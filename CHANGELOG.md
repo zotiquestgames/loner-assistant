@@ -36,6 +36,13 @@ All notable changes to Loner Assistant are documented here.
 - Undefined `--info` / `--bg-primary` CSS variables.
 - An unescaped NPC tag list.
 - An inconsistent status badge on campaign cards.
+- **Doubled oracle rolls of 4-4/5-5/6-6 in a Conflict** were scored as
+  critical hits/failures (3 damage) instead of complications (1 damage) -
+  an equal roll is always "Yes, but..." regardless of the dice values.
+- **"No, but..." Dead End results** never triggered their softer guidance
+  text; every soft dead end was treated as a hard one.
+- **Luck no longer carries over between Conflicts.** It now resets to full
+  on the character's sheet, not just in memory, when a Conflict ends.
 
 ## v2.2.0 — 2026-07-23
 
