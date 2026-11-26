@@ -16,11 +16,14 @@ import { showThreadPanel } from './threads.js';
 import { showEventPanel } from './events.js';
 import { showChallengeTracksPanel } from './challenge-tracks.js';
 import { displayLeverage } from './leverage.js';
+import { applyModules } from './modules.js';
 
 /**
  * Display current campaign info in sidebar
  */
 export function displayCurrentCampaign(campaign) {
+  applyModules(campaign);
+
   const infoDiv = document.getElementById('current-campaign-info');
   if (!infoDiv) return;
 
@@ -29,9 +32,14 @@ export function displayCurrentCampaign(campaign) {
     <p style="font-size: 0.85rem; color: var(--text-muted);">
       Last played: ${UI.formatDate(campaign.lastPlayed)}
     </p>
-    <button class="btn btn-sm btn-outline" onclick="showView('campaigns')" style="margin-top: 0.5rem;">
-      Switch Campaign
-    </button>
+    <div style="display: flex; gap: var(--space-xs); margin-top: 0.5rem;">
+      <button class="btn btn-sm btn-outline" onclick="showView('campaigns')">
+        Switch Campaign
+      </button>
+      <button class="btn btn-sm btn-outline" onclick="ModuleSettings.showModuleSettings()">
+        Modules
+      </button>
+    </div>
   `;
 }
 

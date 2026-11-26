@@ -10,6 +10,7 @@ import { getState, setCurrentCharacter, clearCurrentCharacter } from './state.js
 import { openFormModal, confirmAndDelete } from './crud/modal-form.js';
 import { StatusTrackSystem } from './status-track.js';
 import { renderSection as renderBackstory } from './backstory.js';
+import { isEnabled } from './modules.js';
 
 // Lifepath fragments handed over by the Character Generator, saved with
 // the character when the New Character form is submitted.
@@ -272,7 +273,7 @@ export async function viewCharacterSheet(characterId) {
         <label>Luck</label>
         <div>${character.luck} / ${character.maxLuck}</div>
       </div>
-      <div class="form-group">
+      <div class="form-group" ${isEnabled('status-track') ? '' : 'hidden'}>
         <label>Status Track</label>
         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
           ${statusTag ? `<span class="tag-chip">${UI.escapeHtml(statusTag)}</span>` : '<span class="text-muted" style="font-size: 0.85rem;">No lasting consequence</span>'}
