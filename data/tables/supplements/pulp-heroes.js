@@ -54,20 +54,6 @@ export default {
         ['Private Detective Agency - Investigation business with blackmail client records', 'Auction House Appraisal Room - Art business with forgery authentication documentation', 'Shipping Company Manifest Office - Import business with contraband cargo records', 'Educational Institution Endowment Office - Academic facility with donation misuse files', 'Religious Organization Treasury - Spiritual institution with charity fund embezzlement records', 'International Trade Company - Commerce business with foreign espionage documentation'],
       ]
     },
-    document_types: {
-      id: 'document_types',
-      name: 'Document Types',
-      category: 'random-tables',
-      rollType: '2d6',
-      entries: [
-        ['Financial Ledger - Accounting records showing illegal money movement', 'Correspondence Files - Personal letters revealing criminal relationships', 'Contract Agreement - Legal documents outlining illegal business arrangements', 'Photograph Collection - Visual evidence of criminal activities or blackmail material', 'Meeting Minutes - Official records of conspiracy planning sessions', 'Property Deed - Real estate ownership documents with fraudulent transfers'],
-        ['Medical Records - Healthcare documentation covering up suspicious deaths', 'Employee Roster - Personnel lists revealing criminal organization structure', 'Shipping Manifest - Cargo documentation concealing smuggling operations', 'Legal Brief - Court documents showing case fixing or judicial corruption', 'Insurance Policy - Coverage documents with suspicious beneficiary changes', 'Government Permit - Official authorization obtained through bribery'],
-        ['Personal Diary - Private journal documenting criminal activities and plans', 'Bank Statement - Financial records showing suspicious deposits and withdrawals', 'Travel Itinerary - Transportation schedules for criminal operation timing', '', '', ''],
-        ['', '', '', '', '', ''],
-        ['', '', '', '', '', ''],
-        ['', '', '', '', '', ''],
-      ]
-    },
     city_districts: {
       id: 'city_districts',
       name: 'City Districts',
@@ -346,6 +332,118 @@ export default {
         ['Brewery Fermentation Tank Rupture - Alcohol production equipment failure', 'Tobacco Factory Air Quality Crisis - Workplace environment hazard', 'Electronics Assembly Electrical Short - Production line power surge', 'Machine Shop Tool Accident - Precision equipment causing worker injury', 'Lumber Mill Saw Blade Failure - Wood processing equipment malfunction', 'Cold Storage Refrigeration Breakdown - Temperature control system failure'],
         ['Scrap Yard Crane Collapse - Heavy equipment failure in salvage operation', 'Train Repair Shop Fire - Locomotive maintenance facility blaze', 'Foundry Metal Spill - Molten material containment failure', 'Printing Press Ink Contamination - Publishing equipment chemical accident', 'Research Laboratory Equipment Explosion - Scientific facility experimental accident', 'Testing Facility Structural Failure - Quality control building collapse'],
         ['Fuel Depot Tank Rupture - Gasoline storage facility leak', 'Loading Dock Equipment Failure - Cargo handling accident', 'Assembly Line Conveyor Malfunction - Production system mechanical failure', 'Quality Control Center Fire - Inspection facility blaze destroying records', 'Industrial Kitchen Pressure Cooker Explosion - Food service equipment failure', 'Experimental Workshop Chemical Reaction - Research facility uncontrolled experiment'],
+      ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Cloaked Avenger', 'Shadow Walker', 'Merciless Judge', 'Night Stalker', 'Grim Executioner', 'Masked Vigilante'],
+        ['Vengeful Sleuth', 'Truth Seeker', 'Relentless Hunter', 'Dark Detective', 'Justice Bringer', 'Phantom Nemesis'],
+        ['Brutal Enforcer', 'Terror Incarnate', 'Silent Death', 'Urban Predator', 'Moral Compass', 'Shadowed Crusader'],
+        ['Lethal Protector', 'Nightmare Walker', 'Guilty Conscience', 'Street Phantom', 'Merciless Angel', 'Righteous Fury'],
+        ['Broken Idealist', 'Reformed Criminal', 'Haunted Veteran', 'Dual Personality', 'Obsessed Avenger', 'Living Weapon'],
+        ['Master of Fear', 'Criminal Genius', 'Corrupt Official', 'Reluctant Hero', 'Tortured Soul', 'Urban Myth'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Mind Reader', 'Master Disguise', 'Rooftop Runner', 'Lock Picker', 'Truth Serum', 'Shadow Blend'],
+        ['Intimidation', 'Martial Artist', 'Sharpshooter', 'Explosive Expert', 'Voice Mimic', 'Escape Artist'],
+        ['Criminal Network', 'Police Contact', 'Forensic Eye', 'Street Informant', 'Safe Cracker', 'Knife Fighter'],
+        ['Pain Immunity', 'Photographic Memory', 'Quick Draw', 'Lie Detector', 'Torture Techniques', 'Silent Movement'],
+        ['Chemical Knowledge', 'Trap Setter', 'Crowd Manipulator', 'Fear Projector', 'Evidence Planter', 'Wound Ignorer'],
+        ['Radio Operator', 'Hypnotist', 'Acrobat', 'Demolitions', 'Master Tracker', 'Combat Surgeon'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Guilty Conscience', 'Obsessive', 'Wanted by Police', 'Haunted Past', 'Double Identity', 'Trust Issues'],
+        ['Violent Temper', 'Substance Dependent', 'Physical Scar', 'Moral Rigidity', 'Paranoid', 'Social Outcast'],
+        ['Blackmailed', 'Family Hostage', 'Memory Gaps', 'Chronic Pain', 'Marked for Death', 'Code of Honor'],
+        ['Unstable Mind', 'Corrupt Contact', 'Old Enemy', 'Addiction', 'Nightmares', 'Reckless'],
+        ['Secret Exposed', 'Loved One Target', 'Authority Figure', 'Debt Owed', 'Mercy Weakness', 'Identity Crisis'],
+        ['Physical Disability', 'Emotional Trauma', 'Legal Troubles', 'Religious Conflict', 'Age Catching Up', 'Betrayed Before'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Twin .45s', 'Smoke Bombs', 'Grappling Hook', 'Trench Knife', 'Truth Serum', 'Gas Mask'],
+        ['Armored Coat', 'Lock Picks', 'Throwing Knives', 'Disguise Kit', 'Radio Set', 'First Aid Kit'],
+        ['Rope & Harness', 'Brass Knuckles', 'Chloroform', 'Camera', 'Binoculars', 'Crowbar'],
+        ['Skeleton Keys', 'Flash Powder', 'Silenced Pistol', 'Caltrops', 'Wiretap Device', 'Emergency Cash'],
+        ['Poison Capsules', 'Bulletproof Vest', 'Signal Flares', 'Glass Cutter', 'Fingerprint Kit', 'Medical Supplies'],
+        ['Tear Gas', 'Steel-Toed Boots', 'Pocket Watch', 'Hip Flask', 'Handcuffs', 'Backup Weapon'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Diana', 'Victoria', 'Margaret', 'Eleanor', 'Catherine', 'Vivian'],
+        ['Helen', 'Dorothy', 'Frances', 'Ruth', 'Alice', 'Rose'],
+        ['Marie', 'Florence', 'Edith', 'Grace', 'Anna', 'Clara'],
+        ['Martha', 'Louise', 'Lillian', 'Gladys', 'Irene', 'Pearl'],
+        ['Ethel', 'Hazel', 'Mildred', 'Gertrude', 'Stella', 'Eva'],
+        ['Beatrice', 'Josephine', 'Agnes', 'Ruby', 'Mabel', 'Viola'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Richard', 'Charles', 'William', 'Thomas', 'Robert', 'Edward'],
+        ['Frank', 'Arthur', 'Henry', 'George', 'Walter', 'Harold'],
+        ['Albert', 'Samuel', 'Louis', 'David', 'Frederick', 'Ernest'],
+        ['Ralph', 'Joseph', 'Edgar', 'Raymond', 'Howard', 'Victor'],
+        ['Lawrence', 'Leonard', 'Vincent', 'Theodore', 'Kenneth', 'Eugene'],
+        ['Clarence', 'Bernard', 'Jerome', 'Maurice', 'Chester', 'Harvey'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Blackwood', 'Ashford', 'Sterling', 'Hartwell', 'Grimm', 'Kane'],
+        ['Steele', 'Cross', 'Stone', 'Sharp', 'Dark', 'Grey'],
+        ['Hunter', 'Walker', 'Knight', 'Bishop', 'Judge', 'King'],
+        ['Shadow', 'Raven', 'Crow', 'Wolf', 'Fox', 'Hawk'],
+        ['Winters', 'Storm', 'Rivers', 'Hill', 'Vale', 'West'],
+        ['Blake', 'Reed', 'Ward', 'Bell', 'Cole', 'Price'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Shadow', 'Spider', 'Phantom', 'Wraith', 'Ghost', 'Specter'],
+        ['Reaper', 'Judge', 'Executioner', 'Avenger', 'Hunter', 'Stalker'],
+        ['Nightmare', 'Terror', 'Fear', 'Dread', 'Doom', 'Death'],
+        ['Razor', 'Blade', 'Steel', 'Iron', 'Stone', 'Bullet'],
+        ['Whisper', 'Silence', 'Echo', 'Voice', 'Truth', 'Justice'],
+        ['Mask', 'Cloak', 'Hood', 'Cape', 'Shroud', 'Veil'],
       ]
     }
   }

@@ -417,6 +417,118 @@ export default {
         ['Isadora Crane: A brilliant but reckless inventor who creates dangerous gadgets to aid her expeditions, often leaving destruction in her wake.', 'The Midnight Vanguard: A shadowy cabal of adventurers backed by a powerful secret society, using stolen ancient knowledge to gain an edge.', 'Victor "The Vulture" Strand: A scavenger who waits for other groups to unearth treasures, then swoops in to take credit—and the loot.', 'Arden "The Wolf" Maddox: A lone tracker with an uncanny ability to predict his rivals’ next moves, often intercepting them at key moments.', 'The Iron Compass Brigade: A team of ex-soldiers turned adventurers, known for their ruthless efficiency and military-style tactics.', 'Natalia “The Thorn” Dimitriou: A former ally of the heroes, now a bitter rival seeking revenge for a perceived betrayal.'],
         ['The Onyx Crow Society: A secretive organization that uses trained spies and informants to stay one step ahead of their competitors.', 'Helena "The Siren" Drake: A charming but duplicitous rival who lures heroes into traps with promises of partnership and shared treasures.', 'The Brass Raven Gang: A group of airship-flying adventurers who raid rivals’ camps from above, escaping with relics and supplies.', 'Gregor "The Hammer" Kravchik: A brutish treasure hunter who believes in using brute force and intimidation to get what he wants.', 'Marina "The Mirage" Calderon: A master of disguise who infiltrates expeditions, stealing vital clues and maps without ever being noticed.', 'Lord Everett Hawthorne: A pompous aristocrat funding his expeditions with inherited wealth, obsessed with proving his superiority to "common" adventurers.'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Daring Explorer', 'Resourceful PI', 'Intrepid Reporter', 'Fearless Pilot', 'Cunning Spy', 'Mysterious Thief'],
+        ['Brave Adventurer', 'Tough Detective', 'Bold Journalist', 'Sky Ace', 'Secret Agent', 'Stealthy Infiltrator'],
+        ['Relentless Hunter', 'Streetwise Cop', 'Sharp-eyed Photo', 'Reckless Racer', 'Shadow Operative', 'Agile Cat Burglar'],
+        ['Resilient Seeker', 'Wise Criminologist', 'Tenacious Newsman', 'Charismatic Aviator', 'Tech Savvy Engineer', 'Ingenious Swindler'],
+        ['Fearless Pioneer', 'Determined Sleuth', 'Curious Chronicler', 'Bold Balloonist', 'Undercover Expert', 'Deft Smuggler'],
+        ['Venturous Smuggler', 'Clever Consultant', 'Unyielding Newshound', 'Courageous Airman', 'Covert Operative', 'Artful Thief'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Quick Thinker', 'Keen Observer', 'Lock Picking', 'Mechanical Genius', 'Master Disguise', 'Survival Expert'],
+        ['Expert Tracker', 'Persuasive Speaker', 'Intuition', 'Pilot Expert', 'Cryptography', 'Escape Artist'],
+        ['Combat Pro', 'Negotiation', 'Sleight of Hand', 'Engineering', 'Tech Savvy', 'Stunt Driver'],
+        ['Linguist', 'Streetwise', 'Journalism', 'Navigation', 'Gadgeteer', 'Acrobatics'],
+        ['Archeology', 'Forensic Science', 'Stealth', 'Map Reading', 'Robotics', 'Parkour'],
+        ['Ancient History', 'Investigation', 'Interrogation', 'Aerodynamics', 'Weapon Specialist', 'Marksman'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Overconfident', 'Haunted by Past', 'Impulsive', 'Reckless', 'Distrustful', 'Superstitious'],
+        ['Arrogant', 'Claustrophobic', 'Headstrong', 'Thrill-seeker', 'Cynical', 'Haunted'],
+        ['Secretive', 'Emotionally Scarred', 'Stubborn', 'Hot-headed', 'Skeptical', 'Paranoid'],
+        ['Obsessed', 'Guilt-ridden', 'Impatient', 'Risk-addicted', 'Jaded', 'Delusional'],
+        ['Ambitious', 'Traumatized', 'Reckless', 'Adrenaline Junkie', 'Untrusting', 'Haunted'],
+        ['Paranoid', 'Secretive', 'Headstrong', 'Hot-headed', 'Skeptical', 'Jaded'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Revolver', 'Lockpicks', 'Compass', 'Flight Goggles', 'Spy Camera', 'Grappling Hook'],
+        ['Fedora', 'Trench Coat', 'Flashlight', 'Aviator Jacket', 'Concealed Weapon', 'Crowbar'],
+        ['Magnifying Glass', 'Notebook', 'Satchel', 'Pilot\'s License', 'Codebook', 'Disguise Kit'],
+        ['Binoculars', 'Reporter Badge', 'Map', 'Pilot\'s Log', 'Cipher Disk', 'Infiltration Kit'],
+        ['Ancient Talisman', 'Tape Recorder', 'Artifact', 'Parachute', 'Surveillance Gear', 'Rope'],
+        ['Silver Bullet', 'Press Pass', 'Explorer\'s Hat', 'Flight Manual', 'Microphone', 'Climbing Gear'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Amelia', 'Clara', 'Evelyn', 'Harriet', 'Isabel', 'Lillian'],
+        ['Dorothy', 'Frances', 'Grace', 'Helen', 'Jane', 'Laura'],
+        ['Beatrice', 'Florence', 'Harriet', 'Irene', 'Julia', 'Margaret'],
+        ['Alice', 'Edith', 'Gloria', 'Katherine', 'Mary', 'Olive'],
+        ['Cecelia', 'Dora', 'Gwendolyn', 'Lydia', 'Nora', 'Pearl'],
+        ['Ada', 'Daphne', 'Ethel', 'Hilda', 'June', 'Mabel'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Albert', 'Charles', 'Edward', 'Frank', 'George', 'Harold'],
+        ['Arthur', 'David', 'Frederick', 'Henry', 'James', 'John'],
+        ['Bernard', 'Daniel', 'Francis', 'Howard', 'Joseph', 'Leonard'],
+        ['Alfred', 'Douglas', 'Gordon', 'Jack', 'Louis', 'Mark'],
+        ['Alexander', 'Dennis', 'Hugh', 'Lawrence', 'Michael', 'Patrick'],
+        ['Andrew', 'Donald', 'Henry', 'Kenneth', 'Paul', 'Richard'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Anderson', 'Bennett', 'Collins', 'Davis', 'Edwards', 'Foster'],
+        ['Bailey', 'Carter', 'Cox', 'Dixon', 'Evans', 'Griffith'],
+        ['Baker', 'Clark', 'Dean', 'Elliott', 'Fisher', 'Harris'],
+        ['Brooks', 'Clarke', 'Dunn', 'Foster', 'Gibson', 'Howard'],
+        ['Campbell', 'Cook', 'Evans', 'Gardner', 'Gray', 'Hughes'],
+        ['Chapman', 'Davies', 'Fletcher', 'Gordon', 'Green', 'Johnson'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Ace', 'Bullet', 'Colt', 'Duke', 'Eagle', 'Flash'],
+        ['Blaze', 'Butch', 'Dash', 'Flint', 'Hawk', 'Jazz'],
+        ['Blaze', 'Chief', 'Dusty', 'Gunner', 'Jet', 'Knuckles'],
+        ['Buck', 'Copper', 'Eagle', 'Hank', 'Kid', 'Lancer'],
+        ['Buddy', 'Curly', 'Fox', 'Hawkeye', 'Lobo', 'Maverick'],
+        ['Buzz', 'Dagger', 'Gator', 'Hunter', 'Lucky', 'Razor'],
+      ]
     }
   }
 };

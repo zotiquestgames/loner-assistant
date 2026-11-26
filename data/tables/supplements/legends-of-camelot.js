@@ -557,6 +557,132 @@ export default {
         ['A mysterious song lures you deeper into the forest.', 'Encounter a band of rebels hiding from the authorities.', 'Find an ancient altar used for druidic ceremonies.', 'A fox leads you to a hidden den filled with secrets.', 'Discover a network of tunnels beneath the forest floor.', 'Encounter a hermit living in seclusion.'],
         ['A bear cub approaches your camp, followed by its protective mother.', 'Discover a grove where time seems to stand still.', 'A raven brings a message from a distant land.', 'Find a hidden waterfall with a cave behind it.', 'Encounter a group of forest bandits planning a raid.', 'Discover a tree with a door leading to an underground chamber.'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Gallant Knight', 'Wise Sage', 'Daring Rogue', 'Bold Bard', 'Loyal Squire', 'Mysterious Druid'],
+        ['Noble Lord', 'Cunning Thief', 'Pious Monk', 'Brave Warrior', 'Mercenary', 'Enchanted Healer'],
+        ['Devout Priest', 'Stalwart Guard', 'Witty Jester', 'Wandering Minstrel', 'Fierce Hunter', 'Stealthy Scout'],
+        ['Skillful Smith', 'Fierce Viking', 'Agile Acrobat', 'Faithful Servant', 'Tactical General', 'Crafty Merchant'],
+        ['Valiant Leader', 'Tragic Hero', 'Unyielding Defender', 'Enigmatic Sorcerer', 'Ancient Hermit', 'Fearless Champion'],
+        ['Quick Messenger', 'Loyal Bodyguard', 'Enlightened Scholar', 'Devoted Follower', 'Vengeful Avenger', 'Generous Noble'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Sword Master', 'Potion Brewer', 'Archery Expert', 'Herbalist', 'Beast Tamer', 'Spellcaster'],
+        ['Master Tactician', 'Stealthy Infiltrator', 'Diplomatic Negotiator', 'Quick Reflexes', 'Lockpicker', 'Tracker'],
+        ['Chivalrous', 'Skilled Rider', 'Astrologer', 'Lore Keeper', 'Enchanter', 'Artisan'],
+        ['Divine Healer', 'Skilled Gambler', 'Athletic', 'Fleet-Footed', 'Silver Tongued', 'Alchemist'],
+        ['Berserker Rage', 'Holy Prayers', 'Strategy Genius', 'Illusionist', 'Seer', 'Charm Speaker'],
+        ['Fortitude', 'Courageous Heart', 'Steady Hands', 'Ocean Navigator', 'Silent Movement', 'Battle Commander'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Prideful', 'Overconfident', 'Haunted Past', 'Easily Distracted', 'Naive', 'Vengeful'],
+        ['Weakness', 'Stubborn', 'Trust Issues', 'Guilt-Ridden', 'Superstitious', 'Ambitious'],
+        ['Secret Keeper', 'Fear of Magic', 'Short Temper', 'Blunt Speaker', 'Compulsive', 'Cowardice'],
+        ['Fragile Health', 'Greedy', 'Cursed', 'Hot-Headed', 'Distrustful', 'Reckless'],
+        ['Haunted Dreams', 'Envious', 'Self-Doubting', 'Poor Vision', 'Socially Awkward', 'Mistrustful'],
+        ['Paranoia', 'Doubtful', 'Perfectionist', 'Naive Heart', 'Manipulative', 'Fatalistic'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Excalibur', 'Magic Amulet', 'Sacred Scroll', 'Enchanted Armor', 'Poisoned Dagger', 'Dragon Scale'],
+        ['Healing Potion', 'Stealth Cloak', 'Silver Bow', 'Golden Chalice', 'Ancient Tome', 'Crystal Ball'],
+        ['Holy Relic', 'Mystical Ring', 'Battle Axe', 'War Horn', 'Spellbook', 'Blessed Sword'],
+        ['Enchanted Shield', 'Vial of Nightshade', 'Phoenix Feather', 'Staff of Wisdom', 'Rune Stones', 'Elven Cloak'],
+        ['Map of Camelot', 'Magical Lantern', 'Hunter\'s Trap', 'Eagle Eye Amulet', 'Druid\'s Staff', 'Ring of Invisibility'],
+        ['Wizard\'s Wand', 'Divine Armor', 'Flame Blade', 'Frost Dagger', 'Crystal Staff', 'King\'s Signet'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Guinevere', 'Morgana', 'Isolde', 'Elaine', 'Nimue', 'Luned'],
+        ['Igraine', 'Viviane', 'Rhiannon', 'Ygraine', 'Enid', 'Brangaine'],
+        ['Ariadne', 'Lynette', 'Lyonesse', 'Clarissant', 'Blanchefleur', 'Dindrane'],
+        ['Percivale', 'Alianore', 'Rowena', 'Laudine', 'Brangienne', 'Bellangere'],
+        ['Margawse', 'Melior', 'Iseult', 'Teleri', 'Caradwen', 'Violette'],
+        ['Thelma', 'Angharad', 'Gweneth', 'Margery', 'Matilda', 'Rhonwen'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Arthur', 'Lancelot', 'Gawain', 'Galahad', 'Percival', 'Mordred'],
+        ['Tristan', 'Merlin', 'Bedivere', 'Kay', 'Gareth', 'Agravain'],
+        ['Bors', 'Hector', 'Lamorak', 'Lionel', 'Geraint', 'Palamedes'],
+        ['Caradoc', 'Dinadan', 'Ywain', 'Pellinore', 'Ector', 'Elyan'],
+        ['Lucan', 'Tor', 'Aglovale', 'Leodegrance', 'Balin', 'Colgrevance'],
+        ['Griflet', 'Meliadus', 'Marhaus', 'Brunor', 'Tristram', 'Dagonet'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Pendragon', 'Le Fay', 'De Ganis', 'Of Cornwall', 'The Pure', 'The Brave'],
+        ['The Green', 'Of Orkney', 'The Bold', 'The Swift', 'The Wise', 'The Just'],
+        ['The Strong', 'Of Wales', 'The Black', 'The White', 'The True', 'The Great'],
+        ['Of Brittany', 'The Red', 'The Lion', 'The Knight', 'The Hunter', 'The Wolf'],
+        ['The Fair', 'The Just', 'The Fierce', 'The Proud', 'The Noble', 'The Chaste'],
+        ['Of Avalon', 'The Mighty', 'The Kind', 'The Gallant', 'The Merciful', 'The Defender'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Red', 'The Silent', 'The Brave', 'The Swift', 'The Bold', 'The Cunning'],
+        ['The Pure', 'The Strong', 'The Wise', 'The Noble', 'The Valiant', 'The Just'],
+        ['The Chaste', 'The Kind', 'The Loyal', 'The Faithful', 'The True', 'The Fierce'],
+        ['The Mighty', 'The Great', 'The Honorable', 'The Gallant', 'The Proud', 'The Merciful'],
+        ['The Cunning', 'The Bold', 'The Defender', 'The Swift', 'The Just', 'The Generous'],
+        ['The Enchanter', 'The Sorcerer', 'The Sage', 'The Protector', 'The Hunter', 'The Dragon'],
+      ]
+    },
+    magic: {
+      id: 'magic',
+      name: 'Magic',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Light of Avalon: Create a bright light that illuminates dark areas.', 'Shield of Faith: Conjure a magical shield that deflects attacks.', 'Healing Touch: Restore health to a wounded ally.', 'Flames of the Dragon: Summon a burst of fire to scorch enemies.', 'Whispering Wind: Send a message carried by the wind to a distant ally.', 'Binding Roots: Entangle an enemy with magical roots from the ground.'],
+        ['Illusionary Guise: Create a convincing illusion to deceive others.', 'Enchant Weapon: Imbue a weapon with magical power, enhancing its strength.', 'Mystic Armor: Summon an ethereal armor that protects the wearer.', 'Water Breathing: Allow the target to breathe underwater.', 'Speak with Animals: Communicate with creatures of the forest.', 'Levitation: Lift an object or person into the air effortlessly.'],
+        ['Summon Spirit: Call forth a spirit for guidance or assistance.', 'Frostbite: Encase an enemy in ice, slowing or immobilizing them.', 'Invisibility: Render the target invisible for a short duration.', 'Thunderstrike: Summon a bolt of lightning to strike a target.', 'Nature\'s Blessing: Enhance the growth of plants and heal the land.', 'Arcane Lock: Seal a door or chest with a magical lock.'],
+        ['Teleportation: Instantly move to a previously visited location.', 'Fear: Instill a sense of terror in enemies, causing them to flee.', 'Purify Food and Drink: Remove poisons and contaminants.', 'Ethereal Walk: Phase through solid objects temporarily.', 'Stone Shape: Mold stone into a desired shape or form.', 'Clairvoyance: Gain a vision of a distant or future event.'],
+        ['Fireball: Launch a ball of fire that explodes on impact.', 'Detect Magic: Sense the presence of magical auras.', 'Barrier of Light: Create a barrier that blocks physical and magical attacks.', 'Shadow Step: Teleport from one shadow to another.', 'Enrage: Infuse an ally with berserk strength, increasing their combat ability.', 'Call Lightning: Summon a storm and direct bolts of lightning.'],
+        ['Charm Person: Influence the thoughts and actions of another.', 'Silence: Create a zone where no sound can be heard.', 'Earthquake: Cause the ground to tremble and crack.', 'Scrying: Use a reflective surface to view a distant place or person.', 'Wind Wall: Create a barrier of strong wind that deflects projectiles.', 'Resurrection: Bring a deceased person back to life.'],
+      ]
     }
   }
 };

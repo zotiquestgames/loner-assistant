@@ -361,6 +361,62 @@ export default {
         ['Raising the dead', 'Binding enemy\'s weapon-luck', 'Finding lost item magically', 'Healing serious wound', 'Sending message via dreams', 'Seeing through another\'s eyes'],
         ['Breaking curse', 'Transferring luck', 'Calling storm', 'Making self invisible', 'Berserker rage induced', 'Opening gate to Otherworld'],
       ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Astrid', 'Brynja', 'Dagny', 'Eira', 'Freydis', 'Gudrun'],
+        ['Helga', 'Ingrid', 'Jorunn', 'Kari', 'Liv', 'Margret'],
+        ['Nanna', 'Oda', 'Ragnhild', 'Sigrid', 'Thora', 'Unn'],
+        ['Vigdis', 'Yngvild', 'Asa', 'Bothild', 'Dalla', 'Estra'],
+        ['Geira', 'Halla', 'Inga', 'Joreid', 'Katla', 'Lagertha'],
+        ['Oddny', 'Ragna', 'Signy', 'Thyra', 'Ulfhild', 'Valgerda'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Alf', 'Bjorn', 'Einar', 'Erik', 'Finn', 'Gunnar'],
+        ['Halfdan', 'Harald', 'Ivar', 'Knut', 'Leif', 'Magnus'],
+        ['Njal', 'Olaf', 'Ragnar', 'Sigurd', 'Thorvald', 'Ulf'],
+        ['Vidar', 'Yngvar', 'Asbjorn', 'Bard', 'Egil', 'Floki'],
+        ['Grimr', 'Hakon', 'Ingolf', 'Jorund', 'Ketil', 'Ljot'],
+        ['Orm', 'Rollo', 'Skeggi', 'Thorfinn', 'Ulfar', 'Vali'],
+      ]
+    },
+    patronymics_and_matronymics: {
+      id: 'patronymics_and_matronymics',
+      name: 'Patronymics & Matronymics',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Eriksson', 'Bjornsson', 'Haraldsson', 'Ragnarsson', 'Thorsson', 'Ulfsson'],
+        ['Gunnarsson', 'Sigurdsson', 'Olafsson', 'Knutsson', 'Leifsson', 'Einarsson'],
+        ['Eriksdottir', 'Bjornsdottir', 'Haraldsdottir', 'Ragnarsdottir', 'Thorsdottir', 'Ulfsdottir'],
+        ['Gunnarsdottir', 'Sigurdsdottir', 'Olafsdottir', 'Knutsdottir', 'Leifsdottir', 'Einarsdottir'],
+        ['Hakonsson', 'Ingolfsson', 'Ketilsson', 'Njálsson', 'Valgardsson', 'Yngvarsson'],
+        ['Hakonsdottir', 'Ingolfsdottir', 'Ketilsdottir', 'Njálsdottir', 'Valgardsdottir', 'Yngvarsdottir'],
+      ]
+    },
+    bynames: {
+      id: 'bynames',
+      name: 'Bynames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['the Bold', 'Bloodaxe', 'Bluetooth', 'Fair-Hair', 'Iron-Side', 'the Red'],
+        ['Blackbeard', 'the Unlucky', 'Silvertongue', 'Snake-in-the-Eye', 'the Stout', 'the Grim'],
+        ['the Strong', 'the Wise', 'the Swift', 'the Tall', 'the Lean', 'the Fair'],
+        ['Flat-Nose', 'Hard-Ruler', 'the Deep-Minded', 'the Peacock', 'the Silent', 'the Shrewd'],
+        ['the Proud', 'the Generous', 'the Cruel', 'the Pale', 'the Dark', 'the Fierce'],
+        ['Wolf-Coat', 'Bear-Slayer', 'Ship-Breaker', 'Storm-Rider', 'Skull-Splitter', 'the Restless'],
+      ]
     }
   }
 };

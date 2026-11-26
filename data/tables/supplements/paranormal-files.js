@@ -431,6 +431,118 @@ export default {
         ['Multiple CEOs across industries share identical DNA. None are related—none acknowledge each other.', 'No one born in a leap year remembers the same childhood. Data corruption in official records is consistent but unexplained.', 'A single word, when spoken aloud in every language at once, resets the structure of thought. No record of the word exists—yet.', 'Every missing spacecraft was not lost but reassigned to explore regions not charted in this dimension.', 'In 1995, a phone number briefly connected to a line where the caller heard their own future death.', 'A former weather satellite continues transmitting “rainfall data”—but overlays show geometric glyphs forming weekly.'],
         ['The real purpose of ancient pyramids was not burial, but insulation—against external metaphysical pressure.', 'Currency microprint contains phrases in extinct dialects that describe future economic collapse events.', 'Every recorded solar eclipse has featured a shadow anomaly at least once—most were edited out in archival footage.', 'Anomalies increase near airports because of buried calibration devices built during WWII to triangulate time.', 'The human eye can detect one extra spectrum—suppressed neurologically after birth through subliminal imagery.', 'Consciousness is not generated in the brain, but streamed in—certain individuals hear the static when reception falters.'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Cynical Agent', 'Occult Researcher', 'Rogue Psychic', 'Tech-Savvy Analyst', 'Disillusioned Veteran', 'Ex-Field Operative'],
+        ['Conspiracy Theorist', 'Debunker', 'Cold-Case Detective', 'Embedded Journalist', 'Cryptid Hunter', 'Augmented Escapee'],
+        ['Government Asset', 'Black-Ops Cleaner', 'Paranormal Archivist', 'Experimental Subject', 'Remote Viewer', 'Field Anthropologist'],
+        ['Bureaucratic Handler', 'Residual Medium', 'Trauma-Hardened Survivor', 'Anomalous Tech Engineer', 'Cult Defector', 'Corporate Espionage Expert'],
+        ['Ritualist Operative', 'Experimental Engineer', 'Interdimensional Wanderer', 'Whistleblower', 'Containment Specialist', 'Contact Specialist'],
+        ['Alien Abductee', 'Psychological Warfare Expert', 'Compromised Operative', 'Reality Bender', 'Host of an Unknown Entity', 'Shadow Operative'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Cryptography', 'Lockpicking', 'Spot Weakness', 'Counter-Surveillance', 'Anomaly Calibration', 'Paranormal Detection'],
+        ['Forensic Analysis', 'Reverse Engineering', 'Fast Talk', 'Lie Detection', 'Occult Knowledge', 'Danger Assessment'],
+        ['Firearms Training', 'Close-Quarters Combat', 'Focused Willpower', 'Artifact Appraisal', 'Systems Intrusion', 'Biohazard Containment'],
+        ['Tactical Driving', 'Signal Interception', 'Breaking & Entering', 'Rift Sensing', 'Psychological Control', 'Data Fabrication'],
+        ['Hypnotic Induction', 'Remote Viewing', 'Improvised Problem-Solving', 'Memory Suppression', 'Field Medicine', 'Network Exploitation'],
+        ['Ritual Execution', 'Arcane Symbology', 'Scientific Deduction', 'Espionage Protocols', 'Cryptid Tracking', 'Cult Infiltration'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Paranoia', 'Unresolved Trauma', 'Hallucination-Prone', 'Chemical Dependency', 'Haunted by a Past Case', 'Fragmented Memory'],
+        ['Unstable Psyche', 'Bound to a Foreign Will', 'Distorted Perception', 'Memory Blackouts', 'Misplaced Trust', 'Defiance Toward Authority'],
+        ['Physically Scarred', 'Secretly Compromised', 'Vulnerable to Influence', 'Fear of the Dark', 'Triggered Flashbacks', 'Chronic Bleeding'],
+        ['Obsessive Curiosity', 'Recurring Nightmares', 'Dissociative Episodes', 'Fear of Silence', 'Cursed Luck', 'Anomalous Allergy'],
+        ['Emotional Numbness', 'Temporal Flashbacks', 'Missing Time', 'Under Surveillance', 'Failing Health', 'Psychic Vulnerability'],
+        ['Oathbound', 'Reality Drift', 'Compelled by an Unknown', 'Propaganda Susceptibility', 'Incapable of Deception', 'Neurological Instability'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['EMP Disruptor', 'Night-Vision Mod Goggles', 'Prototype Firearm', 'Anomaly Scanner', 'Thermal-Resistant Suit', 'Encrypted Data Vault'],
+        ['Psychometric Glove', 'Signal-Scrambling Earpiece', 'Concealed Weapon', 'Self-Mending Notebook', 'Biometric Cloak', 'Dimensional Tether'],
+        ['Containment Box', 'EMF Tracker', 'Classified Dossier', 'Reality Stabilizer', 'Tranquilizer Injector', 'Memory-Wipe Ampoule'],
+        ['Satellite Uplink Phone', 'Precision Lockpicks', 'Quantum Cipher Key', 'Portable Ritual Altar', 'Paranormal Signal Receiver', 'Adaptive Cloaking Field'],
+        ['Digital Obfuscator', 'X-Ray Scope', 'Sigil Pendant', 'Voice-Shifting Recorder', 'Forged Bureau Access Card', 'Cognitive Interface Module'],
+        ['UV-Edged Blade', 'Psychic Resonance Shield', 'Ritual Marking Kit', 'Neural Disruptor', 'Anti-Possession Serum', 'Redacted Journal (Unreadable Sections)'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Evelyn', 'Marissa', 'Naomi', 'Isabel', 'Celeste', 'Quinn'],
+        ['Harper', 'Sasha', 'Lydia', 'Vanessa', 'Nora', 'Elise'],
+        ['Veronica', 'Talia', 'Frances', 'Camille', 'Daphne', 'Blair'],
+        ['Miranda', 'Serena', 'Ivy', 'Lorraine', 'Emilia', 'Simone'],
+        ['Hazel', 'Charlotte', 'Delilah', 'June', 'Carmen', 'Odessa'],
+        ['Astrid', 'Helena', 'Fiona', 'Ophelia', 'Margot', 'Alina'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Victor', 'Adrian', 'Malcolm', 'Jasper', 'Silas', 'Ronan'],
+        ['Dorian', 'Elias', 'Gabriel', 'Vincent', 'Theo', 'Julian'],
+        ['Marcus', 'Damian', 'Wesley', 'Holden', 'Xavier', 'Nolan'],
+        ['Grant', 'Sebastian', 'Conrad', 'Lucian', 'Felix', 'Everett'],
+        ['Isaac', 'Benedict', 'Tobias', 'Simon', 'Raphael', 'Rowan'],
+        ['Dean', 'Lawrence', 'Calvin', 'Warren', 'Finn', 'Ezra'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Hawthorne', 'Sinclair', 'Mercer', 'Wakefield', 'Belmont', 'Holloway'],
+        ['Sterling', 'Huxley', 'Winters', 'Calloway', 'Langley', 'Bishop'],
+        ['Aldrich', 'Weston', 'Montgomery', 'Prescott', 'Vance', 'Duvall'],
+        ['Carlisle', 'Beckett', 'Lockwood', 'Remington', 'Thorne', 'Blackwood'],
+        ['Whitaker', 'Moreau', 'Delacroix', 'Sutherland', 'Ashford', 'Grayson'],
+        ['Langford', 'Valentine', 'Marlowe', 'Kensington', 'Fairchild', 'Radcliffe'],
+      ]
+    },
+    codenames: {
+      id: 'codenames',
+      name: 'Codenames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Ghost', 'Cipher', 'Echo', 'Phantom', 'Oracle', 'Warden'],
+        ['Revenant', 'Apex', 'Shadow', 'Nomad', 'Obsidian', 'Vortex'],
+        ['Harbinger', 'Sentinel', 'Rook', 'Rogue', 'Mirage', 'Polaris'],
+        ['Drifter', 'Sable', 'Kestrel', 'Frost', 'Havoc', 'Wraith'],
+        ['Dagger', 'Specter', 'Null', 'Helix', 'Paradox', 'Nightfall'],
+        ['Titan', 'Halcyon', 'Arcadia', 'Shade', 'Requiem', 'Tempest'],
+      ]
     }
   }
 };

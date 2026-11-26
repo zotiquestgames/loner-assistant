@@ -159,9 +159,9 @@ export default {
       rollType: '2d6',
       entries: [
         ['They help — no strings attached, and they mean it.', 'They help, but quietly expect repayment later.', 'They help — but lie about part of it.', 'They agree to help, but ask something awkward in return.', 'They offer help, but only if you renounce something.', 'They help — and immediately tell someone else.'],
-        ['They stall, then disappear.', 'They offer the *appearance* of help, but it’s a trap.', 'They help, but sabotage part of what they give you.', 'They’re willing, but under surveillance.', 'They can\'t help, but offer a lead to someone who might.', 'They ask to join you — permanently.'],
+        ['They stall, then disappear.', 'They offer the appearance of help, but it’s a trap.', 'They help, but sabotage part of what they give you.', 'They’re willing, but under surveillance.', 'They can\'t help, but offer a lead to someone who might.', 'They ask to join you — permanently.'],
         ['They help, but their rival will retaliate.', 'They help — and now think you owe them a favor.', 'They mislead you, unintentionally.', 'They help because they mistake you for someone else.', 'They help, but insist you leave immediately after.', 'They ask you to lie for them in exchange.'],
-        ['They help — but disappear before you can thank or repay them.', 'They agree, but demand your weapon/gear first.', 'They help, but talk about it too loudly.', 'They help — and confess something afterward.', 'They offer help *only if no one finds out*.', 'They call in help from someone dangerous on your behalf.'],
+        ['They help — but disappear before you can thank or repay them.', 'They agree, but demand your weapon/gear first.', 'They help, but talk about it too loudly.', 'They help — and confess something afterward.', 'They offer help only if no one finds out.', 'They call in help from someone dangerous on your behalf.'],
         ['They ask you to prove yourself first.', 'They help — but under false pretenses.', 'They agree, but double-cross you partway through.', 'They help you — and put themselves at great risk.', 'They give you what you need — but not what you asked for.', 'They offer shelter, but won’t answer questions.'],
         ['They claim to help but delay until it’s too late.', 'They’re under orders not to help — and do it anyway.', 'They help, but mark your presence in a registry.', 'They help and reveal they’ve been watching you for some time.', 'They ask you to take their place in a task they can’t complete.', 'They don’t help — but send someone who might.'],
       ]
@@ -219,7 +219,7 @@ export default {
         ['The lights flicker — everyone freezes until they return.', 'A street preacher calls out your secrets from the shadows.', 'You are offered a guide — they demand no payment, just a promise.', 'A defunct vending machine dispenses an ancient relic.', 'Someone tries to trade you a memory — not theirs.', 'You find a shortcut that shouldn’t exist — the exit is miles away.'],
         ['An abandoned checkpoint still scans passersby — and prints warnings.', 'You step into a long-sealed corridor — it feels like it’s waiting.', 'A corpse slumped in the shadows clutches something valuable.', 'Black market traders offer you a deal — but you\'re not sure who\'s watching.', 'A local gang wants to know what you\'re doing down here.', 'You pass a quiet bar where the patrons never blink.'],
         ['You overhear a plan that could shift power above.', 'Someone offers you shelter — but locks the door from the outside.', 'You find someone lost — they’ve forgotten who they are.', 'A modified crawler slinks by, tagged with an unknown symbol.', 'A section is flooded with breathable mist that shouldn’t exist.', 'A wall opens briefly, revealing another layer — and then closes again.'],
-        ['You enter a space lit by bioluminescent murals — one shows your ship.', 'You’re handed a message written in your own handwriting.', 'The path collapses behind you — and someone is watching from above.', 'A memory returns — it never happened, but feels true.', 'You find a coded map etched into overlapping tilework.', 'A child hands you a token — *“You’ll need this to get back out.”*'],
+        ['You enter a space lit by bioluminescent murals — one shows your ship.', 'You’re handed a message written in your own handwriting.', 'The path collapses behind you — and someone is watching from above.', 'A memory returns — it never happened, but feels true.', 'You find a coded map etched into overlapping tilework.', 'A child hands you a token — “You’ll need this to get back out.”'],
       ]
     },
     reactions_to_outsiders: {
@@ -231,7 +231,7 @@ export default {
         ['Hostile — you are immediately challenged or accused.', 'Watched — eyes follow your every move, silently.', 'Cold politeness — you’re tolerated but not welcomed.', 'Confused — they’ve never seen anyone like you.', 'Welcoming — a local greets you like an old friend.', 'Curious — someone asks questions, cautiously but sincerely.'],
         ['Defensive — locals avoid you entirely.', 'Worshipful — they mistake you for something significant.', 'Suspicious — they think you’re lying about your reason for visiting.', 'Amused — you’re treated like a novelty or tourist.', 'Grateful — a stranger believes you helped them in the past.', 'Alarmed — someone alerts security or a local authority.'],
         ['Protective — someone insists on guiding you personally.', 'Opportunistic — several people try to sell you something at once.', 'Judgmental — they assume your presence means trouble.', 'Split — some welcome you, others clearly do not.', 'Dismissive — they pretend you’re not there.', 'Grudging respect — they’ve heard of you, and it’s complicated.'],
-        ['Patronizing — you’re treated as naive or weak.', 'Protective hostility — *“You shouldn’t be here. Go.”*', 'Imitative — someone copies your behavior or style.', 'Territorial — you’re told you’ve crossed an invisible line.', 'Exploitative — someone sees how to use you for their gain.', 'Resentful — past outsiders did harm here.'],
+        ['Patronizing — you’re treated as naive or weak.', 'Protective hostility — “You shouldn’t be here. Go.”', 'Imitative — someone copies your behavior or style.', 'Territorial — you’re told you’ve crossed an invisible line.', 'Exploitative — someone sees how to use you for their gain.', 'Resentful — past outsiders did harm here.'],
         ['Indifferent — they simply don’t care who you are.', 'Grasping — someone begs for help the moment they see you.', 'Warm but wary — kindness without trust.', 'Testing — someone sets a small trap to see how you react.', 'Romanticized — they expect you to act like a mythical outsider.', 'Disguised hostility — all smiles, but doors start closing.'],
         ['Desperate — you’re seen as a last chance.', 'Relieved — your arrival interrupted something worse.', 'Isolated — people scatter when you walk by.', 'Envious — they assume you live better, travel easier.', 'Obligated — a custom requires them to help you (briefly).', 'Forgotten — no one notices or remembers you, even after speaking.'],
       ]
@@ -248,6 +248,132 @@ export default {
         ['A hidden message has been left for you — old code, new urgency.', 'A clone, recording, or impersonator of you is active here.', 'You find signs that someone followed your path after you left.', 'A trial is underway — and you\'re listed as a key witness.', 'A cultural event now centers on something you once did.', 'An artifact you left behind has changed hands — and meaning.'],
         ['A previously minor threat here has grown — because of your absence.', 'Someone tries to kill you without speaking.', 'You’re offered a chance to settle unfinished business — or avoid it.', 'You return during a planetary crisis — no one has time for you.', 'Locals claim you owe them — their version of events differs wildly.', 'You’re offered amnesty — or blackmailed into silence.'],
         ['An ally you abandoned is alive — but not who they were.', 'An item or memory hidden here is waiting — untouched.', 'You’re mistaken for your last enemy — consequences ensue.', 'You find a message written in your own hand — but don’t remember it.', 'A former nemesis is working for local authorities — and smug.', 'No one remembers you — and everything feels slightly wrong.'],
+      ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Veteran Wanderer', 'Ship\'s Gambler', 'Exiled Noble', 'Failed Scholar', 'Pleasure Seeker', 'Trade Mediator'],
+        ['Low Passage Survivor', 'Cargo Handler', 'Former Soldier', 'Medical Outcast', 'Starport Thief', 'Data Courier'],
+        ['Debt Collector', 'Ship Rat', 'Planetary Exile', 'Merchant Prince', 'Earth Seeker', 'Drifter'],
+        ['Knife Artist', 'Information Broker', 'Fallen Pilot', 'Religious Fanatic', 'Genetic Deviant', 'Smuggler'],
+        ['Combat Veteran', 'Cultural Anthropologist', 'Rogue Trader', 'Asteroid Miner', 'System Hopper', 'Tech Scavenger'],
+        ['Professional Gambler', 'Station Dweller', 'Corporate Fugitive', 'Freelance Assassin', 'Lost Tourist', 'Ship\'s Cook'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Knife Fighter', 'Ship Navigation', 'Credit Scrounger', 'Fast Talk', 'Combat Reflexes', 'Tech Repair'],
+        ['Cargo Wrestling', 'Gambling Sense', 'Pilot Training', 'Street Smart', 'Medical Knowledge', 'Trade Savvy'],
+        ['Weapon Master', 'Information Networks', 'Survival Instinct', 'Cultural Adaptation', 'Ship Systems', 'Zero-G Movement'],
+        ['Negotiation', 'Electronic Locks', 'Brawling', 'Sensor Operation', 'Quick Draw', 'Mechanical Intuition'],
+        ['Stealth Movement', 'Crowd Reading', 'First Aid', 'Ship Combat', 'Language Skills', 'Resource Management'],
+        ['Intimidation', 'Stellar Cartography', 'Jury Rigging', 'Social Climbing', 'Escape Artist', 'Trade Languages'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Gambling Addiction', 'Wanted by Authorities', 'Chronic Illness', 'Obvious Augmentation', 'Paranoid Delusions', 'Debt Burden'],
+        ['Social Outcast', 'Memory Gaps', 'Physical Disability', 'Substance Dependency', 'Violent Temper', 'Naive Optimism'],
+        ['Loyalty Complex', 'Technology Phobia', 'Emotional Instability', 'Cultural Isolation', 'Obsessive Quest', 'Trust Issues'],
+        ['Combat Trauma', 'Genetic Markers', 'Communication Barriers', 'Aging Process', 'Reputation Damage', 'Financial Desperation'],
+        ['Phobia Triggers', 'Identity Crisis', 'Health Deterioration', 'Legal Complications', 'Relationship Baggage', 'Moral Inflexibility'],
+        ['Sensory Impairment', 'Pride Issues', 'Energy Depletion', 'Social Anxiety', 'Haunted Past', 'Resource Dependency'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Mono-molecular Knife', 'Passage Vouchers', 'Medical Kit', 'Data Pad', 'Stellar Charts', 'Survival Gear'],
+        ['Combat Armor', 'Credit Transfer', 'Gambling Kit', 'Translation Device', 'Repair Tools', 'Emergency Rations'],
+        ['Identity Papers', 'Communication Gear', 'Weapon Cache', 'Navigation Computer', 'Trade Samples', 'Protective Suit'],
+        ['Ship Share', 'Medical Scanner', 'Forgery Kit', 'Cultural Database', 'Combat Stims', 'Portable Shelter'],
+        ['Information Files', 'Mechanical Tools', 'Disguise Kit', 'Emergency Beacon', 'Luxury Items', 'Sensor Equipment'],
+        ['Personal Vehicle', 'Corporate Credentials', 'Rare Artifacts', 'Advanced Medication', 'Skill Training Modules', 'Resource Contacts'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Zara', 'Lydia', 'Nova', 'Sera', 'Kira', 'Vera'],
+        ['Elena', 'Maya', 'Dara', 'Juna', 'Lila', 'Riva'],
+        ['Cora', 'Nira', 'Tala', 'Mira', 'Jana', 'Zena'],
+        ['Anya', 'Lara', 'Vina', 'Nora', 'Kala', 'Dina'],
+        ['Sira', 'Tara', 'Luna', 'Gina', 'Zira', 'Cara'],
+        ['Yara', 'Rina', 'Pala', 'Hira', 'Vara', 'Sina'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Kael', 'Joren', 'Dex', 'Rian', 'Voss', 'Narn'],
+        ['Talon', 'Bren', 'Zeph', 'Garr', 'Lux', 'Cade'],
+        ['Tor', 'Daven', 'Kess', 'Nix', 'Jax', 'Rex'],
+        ['Vale', 'Renn', 'Thane', 'Zane', 'Lars', 'Max'],
+        ['Drake', 'Knox', 'Sage', 'Gray', 'Wade', 'Fox'],
+        ['Ash', 'Kane', 'Reed', 'Cole', 'Beck', 'Finn'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Starfall', 'Voidborn', 'Driftwood', 'Nebula', 'Starhawk', 'Wanderer'],
+        ['Blackstar', 'Freespace', 'Thornfield', 'Shadowmere', 'Stormwind', 'Darkwater'],
+        ['Ironhold', 'Swiftpass', 'Goldstream', 'Silverbane', 'Redstone', 'Greymantle'],
+        ['Brightway', 'Longreach', 'Deepspace', 'Quicksilver', 'Strongarm', 'Truepath'],
+        ['Nightfall', 'Starseeker', 'Farwalker', 'Trueshot', 'Boldstep', 'Swiftstrike'],
+        ['Moonrise', 'Skyward', 'Starforge', 'Voidwalker', 'Spacehawk', 'Drifter'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Knife', 'Ghost', 'Smoke', 'Steel', 'Shadow', 'Void'],
+        ['Lucky', 'Scar', 'Frost', 'Dust', 'Spark', 'Raven'],
+        ['Echo', 'Blade', 'Storm', 'Flash', 'Iron', 'Silver'],
+        ['Ace', 'Hex', 'Nova', 'Comet', 'Drift', 'Quick'],
+        ['Edge', 'Flint', 'Dash', 'Jet', 'Rocket', 'Star'],
+        ['Crow', 'Wolf', 'Fox', 'Bear', 'Hawk', 'Viper'],
+      ]
+    },
+    world_types: {
+      id: 'world_types',
+      name: 'World Types',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Industrial Manufacturing World - Massive factories and pollution', 'Agricultural Colony - Peaceful farms and rural communities', 'Mining Operation - Dangerous extraction of rare minerals', 'Research Station - Scientific investigation and experimentation', 'Trading Hub - Commercial center with diverse populations', 'Pleasure World - Entertainment and luxury services'],
+        ['Frontier Settlement - Struggling colony on the edge of civilization', 'Military Outpost - Defensive installation with strict security', 'Religious Sanctuary - Spiritual community following specific beliefs', 'Corporate Headquarters - Business center controlled by single company', 'Prison World - Penal colony for galactic criminals', 'Refugee Camp - Temporary shelter for displaced populations'],
+        ['Abandoned Ruins - Failed colony with mysterious circumstances', 'Orbital Station - Space-based habitat serving multiple functions', 'Tech Preserve - Guardians of ancient or advanced technology', 'Water World - Ocean planet with floating cities', 'Desert Wasteland - Harsh environment with scattered settlements', 'Forest Preserve - Ecological sanctuary with strict environmental laws'],
+        ['Ice World - Frozen planet with underground communities', 'Gas Giant Station - Mining platform in planetary atmosphere', 'Asteroid Habitat - Hollowed-out rock with artificial environment', 'Generation Ship - Massive vessel serving as mobile city', 'Quarantine Zone - Isolated area containing dangerous contagion', 'Archaeological Site - Ancient ruins under active investigation'],
+        ['Diplomatic Neutral Zone - Meeting place for conflicting factions', 'Free Port - Lawless trading post with minimal government', 'Monastery World - Contemplative community seeking enlightenment', 'Gravity Well - Planet with unusual gravitational properties', 'Radiation Zone - Area affected by stellar or artificial radiation', 'Time Distortion Field - Region where time flows differently'],
+        ['Artificial World - Constructed planet or massive space habitat', 'Biological Preserve - Protected ecosystem with unique life forms', 'Memory Bank - Repository of cultural and historical information', 'Energy Collection - Facility harvesting stellar or exotic energy', 'Dimensional Gateway - Portal to unknown regions of space', 'Earth Claim - World believed by locals to be humanity\'s birthplace'],
       ]
     }
   }

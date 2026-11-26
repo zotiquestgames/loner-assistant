@@ -487,6 +487,118 @@ export default {
         ['Intimidation surveillance threatening investigator through mysterious incidents', 'Harassment surveillance subjecting investigator to psychological pressure', 'Sabotage surveillance damaging investigator\'s property and equipment', 'Disinformation surveillance spreading false information about investigator\'s activities', 'Isolation surveillance alienating investigator from friends and allies', 'Discreditation surveillance undermining investigator\'s reputation and credibility'],
         ['Elimination surveillance preparing to terminate investigator\'s investigation permanently', 'Replacement surveillance substituting investigator with loyal duplicate', 'Conversion surveillance attempting to recruit investigator as double agent', 'Possession surveillance influencing investigator\'s behavior through supernatural control', 'Memory surveillance altering investigator\'s recollections of important events', 'Reality surveillance manipulating investigator\'s perception of truth and facts'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Antiquarian Scholar', 'Intrepid Reporter', 'Occult Detective', 'Traumatized Veteran', 'Curious Librarian', 'Wealthy Dilettante'],
+        ['Paranormal Doctor', 'Blasphemous Cultist', 'Reformed Criminal', 'Obsessed Artist', 'Mysterious Inheritor', 'Skeptical Scientist'],
+        ['Haunted Psychic', 'Forbidden Archaeologist', 'Defiant Priest', 'Struggling Writer', 'Desperate Parent', 'Ambitious Academic'],
+        ['Rogue Anthropologist', 'Disgraced Physician', 'Cunning Journalist', 'Tormented Dreamer', 'Secretive Collector', 'Brave Explorer'],
+        ['Mad Inventor', 'Enlightened Mystic', 'Doomed Descendant', 'Vigilant Watchman', 'Cynical Detective', 'Cursed Heir'],
+        ['Esoteric Translator', 'Unhinged Researcher', 'Protective Guardian', 'Guilty Survivor', 'Devoted Acolyte', 'Reluctant Hero'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Ancient Languages', 'Occult Lore', 'Research', 'Investigation', 'Medical Knowledge', 'Archaeology'],
+        ['Photography', 'Lock Picking', 'Fast Talk', 'Intimidation', 'Persuasion', 'Stealth'],
+        ['First Aid', 'Library Use', 'Psychology', 'Anthropology', 'History', 'Listen'],
+        ['Spot Hidden', 'Firearms', 'Driving', 'Climbing', 'Swimming', 'Handwriting Analysis'],
+        ['Hypnosis', 'Theology', 'Natural World', 'Survival', 'Contacts', 'Streetwise'],
+        ['Dream Interpretation', 'Ritual Magic', 'Cryptography', 'Engineering', 'Art/Craft', 'Bargain'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Nightmares', 'Phobia', 'Addiction', 'Paranoia', 'Depression', 'Anxiety'],
+        ['Obsession', 'Guilt', 'Trauma', 'Insomnia', 'Delusions', 'Compulsion'],
+        ['Arrogance', 'Recklessness', 'Cowardice', 'Greed', 'Envy', 'Wrath'],
+        ['Chronic Pain', 'Poor Eyesight', 'Hearing Loss', 'Weakness', 'Clumsiness', 'Illness'],
+        ['Social Outcast', 'Debt', 'Enemy', 'Obligation', 'Secret', 'Bad Reputation'],
+        ['Cursed', 'Haunted', 'Marked', 'Tainted', 'Doomed', 'Possessed'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Revolver', 'Camera', 'Medical Kit', 'Flashlight', 'Research Notes', 'Occult Tome'],
+        ['Magnifying Glass', 'Lockpicks', 'Disguise Kit', 'Recording Device', 'Typewriter', 'Ancient Artifact'],
+        ['Holy Symbol', 'Protective Ward', 'Ritual Components', 'Poison', 'Explosives', 'Rare Book'],
+        ['Telescope', 'Automobile', 'Map Collection', 'Cipher Wheel', 'Laboratory Equipment', 'Personal Library'],
+        ['Heirloom Weapon', 'Séance Equipment', 'Microscope', 'Safe Box', 'Contacts List', 'Identity Papers'],
+        ['Cursed Object', 'Protective Charm', 'Emergency Fund', 'Hidden Shelter', 'Network Access', 'Backup Identity'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Adelaide', 'Beatrice', 'Catherine', 'Dorothy', 'Evelyn', 'Florence'],
+        ['Grace', 'Helen', 'Iris', 'Josephine', 'Katherine', 'Lillian'],
+        ['Margaret', 'Nancy', 'Olivia', 'Penelope', 'Ruth', 'Stella'],
+        ['Theresa', 'Ursula', 'Vivian', 'Winifred', 'Yvonne', 'Zelda'],
+        ['Agatha', 'Cordelia', 'Evangeline', 'Imogen', 'Persephone', 'Tabitha'],
+        ['Lenore', 'Ophelia', 'Seraphina', 'Violet', 'Rosalind', 'Minerva'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Albert', 'Benjamin', 'Charles', 'Daniel', 'Edmund', 'Francis'],
+        ['George', 'Henry', 'Isaac', 'James', 'Kenneth', 'Lawrence'],
+        ['Michael', 'Nicholas', 'Oliver', 'Patrick', 'Quentin', 'Robert'],
+        ['Samuel', 'Theodore', 'Ulysses', 'Victor', 'William', 'Xavier'],
+        ['Arthur', 'Cornelius', 'Edgar', 'Humphrey', 'Mortimer', 'Percival'],
+        ['Ambrose', 'Barnabas', 'Cedric', 'Dunstan', 'Erasmus', 'Fitzroy'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Ashworth', 'Blackwood', 'Crowley', 'Danvers', 'Everett', 'Fairfax'],
+        ['Grimwald', 'Hawthorne', 'Innsmouth', 'Jermyn', 'Kingsport', 'Lancaster'],
+        ['Marsh', 'Nightingale', 'Osborn', 'Pickman', 'Quatermass', 'Ravencroft'],
+        ['Stapledon', 'Thorndike', 'Usher', 'Vane', 'Whitmarsh', 'Yithian'],
+        ['Armitage', 'Billington', 'Curwen', 'Derby', 'Elwood', 'Gilman'],
+        ['Hathorne', 'Keziah', 'Lavinia', 'Malygris', 'Nodens', 'Olmstead'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Scholar', 'Old Pete', 'Whispers', 'Doc', 'Professor', 'The Count'],
+        ['Mad Jack', 'Spooky', 'Bookworm', 'The Seer', 'Dreamer', 'Scribbles'],
+        ['Graveyard', 'Midnight', 'The Quiet One', 'Oracle', 'Vision', 'Phantom'],
+        ['Shadow', 'Raven', 'Spider', 'Serpent', 'Wolf', 'Crow'],
+        ['The Keeper', 'Chronicler', 'Wanderer', 'Pilgrim', 'Seeker', 'Finder'],
+        ['Cursed', 'Marked', 'Chosen', 'Touched', 'Blessed', 'Damned'],
+      ]
     }
   }
 };

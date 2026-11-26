@@ -6,6 +6,20 @@ All notable changes to Loner Assistant are documented here.
 
 ### Added
 
+- **Six more Geared Towards Loner supplements**: Celtic Fantasy,
+  Dungeoneer, Mech Requiem, Prime Time Hero, Rocketpunk and Spacer, with
+  their random tables and, where the book has them, Get Inspired flavors.
+  Dungeoneer, Mech Requiem, Prime Time Hero, Rocketpunk and Spacer are in
+  the character generator (18 supplements in all).
+- **Character generator for every Geared Towards Loner supplement.**
+  Concepts, Skills, Frailties, Gear and the name tables of 12 more
+  supplements (Arabian Nights, Cog & Compass, Cozy Fantasy, Cthulhu,
+  Galaxy Drifter, Legends of Camelot, Paranormal Files, Pulp Adventures,
+  Pulp Heroes, Savage Blades of Xylandra, Steel and Sorcery, Urban
+  Fantasy), regenerated from their SRD texts; before, only Kwaidan had
+  them. The Threads of Saga gets its name tables; its six Origins need
+  their own generator. Tables added along the way: Nicknames, vehicle and
+  companion traits, and the D66 tables the earlier import missed.
 - **Optional modules per campaign.** A "Modules" button in the Current
   Campaign panel switches Leverage, Challenge Tracks, Status Track,
   Cinematic Action, and Time Travel on or off. Switched-off modules hide
@@ -33,6 +47,14 @@ All notable changes to Loner Assistant are documented here.
 
 ### Fixed
 
+- Pulp Heroes: removed "Document Types", a half-empty grid that is no
+  longer in the book.
+- The character generator lists only supplements with all four trait
+  tables; Celtic Fantasy and The Threads of Saga (characters from
+  Origins) keep their Concepts and names as random tables, which were
+  unreachable before.
+- A supplement with one Names table for everyone (Spacer) gives the
+  generator a first name.
 - **Horizontal scrolling on mid-size screens.** The navigation bar was
   wider than the viewport between tablet and full desktop width; it now
   compacts and, if needed, wraps. The mobile menu no longer hides the

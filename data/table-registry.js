@@ -303,6 +303,99 @@ export const supplements = [
     version: '1.0',
     enabled: true,
     description: 'Twist effects for time-travel play'
+  },
+  {
+    id: 'celtic-fantasy-adventure',
+    name: 'Celtic Fantasy Adventure Tables',
+    file: 'tables/supplements/celtic-fantasy.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Celtic Fantasy supplemental adventure tables and character generator'
+  },
+  {
+    id: 'celtic-fantasy-inspired',
+    name: 'Celtic Fantasy Inspiration',
+    file: 'tables/flavors/celtic-fantasy-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Celtic Fantasy adventures'
+  },
+  {
+    id: 'dungeoneer-adventure',
+    name: 'Dungeoneer Adventure Tables',
+    file: 'tables/supplements/dungeoneer.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Dungeoneer supplemental adventure tables and character generator'
+  },
+  {
+    id: 'dungeoneer-inspired',
+    name: 'Dungeoneer Inspiration',
+    file: 'tables/flavors/dungeoneer-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Dungeoneer adventures'
+  },
+  {
+    id: 'mech-requiem-adventure',
+    name: 'Mech Requiem Adventure Tables',
+    file: 'tables/supplements/mech-requiem.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Mech Requiem supplemental adventure tables and character generator'
+  },
+  {
+    id: 'prime-time-hero-adventure',
+    name: 'Prime Time Hero Adventure Tables',
+    file: 'tables/supplements/prime-time-hero.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Prime Time Hero supplemental adventure tables and character generator'
+  },
+  {
+    id: 'prime-time-hero-inspired',
+    name: 'Prime Time Hero Inspiration',
+    file: 'tables/flavors/prime-time-hero-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Prime Time Hero adventures'
+  },
+  {
+    id: 'rocketpunk-adventure',
+    name: 'Rocketpunk Adventure Tables',
+    file: 'tables/supplements/rocketpunk.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Rocketpunk supplemental adventure tables and character generator'
+  },
+  {
+    id: 'rocketpunk-inspired',
+    name: 'Rocketpunk Inspiration',
+    file: 'tables/flavors/rocketpunk-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Rocketpunk adventures'
+  },
+  {
+    id: 'spacer-adventure',
+    name: 'Spacer Adventure Tables',
+    file: 'tables/supplements/spacer.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Spacer supplemental adventure tables and character generator'
+  },
+  {
+    id: 'spacer-inspired',
+    name: 'Spacer Inspiration',
+    file: 'tables/flavors/spacer-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Spacer adventures'
   }
   // Template for adding new supplements:
   // {
