@@ -54,20 +54,6 @@ export default {
         ['Private Detective Agency - Investigation business with blackmail client records', 'Auction House Appraisal Room - Art business with forgery authentication documentation', 'Shipping Company Manifest Office - Import business with contraband cargo records', 'Educational Institution Endowment Office - Academic facility with donation misuse files', 'Religious Organization Treasury - Spiritual institution with charity fund embezzlement records', 'International Trade Company - Commerce business with foreign espionage documentation'],
       ]
     },
-    document_types: {
-      id: 'document_types',
-      name: 'Document Types',
-      category: 'random-tables',
-      rollType: '2d6',
-      entries: [
-        ['Financial Ledger - Accounting records showing illegal money movement', 'Correspondence Files - Personal letters revealing criminal relationships', 'Contract Agreement - Legal documents outlining illegal business arrangements', 'Photograph Collection - Visual evidence of criminal activities or blackmail material', 'Meeting Minutes - Official records of conspiracy planning sessions', 'Property Deed - Real estate ownership documents with fraudulent transfers'],
-        ['Medical Records - Healthcare documentation covering up suspicious deaths', 'Employee Roster - Personnel lists revealing criminal organization structure', 'Shipping Manifest - Cargo documentation concealing smuggling operations', 'Legal Brief - Court documents showing case fixing or judicial corruption', 'Insurance Policy - Coverage documents with suspicious beneficiary changes', 'Government Permit - Official authorization obtained through bribery'],
-        ['Personal Diary - Private journal documenting criminal activities and plans', 'Bank Statement - Financial records showing suspicious deposits and withdrawals', 'Travel Itinerary - Transportation schedules for criminal operation timing', '', '', ''],
-        ['', '', '', '', '', ''],
-        ['', '', '', '', '', ''],
-        ['', '', '', '', '', ''],
-      ]
-    },
     city_districts: {
       id: 'city_districts',
       name: 'City Districts',

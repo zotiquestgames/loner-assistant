@@ -365,7 +365,7 @@ export default {
     female_names: {
       id: 'female_names',
       name: 'Female Names',
-      category: 'character',
+      category: 'random-tables',
       rollType: '2d6',
       entries: [
         ['Astrid', 'Brynja', 'Dagny', 'Eira', 'Freydis', 'Gudrun'],
@@ -379,7 +379,7 @@ export default {
     male_names: {
       id: 'male_names',
       name: 'Male Names',
-      category: 'character',
+      category: 'random-tables',
       rollType: '2d6',
       entries: [
         ['Alf', 'Bjorn', 'Einar', 'Erik', 'Finn', 'Gunnar'],

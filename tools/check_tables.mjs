@@ -17,9 +17,9 @@ for (const s of supplements) {
       t.entries.every(r => r.length === 6 && r.every(c => typeof c === 'string' && c.trim()));
     if (!ok) { bad++; console.log(`broken grid: ${s.id} / ${id}`); }
   }
-  if (tables.concepts?.category === 'character') {
-    const missing = ['skills', 'frailties', 'gear', 'female_names', 'male_names']
-      .filter(k => tables[k]?.category !== 'character');
+  if (['concepts', 'skills', 'frailties', 'gear'].every(k => tables[k]?.category === 'character')) {
+    const names = tables.names || (tables.female_names && tables.male_names);
+    const missing = names ? [] : ['names'];
     generator.push(s.name + (missing.length ? ` (missing: ${missing.join(', ')})` : ''));
   }
 }

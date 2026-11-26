@@ -141,7 +141,7 @@ DIVIDER_HEADERS = {'inspiration tables'}
 
 # Name tables that feed the character generator (vs. world/place names, which
 # are ordinary random tables).
-CHARACTER_NAME_TABLES = {'female_names', 'male_names', 'surnames'}
+CHARACTER_NAME_TABLES = {'female_names', 'male_names', 'surnames', 'names'}
 # The tables the character generator rolls (js/tables.js generateCharacter).
 CHARACTER_TRAIT_TABLES = {'concepts', 'skills', 'frailties', 'gear'}
 
@@ -149,7 +149,8 @@ CHARACTER_TRAIT_TABLES = {'concepts', 'skills', 'frailties', 'gear'}
 def classify_domain(section_title):
     """Map a '## ' section header to a domain that drives table categories."""
     t = section_title.strip().lower()
-    if 'character trait' in t:
+    if 'character' in t:
+        # "Character Traits", "## Characters", "Character Creation: Six Origins"
         return 'character'
     if 'name' in t:
         return 'names'
@@ -262,6 +263,10 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
                 continue
 
             table_id = slugify(table_name).replace('-', '_')
+            first = table_id.split('_')[0]
+            if first in INSPIRATION_TABLE_NAMES:
+                # "Verbs & Actions", "Nouns & Concepts" (Celtic Fantasy)
+                table_id = first
             if table_id in supplement_tables or table_id in inspiration_tables:
                 # Same name as an earlier table (Spacecraft Traits > Concepts
                 # after Character Traits > Concepts): keep both, and never let
@@ -297,6 +302,18 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
 
     if not supplement_tables and not inspiration_tables:
         raise ValueError("No valid tables found")
+
+    # The character generator needs all four trait tables. Without them
+    # (characters built from Origins, as in The Threads of Saga), keep the
+    # names and traits rollable as random tables: the app shows 'character'
+    # tables only inside the generator.
+    if not CHARACTER_TRAIT_TABLES <= {k for k, t in supplement_tables.items() if t['category'] == 'character'}:
+        demoted = [t['name'] for t in supplement_tables.values() if t['category'] == 'character']
+        for t in supplement_tables.values():
+            t['category'] = 'random-tables'
+        if demoted:
+            print(f"  No full set of Concepts, Skills, Frailties and Gear: "
+                  f"{', '.join(demoted)} kept as random tables")
 
     return title, supplement_tables, inspiration_tables
 

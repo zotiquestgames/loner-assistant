@@ -350,7 +350,10 @@ export const TableSystem = {
     const sources = [];
     for (const [id, supplement] of Object.entries(this.registry)) {
       const tables = supplement.tables || {};
-      if (tables.concepts && tables.concepts.category === 'character') {
+      // The generator needs all four trait tables; a supplement that builds
+      // characters another way (Origins in The Threads of Saga) is left out.
+      const traits = ['concepts', 'skills', 'frailties', 'gear'];
+      if (traits.every(k => tables[k] && tables[k].category === 'character')) {
         sources.push({ id, name: supplement.supplement.name });
       }
     }
@@ -370,6 +373,8 @@ export const TableSystem = {
       // 'any' picks a gender per roll, so a generated cast can be mixed.
       const g = gender === 'any' ? (Math.random() < 0.5 ? 'male' : 'female') : gender;
       tableId = g === 'male' ? 'male_names' : 'female_names';
+      // Some supplements have one Names table for everyone (Spacer).
+      if (!supplement.tables[tableId] && supplement.tables.names) tableId = 'names';
     }
     if (!supplement.tables[tableId]) return '';
     return this.roll(supplementId, tableId).result;
