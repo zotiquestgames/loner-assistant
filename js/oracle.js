@@ -12,30 +12,21 @@ import * as Editor from './editor.js';
 import { clearLeverage } from './leverage.js';
 import { showFillBoxPrompt } from './status-track.js';
 import { isEnabled } from './modules.js';
+import {
+  rollD6,
+  rollChanceRisk,
+  interpretOracleRoll,
+  formatOracleResult,
+  conflictDamage,
+  deadEndOutcome,
+  sceneTransition
+} from './rules/oracle.js';
+
+export { rollD6, rollChanceRisk, interpretOracleRoll, formatOracleResult };
 
 // Current session state
 let currentTwistCounter = 0;
 let consecutiveDeadEnds = 0;
-
-/**
- * Roll a die (1-6)
- */
-export function rollD6() {
-  return Math.floor(Math.random() * 6) + 1;
-}
-
-/**
- * Roll the Oracle (Chance vs Risk dice)
- */
-/**
- * Roll Chance and Risk with a modifier: Advantage rolls two Chance dice,
- * Disadvantage two Risk dice, keeping the highest.
- */
-export function rollChanceRisk(modifier) {
-  const chanceDice = modifier === 'advantage' ? Math.max(rollD6(), rollD6()) : rollD6();
-  const riskDice = modifier === 'disadvantage' ? Math.max(rollD6(), rollD6()) : rollD6();
-  return { chanceDice, riskDice };
-}
 
 /**
  * Equal dice add 1 to the Twist Counter; at 3 the Twist fires.
@@ -102,61 +93,6 @@ export async function rollOracle() {
   }
 
   return result;
-}
-
-/**
- * Interpret oracle roll result
- */
-export function interpretOracleRoll(chance, risk) {
-  let answer, modifier;
-
-  // Check for doubles
-  const isDoubles = (chance === risk);
-
-  // Determine base answer
-  if (chance > risk) {
-    answer = 'Yes';
-  } else if (chance < risk) {
-    answer = 'No';
-  } else {
-    answer = 'Yes';
-  }
-
-  // Determine modifier (doubles always resolve as "but", whatever the
-  // dice values, per the Loner 4e rule that an equal roll is Yes, but...)
-  if (isDoubles) {
-    modifier = 'but';
-  } else if (chance < 4 && risk < 4) {
-    modifier = 'but';
-  } else if (chance > 3 && risk > 3) {
-    modifier = 'and';
-  } else {
-    modifier = null;
-  }
-
-  return {
-    answer,
-    modifier,
-    chanceDice: chance,
-    riskDice: risk,
-    isDoubles,
-    formatted: formatOracleResult(answer, modifier, isDoubles)
-  };
-}
-
-/**
- * Format oracle result as text
- */
-export function formatOracleResult(answer, modifier, isDoubles) {
-  let text = answer;
-
-  if (isDoubles) {
-    text += ', but'; // Doubles always give "but" before twist
-  } else if (modifier) {
-    text += ', ' + modifier;
-  }
-
-  return text + '...';
 }
 
 /**
@@ -322,19 +258,7 @@ export let sceneTransitionCount = 0;
 export async function rollScene() {
   sceneTransitionCount++;
   const roll = rollD6();
-
-  let sceneType, description;
-
-  if (roll <= 3) {
-    sceneType = 'Dramatic';
-    description = 'Stakes increase, tension rises';
-  } else if (roll <= 5) {
-    sceneType = 'Quiet';
-    description = 'Time for recovery, planning, or reflection';
-  } else {
-    sceneType = 'Meanwhile';
-    description = 'Cut to another perspective or subplot';
-  }
+  const { sceneType, description } = sceneTransition(roll);
 
   const resultDiv = document.getElementById('scene-result');
   resultDiv.innerHTML = `
@@ -558,36 +482,11 @@ export async function rollConflict() {
 
   // Interpret for damage
   const result = interpretOracleRoll(chanceDice, riskDice);
-  let damage = 0;
-  let targetIsCharacter = false;
-  let description = '';
+  const { damage, targetIsCharacter, description } = conflictDamage(result);
 
-  if (result.answer === 'Yes') {
-    // Character succeeds - damage opponent
-    if (result.modifier === 'and') {
-      damage = 3;
-      description = 'Critical success!';
-    } else if (result.modifier === 'but') {
-      damage = 1;
-      description = 'Success with complication';
-    } else {
-      damage = 2;
-      description = 'Success';
-    }
+  if (!targetIsCharacter) {
     opponentLuck -= damage;
   } else {
-    // Character fails - take damage
-    targetIsCharacter = true;
-    if (result.modifier === 'and') {
-      damage = 3;
-      description = 'Critical failure!';
-    } else if (result.modifier === 'but') {
-      damage = 1;
-      description = 'Failure with silver lining';
-    } else {
-      damage = 2;
-      description = 'Failure';
-    }
     characterLuck -= damage;
 
     if (conflictCharacterId) {
@@ -732,10 +631,11 @@ export async function rollDeadEnd() {
   const result = interpretOracleRoll(chance, risk);
 
   let guidance;
-  if (result.answer.startsWith('Yes')) {
+  const outcome = deadEndOutcome(result);
+  if (outcome === 'forward') {
     consecutiveDeadEnds = 0;
     guidance = "Introduce a new element that points forward: an overlooked detail, an unexpected contact, an object that suggests a direction. It need not be obvious. It need only exist.";
-  } else if (result.answer === 'No' && result.modifier === 'but') {
+  } else if (outcome === 'soft') {
     guidance = "The path remains closed, but the Protagonist understands something about why. That understanding may suggest a direction, or it may simply be closure.";
   } else {
     consecutiveDeadEnds++;

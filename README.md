@@ -1,4 +1,4 @@
-# Loner Assistant v2.4
+# Loner Assistant v2.5
 
 **Loner Assistant** is a comprehensive, offline-first web companion for the [Loner](https://loner.zotiquestgames.com) solo RPG system. It allows you to manage campaigns, characters, and stories entirely in your browser, with no installation required.
 
@@ -47,6 +47,14 @@
 - **HTML5 / CSS3 / Vanilla JavaScript**
 - **[Dexie.js](https://dexie.org/)**: IndexedDB wrapper for storage.
 - **[Quill.js](https://quilljs.com/)**: Rich text editor.
+- No build step: the browser loads the ES modules as they are.
+
+## 🧪 Development
+
+Node.js (18 or later) is used only for tests and maintenance, never at runtime. There are no dependencies to install.
+
+- `npm test`: runs the test suite (`node --test`). It covers the game rules in `js/rules/`, the structure of every roll table, and the service worker precache.
+- `npm run cache-version`: updates `CACHE_VERSION` in `sw.js` after changing any precached file. The tests fail while it is out of date, or when a module under `js/` or `data/` is missing from the precache list.
 
 ## 📄 License
 
