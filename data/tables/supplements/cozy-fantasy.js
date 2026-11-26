@@ -16,14 +16,14 @@ export default {
       id: 'adventure_seeds',
       name: 'Adventure Seeds',
       category: 'random-tables',
-      rollType: '1d66',
+      rollType: '2d6',
       entries: [
-        'A mysterious letter arrives at the village, addressed to someone who no longer lives there.', 'The old baker has lost their secret ingredient and needs help finding it before the festival.', 'A traveling merchant is searching for an object that no one remembers but everyone feels nostalgic for.', 'A forgotten path in the woods has reappeared, leading to an overgrown cottage.', 'A neighbor’s cat keeps bringing back strange, glowing pebbles—where are they coming from?', 'A storyteller arrives in town but refuses to share their last tale until a personal mystery is solved.',
-        'Fireflies are gathering unnaturally early this year—something is calling them.', 'A teashop’s blend has suddenly started whispering advice to the drinkers.', 'A festival mask vendor insists one of their masks belonged to the player’s ancestor.', 'A local bridge crumbles overnight, but no one remembers it ever being there in the first place.', 'A patchwork quilt at the market is said to change its pattern based on who owns it.', 'A reclusive artist has painted a portrait of someone they’ve never met—but that person is real.',
-        'A ghost in the attic insists they are not a ghost but refuses to leave.', 'A tiny door has appeared in a tree trunk, with a note asking for sugar.', 'The town’s clocktower chimes at an odd hour, causing small but delightful mishaps.', 'A mysterious pastry appears on the bakery counter every morning before dawn.', 'The village librarian discovers a book that writes back to whoever reads it.', 'A soft rain falls, but only on a single street in town—where is it coming from?',
-        'A candle shop receives an order for a candle that no one remembers requesting.', 'A cat refuses to leave a specific bench and hisses at anyone who sits there.', 'A firefly-shaped lantern keeps flickering, seemingly pointing toward something.', 'The town\'s well hums a tune at midnight, and no one knows why.', 'A child claims their shadow has gone missing, and strange footprints appear at night.', 'A handwritten recipe is found in an old book, but it’s written in disappearing ink.',
-        'The cobblestone street rearranges itself every time it rains.', 'A pair of gloves appear on doorsteps throughout the town, perfectly tailored for the recipients.', 'A talking magpie insists they have urgent news but keeps getting distracted.', 'A wind chime only rings when someone tells a lie nearby.', 'A pocket watch without hands keeps ticking, and its owner has a request.', 'A single tree in the orchard is blooming out of season, attracting curious visitors.',
-        'A song keeps playing on the wind, but only certain people can hear it.', 'A lighthouse flickers on and off, despite having been abandoned for decades.', 'A tiny boat is found floating in a pond with a miniature letter inside.', 'The bakery’s sourdough starter has started writing messages in flour.', 'A traveling seamstress offers to sew a single dream into fabric—for a price.', 'A star falls, but instead of a crater, it leaves behind a single glowing feather.'
+        ['A mysterious letter arrives at the village, addressed to someone who no longer lives there.', 'The old baker has lost their secret ingredient and needs help finding it before the festival.', 'A traveling merchant is searching for an object that no one remembers but everyone feels nostalgic for.', 'A forgotten path in the woods has reappeared, leading to an overgrown cottage.', 'A neighbor’s cat keeps bringing back strange, glowing pebbles—where are they coming from?', 'A storyteller arrives in town but refuses to share their last tale until a personal mystery is solved.'],
+        ['Fireflies are gathering unnaturally early this year—something is calling them.', 'A teashop’s blend has suddenly started whispering advice to the drinkers.', 'A festival mask vendor insists one of their masks belonged to the player’s ancestor.', 'A local bridge crumbles overnight, but no one remembers it ever being there in the first place.', 'A patchwork quilt at the market is said to change its pattern based on who owns it.', 'A reclusive artist has painted a portrait of someone they’ve never met—but that person is real.'],
+        ['A ghost in the attic insists they are not a ghost but refuses to leave.', 'A tiny door has appeared in a tree trunk, with a note asking for sugar.', 'The town’s clocktower chimes at an odd hour, causing small but delightful mishaps.', 'A mysterious pastry appears on the bakery counter every morning before dawn.', 'The village librarian discovers a book that writes back to whoever reads it.', 'A soft rain falls, but only on a single street in town—where is it coming from?'],
+        ['A candle shop receives an order for a candle that no one remembers requesting.', 'A cat refuses to leave a specific bench and hisses at anyone who sits there.', 'A firefly-shaped lantern keeps flickering, seemingly pointing toward something.', 'The town\'s well hums a tune at midnight, and no one knows why.', 'A child claims their shadow has gone missing, and strange footprints appear at night.', 'A handwritten recipe is found in an old book, but it’s written in disappearing ink.'],
+        ['The cobblestone street rearranges itself every time it rains.', 'A pair of gloves appear on doorsteps throughout the town, perfectly tailored for the recipients.', 'A talking magpie insists they have urgent news but keeps getting distracted.', 'A wind chime only rings when someone tells a lie nearby.', 'A pocket watch without hands keeps ticking, and its owner has a request.', 'A single tree in the orchard is blooming out of season, attracting curious visitors.'],
+        ['A song keeps playing on the wind, but only certain people can hear it.', 'A lighthouse flickers on and off, despite having been abandoned for decades.', 'A tiny boat is found floating in a pond with a miniature letter inside.', 'The bakery’s sourdough starter has started writing messages in flour.', 'A traveling seamstress offers to sew a single dream into fabric—for a price.', 'A star falls, but instead of a crater, it leaves behind a single glowing feather.'],
       ]
     },
     encounters_in_everhollow: {
@@ -102,12 +102,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['The **Lantern Walk**, where villagers release floating lanterns carrying their wishes.', 'The **First Frost Gathering**, where warm drinks are shared beneath frost-covered trees.', 'The **Bloom Festival**, where people weave crowns of the first spring flowers.', 'The **Night of Falling Stars**, when everyone stays up late to watch meteor showers.', 'The **Festival of Forgotten Stories**, where old tales are told before they are lost.', 'The **Harvest Lights**, where homes are decorated with glowing autumnal charms.'],
-        ['The **Festival of Mended Things**, where broken objects are repaired and gifted anew.', 'The **Tea Moon Festival**, where tea is brewed under moonlight for special blessings.', 'The **Kindness Exchange**, where anonymous gifts are left for strangers.', 'The **Whispering Winds Celebration**, where messages are sent with ribbons tied to trees.', 'The **Firefly Festival**, where lanterns are released to mimic the glowing insects.', 'The **Festival of Shared Shadows**, where shadow puppets tell village legends.'],
-        ['The **Echo Market**, where merchants trade items based on sentimental value, not money.', 'The **Feast of the Hearth**, a winter gathering to share stories and warm food.', 'The **Soft Snowfall Celebration**, when snow is welcomed as a sign of good fortune.', 'The **River’s Gift**, where small boats are set afloat carrying handwritten wishes.', 'The **Candle-Lit Vigil**, held on the longest night to welcome back the sun.', 'The **Festival of Hidden Paths**, where forgotten trails are mapped anew.'],
-        ['The **Sun-Kissed Gathering**, a picnic under the first full day of summer.', 'The **Echo of Laughter**, where people re-tell their favorite childhood memories.', 'The **Quiet Day**, when no loud noises are made, allowing nature to speak.', 'The **Turning Leaves Festival**, where golden leaves are pressed into keepsakes.', 'The **Evening of Shared Secrets**, where people leave anonymous kind notes for others.', 'The **Festival of Woven Threads**, celebrating the art of storytelling through textiles.'],
-        ['The **Sky’s Reflection**, where people release paper boats in ponds at twilight.', 'The **Gathering of Soft Echoes**, where lullabies and gentle songs are shared.', 'The **Elder’s Evening**, where elders share their wisdom under candlelight.', 'The **Cup of Comfort**, where people leave tea outside for wandering travelers.', 'The **Festival of the Night Breeze**, where wind chimes are exchanged as gifts.', 'The **Day of Lost and Found**, where people return lost items to their rightful owners.'],
-        ['The **Evening of Silent Lanterns**, where people walk the village holding quiet glows.', 'The **Autumn Serenade**, where musicians play soft melodies at sunset.', 'The **Feast of Secret Recipes**, where dishes passed through generations are shared.', 'The **Festival of Hidden Fires**, where small bonfires are lit along forgotten paths.', 'The **Petal’s Farewell**, where flower petals are cast into the wind to welcome new beginnings.', 'The **Gathering of Gentle Spirits**, where kindness is celebrated above all else.'],
+        ['The Lantern Walk, where villagers release floating lanterns carrying their wishes.', 'The First Frost Gathering, where warm drinks are shared beneath frost-covered trees.', 'The Bloom Festival, where people weave crowns of the first spring flowers.', 'The Night of Falling Stars, when everyone stays up late to watch meteor showers.', 'The Festival of Forgotten Stories, where old tales are told before they are lost.', 'The Harvest Lights, where homes are decorated with glowing autumnal charms.'],
+        ['The Festival of Mended Things, where broken objects are repaired and gifted anew.', 'The Tea Moon Festival, where tea is brewed under moonlight for special blessings.', 'The Kindness Exchange, where anonymous gifts are left for strangers.', 'The Whispering Winds Celebration, where messages are sent with ribbons tied to trees.', 'The Firefly Festival, where lanterns are released to mimic the glowing insects.', 'The Festival of Shared Shadows, where shadow puppets tell village legends.'],
+        ['The Echo Market, where merchants trade items based on sentimental value, not money.', 'The Feast of the Hearth, a winter gathering to share stories and warm food.', 'The Soft Snowfall Celebration, when snow is welcomed as a sign of good fortune.', 'The River’s Gift, where small boats are set afloat carrying handwritten wishes.', 'The Candle-Lit Vigil, held on the longest night to welcome back the sun.', 'The Festival of Hidden Paths, where forgotten trails are mapped anew.'],
+        ['The Sun-Kissed Gathering, a picnic under the first full day of summer.', 'The Echo of Laughter, where people re-tell their favorite childhood memories.', 'The Quiet Day, when no loud noises are made, allowing nature to speak.', 'The Turning Leaves Festival, where golden leaves are pressed into keepsakes.', 'The Evening of Shared Secrets, where people leave anonymous kind notes for others.', 'The Festival of Woven Threads, celebrating the art of storytelling through textiles.'],
+        ['The Sky’s Reflection, where people release paper boats in ponds at twilight.', 'The Gathering of Soft Echoes, where lullabies and gentle songs are shared.', 'The Elder’s Evening, where elders share their wisdom under candlelight.', 'The Cup of Comfort, where people leave tea outside for wandering travelers.', 'The Festival of the Night Breeze, where wind chimes are exchanged as gifts.', 'The Day of Lost and Found, where people return lost items to their rightful owners.'],
+        ['The Evening of Silent Lanterns, where people walk the village holding quiet glows.', 'The Autumn Serenade, where musicians play soft melodies at sunset.', 'The Feast of Secret Recipes, where dishes passed through generations are shared.', 'The Festival of Hidden Fires, where small bonfires are lit along forgotten paths.', 'The Petal’s Farewell, where flower petals are cast into the wind to welcome new beginnings.', 'The Gathering of Gentle Spirits, where kindness is celebrated above all else.'],
       ]
     },
     unusual_visitors_and_travelers: {
@@ -167,17 +167,17 @@ export default {
       ]
     },
     letters_notes_and_messages_left_behind: {
-      id: 'letters,_notes_and_messages_left_behind',
+      id: 'letters_notes_and_messages_left_behind',
       name: 'Letters, Notes & Messages Left Behind',
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['A letter tucked inside an old book, signed only with the initials "R.L."', 'A note on a bakery napkin that reads, *"Meet me where the fireflies dance."*', 'A faded postcard from a place that no one has ever heard of.', 'A scrap of parchment under a loose floorboard that simply says, *"Look up."*', 'A neatly folded letter that begins, *"If you\'re reading this, then I was right."*', 'A love letter never sent, sealed with an old wax stamp.'],
-        ['A note inside a teapot that reads, *"Thank you for the kindness. I won\'t forget."*', 'A crumpled paper with the words *"Follow the lanterns at dusk."*', 'A to-do list left on a desk, with the last task reading *"Remember the melody."*', 'A journal entry about a festival that hasn\'t happened yet.', 'A shopping list with an extra item at the bottom: *"One pinch of moonlight."*', 'A child’s drawing of a smiling stranger, with *"See you soon!"* written underneath.'],
-        ['A weathered letter sealed inside a bottle, washed up by the river.', 'A message carved into the wood of an old bench: *"I still wait for you here."*', 'A pressed flower inside an envelope with no return address.', 'A poem written in beautiful handwriting, but missing the last line.', 'A torn page from a storybook with a handwritten note: *"The ending is wrong."*', 'A letter addressed to someone in town, but no one recognizes the name.'],
-        ['A dusty note found inside a music box: *"Play me under the full moon."*', 'A list of names, but half of them are crossed out in ink.', 'A birthday card dated 20 years ago, but it looks freshly written.', 'A warning scribbled hastily: *"Do not open the door on the red moon."*', 'A neatly written invitation to a tea party that happened decades ago.', 'A slip of paper under a bakery counter reading, *"The secret is in the cinnamon."*'],
-        ['A folded map with a small "X" marked outside the village.', 'A letter in an old coat pocket that simply says, *"I forgive you."*', 'A note tucked into a book: *"Come find me where the old lantern still burns."*', 'A tiny scroll hidden in a drawer, with a single word: *"Patience."*', 'A farewell letter, but it’s addressed to someone who never left.', 'A pressed leaf with words written in golden ink: *"Remember me in autumn."*'],
-        ['A business card for a shop that doesn’t seem to exist.', 'A letter of apology, but the ink has been smudged beyond reading.', 'A recipe for a "memory cake" that includes *"one teaspoon of laughter."*', 'A neatly folded napkin with musical notes scribbled along the edges.', 'A half-finished letter beginning with *"I hope you haven’t forgotten…"*', 'A final message scrawled in the margin of a journal: *"It was always you."*'],
+        ['A letter tucked inside an old book, signed only with the initials "R.L."', 'A note on a bakery napkin that reads, "Meet me where the fireflies dance."', 'A faded postcard from a place that no one has ever heard of.', 'A scrap of parchment under a loose floorboard that simply says, "Look up."', 'A neatly folded letter that begins, "If you\'re reading this, then I was right."', 'A love letter never sent, sealed with an old wax stamp.'],
+        ['A note inside a teapot that reads, "Thank you for the kindness. I won\'t forget."', 'A crumpled paper with the words "Follow the lanterns at dusk."', 'A to-do list left on a desk, with the last task reading "Remember the melody."', 'A journal entry about a festival that hasn\'t happened yet.', 'A shopping list with an extra item at the bottom: "One pinch of moonlight."', 'A child’s drawing of a smiling stranger, with "See you soon!" written underneath.'],
+        ['A weathered letter sealed inside a bottle, washed up by the river.', 'A message carved into the wood of an old bench: "I still wait for you here."', 'A pressed flower inside an envelope with no return address.', 'A poem written in beautiful handwriting, but missing the last line.', 'A torn page from a storybook with a handwritten note: "The ending is wrong."', 'A letter addressed to someone in town, but no one recognizes the name.'],
+        ['A dusty note found inside a music box: "Play me under the full moon."', 'A list of names, but half of them are crossed out in ink.', 'A birthday card dated 20 years ago, but it looks freshly written.', 'A warning scribbled hastily: "Do not open the door on the red moon."', 'A neatly written invitation to a tea party that happened decades ago.', 'A slip of paper under a bakery counter reading, "The secret is in the cinnamon."'],
+        ['A folded map with a small "X" marked outside the village.', 'A letter in an old coat pocket that simply says, "I forgive you."', 'A note tucked into a book: "Come find me where the old lantern still burns."', 'A tiny scroll hidden in a drawer, with a single word: "Patience."', 'A farewell letter, but it’s addressed to someone who never left.', 'A pressed leaf with words written in golden ink: "Remember me in autumn."'],
+        ['A business card for a shop that doesn’t seem to exist.', 'A letter of apology, but the ink has been smudged beyond reading.', 'A recipe for a "memory cake" that includes "one teaspoon of laughter."', 'A neatly folded napkin with musical notes scribbled along the edges.', 'A half-finished letter beginning with "I hope you haven’t forgotten…"', 'A final message scrawled in the margin of a journal: "It was always you."'],
       ]
     },
     cozy_shops_and_their_keepers: {
@@ -186,12 +186,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**The Hearth & Hollow** – A bookshop where the shelves shift slightly when no one is looking. The owner, **Mr. Thistlewood**, remembers every book he’s ever sold.', '**The Lantern & Lattice** – A candle shop where the wicks hum softly. **Madame Isolde**, the candle maker, claims she can weave emotions into wax.', '**Fern & Feather Tea Room** – A teahouse run by **Auntie Elenora**, whose tea blends always seem to match exactly what a visitor needs.', '**The Woven Wind** – A fabric and tailor shop owned by **Marigold Stowe**, who stitches tiny protective runes into every garment.', '**The Whistling Kettle** – A bakery where the ovens never quite cool down. **Baker Tomas** makes loaves that always stay fresh for the perfect amount of time.', '**Moonwake Instruments** – A shop that sells only handmade flutes and harps. **Gideon the Luthier** claims each instrument chooses its owner.'],
-        ['**The Honeycomb Pantry** – A general store where the honey always tastes just a little different, as if infused with forgotten summers. Run by **Old Rhea**, a former beekeeper.', '**Star & Stitches Apothecary** – An herbal shop where the jars of dried herbs are arranged like constellations. **Sage Whitlock**, the apothecary, can read futures in dried leaves.', '**The Midnight Loom** – A small weaving shop that only opens at twilight. **Aunt Moira** claims she can weave luck into fabric.', '**Bell & Bramble** – A florist’s shop where the flowers whisper softly at dawn. **Clover and Pippin**, the twin florists, always seem to know who needs a bouquet before they ask.', '**Patchwork Wonders** – A tailor shop where buttons appear in your pocket if you lose them. **Miss Juniper** embroiders small charms into each of her works.', '**The Cloud & Compass** – A mapmaker’s shop where the ink never quite dries. **Cartographer Edwin** is always half-packed for a journey.'],
-        ['**Silver & Sunbeam** – A jewelry shop that sells pieces made from found objects. **Lysander the Smith** hums while he works, and his creations always catch the morning light just right.', '**The Fabled Quill** – A stationery shop where the pens write neater for their favorite owners. **Mistress Adelaide** never seems to blink.', '**Moss & Marble Antiques** – A small curio shop filled with forgotten trinkets. **Mr. Farrow** insists every item still remembers its first owner.', '**Ember & Ash** – A glassblowing studio run by **Cressida Ashwood**, whose creations sometimes glow faintly at night.', '**The Wandering Chest** – A secondhand shop where objects occasionally rearrange themselves. **Merchant Tobias** has never left town, yet somehow always has goods from distant places.', '**The Fiddlefern Bakery** – A cozy bakery known for pastries that taste like nostalgia. **Rosie Fiddlefern** claims she bakes memories into her bread.'],
-        ['**The Velvet Paw** – A shop selling scarves, gloves, and hats. **Mina Softpaw**, a retired adventurer, knits each item while telling stories.', '**The Murmuring Brook** – A quiet bookshop with a hidden back room. **Elliot Waters**, the keeper, reads aloud to the books at night.', '**The Sunbeam Market** – A shop that only stocks fresh produce and homegrown spices. **Miriam, the grocer**, always knows exactly what’s in season.', '**The Bramble Basket** – A small stall selling enchanted baskets that never spill their contents. **Holly Redfern**, the weaver, was once a famous traveler.', '**Whisper & Wing** – A music store where the instruments seem to remember the songs played on them. **Old William** always recognizes a melody, even if he’s never heard it before.', '**The Pebbled Path** – A shoemaker’s shop where every pair is made by hand. **Finnian Cobbler** makes shoes that always find their way home.'],
-        ['**The Lantern Nook** – A cozy lighting shop where lamps flicker when good news is near. **Mistress Laurel** is rarely seen without a warm cup of tea.', '**The Gentle Hearth** – A furniture workshop run by **Mason Turner**, who crafts rocking chairs that always feel perfectly worn-in.', '**The Owl & Inkpot** – A scribe’s shop where the ink bottles refill themselves at dawn. **Mr. Sylvan**, the scribe, always remembers a customer’s handwriting.', '**The Whispering Willow** – A flower shop where bouquets bloom fresh upon purchase. **Nettle Windrow** always wears a crown of woven herbs.', '**Cobweb & Crystal** – A shop full of small trinkets that glow softly in moonlight. **Miss Lenora** claims each item is waiting for the right person.', '**The Echoing Bell** – A clockmaker’s shop where no two clocks tick in perfect sync. **Old Mr. Dorian** winds every clock by hand each morning.'],
-        ['**The Everwarm Hearth** – A candle and incense shop where the scents change based on the weather. **Maggie Brightfire** always smells of cinnamon and cloves.', '**The Dusty Satchel** – A leatherworking shop where each bag made seems to weigh less than expected. **Benedict Leatherby** has never lost a single item in his life.', '**The Wayfarer’s Knot** – A rope and knot shop run by **Captain Norwyn**, an old sailor who ties knots that never come undone unless they’re ready.', '**The Silver Birch** – A woodcarving shop where the scent of fresh shavings lingers. **Rowan Birchwood** always leaves a small hidden carving in their work.', '**The Hollow Acorn** – A shop selling enchanted charms made from nature. **Lena and Piper**, the twin sisters who run it, never seem to age.', '**The Starlit Loom** – A tailor’s shop where the garments seem to subtly change their patterns at night. **Mistress Aveline** always embroiders a single hidden star into every piece.'],
+        ['The Hearth & Hollow – A bookshop where the shelves shift slightly when no one is looking. The owner, Mr. Thistlewood, remembers every book he’s ever sold.', 'The Lantern & Lattice – A candle shop where the wicks hum softly. Madame Isolde, the candle maker, claims she can weave emotions into wax.', 'Fern & Feather Tea Room – A teahouse run by Auntie Elenora, whose tea blends always seem to match exactly what a visitor needs.', 'The Woven Wind – A fabric and tailor shop owned by Marigold Stowe, who stitches tiny protective runes into every garment.', 'The Whistling Kettle – A bakery where the ovens never quite cool down. Baker Tomas makes loaves that always stay fresh for the perfect amount of time.', 'Moonwake Instruments – A shop that sells only handmade flutes and harps. Gideon the Luthier claims each instrument chooses its owner.'],
+        ['The Honeycomb Pantry – A general store where the honey always tastes just a little different, as if infused with forgotten summers. Run by Old Rhea, a former beekeeper.', 'Star & Stitches Apothecary – An herbal shop where the jars of dried herbs are arranged like constellations. Sage Whitlock, the apothecary, can read futures in dried leaves.', 'The Midnight Loom – A small weaving shop that only opens at twilight. Aunt Moira claims she can weave luck into fabric.', 'Bell & Bramble – A florist’s shop where the flowers whisper softly at dawn. Clover and Pippin, the twin florists, always seem to know who needs a bouquet before they ask.', 'Patchwork Wonders – A tailor shop where buttons appear in your pocket if you lose them. Miss Juniper embroiders small charms into each of her works.', 'The Cloud & Compass – A mapmaker’s shop where the ink never quite dries. Cartographer Edwin is always half-packed for a journey.'],
+        ['Silver & Sunbeam – A jewelry shop that sells pieces made from found objects. Lysander the Smith hums while he works, and his creations always catch the morning light just right.', 'The Fabled Quill – A stationery shop where the pens write neater for their favorite owners. Mistress Adelaide never seems to blink.', 'Moss & Marble Antiques – A small curio shop filled with forgotten trinkets. Mr. Farrow insists every item still remembers its first owner.', 'Ember & Ash – A glassblowing studio run by Cressida Ashwood, whose creations sometimes glow faintly at night.', 'The Wandering Chest – A secondhand shop where objects occasionally rearrange themselves. Merchant Tobias has never left town, yet somehow always has goods from distant places.', 'The Fiddlefern Bakery – A cozy bakery known for pastries that taste like nostalgia. Rosie Fiddlefern claims she bakes memories into her bread.'],
+        ['The Velvet Paw – A shop selling scarves, gloves, and hats. Mina Softpaw, a retired adventurer, knits each item while telling stories.', 'The Murmuring Brook – A quiet bookshop with a hidden back room. Elliot Waters, the keeper, reads aloud to the books at night.', 'The Sunbeam Market – A shop that only stocks fresh produce and homegrown spices. Miriam, the grocer, always knows exactly what’s in season.', 'The Bramble Basket – A small stall selling enchanted baskets that never spill their contents. Holly Redfern, the weaver, was once a famous traveler.', 'Whisper & Wing – A music store where the instruments seem to remember the songs played on them. Old William always recognizes a melody, even if he’s never heard it before.', 'The Pebbled Path – A shoemaker’s shop where every pair is made by hand. Finnian Cobbler makes shoes that always find their way home.'],
+        ['The Lantern Nook – A cozy lighting shop where lamps flicker when good news is near. Mistress Laurel is rarely seen without a warm cup of tea.', 'The Gentle Hearth – A furniture workshop run by Mason Turner, who crafts rocking chairs that always feel perfectly worn-in.', 'The Owl & Inkpot – A scribe’s shop where the ink bottles refill themselves at dawn. Mr. Sylvan, the scribe, always remembers a customer’s handwriting.', 'The Whispering Willow – A flower shop where bouquets bloom fresh upon purchase. Nettle Windrow always wears a crown of woven herbs.', 'Cobweb & Crystal – A shop full of small trinkets that glow softly in moonlight. Miss Lenora claims each item is waiting for the right person.', 'The Echoing Bell – A clockmaker’s shop where no two clocks tick in perfect sync. Old Mr. Dorian winds every clock by hand each morning.'],
+        ['The Everwarm Hearth – A candle and incense shop where the scents change based on the weather. Maggie Brightfire always smells of cinnamon and cloves.', 'The Dusty Satchel – A leatherworking shop where each bag made seems to weigh less than expected. Benedict Leatherby has never lost a single item in his life.', 'The Wayfarer’s Knot – A rope and knot shop run by Captain Norwyn, an old sailor who ties knots that never come undone unless they’re ready.', 'The Silver Birch – A woodcarving shop where the scent of fresh shavings lingers. Rowan Birchwood always leaves a small hidden carving in their work.', 'The Hollow Acorn – A shop selling enchanted charms made from nature. Lena and Piper, the twin sisters who run it, never seem to age.', 'The Starlit Loom – A tailor’s shop where the garments seem to subtly change their patterns at night. Mistress Aveline always embroiders a single hidden star into every piece.'],
       ]
     },
     baking_mishaps_and_culinary_wonders: {
@@ -261,7 +261,7 @@ export default {
         ['A street lamp lights up a few seconds before anyone passes underneath it.', 'A piece of paper keeps folding itself into tiny origami birds.', 'A pocket watch that hasn’t worked in years suddenly ticks for a few seconds at random times.', 'A door in the village creaks out a tune when opened.', 'A small rock in the road always rolls just a little out of the way before someone steps on it.', 'A broom in the bakery slowly sweeps the floor overnight.'],
         ['A hat caught in the wind lands neatly on a passerby’s head.', 'A set of keys appears in a pocket, even though they were left at home.', 'A spilled drink never stains, no matter what color it is.', 'A piece of embroidery rearranges itself into different patterns when no one is watching.', 'A cobblestone in the square hums when tapped with a cane.', 'A chair scoots itself forward when someone hesitates before sitting down.'],
         ['A ribbon tied to a shop door sways as if tugged by invisible hands.', 'A shadow lingers a moment longer than it should before catching up with its owner.', 'A lantern flickers to match the heartbeat of the person holding it.', 'A windowpane fogs up with words written in a language no one recognizes.', 'A coat in the market rack always falls off its hanger when someone walks by in the rain.', 'A loaf of bread bounces lightly when tapped, as if full of air.'],
-        ['A feather floats straight up before slowly drifting back down, no wind required.', 'A song lingers in the air a few seconds after it has stopped playing.', 'A pot of soup simmers at the exact right temperature without burning.', 'A rocking chair in the village square creaks softly, even when empty.', 'A paper note is found with the words *“You’ll need this soon”* written in neat handwriting.', 'A handful of flower petals swirl in a tiny spiral before settling on the ground.'],
+        ['A feather floats straight up before slowly drifting back down, no wind required.', 'A song lingers in the air a few seconds after it has stopped playing.', 'A pot of soup simmers at the exact right temperature without burning.', 'A rocking chair in the village square creaks softly, even when empty.', 'A paper note is found with the words “You’ll need this soon” written in neat handwriting.', 'A handful of flower petals swirl in a tiny spiral before settling on the ground.'],
       ]
     },
     unfinished_stories_and_lost_books: {
@@ -272,10 +272,10 @@ export default {
       entries: [
         ['A diary with every page written except for the last one, which is left blank.', 'A book with a title no one can remember after closing it.', 'A novel missing its final chapter, but the pages feel heavier where the ending should be.', 'A collection of bedtime stories, each one subtly changing every time it’s read aloud.', 'A tiny book found under a floorboard, filled with poems in delicate handwriting.', 'A book whose words rearrange themselves into different languages depending on who reads it.'],
         ['A journal with entries dated in the future, recording events that haven’t happened yet.', 'A book of maps, but each page leads to a place no one recognizes.', 'A recipe book where new dishes appear on its pages whenever someone recalls a childhood meal.', 'A novel where the name of the protagonist is missing, replaced with a blank space.', 'A book with illustrations that change subtly from day to day.', 'A pocket-sized book found in an old satchel, its pages filled with half-written letters.'],
-        ['A book of riddles, but the answers appear only when spoken aloud.', 'A storybook where the characters seem to glance at the reader when no one is looking.', 'A thin leather journal with the words *"For You"* written on the inside cover.', 'A book that sometimes flips to a certain page on its own, as if hinting at something important.', 'A poetry book where one poem is torn out, but the imprint of its words remains faintly visible.', 'A logbook filled with names and descriptions, but no one remembers writing in it.'],
-        ['A stack of pages tucked into a drawer, labeled *"To Be Finished One Day."*', 'A book whose ink shimmers faintly under moonlight, revealing hidden notes.', 'A play script with a missing ending, and a note in the margin: *"You decide."*', 'A book of fairy tales that tells a slightly different version of the stories each time it’s read.', 'A history book that mentions a village no one has ever heard of.', 'A children’s book with one missing illustration, its caption reading, *"Yet to be drawn."*'],
-        ['A novel where certain words have been underlined by a past reader—forming a secret message.', 'A book of letters between two people, but only half of them remain.', 'A book with a single pressed flower between its pages, perfectly preserved.', 'A small book of lullabies, but the notes for the last song have been scribbled out.', 'A dusty tome with a dedication: *"To the one who will find me."*', 'A book with an unfamiliar symbol on the cover, glowing faintly at dusk.'],
-        ['A handwritten manuscript titled *"The Story of a Forgotten Friend."*', 'A book of short stories, each one signed by a different person.', 'A book with blank pages—except for one, where a name is scrawled in the corner.', 'A guidebook for a town that no longer exists.', 'A book that, when placed on a shelf, always ends up next to a certain other book.', 'A final volume in a series that was never completed—except for this one copy.'],
+        ['A book of riddles, but the answers appear only when spoken aloud.', 'A storybook where the characters seem to glance at the reader when no one is looking.', 'A thin leather journal with the words "For You" written on the inside cover.', 'A book that sometimes flips to a certain page on its own, as if hinting at something important.', 'A poetry book where one poem is torn out, but the imprint of its words remains faintly visible.', 'A logbook filled with names and descriptions, but no one remembers writing in it.'],
+        ['A stack of pages tucked into a drawer, labeled "To Be Finished One Day."', 'A book whose ink shimmers faintly under moonlight, revealing hidden notes.', 'A play script with a missing ending, and a note in the margin: "You decide."', 'A book of fairy tales that tells a slightly different version of the stories each time it’s read.', 'A history book that mentions a village no one has ever heard of.', 'A children’s book with one missing illustration, its caption reading, "Yet to be drawn."'],
+        ['A novel where certain words have been underlined by a past reader—forming a secret message.', 'A book of letters between two people, but only half of them remain.', 'A book with a single pressed flower between its pages, perfectly preserved.', 'A small book of lullabies, but the notes for the last song have been scribbled out.', 'A dusty tome with a dedication: "To the one who will find me."', 'A book with an unfamiliar symbol on the cover, glowing faintly at dusk.'],
+        ['A handwritten manuscript titled "The Story of a Forgotten Friend."', 'A book of short stories, each one signed by a different person.', 'A book with blank pages—except for one, where a name is scrawled in the corner.', 'A guidebook for a town that no longer exists.', 'A book that, when placed on a shelf, always ends up next to a certain other book.', 'A final volume in a series that was never completed—except for this one copy.'],
       ]
     },
     lantern_keepers_secret_destinations: {
@@ -326,12 +326,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**Moonlit Lavender** – A calming tea that helps with sleep and causes dreams to be slightly more vivid.', '**Autumn Ember** – Warms the drinker from head to toe and makes their breath smell faintly of cinnamon.', '**Silver Fog** – Clears the mind, but also causes the drinker to hear faint echoes of past conversations.', '**Whisperleaf** – Enhances focus and concentration, but words written while drinking it seem to glow softly for a few moments.', '**First Snow** – A crisp, cooling tea that makes the drinker feel as if they’ve just stepped into fresh winter air.', '**Golden Glow** – Gives the drinker a gentle sense of happiness, like the warmth of sitting by a fire on a rainy day.'],
-        ['**Honeyed Hush** – Soothes sore throats and momentarily deepens the drinker’s voice.', '**Twilight Petal** – A floral tea that helps recall old memories with striking clarity.', '**Dewdrop Mint** – Refreshing and cool, causing a faint sensation of morning mist on the skin.', '**Elderberry Charm** – Boosts energy, but also makes small objects easier to find.', '**Brambleberry Brew** – Tastes sweet at first, then turns slightly tart, encouraging spontaneous laughter.', '**Velvet Night** – A deep, rich tea that makes the drinker’s heartbeat feel slightly in sync with the ticking of a clock.'],
-        ['**Emberthorn Spice** – Warms the body and keeps hands and feet toasty for hours.', '**Starflower Infusion** – Causes the drinker to see faint glimmers in the sky, even when it’s cloudy.', '**Cloudberry Drift** – Makes one feel lighter on their feet and subtly improves balance.', '**Sundappled Peach** – Brings back the feeling of lazy summer afternoons, even in winter.', '**Midsummer Glow** – Enhances creativity, but the drinker’s fingertips tingle slightly while writing or painting.', '**Candlewick Brew** – Helps calm nerves but also makes candle flames flicker whenever the drinker exhales.'],
-        ['**Mariner’s Steep** – Helps soothe seasickness and allows the drinker to hear distant waves when closing their eyes.', '**Harvest Hearth** – Comforts the drinker and temporarily makes everything smell faintly of baking bread.', '**Rosehip Reverie** – A floral tea that encourages daydreaming and gentle, imaginative thoughts.', '**Echoing Chamomile** – Helps with sleep and causes soft humming sounds to linger in the air around the drinker.', '**Mossy Hollow** – Grounds the drinker, making them feel as though they are rooted to the earth like an ancient tree.', '**Featherlight Lemon** – A zesty tea that makes the drinker feel lighter and quicker on their feet.'],
-        ['**Crisp Orchard** – Gives the sensation of biting into a fresh apple and momentarily makes all fruit taste sweeter.', '**Wanderer’s Blend** – Restores energy but gives the subtle feeling of being pulled toward an unknown destination.', '**Sable Moon** – A rich, dark brew that temporarily sharpens night vision.', '**Willow Whisper** – Enhances intuition, making the drinker more aware of subtle changes in their surroundings.', '**Stormy Grey** – Warms the body on cold days and makes thunder sound distant and soothing rather than loud.', '**Dandelion Waltz** – Causes the drinker to unconsciously sway slightly to an unheard rhythm.'],
-        ['**Frostbloom Blend** – Tastes icy at first sip but leaves a lingering warmth.', '**Golden Hour Chai** – Enhances appreciation for light and color, making the world seem more vibrant.', '**Quiet Glen** – A grounding tea that helps with meditation and makes the drinker’s voice slightly softer.', '**Pinecone Steep** – Smells of pine forests and makes the drinker momentarily feel like they’ve stepped into the woods.', '**Woven Dream** – A soft, floral tea that occasionally leaves the drinker with a half-remembered dream upon waking.', '**Lantern Glow** – A comforting tea that makes lanterns burn just a little brighter while it’s being sipped.'],
+        ['Moonlit Lavender – A calming tea that helps with sleep and causes dreams to be slightly more vivid.', 'Autumn Ember – Warms the drinker from head to toe and makes their breath smell faintly of cinnamon.', 'Silver Fog – Clears the mind, but also causes the drinker to hear faint echoes of past conversations.', 'Whisperleaf – Enhances focus and concentration, but words written while drinking it seem to glow softly for a few moments.', 'First Snow – A crisp, cooling tea that makes the drinker feel as if they’ve just stepped into fresh winter air.', 'Golden Glow – Gives the drinker a gentle sense of happiness, like the warmth of sitting by a fire on a rainy day.'],
+        ['Honeyed Hush – Soothes sore throats and momentarily deepens the drinker’s voice.', 'Twilight Petal – A floral tea that helps recall old memories with striking clarity.', 'Dewdrop Mint – Refreshing and cool, causing a faint sensation of morning mist on the skin.', 'Elderberry Charm – Boosts energy, but also makes small objects easier to find.', 'Brambleberry Brew – Tastes sweet at first, then turns slightly tart, encouraging spontaneous laughter.', 'Velvet Night – A deep, rich tea that makes the drinker’s heartbeat feel slightly in sync with the ticking of a clock.'],
+        ['Emberthorn Spice – Warms the body and keeps hands and feet toasty for hours.', 'Starflower Infusion – Causes the drinker to see faint glimmers in the sky, even when it’s cloudy.', 'Cloudberry Drift – Makes one feel lighter on their feet and subtly improves balance.', 'Sundappled Peach – Brings back the feeling of lazy summer afternoons, even in winter.', 'Midsummer Glow – Enhances creativity, but the drinker’s fingertips tingle slightly while writing or painting.', 'Candlewick Brew – Helps calm nerves but also makes candle flames flicker whenever the drinker exhales.'],
+        ['Mariner’s Steep – Helps soothe seasickness and allows the drinker to hear distant waves when closing their eyes.', 'Harvest Hearth – Comforts the drinker and temporarily makes everything smell faintly of baking bread.', 'Rosehip Reverie – A floral tea that encourages daydreaming and gentle, imaginative thoughts.', 'Echoing Chamomile – Helps with sleep and causes soft humming sounds to linger in the air around the drinker.', 'Mossy Hollow – Grounds the drinker, making them feel as though they are rooted to the earth like an ancient tree.', 'Featherlight Lemon – A zesty tea that makes the drinker feel lighter and quicker on their feet.'],
+        ['Crisp Orchard – Gives the sensation of biting into a fresh apple and momentarily makes all fruit taste sweeter.', 'Wanderer’s Blend – Restores energy but gives the subtle feeling of being pulled toward an unknown destination.', 'Sable Moon – A rich, dark brew that temporarily sharpens night vision.', 'Willow Whisper – Enhances intuition, making the drinker more aware of subtle changes in their surroundings.', 'Stormy Grey – Warms the body on cold days and makes thunder sound distant and soothing rather than loud.', 'Dandelion Waltz – Causes the drinker to unconsciously sway slightly to an unheard rhythm.'],
+        ['Frostbloom Blend – Tastes icy at first sip but leaves a lingering warmth.', 'Golden Hour Chai – Enhances appreciation for light and color, making the world seem more vibrant.', 'Quiet Glen – A grounding tea that helps with meditation and makes the drinker’s voice slightly softer.', 'Pinecone Steep – Smells of pine forests and makes the drinker momentarily feel like they’ve stepped into the woods.', 'Woven Dream – A soft, floral tea that occasionally leaves the drinker with a half-remembered dream upon waking.', 'Lantern Glow – A comforting tea that makes lanterns burn just a little brighter while it’s being sipped.'],
       ]
     },
     fateful_coincidences_and_lucky_moments: {
@@ -346,6 +346,174 @@ export default {
         ['A shopkeeper accidentally saves the last of an item someone was looking for.', 'A scarf, hat, or glove is picked up just before an unexpected chill in the air.', 'A flower blooms unexpectedly outside someone’s window on an important day.', 'Someone hums a song, only to realize another person nearby is humming it too.', 'A chance detour leads to discovering a beautiful hidden place.', 'A small bird follows someone home, then flits away as soon as they arrive.'],
         ['A candle flickers at the exact moment a difficult decision is made.', 'A stranger says something in passing that turns out to be exactly what someone needed to hear.', 'A rainstorm stops just as someone steps outside without an umbrella.', 'A book borrowed long ago is returned the same day its owner was thinking about it.', 'A cup of tea is made just the way someone likes it—without them asking.', 'A small child waves excitedly at someone from across the street, making them smile.'],
         ['A missing earring, ring, or trinket is found at the bottom of a bag.', 'A shopkeeper discounts an item just before someone decides they can’t afford it.', 'A lantern lights itself just as someone reaches for a match.', 'A path that should have been confusing turns out to be easy to follow.', 'A forgotten letter arrives just when it’s most needed.', 'A wish made absentmindedly comes true in the smallest, sweetest way.'],
+      ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Kindly Baker', 'Wandering Herbalist', 'Gentle Candlemaker', 'Curious Storyteller', 'Shy Tea Witch', 'Forgetful Alchemist'],
+        ['Traveling Librarian', 'Warmhearted Innkeeper', 'Soft-Spoken Tailor', 'Thoughtful Cartographer', 'Mischievous Tinkerer', 'Dreaming Poet'],
+        ['Cloud-Gazing Shepherd', 'Secretive Potion-Maker', 'Hearth-Keeper', 'Friendly Ghost', 'Patient Toymaker', 'Hidden Heir'],
+        ['Fidgety Apprentice', 'Firefly Catcher', 'Quiet Fortune Teller', 'Stargazing Cobbler', 'Generous Letter-Carrier', 'Lost Timekeeper'],
+        ['Guardian of an Old Garden', 'Candlelit Musician', 'Night Market Trader', 'Reluctant Healer', 'Cozy Cottage Witch', 'Kindly Potion Brewer'],
+        ['Wandering Artist', 'Friend to the Forest', 'Keeper of Lost Things', 'Eccentric Perfumer', 'Clover-Finder', 'Luckless Mapmaker'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Expert at Brewing Tea', 'Can Hear Books Whisper', 'Speaks to Fireflies', 'Can Always Find a Warm Hearth', 'Sews Wishes into Fabric', 'Recognizes Every Birdsong'],
+        ['Can Fix Anything with String', 'Bakes Memories into Pastries', 'Reads the Stars for Hidden Messages', 'Whittles Wooden Animals That Move', 'Paints Dreams into Reality', 'Knows the Secret Paths Between Towns'],
+        ['Comforts Even the Most Stubborn Spirits', 'Knows Every Wild Herb', 'Can Mend a Broken Heart with Music', 'Writes Letters That Deliver Themselves', 'Always Knows When It Will Rain', 'Can Talk to Cats'],
+        ['Remembers Every Face They’ve Met', 'Can Smell Hidden Emotions', 'Makes the Best Candles for Long Nights', 'Finds Forgotten Things', 'Can Tell When Someone Is Lonely', 'Sings Flowers into Bloom'],
+        ['Tells Stories That Come to Life', 'Can Follow the Wind Like a Compass', 'Listens to Trees for Advice', 'Hears the Footsteps of Time', 'Can Bind a Promise into an Object', 'Knows the Song of Every River'],
+        ['Feels the Seasons Changing Before They Arrive', 'Can Draw Maps That Shift with the Land', 'Can Weave Luck into Thread', 'Creates Perfumes That Hold Memories', 'Makes Lanterns That Keep Away Bad Dreams', 'Has an Uncanny Sense of Direction'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Easily Distracted by Beautiful Things', 'Always Gets Lost, Even in Familiar Places', 'Struggles to Say No', 'Can Never Remember Names', 'Is Too Curious for Their Own Good', 'Always Running Late'],
+        ['Forgetful When Stressed', 'Terrible at Keeping Secrets', 'Too Kind for Their Own Good', 'Tends to Overcomplicate Simple Problems', 'Avoids Conflict at All Costs', 'Prone to Daydreaming Mid-Conversation'],
+        ['Can’t Handle Spicy Food', 'Gets Flustered Easily', 'Talks Too Much When Nervous', 'Shy Around Strangers', 'Tends to Collect Too Many Odd Things', 'Takes on Everyone’s Problems'],
+        ['Hates Being the Center of Attention', 'Never Knows When to Stop Talking', 'Afraid of Disappointing Others', 'Can’t Resist a Mystery', 'Has a Hard Time Trusting People', 'Gets Lost in Their Own Thoughts'],
+        ['Too Softhearted', 'Can’t Stay in One Place for Long', 'Hides Their True Feelings', 'Loses Track of Time When Reading', 'Has a Rival Who Constantly Outshines Them', 'Terrible at Giving Directions'],
+        ['Is Scared of the Dark (But Won’t Admit It)', 'Has a Mischievous Streak That Gets Them Into Trouble', 'Worries Too Much', 'Takes on Too Many Projects at Once', 'Is Too Polite to Refuse a Challenge', 'Struggles to Ask for Help'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Teapot That Never Runs Dry', 'Book That Writes Its Own Notes', 'Map That Changes Depending on the Moon', 'Pocket Watch That’s Always Five Minutes Off', 'A Feather That Glows in the Dark', 'A Patchwork Cloak That Smells Like Home'],
+        ['Tiny Box of Unfinished Stories', 'A Pen That Writes in Any Language', 'A Candle That Never Melts', 'A Spool of Thread That Repairs Clothes on Its Own', 'A Compass That Points to Where You Need to Go', 'A Notebook That Remembers Everything You Forget'],
+        ['A Walking Stick That Feels Like an Old Friend', 'A Tiny Bell That Calls Lost Animals Home', 'A Pouch of Spices That Change Flavor Based on Mood', 'A Necklace That Warms When Someone Misses You', 'A Basket That Keeps Bread Fresh Forever', 'A Cup That Tells the Temperature of Whatever It Holds'],
+        ['A Scarf That Smells Like the First Snowfall', 'A Wooden Spoon That Never Lets Soup Burn', 'A Small Jar of Captured Sunlight', 'A Music Box That Plays Forgotten Songs', 'A Coat That Always Feels Just the Right Weight', 'A Lantern That Glows Brighter When You Laugh'],
+        ['A Book of Letters Never Sent', 'A Pair of Gloves That Never Wear Out', 'A Hat That Changes Color With the Seasons', 'A Set of Tiny Keys That Unlock Something, Somewhere', 'A Tin of Biscuits That Never Goes Stale', 'A Pebble That Hums Softly When Held'],
+        ['A Teacup That Lets You Share Memories', 'A Quilt That Dreams When Folded', 'A Pair of Boots That Never Get Muddy', 'A Satchel That Holds More Than It Should', 'A Small Whistle That Calls the Wind', 'A Journal That Answers in Riddles'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Elara', 'Marigold', 'Sylvie', 'Clementine', 'Opal', 'Juniper'],
+        ['Winry', 'Rowan', 'Odette', 'Isolde', 'Tansy', 'Wren'],
+        ['Liora', 'Hazel', 'Calla', 'Sable', 'Meadow', 'Eulalie'],
+        ['Briar', 'Sage', 'Fawn', 'Lyra', 'Mabel', 'Ivy'],
+        ['Anwen', 'Thistle', 'Fern', 'Delphine', 'Clover', 'Mirren'],
+        ['Oriel', 'Petal', 'Nimue', 'Solenne', 'Poppy', 'Beatrix'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Alder', 'Cassian', 'Florian', 'Bram', 'Otis', 'Leon'],
+        ['Hugo', 'Emrys', 'Sylvan', 'Thorne', 'Basil', 'Everett'],
+        ['Orion', 'Jasper', 'Marlowe', 'Rowan', 'Finnian', 'Oswin'],
+        ['Wilbur', 'Alder', 'Felix', 'Peregrin', 'Virgil', 'Alaric'],
+        ['Quinlan', 'Halcyon', 'Ambrose', 'Gideon', 'Ludo', 'Soren'],
+        ['Crispin', 'Ezra', 'Hawthorne', 'Idris', 'Niall', 'Tobias'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Thistledown', 'Underwood', 'Honeywell', 'Fairweather', 'Wrenhaven', 'Frostwhisper'],
+        ['Fernbrook', 'Hearthstone', 'Nightingale', 'Sagebrush', 'Alderwood', 'Bramblewick'],
+        ['Merriweather', 'Wintergreen', 'Starfell', 'Dewhurst', 'Finchley', 'Everwood'],
+        ['Maplewick', 'Larkspur', 'Cobblethatch', 'Goldfinch', 'Moonwhisper', 'Wisteria'],
+        ['Foxglove', 'Applebrook', 'Tumbleweed', 'Silverbranch', 'Dovetail', 'Marigold'],
+        ['Oakshade', 'Spriggan', 'Softpaw', 'Brightmeadow', 'Windmere', 'Featherstone'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Pip', 'Sunny', 'Bramble', 'Lark', 'Moth', 'Thistle'],
+        ['Cricket', 'Tilly', 'Sprout', 'Clover', 'Wisp', 'Marbles'],
+        ['Tuck', 'Dandy', 'Breezy', 'Cosmo', 'Fidget', 'Echo'],
+        ['Fig', 'Pebble', 'Puddle', 'Smudge', 'Poppy', 'Quill'],
+        ['Nib', 'Tinker', 'Wren', 'Sooty', 'Doodle', 'Flax'],
+        ['Toadstool', 'Titch', 'Button', 'Snippet', 'Whimsy', 'Fawn'],
+      ]
+    },
+    locations: {
+      id: 'locations',
+      name: 'Locations',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Drowsy Bookshelf', 'Moonlit Meadow', 'The Wandering Library', 'Warm Kettle Inn', 'The Whispering Woods', 'Starfall Bridge'],
+        ['Fireside Bakery', 'The Old Willow', 'Candleglow Workshop', 'Hidden Glade', 'The Cozy Corner', 'Twilight Tearoom'],
+        ['The Forgotten Garden', 'Lantern Grove', 'Ember & Ash Forge', 'Crystal Brook', 'The Velvet Thread', 'Dewdrop Dell'],
+        ['The Winding Path', 'Firefly Hollow', 'The Mended Quilt', 'Stargazer\'s Peak', 'The Singing River', 'Honeycomb Market'],
+        ['Moss-Covered Ruins', 'The Warm Welcome', 'Petal Bridge', 'The Quiet Shore', 'Bramble Thicket', 'The Tattered Map Room'],
+        ['Cobblestone Square', 'The Driftwood Pier', 'Fern Canyon', 'The Sleeping Hearth', 'Clover Crossing', 'The Silver Bell'],
+      ]
+    },
+    regions: {
+      id: 'regions',
+      name: 'Regions',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Brindlewick', 'Mossmere', 'Cindergrove', 'Willowbend', 'Thornhaven', 'Amber Hollow'],
+        ['Cloverfield', 'Hearthbrook', 'Mistwood Vale', 'Starfall Crossing', 'Pebbleshore', 'Fernwick'],
+        ['Dewmere', 'Candlewick', 'Bramble Rest', 'Quiethaven', 'Meadowlark', 'Silver Birch'],
+        ['Honeydell', 'Twilight Glen', 'Cobbleton', 'Rosemere', 'Fireside', 'Moonwater'],
+        ['Lanternwood', 'Applebough', 'Starling\'s End', 'Wrendale', 'Marigold Mills', 'Whisperleaf'],
+        ['Cinderholm', 'Frostvale', 'Emberstone', 'Thimblewick', 'Goldenrod', 'Softpine'],
+      ]
+    },
+    d66_table_magics_unexpected_twists: {
+      id: 'd66_table_magics_unexpected_twists',
+      name: 'D66 Table: Magic’s Unexpected Twists',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The magic affects someone nearby instead of its intended target.', 'A whimsical visual change occurs (e.g., glowing freckles, floating leaves, shimmering footprints).', 'The spell lingers longer than expected, causing minor inconvenience.', 'The effect is weaker than expected but still functional.', 'The spell is misinterpreted by someone, leading to confusion.', 'The magic echoes later, triggering again unexpectedly.'],
+        ['The spell activates a hidden enchantment nearby.', 'The spell shifts subtly, causing a slightly different but harmless effect.', 'A small creature is attracted to the spell’s energy.', 'The spell alters the caster’s voice for a short time.', 'The magic manifests as music, with faint melodies tied to its effect.', 'A harmless illusion accompanies the spell, making it more dramatic.'],
+        ['The effect is delayed, activating at an unexpected moment later.', 'The magic reacts with the current season, modifying its effect.', 'The spell causes objects to gently float for a short time.', 'A random item glows faintly in response to the magic.', 'The magic attracts attention, even from unseen forces.', 'The caster gains a brief vision of a related event.'],
+        ['The spell affects memories, bringing a nostalgic feeling.', 'A familiar scent lingers after the spell.', 'The spell’s effect is mirrored on a distant, unknown object.', 'A nearby plant or object responds to the spell in an unexpected way.', 'The magic creates a comforting warmth, regardless of its purpose.', 'A small pocket of time slows briefly, making things feel dreamlike.'],
+        ['The spell has aesthetic flair, making the area more charming.', 'A tiny, friendly spark of light follows the caster for a while.', 'The magic briefly reveals something hidden (a message, a passage, a thought).', 'The spell’s effect is gentle but humorous in some way.', 'The magic leaves a mark—a glowing rune, a swirl of color, a shimmer.', 'A harmless spirit takes notice and might interact with the caster.'],
+        ['The spell slightly changes the caster’s appearance (eye color, glowing hands).', 'The magic responds to the caster’s emotions, intensifying when excited or dimming when uncertain.', 'The spell affects the weather slightly, making it more pleasant.', 'A tiny star-like sparkle follows the spell’s effect.', 'The magic leaves a feeling of warmth and peace in its wake.', 'The magic unexpectedly enchants a small object, leaving a lingering charm.'],
+      ]
+    },
+    d66_spell_table_everyday_wonders: {
+      id: 'd66_spell_table_everyday_wonders',
+      name: 'D66 Spell Table: Everyday Wonders',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Warmth of the Hearth', 'Kindled Candle', 'Memory in a Cup', 'Soothing Touch', 'Breeze of Clean Air', 'Patchwork Mending'],
+        ['Whispering Leaves', 'Song of the Birds', 'The Green Thumb', 'Trailblazer’s Guide', 'Hearth’s Welcome', 'Comforting Quilt'],
+        ['Letters That Listen', 'Echo of the Past', 'Ink That Never Fades', 'Binding Promise', 'Story-Woven Threads', 'Tales Between the Pages'],
+        ['Moonlit Reflection', 'Old Roads Remember', 'Timeless Hearthstone', 'Lost and Found', 'Mended Memories', 'The Watchmaker’s Secret'],
+        ['Fireflies’ Glow', 'Lantern of Safety', 'Guiding Ember', 'Glimmer of Hope', 'Sunbeam’s Touch', 'Kindred Flame'],
+        ['Lucky Coin', 'Mishap’s Grace', 'Feather’s Fall', 'Little Whimsy', 'Pocketful of Luck', 'The World’s Smallest Miracle'],
       ]
     },
   }

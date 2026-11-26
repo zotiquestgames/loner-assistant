@@ -6,6 +6,15 @@ All notable changes to Loner Assistant are documented here.
 
 ### Added
 
+- **Character generator for every Geared Towards Loner supplement.**
+  Concepts, Skills, Frailties, Gear and the name tables of 12 more
+  supplements (Arabian Nights, Cog & Compass, Cozy Fantasy, Cthulhu,
+  Galaxy Drifter, Legends of Camelot, Paranormal Files, Pulp Adventures,
+  Pulp Heroes, Savage Blades of Xylandra, Steel and Sorcery, Urban
+  Fantasy), regenerated from their SRD texts; before, only Kwaidan had
+  them. The Threads of Saga gets its name tables; its six Origins need
+  their own generator. Tables added along the way: Nicknames, vehicle and
+  companion traits, and the D66 tables the earlier import missed.
 - **Optional modules per campaign.** A "Modules" button in the Current
   Campaign panel switches Leverage, Challenge Tracks, Status Track,
   Cinematic Action, and Time Travel on or off. Switched-off modules hide

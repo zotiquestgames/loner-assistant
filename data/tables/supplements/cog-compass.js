@@ -18,12 +18,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**Industrial District:** Assist workers in a strike against factory owners.', '**Noble Quarter:** Attend an extravagant masquerade hosted by aristocrats.', '**Artisan Alley:** Help a struggling inventor showcase their latest creation.', '**Waterfront Docks:** Investigate smuggling activities along the docks.', '**Market Square:** Uncover a black market selling illegal technological artifacts.', '**Techno-Carnival:** Participate in a contest of technological prowess.'],
-        ['**Scholar\'s Enclave:** Solve a puzzle in a hidden library of forgotten lore.', '**Theatre District:** Investigate the disappearance of a famous playwright.', '**Sewer Depths:** Confront a faction of rebels hiding in the city\'s underbelly.', '**Observatory:** Decode mysterious signals from distant weather balloons.', '**Cathedral District:** Unravel a conspiracy to overthrow the city’s leadership.', '**Clockwork Plaza:** Defend against a malfunctioning automaton rampage.'],
-        ['**Pleasure Gardens:** Encounter a secret society in pursuit of hedonistic thrills.', '**Engineer\'s Quarter:** Solve a mechanical mystery causing strange malfunctions.', '**Refugee Camp:** Aid refugees seeking shelter from the ravages of industry.', '**Underground Network:** Infiltrate a hidden resistance against the ruling class.', '**Scholarly Debate:** Mediate a heated discussion among renowned academics.', '**Smoggy Alleyways:** Navigate a labyrinthine maze of smog-choked streets.'],
-        ['**Sporting Arena:** Compete in a high-stakes mechanized gladiator match.', '**Theater of Inventions:** Resolve technical malfunctions disrupting performances.', '**Potion Peddler\'s Row:** Uncover an illicit operation distributing dangerous chemicals.', '**Abandoned Factory:** Confront a rogue automaton wreaking havoc.', '**Historian\'s Guild:** Decode a cryptic document that foretells a potential disaster.', '**Engineer\'s Workshop:** Prevent a disgruntled inventor from unleashing a dangerous device.'],
-        ['**Garden Conservatory:** Investigate the theft of rare and exotic mechanical plants.', '**Skybridge Heist:** Chase down a thief across the precarious city skybridges.', '**Smuggler\'s Hideout:** Infiltrate a den of smugglers trafficking illegal machine parts.', '**Clockwork Parade:** Protect the city\'s grand clockwork parade from sabotage.', '**Architect\'s Retreat:** Seek solutions from master builders hidden within an ancient structure.', '**The Abandoned Spire:** Ascend a forgotten tower with industrial secrets waiting to be uncovered.'],
-        ['**Guild Hall Challenge:** Compete in a contest to prove mastery in a guild\'s craft.', '**Haunted Machine Shop:** Confront the mechanical remnants of the city\'s industrial accidents.', '**Inventor\'s Convention:** Present your own creation among a host of inventors.', '**Towering Factory:** Infiltrate an oppressive factory overseen by tyrannical managers.', '**Veiled Auction:** Bid on rare mechanical artifacts in a shadowy auction house.', '**Steamway Pursuit:** Chase down thieves through the city\'s elaborate steamway system.'],
+        ['Industrial District: Assist workers in a strike against factory owners.', 'Noble Quarter: Attend an extravagant masquerade hosted by aristocrats.', 'Artisan Alley: Help a struggling inventor showcase their latest creation.', 'Waterfront Docks: Investigate smuggling activities along the docks.', 'Market Square: Uncover a black market selling illegal technological artifacts.', 'Techno-Carnival: Participate in a contest of technological prowess.'],
+        ['Scholar\'s Enclave: Solve a puzzle in a hidden library of forgotten lore.', 'Theatre District: Investigate the disappearance of a famous playwright.', 'Sewer Depths: Confront a faction of rebels hiding in the city\'s underbelly.', 'Observatory: Decode mysterious signals from distant weather balloons.', 'Cathedral District: Unravel a conspiracy to overthrow the city’s leadership.', 'Clockwork Plaza: Defend against a malfunctioning automaton rampage.'],
+        ['Pleasure Gardens: Encounter a secret society in pursuit of hedonistic thrills.', 'Engineer\'s Quarter: Solve a mechanical mystery causing strange malfunctions.', 'Refugee Camp: Aid refugees seeking shelter from the ravages of industry.', 'Underground Network: Infiltrate a hidden resistance against the ruling class.', 'Scholarly Debate: Mediate a heated discussion among renowned academics.', 'Smoggy Alleyways: Navigate a labyrinthine maze of smog-choked streets.'],
+        ['Sporting Arena: Compete in a high-stakes mechanized gladiator match.', 'Theater of Inventions: Resolve technical malfunctions disrupting performances.', 'Potion Peddler\'s Row: Uncover an illicit operation distributing dangerous chemicals.', 'Abandoned Factory: Confront a rogue automaton wreaking havoc.', 'Historian\'s Guild: Decode a cryptic document that foretells a potential disaster.', 'Engineer\'s Workshop: Prevent a disgruntled inventor from unleashing a dangerous device.'],
+        ['Garden Conservatory: Investigate the theft of rare and exotic mechanical plants.', 'Skybridge Heist: Chase down a thief across the precarious city skybridges.', 'Smuggler\'s Hideout: Infiltrate a den of smugglers trafficking illegal machine parts.', 'Clockwork Parade: Protect the city\'s grand clockwork parade from sabotage.', 'Architect\'s Retreat: Seek solutions from master builders hidden within an ancient structure.', 'The Abandoned Spire: Ascend a forgotten tower with industrial secrets waiting to be uncovered.'],
+        ['Guild Hall Challenge: Compete in a contest to prove mastery in a guild\'s craft.', 'Haunted Machine Shop: Confront the mechanical remnants of the city\'s industrial accidents.', 'Inventor\'s Convention: Present your own creation among a host of inventors.', 'Towering Factory: Infiltrate an oppressive factory overseen by tyrannical managers.', 'Veiled Auction: Bid on rare mechanical artifacts in a shadowy auction house.', 'Steamway Pursuit: Chase down thieves through the city\'s elaborate steamway system.'],
       ]
     },
     urban_legends_or_rumors: {
@@ -60,12 +60,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**Aerial Battle:** Witness a clash between rival airship fleets.', '**Sky Pirates:** Encounter a crew of ruthless sky pirates attempting a raid.', '**Weather Front:** Navigate through a treacherous storm.', '**Stowaway:** Discover an unexpected passenger hiding aboard the airship.', '**Engine Malfunction:** The airship\'s engines sputter, causing turbulence.', '**Celestial Phenomenon:** Witness a breathtaking display of natural lights.'],
-        ['**Skyward Obstacle:** Navigate around a floating island or massive cloud.', '**Lost Airship:** Encounter a damaged airship drifting aimlessly.', '**Airborne Market:** Stumble upon a floating bazaar of traders and merchants.', '**Aerial Espionage:** Uncover a plot involving spies on a neighboring airship.', '**Mechanical Failure:** Help a stranded airship crew repair their vessel.', '**Skyward Herd:** Avoid a flock of migratory flying creatures.'],
-        ['**Cloudship Nomads:** Meet a group of nomads who live aboard cloudships.', '**Skyport Landing:** Dock at a bustling airship port, encountering customs officials and traders.', '**Resonance Flare:** Experience a surge in steam power due to a rare atmospheric condition.', '**Aerial Courier:** Intercept a messenger airship delivering important news.', '**Navigational Challenge:** Follow a complex route marked by beacons through a maze of air currents.', '**Airship Sabotage:** Discover a sabotage attempt targeting your airship.'],
-        ['**Skyrace Challenge:** Participate in an impromptu sky race with other airships.', '**High Altitude Wildlife:** Observe rare birds or flying creatures adapted to high altitudes.', '**Floating Workshop:** Encounter an inventor’s airship, brimming with bizarre gadgets.', '**Fuel Shortage:** Scramble to find a refueling station before your reserves run out.', '**Emergency Landing:** Perform an emergency landing on a remote airfield or sky island.', '**Engine Overheat:** Deal with an overheating engine while navigating dangerous territory.'],
-        ['**Industrial Espionage:** Catch industrial spies trying to steal your airship designs.', '**Skyship Graveyard:** Discover a hidden graveyard of abandoned airships.', '**Atmospheric Anomaly:** Navigate through strange atmospheric phenomena affecting your instruments.', '**Sky Sanctuary:** Encounter a secluded temple floating in the sky, offering sanctuary.', '**Research Vessel:** Meet a team of scientists conducting experiments in the upper atmosphere.', '**Storm Chasers:** Join a crew of adventurers tracking powerful storms for research.'],
-        ['**Silent Zone:** Enter a zone where all sound is mysteriously dampened.', '**Cloud Mining:** Interact with miners extracting minerals from floating rock formations.', '**Celestial Alignment:** Witness a rare celestial alignment offering unique navigational opportunities.', '**Midnight Regatta:** Participate in a secretive airship race under moonlight.', '**Skyborne Feast:** Be invited to a lavish banquet held on a luxury airship.', '**Cosmic Event:** Experience a once-in-a-lifetime astronomical event visible from high altitudes.'],
+        ['Aerial Battle: Witness a clash between rival airship fleets.', 'Sky Pirates: Encounter a crew of ruthless sky pirates attempting a raid.', 'Weather Front: Navigate through a treacherous storm.', 'Stowaway: Discover an unexpected passenger hiding aboard the airship.', 'Engine Malfunction: The airship\'s engines sputter, causing turbulence.', 'Celestial Phenomenon: Witness a breathtaking display of natural lights.'],
+        ['Skyward Obstacle: Navigate around a floating island or massive cloud.', 'Lost Airship: Encounter a damaged airship drifting aimlessly.', 'Airborne Market: Stumble upon a floating bazaar of traders and merchants.', 'Aerial Espionage: Uncover a plot involving spies on a neighboring airship.', 'Mechanical Failure: Help a stranded airship crew repair their vessel.', 'Skyward Herd: Avoid a flock of migratory flying creatures.'],
+        ['Cloudship Nomads: Meet a group of nomads who live aboard cloudships.', 'Skyport Landing: Dock at a bustling airship port, encountering customs officials and traders.', 'Resonance Flare: Experience a surge in steam power due to a rare atmospheric condition.', 'Aerial Courier: Intercept a messenger airship delivering important news.', 'Navigational Challenge: Follow a complex route marked by beacons through a maze of air currents.', 'Airship Sabotage: Discover a sabotage attempt targeting your airship.'],
+        ['Skyrace Challenge: Participate in an impromptu sky race with other airships.', 'High Altitude Wildlife: Observe rare birds or flying creatures adapted to high altitudes.', 'Floating Workshop: Encounter an inventor’s airship, brimming with bizarre gadgets.', 'Fuel Shortage: Scramble to find a refueling station before your reserves run out.', 'Emergency Landing: Perform an emergency landing on a remote airfield or sky island.', 'Engine Overheat: Deal with an overheating engine while navigating dangerous territory.'],
+        ['Industrial Espionage: Catch industrial spies trying to steal your airship designs.', 'Skyship Graveyard: Discover a hidden graveyard of abandoned airships.', 'Atmospheric Anomaly: Navigate through strange atmospheric phenomena affecting your instruments.', 'Sky Sanctuary: Encounter a secluded temple floating in the sky, offering sanctuary.', 'Research Vessel: Meet a team of scientists conducting experiments in the upper atmosphere.', 'Storm Chasers: Join a crew of adventurers tracking powerful storms for research.'],
+        ['Silent Zone: Enter a zone where all sound is mysteriously dampened.', 'Cloud Mining: Interact with miners extracting minerals from floating rock formations.', 'Celestial Alignment: Witness a rare celestial alignment offering unique navigational opportunities.', 'Midnight Regatta: Participate in a secretive airship race under moonlight.', 'Skyborne Feast: Be invited to a lavish banquet held on a luxury airship.', 'Cosmic Event: Experience a once-in-a-lifetime astronomical event visible from high altitudes.'],
       ]
     },
     steambot_encounters: {
@@ -74,12 +74,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**Bot Clash:** Witness a confrontation between rival steambot gangs.', '**Robotic Thieves:** Encounter a group of steambots attempting a heist.', '**System Overload:** Navigate through a region of intense electromagnetic interference.', '**Stowaway Bot:** Discover a runaway steambot hiding within your vehicle.', '**Circuit Failure:** A critical system failure causes your steambot to malfunction.', '**Solar Flare:** Experience a solar event that temporarily enhances your steambot\'s sensors.'],
-        ['**Obstacle Course:** Navigate a treacherous area filled with mechanical debris.', '**Abandoned Automaton:** Find a deserted steambot in disrepair.', '**Mobile Market:** Stumble upon a caravan of steambots trading parts.', '**Electronic Espionage:** Uncover a spy drone recording your movements.', '**Assistance Required:** Aid a malfunctioning steambot on your path.', '**Swarm Avoidance:** Dodge a swarm of miniature surveillance bots.'],
-        ['**Nomadic Tinkers:** Encounter a group of nomadic engineers traveling with mobile workshops.', '**Automaton Station:** Arrive at a busy hub where steambots are docked and maintained.', '**Power Surge:** A sudden burst of energy supercharges your steambot temporarily.', '**Message Carrier:** Intercept a bot carrying urgent news across the city.', '**Navigational Puzzle:** Solve a complex routing challenge through congested urban areas.', '**Sabotage Discovery:** Find that someone has tampered with your steambot.'],
-        ['**Race Challenge:** Engage in a speed contest with other high-performance steambots.', '**Wildlife Observation:** Observe mechanical creatures in their natural habitat, perhaps collecting data or samples.', '**Inventor\'s Field Test:** Meet an eccentric inventor testing out new bot designs in the field.', '**Fuel Hunt:** Search for a rare type of fuel needed for your steambot\'s operation.', '**Emergency Repairs:** Conduct urgent repairs in a hazardous location.', '**Overheating Issue:** Manage overheating issues during a critical moment of your journey.'],
-        ['**Design Theft:** Thwart thieves attempting to steal your steambot\'s blueprints.', '**Junkyard Secrets:** Explore a vast steambot junkyard looking for valuable parts.', '**Atmospheric Disturbances:** Adapt to unexpected changes in weather affecting your bot\'s performance.', '**Secluded Workshop:** Find a hidden workshop offering upgrades and repairs.', '**Experimental Tests:** Assist scientists testing new steambot capabilities.', '**Storm Navigation:** Pilot your steambot through a hazardous mechanical storm.'],
-        ['**Silence Field:** Enter an area where all communications are mysteriously cut off.', '**Resource Extraction:** Work alongside mining bots extracting rare minerals.', '**Astronomical Phenomenon:** Observe a rare celestial event affecting steambot circuitry.', '**Night Operation:** Conduct a covert operation under the cover of darkness.', '**Gala Event:** Attend a high-profile gathering featuring advanced steambots.', '**Cosmic Pulse:** Experience a rare cosmic pulse that temporarily alters the physical properties of your steambot.'],
+        ['Bot Clash: Witness a confrontation between rival steambot gangs.', 'Robotic Thieves: Encounter a group of steambots attempting a heist.', 'System Overload: Navigate through a region of intense electromagnetic interference.', 'Stowaway Bot: Discover a runaway steambot hiding within your vehicle.', 'Circuit Failure: A critical system failure causes your steambot to malfunction.', 'Solar Flare: Experience a solar event that temporarily enhances your steambot\'s sensors.'],
+        ['Obstacle Course: Navigate a treacherous area filled with mechanical debris.', 'Abandoned Automaton: Find a deserted steambot in disrepair.', 'Mobile Market: Stumble upon a caravan of steambots trading parts.', 'Electronic Espionage: Uncover a spy drone recording your movements.', 'Assistance Required: Aid a malfunctioning steambot on your path.', 'Swarm Avoidance: Dodge a swarm of miniature surveillance bots.'],
+        ['Nomadic Tinkers: Encounter a group of nomadic engineers traveling with mobile workshops.', 'Automaton Station: Arrive at a busy hub where steambots are docked and maintained.', 'Power Surge: A sudden burst of energy supercharges your steambot temporarily.', 'Message Carrier: Intercept a bot carrying urgent news across the city.', 'Navigational Puzzle: Solve a complex routing challenge through congested urban areas.', 'Sabotage Discovery: Find that someone has tampered with your steambot.'],
+        ['Race Challenge: Engage in a speed contest with other high-performance steambots.', 'Wildlife Observation: Observe mechanical creatures in their natural habitat, perhaps collecting data or samples.', 'Inventor\'s Field Test: Meet an eccentric inventor testing out new bot designs in the field.', 'Fuel Hunt: Search for a rare type of fuel needed for your steambot\'s operation.', 'Emergency Repairs: Conduct urgent repairs in a hazardous location.', 'Overheating Issue: Manage overheating issues during a critical moment of your journey.'],
+        ['Design Theft: Thwart thieves attempting to steal your steambot\'s blueprints.', 'Junkyard Secrets: Explore a vast steambot junkyard looking for valuable parts.', 'Atmospheric Disturbances: Adapt to unexpected changes in weather affecting your bot\'s performance.', 'Secluded Workshop: Find a hidden workshop offering upgrades and repairs.', 'Experimental Tests: Assist scientists testing new steambot capabilities.', 'Storm Navigation: Pilot your steambot through a hazardous mechanical storm.'],
+        ['Silence Field: Enter an area where all communications are mysteriously cut off.', 'Resource Extraction: Work alongside mining bots extracting rare minerals.', 'Astronomical Phenomenon: Observe a rare celestial event affecting steambot circuitry.', 'Night Operation: Conduct a covert operation under the cover of darkness.', 'Gala Event: Attend a high-profile gathering featuring advanced steambots.', 'Cosmic Pulse: Experience a rare cosmic pulse that temporarily alters the physical properties of your steambot.'],
       ]
     },
     land_encounters: {
@@ -88,12 +88,12 @@ export default {
       category: 'random-tables',
       rollType: '2d6',
       entries: [
-        ['**Bandit Ambush:** Encounter a group of highwaymen on a deserted road.', '**Mechanical Failure:** Your vehicle breaks down in an unknown area.', '**Road Blockade:** Navigate through a blockade set up by local militia.', '**Hitchhiker:** Pick up a mysterious traveler with hidden talents.', '**Landmark Discovery:** Find an ancient, forgotten monument.', '**Foggy Passage:** Drive through a dense, disorienting fog.'],
-        ['**Bridge Toll:** Pay a toll to cross a heavily guarded bridge.', '**Abandoned Vehicle:** Come across a deserted steam wagon with supplies.', '**Traveling Circus:** Encounter a colorful, traveling circus with a dark secret.', '**Engine Overheat:** Manage an overheating engine in the middle of your journey.', '**Detour:** Forced to take a long detour due to unexpected road closure.', '**Animal Crossing:** A herd of mechanical animals crosses your path.'],
-        ['**Lost Travelers:** Aid lost travelers who offer valuable information in return.', '**Checkpoint:** Stop at a military checkpoint that scrutinizes your cargo.', '**Outlaw Hideout:** Stumble upon a hidden outlaw camp with a chance to trade.', '**Suspicious Activity:** Notice suspicious activity near a critical infrastructure.', '**Market Day:** Arrive in a town during their bustling market day.', '**Quicksand Trap:** Navigate around a dangerous area of quicksand.'],
-        ['**Roadside Inn:** Stay at a roadside inn that harbors secret meetings.', '**Natural Disaster:** Survive a sudden earthquake or mudslide.', '**Repair Workshop:** Find a remote workshop that can upgrade your vehicle.', '**Smugglers\' Path:** Discover a smugglers\' path that offers a shortcut.', '**Wild Chase:** Engage in a high-speed chase with rogue steam cyclists.', '**Ancient Ruins:** Explore ancient ruins recently uncovered by a landslide.'],
-        ['**Resource Cache:** Find a hidden cache of fuel and spare parts.', '**Mechanical Beasts:** Encounter mechanical beasts protecting their territory.', '**Rebel Camp:** Come across a rebel camp that seeks your help.', '**Steampunk Festival:** Participate in a local steampunk festival with competitions.', '**Salvage Operation:** Chance upon a salvage operation in need of assistance.', '**Time Capsule:** Discover a time capsule left by a previous era\'s inventor.'],
-        ['**Ghost Town:** Enter a town abandoned after a mysterious incident.', '**Hermit Inventor:** Meet a hermit inventor who offers to share his quirky inventions.', '**Desert Mirage:** Experience mirages that lead to a hidden oasis.', '**Night Vision:** Navigate a perilous path only visible under moonlight.', '**Cursed Artifact:** Find a cursed artifact that affects your vehicle\'s operation.', '**Aurora Steamalis:** Witness the rare sight of steam-powered northern lights.'],
+        ['Bandit Ambush: Encounter a group of highwaymen on a deserted road.', 'Mechanical Failure: Your vehicle breaks down in an unknown area.', 'Road Blockade: Navigate through a blockade set up by local militia.', 'Hitchhiker: Pick up a mysterious traveler with hidden talents.', 'Landmark Discovery: Find an ancient, forgotten monument.', 'Foggy Passage: Drive through a dense, disorienting fog.'],
+        ['Bridge Toll: Pay a toll to cross a heavily guarded bridge.', 'Abandoned Vehicle: Come across a deserted steam wagon with supplies.', 'Traveling Circus: Encounter a colorful, traveling circus with a dark secret.', 'Engine Overheat: Manage an overheating engine in the middle of your journey.', 'Detour: Forced to take a long detour due to unexpected road closure.', 'Animal Crossing: A herd of mechanical animals crosses your path.'],
+        ['Lost Travelers: Aid lost travelers who offer valuable information in return.', 'Checkpoint: Stop at a military checkpoint that scrutinizes your cargo.', 'Outlaw Hideout: Stumble upon a hidden outlaw camp with a chance to trade.', 'Suspicious Activity: Notice suspicious activity near a critical infrastructure.', 'Market Day: Arrive in a town during their bustling market day.', 'Quicksand Trap: Navigate around a dangerous area of quicksand.'],
+        ['Roadside Inn: Stay at a roadside inn that harbors secret meetings.', 'Natural Disaster: Survive a sudden earthquake or mudslide.', 'Repair Workshop: Find a remote workshop that can upgrade your vehicle.', 'Smugglers\' Path: Discover a smugglers\' path that offers a shortcut.', 'Wild Chase: Engage in a high-speed chase with rogue steam cyclists.', 'Ancient Ruins: Explore ancient ruins recently uncovered by a landslide.'],
+        ['Resource Cache: Find a hidden cache of fuel and spare parts.', 'Mechanical Beasts: Encounter mechanical beasts protecting their territory.', 'Rebel Camp: Come across a rebel camp that seeks your help.', 'Steampunk Festival: Participate in a local steampunk festival with competitions.', 'Salvage Operation: Chance upon a salvage operation in need of assistance.', 'Time Capsule: Discover a time capsule left by a previous era\'s inventor.'],
+        ['Ghost Town: Enter a town abandoned after a mysterious incident.', 'Hermit Inventor: Meet a hermit inventor who offers to share his quirky inventions.', 'Desert Mirage: Experience mirages that lead to a hidden oasis.', 'Night Vision: Navigate a perilous path only visible under moonlight.', 'Cursed Artifact: Find a cursed artifact that affects your vehicle\'s operation.', 'Aurora Steamalis: Witness the rare sight of steam-powered northern lights.'],
       ]
     },
     adventure_hooks: {
@@ -108,6 +108,286 @@ export default {
         ['Prevent the assassination of a key political figure by intercepting and decoding encrypted messages.', 'Navigate the dangerous terrain and hidden traps of an ancient automaton factory to uncover lost technology.', 'Thwart an espionage attempt aimed at stealing your own designs during a high-profile technology exhibition.', 'Solve the mystery of disappearing workers, revealing a hidden network of underground resistance fighters.', 'Rescue a kidnapped inventor who holds the key to a vital new steam propulsion system.', 'Negotiate a truce between warring factions to secure peace in an area rich in steam minerals.'],
         ['Solve a series of mechanical puzzles left by a previous explorer to find a hidden cache of precious ores.', 'Face off against a rogue automaton in a public duel to prove the superiority of human ingenuity over machine learning.', 'Broker a deal between feuding inventors whose technologies could revolutionize or destroy the city\'s infrastructure.', 'Protect a vital coal shipment from bandits and saboteurs on a high-speed rail journey through enemy territory.', 'Unravel the secrets of an ancient steam-powered civilization in a remote and mystical part of the world.', 'Lead a team to extinguish a catastrophic fire in a major industrial complex using experimental steam technology.'],
         ['Commandeer a prototype airship to chase down pirates who have stolen a critical energy core.', 'Defend your workshop from a relentless assault by mechanical spiders programmed to retrieve their creator\'s designs.', 'Coordinate the evacuation of a town threatened by an out-of-control steam reactor nearing meltdown.', 'Investigate the mysterious shutdown of a vital steam conduit that supplies power to the entire eastern district.', 'Capture and repurpose a fleet of automated drones that have been terrorizing local air traffic.', 'Discover the truth behind a series of explosions that threaten to undermine the city\'s steam distribution network.'],
+      ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Airship Captain', 'Ingenious Inventor', 'Street Urchin', 'Eccentric Scholar', 'Mysterious Agent', 'Clockwork Spy'],
+        ['Sky Pirate', 'Master Tinkerer', 'Detective', 'Socialite', 'Secret Society Operative', 'Automaton Prototype'],
+        ['Mechanical Savant', 'Mechanical Engineer', 'Investigative Journalist', 'Factory Worker', 'Underground Revolutionary', 'Steam-Powered Alchemist'],
+        ['Aeronautic Explorer', 'Clockwork Artisan', 'Private Investigator', 'Inventor\'s Assistant', 'Saboteur', 'Steam Dynamics Expert'],
+        ['Gadgetsmith', 'Steam Mechanic', 'Cipher Expert', 'Aristocrat', 'Underground Informant', 'Airship Engineer'],
+        ['Sky Smuggler', 'Renowned Inventor', 'Steampunk Detective', 'Noble Outcast', 'Saboteur\'s Accomplice', 'Industrial Innovator'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Piloting', 'Engineering', 'Stealth', 'Diplomacy', 'Espionage', 'Mechanical Repair'],
+        ['Gunmanship', 'Invention', 'Investigation', 'Etiquette', 'Sabotage', 'Steam Control'],
+        ['Survival', 'Mechanical Repair', 'Deduction', 'Persuasion', 'Codebreaking', 'Steam Manipulation'],
+        ['Navigation', 'Clockwork Crafting', 'Observation', 'Seduction', 'Infiltration', 'Steam Resonance'],
+        ['Acrobatics', 'Technological Lore', 'Research', 'Networking', 'Disguise', 'Steam Channeling'],
+        ['Aerial Maneuvers', 'Automaton Design', 'Forensics', 'Public Speaking', 'Deception', 'Steam Augmentation'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Fear of Heights', 'Clockwork Obsession', 'Technological Hallucinations', 'Memory Loss', 'Easily Distracted', 'Fear of Clocks'],
+        ['Fear of Disassembly', 'Mechanical Malfunction', 'Chronic Respiratory Illness', 'Mechanophobia', 'Aversion to Modern Clothing', 'Chronic Nostalgia'],
+        ['Impaired Decision-Making', 'Risky Gambler', 'Gullibility', 'Industrial Allergy', 'Uncontrolled Tinkering', 'Mismatched Limbs'],
+        ['Impulsive Behavior', 'Abandonment Issues', 'Speech Impediment', 'Self-Doubt', 'Aversion to Fire', 'Impaired Smell'],
+        ['Tendency to Faint', 'Inability to Keep Secrets', 'Insomnia', 'Paranoia', 'Crippling Guilt', 'Impaired Hearing'],
+        ['PTSD from Automaton Encounter', 'Prone to Panic Attacks', 'Fear of Rejection', 'Perpetual Cynicism', 'Obsessive Need for Order', 'Germaphobia'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Tesla Rifle', 'Steam-Powered Arm', 'Toolbelt', 'Monocle', 'Revolver', 'Grappling Hook'],
+        ['Airship Model', 'Gadgetry Kit', 'Mechanical Pet', 'Wrist-mounted Dart', 'Cipher Ring', 'Steam Focus'],
+        ['Zeppelin Map', 'Jetpack', 'Spyglass', 'Codebook', 'Automaton Companion', 'Steam Conduit'],
+        ['Smoke Bombs', 'Pocket Watch', 'Technological Codex', 'Walking Stick', 'Gas Mask', 'Steam Battery'],
+        ['Aether Compass', 'Gear Gauntlet', 'Notebook', 'Fine Attire', 'Disguise Kit', 'Steam Amplifier'],
+        ['Clockwork Automaton', 'Stealth Cloak', 'Mechanical Limb', 'Detonator', 'Concealed Holster', 'Steam Capacitor'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Amelia', 'Clara', 'Isabella', 'Penelope', 'Victoria', 'Evelyn'],
+        ['Ada', 'Eliza', 'Matilda', 'Beatrice', 'Lillian', 'Genevieve'],
+        ['Sophia', 'Josephine', 'Arabella', 'Prudence', 'Winifred', 'Imogen'],
+        ['Octavia', 'Millicent', 'Rosalind', 'Adeline', 'Cecilia', 'Seraphina'],
+        ['Evangeline', 'Ophelia', 'Felicity', 'Gwendolyn', 'Rosamund', 'Vivienne'],
+        ['Theodora', 'Harriet', 'Philomena', 'Clementine', 'Georgiana', 'Cordelia'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Nathaniel', 'Ezekiel', 'Thaddeus', 'Archibald', 'Theodore', 'Benedict'],
+        ['Ignatius', 'Percival', 'Bartholomew', 'Leopold', 'Reginald', 'Octavius'],
+        ['Horatio', 'Phineas', 'Cornelius', 'Montgomery', 'Atticus', 'Maximilian'],
+        ['Alaric', 'Barnaby', 'Casimir', 'Reginald', 'Sylvester', 'Percival'],
+        ['Cornelius', 'Thaddeus', 'Linus', 'Phineas', 'Archibald', 'Bartholomew'],
+        ['Ambrose', 'Ignatius', 'Remington', 'Alaric', 'Percival', 'Augustus'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Thorne', 'Ironsmith', 'Pendleton', 'Gearhart', 'Cogsworth', 'Brasswick'],
+        ['Steamson', 'Whitlock', 'Wraithborne', 'Blackthorn', 'Copperfield', 'Gearwright'],
+        ['Ironclad', 'Windermere', 'Clockwright', 'Stoker', 'Redforge', 'Gearspring'],
+        ['Cogswell', 'Thornfield', 'Brassington', 'Steelgrave', 'Hightower', 'Gearsmith'],
+        ['Steamwell', 'Clockburn', 'Ironhaven', 'Steamwhisper', 'Gearstone', 'Brassfield'],
+        ['Blacksmith', 'Gearhart', 'Pendulum', 'Ironwright', 'Copperhill', 'Windforge'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Cogmaster', 'Bolt', 'Steamwright', 'Irons', 'Gearhead', 'Piston'],
+        ['Smokestack', 'Rivet', 'Flywheel', 'Spark', 'Boiler', 'Coalfoot'],
+        ['Brasshand', 'The Tinkerer', 'Volt', 'Widget', 'Fuse', 'Steambeard'],
+        ['Clockwork', 'Sprocket', 'Copperpot', 'Crankshaft', 'Valve', 'Locomotive'],
+        ['Steamsmith', 'Oilcan', 'Gasket', 'Springheel', 'Ironclad', 'Treadturner'],
+        ['The Mechanist', 'Aether', 'Pressure', 'Blacksmoke', 'Dynamo', 'Piston Pete'],
+      ]
+    },
+    cogwork_familiar_traits_concepts: {
+      id: 'cogwork_familiar_traits_concepts',
+      name: 'Cogwork Familiar Traits: Concepts',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Clockwork Cat', 'Sentinel Owl', 'Scout Mouse', 'Guard Dog', 'Messenger Raven', 'Surveillance Spider'],
+        ['Steam Serpent', 'Mechanical Hawk', 'Recon Rabbit', 'Battle Badger', 'Signal Fox', 'Illuminator Firefly'],
+        ['Gearwork Horse', 'Loadbearing Beetle', 'Surveyor Squirrel', 'Protector Panther', 'Helper Monkey', 'Guide Parrot'],
+        ['Locomotive Lynx', 'Aqua Explorer Fish', 'Treasure Tracker Magpie', 'Combat Crab', 'Informant Bat', 'Constructor Beaver'],
+        ['Miner Mole', 'Pathfinder Pigeon', 'Navigator Nightingale', 'Sentinel Swan', 'Courier Cheetah', 'Reconnaissance Rooster'],
+        ['Explorer Elephant', 'Heavy-Duty Tortoise', 'Climber Chameleon', 'Spy Seal', 'Alert Albatross', 'Maintenance Meerkat'],
+      ]
+    },
+    cogwork_familiar_traits_skills: {
+      id: 'cogwork_familiar_traits_skills',
+      name: 'Cogwork Familiar Traits: Skills',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Enhanced Vision', 'Night Vision', 'Enhanced Hearing', 'Enhanced Smell', 'Speed Boost', 'Heightened Reflexes'],
+        ['Silent Movement', 'High Altitude Flight', 'Rapid Burrowing', 'Strong Defense', 'Long Range Signal', 'Illumination'],
+        ['Load Carrying', 'Terrain Adaptation', 'High Speed Scouting', 'Protective Alert', 'Intricate Manipulation', 'Vocal Mimicry'],
+        ['Fast Recovery', 'Water Navigation', 'Item Retrieval', 'Crowd Control', 'Stealth Operation', 'Construction Assistance'],
+        ['Deep Earth Navigation', 'Urban Navigation', 'Air Navigation', 'Water Surveillance', 'Emergency Messaging', 'Detailed Mapping'],
+        ['Heavy Lifting', 'Environmental Resistance', 'Camouflage', 'Cold Endurance', 'Storm Endurance', 'Self-Repairing'],
+      ]
+    },
+    cogwork_familiar_traits_frailties: {
+      id: 'cogwork_familiar_traits_frailties',
+      name: 'Cogwork Familiar Traits: Frailties',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Overheating', 'Noise Sensitivity', 'Light Sensitivity', 'Moisture Damage', 'Limited Operation Time', 'Fragile Mechanics'],
+        ['High Energy Consumption', 'Limited Range', 'Frequent Maintenance', 'Low Power Mode', 'Magnetic Interference', 'Signal Jamming'],
+        ['Rusting', 'Cold Intolerance', 'Dust Susceptibility', 'High Light Glare', 'Fragile Exterior', 'Limited Mobility'],
+        ['Component Wear', 'Battery Dependency', 'Signal Disruption', 'Overload Risk', 'System Reboot Delay', 'Navigation Errors'],
+        ['Maintenance Intensive', 'Hack Vulnerability', 'Collision Vulnerability', 'Sensory Overload', 'Memory Corruption', 'Instruction Misinterpretation'],
+        ['Fuel Dependency', 'Specific Habitat Needs', 'Power Surge Vulnerability', 'Balance Issues', 'Structural Weakness', 'Environmental Sensitivity'],
+      ]
+    },
+    cogwork_familiar_traits_gear: {
+      id: 'cogwork_familiar_traits_gear',
+      name: 'Cogwork Familiar Traits: Gear',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Optical Enhancers', 'Stealth Coating', 'Audio Boosters', 'Smell Enhancers', 'Mobility Enhancers', 'Reflex Enhancers'],
+        ['Communication Devices', 'Flight Enhancements', 'Burrowing Gear', 'Defense Mechanisms', 'Signal Amplifiers', 'Light Projectors'],
+        ['Carrying Harness', 'All-Terrain Treads', 'Mapping Sensors', 'Shock Absorbers', 'Tool Attachments', 'Voice Synthesizers'],
+        ['Repair Kits', 'Waterproof Covers', 'Retrieval Magnets', 'Crowd Repellers', 'Camouflage Skins', 'Building Tools'],
+        ['Navigation Systems', 'Urban Gear', 'Aerial Maneuver Gear', 'Water Propulsion Kits', 'Emergency Beacons', 'Topographical Mappers'],
+        ['Heavy-Duty Cables', 'Environmental Suits', 'Adaptive Camouflage', 'Ice Chains', 'Storm Shields', 'Self-Diagnostics Kits'],
+      ]
+    },
+    airship_traits_concepts: {
+      id: 'airship_traits_concepts',
+      name: 'Airship Traits: Concepts',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Trade Schooner', 'Arctic Explorer', 'Royal Vessel', 'Floating Laboratory', 'Pirate Skiff', 'Stealth Recon'],
+        ['Cargo Freighter', 'Storm Chaser', 'Diplomatic Yacht', 'Smuggler\'s Clipper', 'Gunship Cruiser', 'Research Vessel'],
+        ['Luxury Liner', 'Icebreaker', 'Spymaster\'s Zeppelin', 'Prison Transport', 'Battle Frigate', 'Weather Monitor'],
+        ['Medical Frigate', 'High-Altitude Surveyor', 'Cultural Envoy', 'Treasure Hunter', 'Patrol Airship', 'Mining Platform'],
+        ['Entertainment Palace', 'Disaster Relief Carrier', 'Propaganda Blimp', 'Salvage Vessel', 'Mercenary Carrier', 'Scientific Expedition'],
+        ['Mobile Fortress', 'Wilderness Explorer', 'Royal Guard Airship', 'Transport Behemoth', 'Rebel Command Ship', 'High-Atmosphere Probe'],
+      ]
+    },
+    airship_traits_skills: {
+      id: 'airship_traits_skills',
+      name: 'Airship Traits: Skills',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Enhanced Navigation', 'Weather Resistance', 'Diplomatic Suites', 'Advanced Alchemy Labs', 'Cannon Arrays', 'Stealth Technology'],
+        ['Heavy Cargo Lifting', 'Storm Navigation', 'Espionage Equipment', 'Smuggling Compartments', 'Armored Hull', 'Long-Range Sensors'],
+        ['Luxury Amenities', 'Ice-Cutting Hull', 'Secure Communication', 'Prisoner Cells', 'Broadside Cannons', 'Atmospheric Analysis'],
+        ['Medical Facilities', 'High-Altitude Capability', 'Cultural Exhibits', 'Treasure Scanners', 'Patrol Radar', 'Resource Extraction'],
+        ['Entertainment Systems', 'Emergency Response Systems', 'Propaganda Broadcasters', 'Deep Sea Recovery Gear', 'Mercenary Quarters', 'Experimental Labs'],
+        ['Siege Weapons', 'Wilderness Survival Kits', 'Elite Guard Quarters', 'Massive Storage', 'Command Center', 'High-Atmosphere Communications'],
+      ]
+    },
+    airships_frailties: {
+      id: 'airships_frailties',
+      name: 'Airships: Frailties',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Low Fuel Efficiency', 'Vulnerable to Ice', 'High Profile Target', 'Sensitive Equipment', 'Fire Hazard', 'Radar Signature'],
+        ['Slow Speed', 'Limited Maneuverability in Storms', 'Known to Diplomats', 'Contraband Risk', 'High Maintenance', 'Sensor Interference'],
+        ['Attracts Pirates', 'Freezes Easily', 'Easily Bugged', 'Jailbreak Risk', 'Loud Engines', 'Weather Sensitive'],
+        ['Frequent Malfunctions', 'High Fuel Consumption', 'Cultural Misunderstandings', 'Treasure Hunter Rivalry', 'Target for Patrols', 'Rock Debris Damage'],
+        ['Popular Target for Thieves', 'Slow Emergency Response', 'Monitored by Authorities', 'High Salvage Costs', 'Prone to Mercenary Mutiny', 'Experimental Malfunctions'],
+        ['Siege Weapon Recoil', 'Struggles in Wilderness', 'Known Royal Allegiance', 'Overloaded Weight Capacity', 'Rebellious Crew', 'Communication Blackouts'],
+      ]
+    },
+    frailties_gear: {
+      id: 'frailties_gear',
+      name: 'Frailties: Gear',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Advanced Compass', 'Reinforced Hull', 'Diplomatic Codes', 'Alchemical Labs', 'Mounted Cannons', 'Cloaking Device'],
+        ['Heavy-Duty Cranes', 'Storm Shields', 'Embassy Quarters', 'Hidden Compartments', 'Ironclad Sides', 'High-Definition Radars'],
+        ['Opulent Decor', 'Heated Outer Shell', 'Encrypted Radios', 'Secure Holding Cells', 'Automated Turrets', 'Weather Instruments'],
+        ['Hospital Bay', 'Oxygen Tanks', 'Cultural Artifacts', 'Submersible Scouts', 'Radar Systems', 'Mining Lasers'],
+        ['Theater Stage', 'Rapid Relief Equipment', 'Loudspeakers', 'Salvage Drones', 'Mercenary Armory', 'Research Modules'],
+        ['Fortified Command Center', 'Rugged Terrain Kits', 'Royal Sigils', 'Massive Cargo Holds', 'Strategic War Room', 'High-Atmosphere Antennas'],
+      ]
+    },
+    steamboat_traits_concepts: {
+      id: 'steamboat_traits_concepts',
+      name: 'Steamboat Traits: Concepts',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['River Trader', 'Coastal Freighter', 'Pleasure Cruiser', 'Industrial Tug', 'Exploration Vessel', 'Smuggler’s Runner'],
+        ['Fishing Trawler', 'Luxury Yacht', 'Scientific Surveyor', 'Icebreaker', 'Patrol Boat', 'Floating Market'],
+        ['Ore Transport', 'River Casino', 'Weather Ship', 'Naval Gunboat', 'Research Platform', 'Refugee Carrier'],
+        ['Whaling Ship', 'Diplomatic Envoy', 'Underwater Salvager', 'Hospital Ship', 'Pirate Skiff', 'Hydroplant'],
+        ['Amphibious Carrier', 'Cultural Gallery', 'Stealth Recon', 'Prison Barge', 'Treasure Hunter', 'Disaster Relief'],
+        ['Armored Warship', 'Royal Barge', 'Myth Hunter', 'Deep Sea Miner', 'Rebel Base', 'Mobile Fortress'],
+      ]
+    },
+    steamboat_traits_skills: {
+      id: 'steamboat_traits_skills',
+      name: 'Steamboat Traits: Skills',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Efficient Navigation', 'Coastal Mastery', 'Entertainment Facilities', 'Heavy Lifting', 'Advanced Sonar', 'Stealth Navigation'],
+        ['Deep Sea Fishing', 'Opulent Comfort', 'Environmental Monitoring', 'Ice Navigation', 'Rapid Response', 'Vendor Stalls'],
+        ['Bulk Cargo Handling', 'Gambling Systems', 'Meteorological Equipment', 'Cannonade', 'Submersible Support', 'Emergency Housing'],
+        ['Whaling Harpoons', 'Diplomatic Facilities', 'Salvage Operations', 'Medical Facilities', 'Boarding Tactics', 'Power Generation'],
+        ['Amphibious Operation', 'Art Exhibits', 'Silent Running', 'Detainee Containment', 'Artifact Retrieval', 'Rescue Equipment'],
+        ['Fortified Hull', 'Royal Quarters', 'Mythical Equipment', 'Drilling Rigs', 'Covert Operations', 'Siege Weapons'],
+      ]
+    },
+    steamboat_traits_frailties: {
+      id: 'steamboat_traits_frailties',
+      name: 'Steamboat Traits: Frailties',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Prone to Silting', 'Hull Corrosion', 'High Maintenance', 'Slow Speed', 'Radar Signature', 'Lightly Armored'],
+        ['Fuel Hog', 'Overly Luxurious', 'Sensitive Instruments', 'Vulnerable to Ice', 'Limited Weaponry', 'Crowded Deck'],
+        ['Heavy Draft', 'Gambling Debts', 'Weather Dependent', 'Target for Pirates', 'Submersible Risk', 'Insufficient Lifeboats'],
+        ['Old Equipment', 'Political Target', 'Salvage Malfunctions', 'Contagion Risk', 'Easy to Board', 'Power Drain'],
+        ['Low Bridge Clearance', 'Cultural Clashes', 'Noise Pollution', 'Fire Risk', 'Treasure Obsession', 'Rescue Delays'],
+        ['High Profile', 'Royal Scrutiny', 'Creature Attraction', 'Depth Limited', 'Rebel Target', 'Bombardment Risk'],
+      ]
+    },
+    steamboat_traits_gear: {
+      id: 'steamboat_traits_gear',
+      name: 'Steamboat Traits: Gear',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Advanced Maps', 'Stabilized Hull', 'Theater Systems', 'Industrial Cranes', 'Depth Sounders', 'Cloaking Screens'],
+        ['Fishing Nets', 'Plush Furnishings', 'Environmental Sensors', 'Icebreaker Bow', 'Water Cannons', 'Floating Stalls'],
+        ['Ore Bins', 'Roulette Wheels', 'Weather Stations', 'Mounted Guns', 'Research Labs', 'Compact Housing'],
+        ['Harpoon Launchers', 'Embassy Suites', 'Diving Gear', 'Hospital Wards', 'Grappling Hooks', 'Turbines'],
+        ['All-Terrain Treads', 'Art Galleries', 'Noise Suppressors', 'Prison Cells', 'Treasure Scopes', 'Emergency Kits'],
+        ['Reinforced Armor', 'Opulent Quarters', 'Mythical Relics', 'Mining Dredges', 'Hidden Compartments', 'Heavy Artillery'],
       ]
     },
   }

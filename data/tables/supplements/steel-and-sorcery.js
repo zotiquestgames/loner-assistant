@@ -557,6 +557,230 @@ export default {
         ['Warband Loyalty: A company of elite soldiers pledged to the recipient’s service.', 'Bloodforged Ring: Strengthens the user in battle but requires regular sacrifice.', 'Patron’s Blessing: A boon that ensures success in one endeavor but binds you to fulfill a future favor.', 'Golden Banner: Commands respect in any territory but attracts unwanted attention.', 'Divine Favor: A deity’s blessing shields the recipient but demands constant piety.', 'Vault of Secrets: Access to the patron’s hidden knowledge, but the secrets come with risks.'],
         ['Dragon’s Fang Blade: A weapon forged from a slain dragon’s fang, granting immense power.', 'Mystic Seal: Grants access to ancient ruins protected by the patron.', 'Crown of Influence: A golden circlet that inspires loyalty but burdens the wearer with guilt.', 'Winged Familiar: A magical creature that aids the recipient but has its own mysterious agenda.', 'Treasure of the Lost Empire: Priceless riches buried with a dark curse.', 'Immortal Contract: The patron promises eternal life, with a hidden price yet to be revealed.'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Cunning Mercenary', 'Haunted Gladiator', 'Wary Wanderer', 'Ruthless Assassin', 'Grim Knight', 'Savage Barbarian'],
+        ['Wandering Sword', 'Lost Prince', 'Vengeful Warrior', 'Cursed Thief', 'Exiled Noble', 'Desert Nomad'],
+        ['Daring Raider', 'Shadowy Rogue', 'Weary Veteran', 'Bloodthirsty Hunter', 'Broken Monk', 'Mad Sorcerer'],
+        ['Rogue Priest', 'Lone Outlander', 'Blacksmith’s Child', 'Fallen Champion', 'Amnesiac Warrior', 'Bitter Survivor'],
+        ['Drunken Brawler', 'Disgraced Captain', 'Unyielding Guard', 'Blind Prophet', 'Ex-Pit Fighter', 'Obsessed Alchemist'],
+        ['Blooded Seer', 'Blighted Shaman', 'Ambitious Noble', 'Ghostly Marauder', 'Exile Prince', 'Silent Hunter'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Shadow Stalker', 'Iron Will', 'Deathly Aim', 'Quick Reflexes', 'Brutal Strength', 'Wily Tactician'],
+        ['Survivalist', 'Beast Tamer', 'Weapon Master', 'Sneak Attack', 'Berserker Rage', 'Arcane Scholar'],
+        ['Herbalist', 'Armor Smith', 'Tracking Expert', 'Battle-Hardened', 'Duelist', 'Battle Cry'],
+        ['Trap Disabler', 'Poison Maker', 'Swift Blade', 'Endurance', 'Fearless', 'Wolf Instincts'],
+        ['River Guide', 'Treasure Hunter', 'Lock Picker', 'Monster Slayer', 'Precise Strikes', 'Spirit Talker'],
+        ['Fleet-Footed', 'Wilderness Scout', 'Serpent Tongue', 'Stone Skin', 'Blood Ritualist', 'Demon Tracker'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Haunted Past', 'Deep Paranoia', 'Fear of Magic', 'Crippling Injury', 'Bloodthirsty', 'Uncontrollable Rage'],
+        ['Merciless', 'Greedy', 'Untrustworthy', 'Addicted', 'Cowardly', 'Unforgiving'],
+        ['Quick Temper', 'Cursed', 'Alcoholic', 'Vengeful', 'Haunted by Nightmares', 'Broken Spirit'],
+        ['Proud', 'Bitter', 'Wrathful', 'Superstitious', 'Selfish', 'Overconfident'],
+        ['Disfigured', 'Slow to Trust', 'Ruthless', 'Wracked with Guilt', 'Obsessed', 'Reckless'],
+        ['Jealous', 'Lone Wolf', 'Scarred', 'Fear of Death', 'Distrust of Authority', 'Traumatized'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Ancient Sword', 'Blackened Dagger', 'Cursed Amulet', 'Battle-Worn Armor', 'Poisoned Blades', 'Enchanted Cloak'],
+        ['Blood-Stained Axe', 'Warhammer', 'Rusted Helm', 'Vial of Poison', 'Steel Gauntlets', 'Ritual Mask'],
+        ['Shadowy Cloak', 'Blood-soaked Tunic', 'Cursed Coin', 'Sacred Totem', 'Elven Bow', 'Mask of Terror'],
+        ['Ghostly Armor', 'Leather Bracers', 'Magic Tome', 'Dragon Scale Shield', 'Twin Scimitars', 'Silver Amulet'],
+        ['Scarred Shield', 'Barbed Net', 'Flaming Torch', 'Tribal Mask', 'Iron Shackles', 'Blood Vials'],
+        ['Eldritch Staff', 'Bone Necklace', 'Spiked Boots', 'Poison Darts', 'Serpent\'s Fang', 'Rune-Covered Blade'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Kiera', 'Aela', 'Nyx', 'Sabra', 'Lira', 'Moira'],
+        ['Bryn', 'Saria', 'Elara', 'Danya', 'Vessa', 'Rhea'],
+        ['Zara', 'Mira', 'Talia', 'Isolde', 'Kaida', 'Nessa'],
+        ['Lira', 'Farah', 'Thora', 'Sienna', 'Orianna', 'Jara'],
+        ['Kaida', 'Seraph', 'Zaira', 'Mara', 'Thalia', 'Aria'],
+        ['Nyra', 'Meya', 'Eris', 'Vara', 'Feyra', 'Cyra'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Kael', 'Torin', 'Garron', 'Darius', 'Kade', 'Alaric'],
+        ['Roran', 'Theron', 'Jarek', 'Tyr', 'Malek', 'Soren'],
+        ['Varis', 'Leoric', 'Caden', 'Darian', 'Zane', 'Lucian'],
+        ['Kade', 'Cael', 'Finn', 'Garen', 'Theron', 'Zarek'],
+        ['Draven', 'Kaelan', 'Aric', 'Rylan', 'Cyric', 'Daegan'],
+        ['Garron', 'Thorne', 'Bael', 'Orion', 'Eamon', 'Kieran'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Blackthorn', 'Ironclaw', 'Darkblade', 'Stormrider', 'Nightshade', 'Steelbrow'],
+        ['Bloodsword', 'Darkwind', 'Wolfsbane', 'Ravenshadow', 'Stoneheart', 'Ironfist'],
+        ['Firebrand', 'Grimblade', 'Duskmourn', 'Stormforge', 'Nightstalker', 'Shadowscar'],
+        ['Silverfang', 'Thorncrest', 'Frostheart', 'Shadowmoon', 'Stonefist', 'Stormwatch'],
+        ['Ironheart', 'Grimstone', 'Nightwind', 'Ravensword', 'Stormwalker', 'Frostfall'],
+        ['Steelclaw', 'Stormblade', 'Nightshade', 'Shadowsteel', 'Stoneforge', 'Darkbrow'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Unbroken', 'The Silent', 'The Cursed', 'The Forgotten', 'The Grim', 'The Scarred'],
+        ['The Bloodied', 'The Dark', 'The Swift', 'The Shadow', 'The Lost', 'The Fearless'],
+        ['The Ruthless', 'The Wild', 'The Vengeful', 'The Wraith', 'The Dreaded', 'The Mad'],
+        ['The Savage', 'The Ghost', 'The Red', 'The Lone', 'The Broken', 'The Unseen'],
+        ['The Black', 'The Wicked', 'The Beast', 'The Wolf', 'The Damned', 'The Merciless'],
+        ['The Cruel', 'The Last', 'The Wraith', 'The Torn', 'The Scarred', 'The Hunted'],
+      ]
+    },
+    first_circle: {
+      id: 'first_circle',
+      name: 'First Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Candlelight', 'Whisper Wind', 'Cursed Ink', 'Chill Touch', 'Spark', 'Phantom Whisper'],
+        ['Cleanse', 'Blight', 'Minor Illusion', 'Fearful Visage', 'Alarm', 'Curse Object'],
+        ['Water Breathing', 'Flicker', 'Binding String', 'Shadow\'s Edge', 'Light Step', 'Scarecrow\'s Curse'],
+        ['Gust', 'Corpse Whisper', 'Healing Hands', 'Poison Stain', 'Mystic Lock', 'Blood Pact'],
+        ['Frost Shield', 'Black Flame', 'Lesser Shroud', 'Summon Vermin', 'Mystic Compass', 'Death Rattle'],
+        ['Feather Fall', 'Venom Spit', 'Elemental Spark', 'Hex', 'Speak with Animals', 'Dark Vision'],
+      ]
+    },
+    second_circle: {
+      id: 'second_circle',
+      name: 'Second Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Flame Burst', 'Arcane Bind', 'Agony Curse', 'Shroud of Shadows', 'Water Shape', 'Poison Fog'],
+        ['Stone Skin', 'Haunting Laughter', 'Wind Surge', 'Animate Bone', 'Mirror Shield', 'Mark of Doom'],
+        ['Beacon of Hope', 'Spectral Weapon', 'Wailing Spirits', 'Wither Limb', 'Protective Ward', 'Dread Aura'],
+        ['Ice Lance', 'Nightmare Pulse', 'Healing Rain', 'Necrotic Grasp', 'Empower Ally', 'Spectral Chains'],
+        ['Earth Spike', 'Soul Leech', 'Lightning Strike', 'Crippling Hex', 'Sanctuary', 'Flesh Warp'],
+        ['Flame Ring', 'Cursed Vision', 'Cleansing Light', 'Phantom Blade', 'Shield of Faith', 'Summon Shade'],
+      ]
+    },
+    third_circle: {
+      id: 'third_circle',
+      name: 'Third Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Inferno Wave', 'Stoneshape', 'Spectral Army', 'Healing Surge', 'Abyssal Gate', 'Wall of Ice'],
+        ['Shadow Doppelgänger', 'Solar Flare', 'Death Wail', 'Earthquake', 'Soul Shackles', 'Blessed Sanctuary'],
+        ['Tempest Wrath', 'Ethereal Wings', 'Necrotic Wave', 'Elemental Binding', 'Nightmare Beast', 'Moonlit Refuge'],
+        ['Flesh to Stone', 'Purifying Flame', 'Spirit\'s Command', 'Arcane Sentinel', 'Dark Bargain', 'Divine Intervention'],
+        ['Blightstorm', 'Sunbeam', 'Blood Puppeteer', 'Verdant Revival', 'Wraithform', 'Barrier of Faith'],
+        ['Plague Touch', 'Celestial Choir', 'Phantom Legion', 'Elemental Wrath', 'Black Void', 'Holy Resurrection'],
+      ]
+    },
+    fourth_circle: {
+      id: 'fourth_circle',
+      name: 'Fourth Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Hellfire Blast', 'Stone Fortress', 'Mass Withering', 'Radiant Rain', 'Abyssal Chains', 'Frost Citadel'],
+        ['Shadow Rift', 'Solar Purge', 'Wail of the Damned', 'Earth Guardian', 'Blood Price', 'Holy Circle'],
+        ['Tempest Storm', 'Flight of Angels', 'Death Harvest', 'Elemental Convergence', 'Phantasmal Horror', 'Sunlit Bastion'],
+        ['Flesh Rebirth', 'Resurrection Ritual', 'Voidwalker', 'Divine Command', 'Dark Pact', 'Sacred Bond'],
+        ['Curse of Ages', 'Life Bloom', 'Black Tempest', 'Heaven’s Wrath', 'Necrotic Swarm', 'Celestial Ward'],
+        ['Infernal Maw', 'Radiant Barrier', 'Abyssal Pulse', 'Arcane Nova', 'Spectral Legion', 'Divine Resurgence'],
+      ]
+    },
+    fifth_circle: {
+      id: 'fifth_circle',
+      name: 'Fifth Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Infernal Storm', 'Bastion of Eternity', 'Death Mark', 'Divine Choir', 'Void Collapse', 'Heaven’s Light'],
+        ['Dark Ascension', 'Resurrection Beacon', 'Curse of Nightmares', 'Earthquake Maelstrom', 'Blood Ritual', 'Divine Shield'],
+        ['Abyssal Rift', 'Elemental Storm', 'Eternal Servant', 'Starfire', 'Harbinger of Doom', 'Celestial Avatar'],
+        ['Fleshcraft', 'Angelic Host', 'Soul Corruption', 'Holy Conflagration', 'Infernal Pact', 'Light of Salvation'],
+        ['Eternal Darkness', 'Radiant Army', 'Necrotic Nova', 'Divine Judgment', 'Death’s Embrace', 'Worldshaper'],
+        ['Plaguebringer', 'Blessing of Eternity', 'Voidwalker’s Gate', 'Elemental Avatar', 'Black Hole', 'Miracle'],
+      ]
+    },
+    sixth_circle: {
+      id: 'sixth_circle',
+      name: 'Sixth Circle',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Apocalypse Flame', 'Eternal Sanctuary', 'Oblivion Mark', 'Dawn of Creation', 'Abyssal Collapse', 'Heaven’s Triumph'],
+        ['Shadow World', 'Godlight Manifest', 'Soul Reaver', 'Elemental Genesis', 'Curse of Eternity', 'Divine Resurrection'],
+        ['Infernal Dominion', 'Eternal Flame', 'Void Consumption', 'Pillar of Heaven', 'Worldbreaker', 'Arcane Apotheosis'],
+        ['Life Unbound', 'Eternal Harmony', 'Dark Star', 'Celestial Convergence', 'Infernal Apotheosis', 'Light of Creation'],
+        ['Eternal Hunger', 'Celestial Judgment', 'Nightfall', 'Miracle of Life', 'Corrupt the World', 'Spirit Ascension'],
+        ['Shadow’s Dominion', 'Light Eternal', 'Death’s Kingdom', 'Eternal Vigil', 'Oblivion Gate', 'Ascend to Divinity'],
+      ]
+    },
+    mishaps_table: {
+      id: 'mishaps_table',
+      name: 'Mishaps Table',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Arcane Explosion: The spell violently detonates, causing harm to the caster and everything within Close range.', 'Reality Fracture: A rift to another plane opens briefly, releasing hostile creatures or destabilizing the area.', 'Spell Rebound: The spell’s effect turns on the caster with double intensity.', 'Elemental Chaos: The spell summons uncontrolled elemental forces (fire, ice, wind, etc.) that wreak havoc.', 'Wild Magic Surge: A random magical effect occurs, unrelated to the original spell. Roll again on this table for details.', 'Temporal Distortion: Time in the area warps, causing rapid aging or slowing of individuals and objects.'],
+        ['Life Drain: The caster loses all remaining Luck and suffers debilitating exhaustion.', 'Phantom Manifestation: Ghostly apparitions fill the area, terrifying or attacking indiscriminately.', 'Spell Amplification: The spell’s effect escalates uncontrollably, impacting unintended targets.', 'Blighted Ground: The land within Medium range becomes corrupted, withering plants and sickening creatures.', 'Curse Echo: The spell leaves behind a lingering curse on the caster or their surroundings.', 'Mind Shatter: The caster suffers temporary insanity, hearing voices or seeing hallucinations for 1 day.'],
+        ['Ethereal Shift: The caster is partially pulled into another plane, becoming ghostly and unable to interact with the physical world for 10 minutes.', 'Chain Reaction: The spell triggers nearby magical effects or items, creating a cascade of unpredictable outcomes.', 'Magical Conflagration: Nearby objects ignite or explode, spreading chaos in the environment.', 'Summoning Mishap: A random, hostile creature is summoned and immediately attacks the caster.', 'Memory Wipe: The caster forgets the spell they just attempted, requiring re-learning.', 'Veil of Darkness: A magical darkness envelops the area, obscuring all vision for 10 minutes.'],
+        ['Unstable Mutation: The caster or a target of the spell gains a grotesque physical alteration.', 'Energy Drain: All magic in the area, including the caster’s, is nullified for 1 hour.', 'Backlash: The caster is thrown violently by the spell’s energy, taking damage and being incapacitated briefly.', 'Hostile Spirits: Malevolent spirits appear and begin attacking everyone present.', 'Dimensional Tear: Gravity and space twist in the area, creating unpredictable movement or disorientation.', 'Corruptive Influence: The caster gains an immediate point of Corruption.'],
+        ['Frenzied Beasts: Nearby animals are driven into a violent rage, attacking indiscriminately.', 'Mirror Reflection: The spell creates an evil duplicate of the caster, intent on their destruction.', 'Cursed Winds: A howling wind carries a curse that spreads misfortune to everyone in the area.', 'Frozen Time: Time freezes briefly for everyone except the caster, who is unable to interact with anything.', 'Arcane Feedback: Magical energy lashes back, severely injuring the caster and damaging their surroundings.', 'Eldritch Whisper: A cosmic entity notices the spell, marking the caster for future torment.'],
+        ['Catastrophic Collapse: Structures in the area weaken or collapse entirely, creating hazards.', 'Reality Inversion: The laws of physics temporarily break, with bizarre effects like floating objects or reversed gravity.', 'Hex Wave: A pulse of energy spreads from the spell, randomly cursing everyone it touches.', 'Shadow Infusion: The area becomes permanently infused with dark energy, attracting dangerous creatures.', 'Unstoppable Growth: Plants and fungi rapidly overtake the area, creating an impassable jungle.', 'Void Manifestation: A fragment of the void materializes, consuming everything in its vicinity before disappearing.'],
+      ]
+    },
+    corruption_table: {
+      id: 'corruption_table',
+      name: 'Corruption Table',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Blackened Eyes', 'Clawlike Hands', 'Hair Turns Ash White', 'Marked by Shadows', 'Rotting Flesh Odor', 'Gaunt, Skeletal Appearance'],
+        ['Cracked Skin', 'Horn-like Growths', 'Fangs Replace Teeth', 'Unnerving Glow', 'Permanent Chill', 'Bloody Tears'],
+        ['Fiery Veins', 'Voice Becomes Echoing', 'Eyes Drip Black Ichor', 'Aura of Dread', 'Warped, Twisted Limbs', 'Crawling Shadows on Skin'],
+        ['Patchy Decay', 'Lich-like Hollow Eyes', 'Uncontrollable Tremors', 'Insatiable Hunger', 'Withered Fingers', 'Blood Burns to Ash'],
+        ['Twisting Scars', 'Smoke Escapes Mouth', 'Phantom Limbs Appear', 'Unnatural Laughter', 'Face Loses Symmetry', 'Mark of the Abyss'],
+        ['Burning Touch', 'Spines Emerge from Back', 'Hair Turns to Tendrils', 'Screaming Visions', 'Weakness to Sunlight', 'Faint Whispers Follow'],
+      ]
     }
   }
 };
