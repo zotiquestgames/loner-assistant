@@ -2,7 +2,7 @@
 
 All notable changes to Loner Assistant are documented here.
 
-## Unreleased
+## v2.5.1 - 2026-11-26
 
 ### Changed
 
