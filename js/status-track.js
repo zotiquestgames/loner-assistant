@@ -32,44 +32,47 @@ export async function showFillBoxPrompt(characterId, characterName) {
     <p class="text-muted" style="margin-bottom: 1rem;">
       ${UI.escapeHtml(characterName)}'s Luck reached 0. Should this defeat leave a lasting mark? If so, fill box ${boxNum} of 3 with a tag.
     </p>
-    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
-      <button class="btn btn-secondary" onclick="StatusTrackSystem.fillBox(${characterId}, '${SUGGESTED_TAGS.physical[filled]}', '${UI.escapeHtml(characterName)}')">
-        Physical: ${SUGGESTED_TAGS.physical[filled]}
-      </button>
-      <button class="btn btn-secondary" onclick="StatusTrackSystem.fillBox(${characterId}, '${SUGGESTED_TAGS.social[filled]}', '${UI.escapeHtml(characterName)}')">
-        Social: ${SUGGESTED_TAGS.social[filled]}
-      </button>
-      <button class="btn btn-secondary" onclick="StatusTrackSystem.fillBox(${characterId}, '${SUGGESTED_TAGS.psychological[filled]}', '${UI.escapeHtml(characterName)}')">
-        Psychological: ${SUGGESTED_TAGS.psychological[filled]}
-      </button>
+    <div class="btn-stack mb-2">
+      ${Object.keys(SUGGESTED_TAGS).map(category => `
+        <button class="btn btn-secondary" onclick="StatusTrackSystem.fillSuggested(${characterId}, '${category}')">
+          ${category[0].toUpperCase() + category.slice(1)}: ${SUGGESTED_TAGS[category][filled]}
+        </button>
+      `).join('')}
     </div>
     <div class="form-group">
       <label>Or write your own tag</label>
       <input type="text" id="status-track-custom-tag" placeholder="e.g., Compromised">
     </div>
-    <button class="btn btn-outline" onclick="StatusTrackSystem.fillBoxCustom(${characterId}, '${UI.escapeHtml(characterName)}')" style="width: 100%; margin-bottom: 0.5rem;">
-      Use Custom Tag
-    </button>
-    <button class="btn btn-outline" onclick="closeModal()" style="width: 100%;">
-      No Lasting Mark
-    </button>
+    <div class="btn-stack">
+      <button class="btn btn-outline" onclick="StatusTrackSystem.fillBoxCustom(${characterId})">Use Custom Tag</button>
+      <button class="btn btn-outline" onclick="closeModal()">No Lasting Mark</button>
+    </div>
   `);
 }
 
-export async function fillBox(characterId, tag, characterName = '') {
+// Handlers receive only the character id and a fixed category, never
+// names or tags: user text inside an inline onclick breaks on quotes.
+export async function fillBox(characterId, tag) {
   await LonerDB.fillStatusTrackBox(characterId, tag);
+  const character = await LonerDB.getCharacter(characterId);
   UI.closeModal();
-  UI.showAlert(`${characterName ? characterName + ' - ' : ''}Status Track: ${tag}`, 'info');
+  UI.showAlert(`${character ? character.name + ' - ' : ''}Status Track: ${tag}`, 'info');
 }
 
-export async function fillBoxCustom(characterId, characterName = '') {
+export async function fillSuggested(characterId, category) {
+  const track = await LonerDB.getStatusTrackForCharacter(characterId);
+  const filled = track ? track.boxes.length : 0;
+  await fillBox(characterId, SUGGESTED_TAGS[category][filled]);
+}
+
+export async function fillBoxCustom(characterId) {
   const input = document.getElementById('status-track-custom-tag');
   const tag = (input.value || '').trim();
   if (!tag) {
     UI.showAlert('Enter a tag first', 'error');
     return;
   }
-  await fillBox(characterId, tag, characterName);
+  await fillBox(characterId, tag);
 }
 
 /**
@@ -95,6 +98,7 @@ export async function getActiveTag(characterId) {
 export const StatusTrackSystem = {
   showFillBoxPrompt,
   fillBox,
+  fillSuggested,
   fillBoxCustom,
   recover,
   getActiveTag

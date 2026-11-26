@@ -174,10 +174,12 @@ export function formatTime(date) {
 /**
  * Escape HTML to prevent XSS
  */
+// Escapes quotes too, so the result is safe inside attribute values
+// (value="...", title="..."), not just element text.
+const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+
 export function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
+  return String(text ?? '').replace(/[&<>"']/g, ch => HTML_ESCAPES[ch]);
 }
 
 /**
