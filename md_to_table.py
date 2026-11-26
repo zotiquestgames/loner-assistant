@@ -38,7 +38,7 @@ This will:
      target file is already registered, its existing id/name are reused so the
      supplement id stays stable (character tables land in the SAME supplement).
   3. Add the new file to sw.js's PRECACHE_URLS so it works offline too,
-     and bump CACHE_VERSION so installed PWAs pick it up.
+     and recompute CACHE_VERSION so installed PWAs pick it up.
 
 Loner 4e sources (Geared Towards Loner, Loner Files) put the character
 tables one level down: "## Characters" > "### Character Traits" >
@@ -566,16 +566,15 @@ def update_service_worker(relative_file_path):
 
 
 def bump_cache_version():
-    """Bump CACHE_VERSION once per run, so installed PWAs fetch the new data."""
-    text = SW_FILE.read_text(encoding='utf-8')
-    version_match = re.search(r"const CACHE_VERSION = 'loner-v(\d+)';", text)
-    if not version_match:
-        print("  Warning: CACHE_VERSION not found in sw.js; bump it by hand")
-        return
-    next_version = int(version_match.group(1)) + 1
-    text = text.replace(version_match.group(0), f"const CACHE_VERSION = 'loner-v{next_version}';")
-    write_matching_newline(SW_FILE, text)
-    print(f"  Bumped sw.js CACHE_VERSION to loner-v{next_version}")
+    """Recompute CACHE_VERSION (a hash of the precached files), so installed
+    PWAs fetch the new data. Same as `npm run cache-version`."""
+    import subprocess
+    try:
+        result = subprocess.run(['node', 'scripts/cache-version.js', '--write'],
+                                cwd=REPO_ROOT, capture_output=True, text=True, check=True)
+        print(f"  {result.stdout.strip()}")
+    except (OSError, subprocess.CalledProcessError) as e:
+        print(f"  Warning: could not update CACHE_VERSION ({e}); run `npm run cache-version`")
 
 
 def write_supplement(out_dir, relative_dir, filename, supplement_id, supplement_name,
