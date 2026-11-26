@@ -6,6 +6,8 @@ All notable changes to Loner Assistant are documented here.
 
 ### Added
 
+- **Mech Requiem Get Inspired flavor**, now readable from the book (loner
+  PR 50 gave its Verbs, Adjectives and Nouns table titles).
 - **Six more Geared Towards Loner supplements**: Celtic Fantasy,
   Dungeoneer, Mech Requiem, Prime Time Hero, Rocketpunk and Spacer, with
   their random tables and, where the book has them, Get Inspired flavors.
