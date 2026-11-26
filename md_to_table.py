@@ -262,11 +262,15 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
                 continue
 
             table_id = slugify(table_name).replace('-', '_')
-            if level == 4 and parent and (table_id in supplement_tables or table_id in inspiration_tables):
+            if table_id in supplement_tables or table_id in inspiration_tables:
                 # Same name as an earlier table (Spacecraft Traits > Concepts
-                # after Character Traits > Concepts): keep both.
-                table_id = slugify(parent + ' ' + table_name).replace('-', '_')
-                table_name = f'{parent}: {table_name}'
+                # after Character Traits > Concepts): keep both, and never let
+                # the later one replace a character table.
+                prefix = parent if level == 4 and parent else section_title
+                print(f"  Warning: '{table_name}' repeats an earlier table name; "
+                      f"kept as '{prefix}: {table_name}' (check the heading levels in the source)")
+                table_id = slugify(prefix + ' ' + table_name).replace('-', '_')
+                table_name = f'{prefix}: {table_name}'
 
             if table_id in INSPIRATION_TABLE_NAMES:
                 inspiration_tables[table_id] = {
