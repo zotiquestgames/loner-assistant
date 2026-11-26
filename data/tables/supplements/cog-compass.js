@@ -306,9 +306,9 @@ export default {
         ['Siege Weapons', 'Wilderness Survival Kits', 'Elite Guard Quarters', 'Massive Storage', 'Command Center', 'High-Atmosphere Communications'],
       ]
     },
-    airships_frailties: {
-      id: 'airships_frailties',
-      name: 'Airships: Frailties',
+    airship_traits_frailties: {
+      id: 'airship_traits_frailties',
+      name: 'Airship Traits: Frailties',
       category: 'random-tables',
       rollType: '2d6',
       entries: [
@@ -320,9 +320,9 @@ export default {
         ['Siege Weapon Recoil', 'Struggles in Wilderness', 'Known Royal Allegiance', 'Overloaded Weight Capacity', 'Rebellious Crew', 'Communication Blackouts'],
       ]
     },
-    frailties_gear: {
-      id: 'frailties_gear',
-      name: 'Frailties: Gear',
+    airship_traits_gear: {
+      id: 'airship_traits_gear',
+      name: 'Airship Traits: Gear',
       category: 'random-tables',
       rollType: '2d6',
       entries: [
