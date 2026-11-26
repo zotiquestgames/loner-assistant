@@ -279,6 +279,30 @@ export const supplements = [
     enabled: true,
     flavorOf: 'get-inspired',
     description: 'Get Inspired flavor themed for Urban Fantasy adventures'
+  },
+  {
+    id: 'character-emulator',
+    name: 'Character Emulator',
+    file: 'tables/supplements/character-emulator.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Quick-Build NPC (Concept, Agenda, Disposition), Voice, Faction Concept, and Cast Twist tables'
+  },
+  {
+    id: 'character-builders-guide',
+    name: "Character Builder's Guide",
+    file: 'tables/supplements/character-builders-guide.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Lifepath, NPC depth, relationship arc, memory, and interpersonal scene frame tables'
+  },
+  {
+    id: 'the-path-not-taken',
+    name: 'The Path Not Taken',
+    file: 'tables/supplements/the-path-not-taken.js',
+    version: '1.0',
+    enabled: true,
+    description: 'Twist effects for time-travel play'
   }
   // Template for adding new supplements:
   // {

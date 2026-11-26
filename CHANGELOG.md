@@ -23,6 +23,13 @@ All notable changes to Loner Assistant are documented here.
   for updating NPCs, Locations, and Threads.
 - **"Build the Setup" premise table** (5W+H) in the Adventure Maker / Get
   Inspired tables.
+- **Tables from three Loner supplements**, rollable from Adventure Tables:
+  - *Character Emulator*: NPC Concept, Agenda, Disposition (Stance ×
+    Awareness), Voice, Faction Concept, and Cast Twists.
+  - *Character Builder's Guide*: the seven Lifepath tables, What They Want,
+    the three Relationship Arc tables, Memory Triggers, False Memory, and
+    the four Interpersonal Scene Frames.
+  - *The Path Not Taken*: Time Twist Effects.
 
 ### Changed
 
