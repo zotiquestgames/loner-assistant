@@ -1,11 +1,11 @@
 /**
- * LONER ASSISTANT v2.0 - Oracle & Dice Rolling
+ * LONER ASSISTANT v2.1 - Oracle & Dice Rolling
  *
  * Handles all dice rolling and oracle consultation logic
  */
 
 import { getState } from './state.js';
-import { updateTwistCounter as dbUpdateTwistCounter, getNPCsForCampaign, updateNPC, getCharacter } from './db/database.js';
+import { updateCampaignTwistCounter, getNPCsForCampaign, updateNPC, getCharacter, updateCharacterLuck } from './db/database.js';
 import { showAlert } from './toast.js';
 import { showModal, closeModal, escapeHtml } from './ui.js';
 import * as Editor from './editor.js';
@@ -193,10 +193,10 @@ export function updateTwistCounter() {
     }
   }
 
-  // SAVE to database
+  // SAVE to database (campaign-level, so it persists across sessions)
   const state = getState();
-  if (state.sessionId) {
-    dbUpdateTwistCounter(state.sessionId, currentTwistCounter);
+  if (state.campaignId) {
+    updateCampaignTwistCounter(state.campaignId, currentTwistCounter);
   }
 }
 
@@ -462,15 +462,26 @@ let inConflict = false;
 let characterLuck = 6;
 let opponentLuck = 6;
 let opponentName = 'Opponent';
+let conflictCharacterId = null;
 
 export async function startConflict() {
   // Get values from form
   opponentName = document.getElementById('opponent-name').value || 'Opponent';
   opponentLuck = parseInt(document.getElementById('opponent-luck-input').value) || 6;
 
-  // Get character luck from active character
-  // TODO: Get from database when we have active character
-  characterLuck = 6;
+  // Get character luck from the active character, if any
+  conflictCharacterId = getState().characterId;
+  if (conflictCharacterId) {
+    const character = await getCharacter(conflictCharacterId);
+    if (character) {
+      characterLuck = character.luck;
+    } else {
+      conflictCharacterId = null;
+      characterLuck = 6;
+    }
+  } else {
+    characterLuck = 6;
+  }
 
   inConflict = true;
 
@@ -553,6 +564,10 @@ export async function rollConflict() {
       description = 'Failure';
     }
     characterLuck -= damage;
+
+    if (conflictCharacterId) {
+      await updateCharacterLuck(conflictCharacterId, Math.max(0, characterLuck));
+    }
   }
 
   // Log event
@@ -667,12 +682,11 @@ export async function endConflict() {
   // Reset values
   characterLuck = 6;
   opponentLuck = 6;
+  conflictCharacterId = null;
   document.getElementById('opponent-name').value = 'Opponent';
   document.getElementById('opponent-luck-input').value = 6;
 
   showAlert('Conflict ended', 'info');
-
-  // TODO: Update character luck in database
 }
 
 /**

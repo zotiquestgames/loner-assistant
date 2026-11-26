@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Main Application Controller
+ * LONER ASSISTANT v2.1 - Main Application Controller
  *
  * This is the app's single ES module entry point (loaded from index.html
  * via <script type="module">). It:
@@ -26,6 +26,7 @@ import { ManualSystem } from './manual.js';
 import { ExportImportSystem } from './export-import.js';
 import { CampaignManager } from './campaigns.js';
 import { CharacterManager } from './characters.js';
+import { CharacterGenerator } from './character-generator.js';
 import { NPCManager, showNPCPanel, showNewNPCForm } from './npcs.js';
 import { LocationManager, showLocationPanel, showNewLocationForm } from './locations.js';
 import { ThreadManager, showThreadPanel, showNewThreadForm } from './threads.js';
@@ -50,7 +51,7 @@ import {
  * Initialize the application when page loads
  */
 document.addEventListener('DOMContentLoaded', async function () {
-  console.log('🎲 Loner Assistant v2.0 starting...');
+  console.log('🎲 Loner Assistant v2.1 starting...');
 
   try {
     // 1. Initialize UI first (doesn't need database)
@@ -254,6 +255,7 @@ function exposeCuratedGlobals() {
   window.ExportImportSystem = ExportImportSystem;
   window.CampaignManager = CampaignManager;
   window.CharacterManager = CharacterManager;
+  window.CharacterGenerator = CharacterGenerator;
   window.NPCManager = NPCManager;
   window.LocationManager = LocationManager;
   window.ThreadManager = ThreadManager;

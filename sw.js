@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Service Worker
+ * LONER ASSISTANT v2.2 - Service Worker
  *
  * Hand-written, Cache API only (no Workbox, no build step). Precaches the
  * full app shell (HTML/CSS/JS modules/table data/vendored libs/fonts/icons)
@@ -14,7 +14,7 @@
  * registerServiceWorker() nudges them to do, but only if this bumps).
  */
 
-const CACHE_VERSION = 'loner-v9';
+const CACHE_VERSION = 'loner-v34';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -37,10 +37,11 @@ const PRECACHE_URLS = [
   './assets/fonts/dicier-round-heavy.otf',
   './assets/fonts/dicier-round-light.otf',
 
-  './assets/icons-pwa/icon-192.png',
-  './assets/icons-pwa/icon-512.png',
-  './assets/icons-pwa/icon-maskable-512.png',
-  './assets/icons-pwa/apple-touch-icon.png',
+  './assets/logo.svg',
+  './assets/icons-pwa/icon-192.png?v=3',
+  './assets/icons-pwa/icon-512.png?v=3',
+  './assets/icons-pwa/icon-maskable-512.png?v=3',
+  './assets/icons-pwa/apple-touch-icon.png?v=3',
 
   './js/main.js',
   './js/state.js',
@@ -58,6 +59,7 @@ const PRECACHE_URLS = [
   './js/export-import.js',
   './js/campaigns.js',
   './js/characters.js',
+  './js/character-generator.js',
   './js/npcs.js',
   './js/locations.js',
   './js/threads.js',
@@ -78,7 +80,29 @@ const PRECACHE_URLS = [
   './data/tables/flavors/kwaidan-inspired.js',
   './data/tables/supplements/cog-compass.js',
   './data/tables/supplements/cozy-fantasy.js',
-  './data/tables/supplements/kwaidan.js'
+  './data/tables/supplements/kwaidan.js',
+  './data/tables/supplements/arabian-nights.js',
+  './data/tables/flavors/arabian-nights-inspired.js',
+  './data/tables/supplements/legends-of-camelot.js',
+  './data/tables/flavors/legends-of-camelot-inspired.js',
+  './data/tables/supplements/cthulhu.js',
+  './data/tables/flavors/cthulhu-inspired.js',
+  './data/tables/supplements/galaxy-drifter.js',
+  './data/tables/flavors/galaxy-drifter-inspired.js',
+  './data/tables/supplements/paranormal-files.js',
+  './data/tables/flavors/paranormal-files-inspired.js',
+  './data/tables/supplements/the-threads-of-saga.js',
+  './data/tables/flavors/the-threads-of-saga-inspired.js',
+  './data/tables/supplements/pulp-adventures.js',
+  './data/tables/flavors/pulp-adventures-inspired.js',
+  './data/tables/supplements/pulp-heroes.js',
+  './data/tables/flavors/pulp-heroes-inspired.js',
+  './data/tables/supplements/savage-blades-of-xylandra.js',
+  './data/tables/flavors/savage-blades-of-xylandra-inspired.js',
+  './data/tables/supplements/steel-and-sorcery.js',
+  './data/tables/flavors/steel-and-sorcery-inspired.js',
+  './data/tables/supplements/urban-fantasy.js',
+  './data/tables/flavors/urban-fantasy-inspired.js'
 ];
 
 self.addEventListener('install', (event) => {

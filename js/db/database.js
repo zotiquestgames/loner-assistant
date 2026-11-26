@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Database Setup
+ * LONER ASSISTANT v2.1 - Database Setup
  *
  * This file handles ALL data storage using Dexie.js (IndexedDB wrapper).
  * Dexie itself is loaded as a classic script (lib/dexie.min.js) before this
@@ -88,7 +88,8 @@ export async function createCampaign(name, description = '') {
     description: description,
     createdAt: new Date(),
     lastPlayed: new Date(),
-    archived: false
+    archived: false,
+    twistCounter: 0 // Story-wide tension gauge, persists across sessions
   });
   return id;
 }
@@ -120,6 +121,13 @@ export async function getCampaign(id) {
 export async function updateCampaignLastPlayed(campaignId) {
   await db.campaigns.update(campaignId, {
     lastPlayed: new Date()
+  });
+}
+
+// Update the campaign-level twist counter (persists across all sessions)
+export async function updateCampaignTwistCounter(campaignId, counter) {
+  await db.campaigns.update(campaignId, {
+    twistCounter: counter
   });
 }
 
@@ -282,13 +290,19 @@ export async function setActiveCharacter(id) {
  * ==============================================
  */
 
-export async function createNPC(campaignId, name, description = '', tags = []) {
+// NPCs use the same core Loner traits as characters (concept, skills,
+// frailty, gear) plus an NPC-specific relationship and free-form notes.
+export async function createNPC(campaignId, data = {}) {
   const id = await db.npcs.add({
     campaignId: campaignId,
-    name: name,
-    description: description,
-    tags: tags, // e.g., ['ally', 'merchant', 'suspicious']
-    relationship: 'neutral', // 'ally', 'enemy', 'neutral'
+    name: data.name || 'New NPC',
+    concept: data.concept || '',
+    skills: data.skills || [], // Array of skill strings
+    frailty: data.frailty || '',
+    gear: data.gear || [], // Array of gear strings
+    description: data.description || '', // Free-form notes
+    relationship: data.relationship || 'neutral', // 'ally', 'enemy', 'neutral'
+    tags: data.tags || [], // Legacy free tags (kept for older/imported NPCs)
     createdAt: new Date()
   });
   return id;

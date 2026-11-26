@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Character Management
+ * LONER ASSISTANT v2.1 - Character Management
  *
  * All character-related functions
  */
@@ -25,12 +25,27 @@ export function displayActiveCharacter(character) {
     <div style="margin-top: 0.5rem;">
       <strong>Luck:</strong> ${character.luck}/${character.maxLuck}
     </div>
-    ${character.skills.length > 0 ? `
+    ${(character.skills || []).length > 0 ? `
       <div style="margin-top: 0.5rem;">
         <strong>Skills:</strong><br>
         <div style="display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.25rem;">
           ${character.skills.map(skill => `
             <span class="tag-chip">${UI.escapeHtml(skill)}</span>
+          `).join('')}
+        </div>
+      </div>
+    ` : ''}
+    ${character.frailty ? `
+      <div style="margin-top: 0.5rem;">
+        <strong>Frailty:</strong> ${UI.escapeHtml(character.frailty)}
+      </div>
+    ` : ''}
+    ${(character.gear || []).length > 0 ? `
+      <div style="margin-top: 0.5rem;">
+        <strong>Gear:</strong><br>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.25rem;">
+          ${character.gear.map(item => `
+            <span class="tag-chip">${UI.escapeHtml(item)}</span>
           `).join('')}
         </div>
       </div>
@@ -44,28 +59,33 @@ export function displayActiveCharacter(character) {
 /**
  * Show new character form
  */
-export function showNewCharacterForm() {
+export function showNewCharacterForm(prefill = null) {
+  const p = prefill || {};
+  const v = (s) => UI.escapeHtml(s || '');
+  const skillsVal = Array.isArray(p.skills) ? p.skills.join(', ') : (p.skills || '');
+  const gearVal = Array.isArray(p.gear) ? p.gear.join(', ') : (p.gear || '');
+
   const formHTML = `
     <form id="new-character-form">
       <div class="form-group">
         <label>Name *</label>
-        <input type="text" id="char-name" required placeholder="Character name">
+        <input type="text" id="char-name" required placeholder="Character name" value="${v(p.name)}">
       </div>
       <div class="form-group">
         <label>Concept</label>
-        <input type="text" id="char-concept" placeholder="e.g., Street-smart hacker">
+        <input type="text" id="char-concept" placeholder="e.g., Street-smart hacker" value="${v(p.concept)}">
       </div>
       <div class="form-group">
         <label>Skills (comma-separated)</label>
-        <input type="text" id="char-skills" placeholder="Hacking, Stealth">
+        <input type="text" id="char-skills" placeholder="Hacking, Stealth" value="${v(skillsVal)}">
       </div>
       <div class="form-group">
         <label>Frailty</label>
-        <input type="text" id="char-frailty" placeholder="Haunted by past">
+        <input type="text" id="char-frailty" placeholder="Haunted by past" value="${v(p.frailty)}">
       </div>
       <div class="form-group">
         <label>Gear (comma-separated)</label>
-        <input type="text" id="char-gear" placeholder="Cyberdeck, Lockpicks">
+        <input type="text" id="char-gear" placeholder="Cyberdeck, Lockpicks" value="${v(gearVal)}">
       </div>
       <div class="form-group">
         <label>Goal & Motive</label>

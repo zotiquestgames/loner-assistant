@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Note Editor Management
+ * LONER ASSISTANT v2.1 - Note Editor Management
  *
  * All editor-related functions (Quill editor). Quill itself is loaded
  * as a classic script (lib/quill.min.js) before this module runs, so
@@ -59,9 +59,15 @@ export async function loadSession(sessionId) {
       quillEditor.setText('');
     }
 
-    // Restore twist counter (without re-saving it back to the DB)
-    if (session.twistCounter !== undefined) {
-      setTwistCounter(session.twistCounter);
+    // Restore the twist counter (without re-saving it back to the DB).
+    // The counter is now campaign-scoped so it persists across sessions;
+    // fall back to any legacy per-session value for pre-existing data.
+    const campaign = session.campaignId ? await getCampaign(session.campaignId) : null;
+    const twistCounter = campaign && campaign.twistCounter !== undefined
+      ? campaign.twistCounter
+      : session.twistCounter;
+    if (twistCounter !== undefined) {
+      setTwistCounter(twistCounter);
     }
 
     // Restore the current scene frame (Where/Who/What)

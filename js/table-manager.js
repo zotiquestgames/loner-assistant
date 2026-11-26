@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Table Manager UI
+ * LONER ASSISTANT v2.1 - Table Manager UI
  *
  * Interface for browsing and rolling tables
  */
@@ -293,6 +293,8 @@ export const TableManager = {
       selector.innerHTML = '<option value="">No supplements available</option>';
       return;
     }
+
+    supplements.sort((a, b) => a.name.localeCompare(b.name));
 
     // Populate dropdown
     selector.innerHTML = '<option value="">-- Select Supplement --</option>' +

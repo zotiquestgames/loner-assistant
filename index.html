@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loner Assistant v2.0</title>
+    <title>Loner Assistant v2.2</title>
     <meta name="description" content="A companion tool for the Loner solo RPG system">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lonerassistant.zotiquestgames.com">
+    <meta property="og:title" content="Loner Assistant">
+    <meta property="og:description" content="A companion tool for the Loner solo RPG system">
+    <meta property="og:image" content="https://lonerassistant.zotiquestgames.com/assets/social-card.png?v=1">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loner Assistant">
+    <meta name="twitter:description" content="A companion tool for the Loner solo RPG system">
+    <meta name="twitter:image" content="https://lonerassistant.zotiquestgames.com/assets/social-card.png?v=1">
+
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#241f1a">
-    <link rel="icon" href="assets/icons-pwa/icon-192.png">
-    <link rel="apple-touch-icon" href="assets/icons-pwa/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=2">
+    <link rel="icon" href="assets/icons-pwa/icon-192.png?v=3">
+    <link rel="apple-touch-icon" href="assets/icons-pwa/apple-touch-icon.png?v=3">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Loner">
@@ -18,8 +33,22 @@
     <!-- Top Navigation -->
     <nav class="navbar">
         <div class="nav-brand">
-            <h1>Loner Assistant</h1>
-            <span class="version">v2.0</span>
+            <svg class="brand-logo" viewBox="0 0 181.9962 60.307293" role="img" aria-label="Loner" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <rect x="211.2341" y="324.97552" width="41.976002" height="24.373165" id="rect360" />
+              </defs>
+              <g transform="translate(-12.432544,-74.347066)">
+                <text
+                   xml:space="preserve"
+                   transform="matrix(4.4808211,0,0,4.4808211,-932.26338,-1397.1051)"
+                   fill="currentColor"
+                   style="font-size:16px;line-height:1.25;font-family:HamletOrNot;white-space:pre;shape-inside:url(#rect360)"><tspan
+                     x="211.23438"
+                     y="340.63372"><tspan style="font-family:Takota">LONER</tspan></tspan></text>
+              </g>
+            </svg>
+            <span class="brand-suffix">Assistant</span>
+            <span class="version">v2.2</span>
         </div>
         <button class="hamburger-menu" onclick="toggleNavMenu()" title="Toggle menu">
           <span></span>
@@ -96,6 +125,9 @@
                             <button class="collapse-toggle" title="Collapse/Expand">▼</button>
                         </div>
                         <div class="panel-content">
+                            <button class="btn btn-sm btn-primary" onclick="CharacterGenerator.open()" style="width: 100%; margin-bottom: var(--space-sm);">
+                                🎲 Generate Character
+                            </button>
                             <div id="active-character-info">
                                 <p class="text-muted">No character selected</p>
                             </div>
@@ -542,9 +574,14 @@
                     <h2 style="margin: 0;">Characters</h2>
                     <button class="help-button" onclick="HelpSystem.show('characters')" title="Show help for Characters">?</button>
                 </div>
-                <button class="btn btn-primary" onclick="showNewCharacterForm()">
-                    + New Character
-                </button>
+                <div style="display: flex; gap: var(--space-sm);">
+                    <button class="btn btn-secondary" onclick="CharacterGenerator.open()" title="Roll a character from a supplement's tables">
+                        🎲 Generate
+                    </button>
+                    <button class="btn btn-primary" onclick="showNewCharacterForm()">
+                        + New Character
+                    </button>
+                </div>
             </div>
             <div id="characters-list" class="grid-list"></div>
         </div>
@@ -604,9 +641,14 @@
               <h2 style="margin: 0;">NPCs</h2>
               <button class="help-button" onclick="HelpSystem.show('npcs')" title="Show help for NPCs">?</button>
             </div>
-            <button class="btn btn-primary" onclick="showNewNPCForm()">
-              + New NPC
-            </button>
+            <div style="display: flex; gap: var(--space-sm);">
+              <button class="btn btn-secondary" onclick="CharacterGenerator.open('npc')" title="Roll an NPC from a supplement's tables">
+                🎲 Generate
+              </button>
+              <button class="btn btn-primary" onclick="showNewNPCForm()">
+                + New NPC
+              </button>
+            </div>
           </div>
           <div id="npcs-list" class="grid-list"></div>
         </div>

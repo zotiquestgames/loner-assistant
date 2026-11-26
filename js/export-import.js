@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.0 - Export/Import System
+ * LONER ASSISTANT v2.1 - Export/Import System
  *
  * Handles exporting and importing of:
  * - Individual sessions
@@ -254,7 +254,7 @@ export const ExportImportSystem = {
       if (data.npcs && data.npcs.length > 0) {
         console.log(`📥 Importing ${data.npcs.length} NPCs...`);
         for (const npc of data.npcs) {
-          await createNPC(campaignId, npc.name, npc.description || '', npc.tags || '');
+          await createNPC(campaignId, npc);
         }
         console.log('✅ NPCs imported');
       }
@@ -358,7 +358,7 @@ export const ExportImportSystem = {
       // Import NPCs, Locations, Threads
       if (data.npcs) {
         for (const npc of data.npcs) {
-          await createNPC(campaignId, npc.name, npc.description || '', npc.tags || '');
+          await createNPC(campaignId, npc);
         }
       }
 
