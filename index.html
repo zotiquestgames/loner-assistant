@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loner Assistant v2.3</title>
+    <title>Loner Assistant v2.4</title>
     <meta name="description" content="A companion tool for the Loner solo RPG system">
 
     <meta property="og:type" content="website">
@@ -48,7 +48,7 @@
               </g>
             </svg>
             <span class="brand-suffix">Assistant</span>
-            <span class="version">v2.3</span>
+            <span class="version">v2.4</span>
         </div>
         <button class="hamburger-menu" onclick="toggleNavMenu()" title="Toggle menu">
           <span></span>
@@ -408,6 +408,19 @@
                         </div>
                     </div>
 
+                    <!-- Cinematic Action (optional module) -->
+                    <div class="panel collapsed" data-panel-id="cinematic" data-mobile-order="5">
+                        <div class="panel-title" onclick="UI.togglePanel('cinematic'); ActionSystem.render();">
+                            <h3>Cinematic Action</h3>
+                            <button class="collapse-toggle" title="Collapse/Expand">▼</button>
+                        </div>
+                        <div class="panel-content">
+                            <div id="cinematic-content">
+                                <p class="text-muted" style="font-size: 0.85rem;">Action Points, chases, and scene intensity.</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Leverage (optional module) -->
                     <div class="panel collapsed" data-panel-id="leverage" data-mobile-order="12">
                         <div class="panel-title" onclick="UI.togglePanel('leverage'); LeverageSystem.displayLeverage();">
@@ -434,6 +447,17 @@
                             <div id="challenge-tracks-list">
                                 <p class="text-muted" style="font-size: 0.85rem; text-align: center;">No challenge tracks yet</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Travel (optional module: The Path Not Taken) -->
+                    <div class="panel collapsed" data-panel-id="temporal" data-mobile-order="12">
+                        <div class="panel-title" onclick="UI.togglePanel('temporal'); TimeSystem.render();">
+                            <h3>Time Travel</h3>
+                            <button class="collapse-toggle" title="Collapse/Expand">▼</button>
+                        </div>
+                        <div class="panel-content">
+                            <div id="temporal-content"></div>
                         </div>
                     </div>
 
@@ -705,7 +729,7 @@
     <!-- Footer -->
     <footer class="app-footer">
         <p>
-            <strong>Loner</strong> © 2021-2025 Roberto Bisceglie.
+            <strong>Loner</strong> © 2021-2026 Roberto Bisceglie.
             This app is licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>.
         </p>
     </footer>

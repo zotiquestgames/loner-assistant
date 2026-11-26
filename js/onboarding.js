@@ -48,6 +48,14 @@ export const HelpSystem = {
           content: 'Optional modules. On a "Yes, and...", click "Bank as Leverage" to save it: spend it later as Advantage, or to soften a No into a "No, but...". Challenge Tracks (4 or 6 boxes) follow long pursuits: +2 on "Yes, and...", +1 on Yes or "Yes, but...", -1 on No or "No, and...". Erasing a box while holding Leverage lets you spend the Leverage instead and keep the box.'
         },
         {
+          title: 'Cinematic Action',
+          content: 'Optional module. Every conflict or chase gives you 3 Action Points: Gain Advantage, Cancel a Failure (reroll a No), Avoid a Consequence, or Do the Impossible (at a price). Push Yourself recovers 3 AP once per session. Chases resolve in up to three questions on a Distant / Close / Caught track. Intensity tracks Low / Medium / High scenes: Twists shift it, and three High scenes in a row force a calmer one.'
+        },
+        {
+          title: 'Time Travel',
+          content: 'Optional module from The Path Not Taken. Set a Memory Tag, then loop (Checkpoints, resets with Wear & Tear, Push Ahead) or leap (Fixed Points, Leap Nodes with divergences, Paradox Stress ✶, timeline collapse). "Open Time-Web" draws the whole timeline. State is kept per campaign.'
+        },
+        {
           title: 'Get Inspired',
           content: 'Generate random, thematic prompts for inspiration. Choose a flavor/theme that matches your story tone, then click "Random Prompt" to get an idea. Keyboard shortcut: Alt+T'
         },
@@ -243,7 +251,7 @@ export const HelpSystem = {
         },
         {
           title: 'Custom Tables',
-          content: 'Create your own tables for custom content. Define entries, then roll them like any other table. Perfect for house rules or supplement-specific mechanics.'
+          content: 'Create your own tables for custom content. Define entries, then roll them like any other table. Perfect for house rules or supplement-specific mechanics. "Start from a template" fills in the World Builder\'s Guide D66 Random Encounters or Story Twists template: rewrite each entry for your setting.'
         },
         {
           title: 'Auto-Insert',

@@ -47,6 +47,9 @@ export async function registerDoubles() {
   }
 }
 
+// Last Oracle panel result, so an Action Point can cancel a failure.
+export let lastOracleResult = null;
+
 export async function rollOracle() {
   // Get modifier selection
   const modifier = document.querySelector('input[name="modifier"]:checked').value;
@@ -55,6 +58,7 @@ export async function rollOracle() {
 
   // Interpret result
   const result = interpretOracleRoll(chanceDice, riskDice);
+  lastOracleResult = result;
 
   // Display result
   displayOracleResult(result);
@@ -300,6 +304,9 @@ export async function triggerTwist() {
   // A Twist means the fiction has moved on - any held Leverage expires
   await clearLeverage();
 
+  // Cinematic Action: a Twist sets the next scene's intensity
+  await window.ActionSystem?.onTwist();
+
   // Show alert
   showAlert('Twist triggered! Check the twist panel.', 'success');
 }
@@ -357,6 +364,8 @@ export async function rollScene() {
       roll: roll
     });
   }
+
+  await window.ActionSystem?.onSceneTransition();
 
   // Meanwhile is procedural, not just atmospheric (Loner 4e): the world
   // acts while the Protagonist is offstage. Run both steps.
@@ -498,6 +507,7 @@ export async function startConflict() {
   }
 
   inConflict = true;
+  window.ActionSystem?.startPool('conflict');
 
   // Show active conflict UI, hide setup
   document.getElementById('conflict-setup').classList.add('hidden');
@@ -685,6 +695,7 @@ export async function endConflict() {
   }
 
   inConflict = false;
+  window.ActionSystem?.endPool('conflict');
 
   // Show setup, hide active
   document.getElementById('conflict-setup').classList.remove('hidden');

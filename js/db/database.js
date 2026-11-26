@@ -117,6 +117,10 @@ export async function getCampaign(id) {
   return await db.campaigns.get(id);
 }
 
+export async function updateCampaign(id, data) {
+  await db.campaigns.update(id, data);
+}
+
 // Update campaign's last played date
 export async function updateCampaignLastPlayed(campaignId) {
   await db.campaigns.update(campaignId, {
@@ -735,4 +739,8 @@ export async function clearStatusTrackBox(characterId) {
 // leverage is { description } or null
 export async function updateSessionLeverage(sessionId, leverage) {
   await db.sessions.update(sessionId, { leverage });
+}
+
+export async function updateSession(sessionId, data) {
+  await db.sessions.update(sessionId, data);
 }

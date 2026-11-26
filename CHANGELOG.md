@@ -2,6 +2,46 @@
 
 All notable changes to Loner Assistant are documented here.
 
+## v2.4.0 — 2026-11-26
+
+### Added
+
+- **Cinematic Action** (optional module, new Play panel):
+  - *Action Points*: 3 per conflict or chase. Gain Advantage (respecting
+    the dice cap: it cancels Disadvantage, and adds nothing on top of
+    Advantage), Cancel a Failure (reroll the last Oracle or chase No),
+    Avoid a Consequence, Do the Impossible (with its narrative price), and
+    Push Yourself once per session.
+  - *Chases*: the three-question framework with the optional Distant /
+    Close / Caught track. Action Point Advantage guarantees one step;
+    Do the Impossible puts you at Distant.
+  - *Intensity*: Low / Medium / High per scene, shifted by Twists, with
+    no more than three High scenes in a row.
+- **Time Travel** (optional module from *The Path Not Taken*, new Play
+  panel), kept per campaign:
+  - *Time Loop*: Checkpoints, Loop Counter, Persist List, Wear & Tear on
+    every reset, Push Ahead, the reset ritual, and the Breakthrough /
+    Acceptance / Consumed endings.
+  - *Time Leap*: Fixed Points, Leap Nodes with the three divergence
+    questions and Temporal Drift, Paradox Stress and the Paradox Entity,
+    timeline collapse with the Fallout table, Prime timeline and Paradox
+    Resolution. Checkpoints inside a leap (C#@L#) are supported.
+  - *Time-Web*: the timeline drawn as a graph, with node notes, tags,
+    and the supplement's Oracle prompts.
+- **Custom table templates**: "Start from a template" offers the *World
+  Builder's Guide* D66 Random Encounters and Story Twists templates.
+
+### Changed
+
+- User Manual and Help panels cover the new modules and templates.
+- Footer copyright updated to 2021-2026.
+
+### Fixed
+
+- **Service worker updates could cache stale files.** Precaching now
+  bypasses the browser's HTTP cache, so a new version never stores an
+  old copy of a changed file.
+
 ## v2.3.0 — 2026-11-26
 
 ### Added

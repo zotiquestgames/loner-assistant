@@ -39,6 +39,8 @@ import { StatusTrackSystem } from './status-track.js';
 import { LivingWorld } from './living-world.js';
 import { CastSystem } from './cast.js';
 import { Backstory } from './backstory.js';
+import { ActionSystem } from './action.js';
+import { TimeSystem } from './temporal.js';
 import {
   getState,
   setCurrentCampaign,
@@ -115,6 +117,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 await showEventPanel();
                 await ChallengeTracks.showChallengeTracksPanel();
                 await LeverageSystem.displayLeverage();
+                await ActionSystem.render();
+                await TimeSystem.render();
               }, 500);
             }
           }
@@ -270,6 +274,8 @@ function exposeCuratedGlobals() {
   window.LivingWorld = LivingWorld;
   window.CastSystem = CastSystem;
   window.Backstory = Backstory;
+  window.ActionSystem = ActionSystem;
+  window.TimeSystem = TimeSystem;
 
   // Bare function names referenced directly in markup
   window.showView = UI.showView;

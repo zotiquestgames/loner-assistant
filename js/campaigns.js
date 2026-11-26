@@ -351,6 +351,8 @@ export async function setAsActiveCampaign(campaignId) {
     await showEventPanel();
     await showChallengeTracksPanel();
     await displayLeverage();
+    await window.ActionSystem?.render();
+    await window.TimeSystem?.render();
 
     // Refresh list to show new active state
     await loadCampaignsList();

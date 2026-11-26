@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.3 - Service Worker
+ * LONER ASSISTANT v2.4 - Service Worker
  *
  * Hand-written, Cache API only (no Workbox, no build step). Precaches the
  * full app shell (HTML/CSS/JS modules/table data/vendored libs/fonts/icons)
@@ -14,7 +14,7 @@
  * registerServiceWorker() nudges them to do, but only if this bumps).
  */
 
-const CACHE_VERSION = 'loner-v41';
+const CACHE_VERSION = 'loner-v44';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -71,6 +71,8 @@ const PRECACHE_URLS = [
   './js/living-world.js',
   './js/cast.js',
   './js/backstory.js',
+  './js/action.js',
+  './js/temporal.js',
   './js/db/database.js',
   './js/crud/modal-form.js',
 
@@ -107,13 +109,16 @@ const PRECACHE_URLS = [
   './data/tables/flavors/urban-fantasy-inspired.js',
   './data/tables/supplements/character-emulator.js',
   './data/tables/supplements/character-builders-guide.js',
-  './data/tables/supplements/the-path-not-taken.js'
+  './data/tables/supplements/the-path-not-taken.js',
+  './data/tables/templates/world-builders-guide.js'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(PRECACHE_URLS))
+      // cache: 'reload' skips the browser's HTTP cache, so a new
+      // CACHE_VERSION never precaches a stale copy of a changed file.
+      .then((cache) => cache.addAll(PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' }))))
       .then(() => self.skipWaiting())
   );
 });

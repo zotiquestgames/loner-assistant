@@ -149,6 +149,45 @@ export const ManualSystem = {
         <li>The most recent tag is the active one, shown on the character sheet. Click <strong>Recover</strong> there to clear the last box.</li>
         <li>The Status Track persists between conflicts. It does not replace Luck.</li>
         </ul>
+        <h3 id="cinematic-action">Cinematic Action</h3>
+        <p>From <em>Cinematic Action</em>, in the <strong>Cinematic Action</strong> panel.</p>
+        <h4 id="action-points">Action Points</h4>
+        <ul>
+        <li>You get <strong>3 Action Points</strong> whenever a conflict or a chase starts. They don't refresh until the next one.</li>
+        <li><strong>Gain Advantage</strong> (1 AP): Advantage on the next conflict roll. If you already have Advantage it adds nothing (the app won't spend it); against Disadvantage it cancels it. In a chase, it also moves you one step ahead on the distance track.</li>
+        <li><strong>Cancel a Failure</strong> (1 AP): reroll the last Oracle question, or the last chase question, that came up No. You must keep the new answer. It does not undo a Harm &amp; Luck exchange.</li>
+        <li><strong>Avoid a Consequence</strong> (1 AP): erase a complication from a success or failure.</li>
+        <li><strong>Do the Impossible</strong> (1 AP): roll for something that should automatically fail, and pick its price: a new Frailty, a burned Tag, or escalating circumstances. In a chase it puts you at Distant, even when you were caught.</li>
+        <li><strong>Push Yourself</strong>: once per session, recover 3 AP mid-conflict by taking a serious consequence, burning a tag, or escalating the situation.</li>
+        </ul>
+        <h4 id="chases">Chases</h4>
+        <p>Enter who is chasing you and click <strong>Start Chase</strong>. Resolve it with up to three questions: <em>Can I gain distance?</em>, <em>Do they close in?</em>, and <em>Do I escape?</em> You can type your own wording for each. The distance track moves between Distant, Close, and Caught: a Yes pulls you away, "Yes, but..." holds, a No lets them gain, and "No, and..." puts them right on you. Reaching Caught ends the chase unless you Do the Impossible. Equal dice count toward the Twist Counter.</p>
+        <h4 id="intensity">Intensity</h4>
+        <ul>
+        <li>Set each scene to <strong>Low</strong>, <strong>Medium</strong>, or <strong>High</strong>. The level carries into the next scene until you change it.</li>
+        <li>A Twist during a High or Medium scene makes the next scene High; a Twist during a Low scene keeps it Low.</li>
+        <li>After three High scenes in a row, the next one must be Low or Medium.</li>
+        </ul>
+        <h3 id="time-travel">Time Travel</h3>
+        <p>From <em>The Path Not Taken</em>, in the <strong>Time Travel</strong> panel. Click <strong>Set Up Temporal Play</strong> to choose a <strong>Memory Tag</strong> (it never changes) and up to three <strong>Sensitive Tags</strong> (time may rewrite them). Temporal play belongs to the campaign, so it carries across sessions.</p>
+        <h4 id="time-loop">Time Loop</h4>
+        <ul>
+        <li><strong>Declare Checkpoint</strong> (C1, C2...): the point you return to. Keep a <strong>Persist List</strong> of facts and gear you carry through every reset; mark remembered details as <em>Recalled</em>.</li>
+        <li><strong>Reset Loop</strong> after a death, a major failure, or by choice: the Loop Counter rises and the app rolls <strong>Wear &amp; Tear</strong> (Temporal Migraine, Déjà-Flare, Ghost Echo, or Loop Mastery). Repeating the same solution to the same problem is at Disadvantage.</li>
+        <li><strong>Push Ahead</strong> to a new Checkpoint when you reach a new location or NPC, after three resets, or when the Twist Counter hits 3 and you succeed at the scene's goal. It erases every Temporal Migraine.</li>
+        <li><strong>Reset Ritual</strong>: in a Quiet Scene, ask "Did the ritual take?"; on Yes or "Yes, and..." erase one wear tag.</li>
+        <li>End the loop with <strong>Loop broken?</strong> (a Yes is a Breakthrough: the final Checkpoint becomes a Fixed Point) or <strong>Accept</strong>. Six resets without a new Checkpoint can mean the character is Consumed.</li>
+        </ul>
+        <h4 id="time-leap">Time Leap</h4>
+        <ul>
+        <li><strong>Fixed Point</strong> (F1, F2...): an event no timeline can change, locked by declaration, by completing a milestone, or by choosing to lock a "Yes, and...".</li>
+        <li><strong>Leap</strong> (L1, L2...): jump to an alternate timeline. The app adds Temporal Drift and asks the three divergence questions; each Yes or "No, and..." gives the Leap Node a world tag.</li>
+        <li><strong>+ ✶ Stress</strong> when an action contradicts a Fixed Point (and play at Disadvantage). Three ✶ on a Leap Node bring a <strong>Paradox Entity</strong>.</li>
+        <li><strong>Stable?</strong> asks "Is this timeline stable?": a No adds a ✶; "No, and..." collapses the timeline, rolls the Fallout table, and leaps you to a new node with ✶✶.</li>
+        <li>End the leaps with <strong>Make Prime</strong> (the current timeline becomes Prime, all ✶ are removed) or <strong>Resolve Paradox</strong> (the entity becomes a permanent tag). Either way, no more leaps.</li>
+        </ul>
+        <h4 id="time-web">The Time-Web</h4>
+        <p><strong>Open Time-Web</strong> draws your timeline: ● Checkpoints, ◯ Leap Nodes, □ Fixed Points, solid lines forward, dashed lines for leaps, ↺ with the loop count, and ✶ for Paradox Stress. The ringed node is where you are. Below it, each node lists its description and tags; add tags or move to another node from there. The <strong>Ask</strong> menu holds the supplement's Oracle prompts ("Have I done this before?", "Can I leap now?"...).</p>
         <h2 id="world-building">World Building</h2>
         <p>Keep track of your evolving world using the dedicated tabs:</p>
         <ul>
@@ -204,6 +243,8 @@ export const ManualSystem = {
         <li><strong>Character Builder's Guide</strong>: the seven Lifepath tables, What They Want, Relationship Arcs (Reconciliation, Regret, Betrayal), Memory Triggers, False Memory, and Interpersonal Scene Frames (Confessions, Confrontations, Bonds Deepening, Betrayals Unfolding).</li>
         <li><strong>The Path Not Taken</strong>: Time Twist Effects.</li>
         </ul>
+        <h3 id="custom-tables">Custom Tables</h3>
+        <p>Create your own tables from the <strong>My Tables</strong> panel or the Tools view. When creating one, <strong>Start from a template</strong> offers the two D66 templates from the <em>World Builder's Guide</em> (Random Encounters and Story Twists). Each entry describes what that slot should do: rewrite them for your setting before you play.</p>
         <h2 id="import/export">Import/Export</h2>
         <p>You can export and import your data to back it up or move it between devices.</p>
         <h3 id="note-exporting">Note Exporting</h3>

@@ -170,6 +170,7 @@ export async function switchToSession(sessionId) {
     const session = await LonerDB.getSession(sessionId);
     displayCurrentSession(session);
     await displayLeverage();
+    await window.ActionSystem?.render();
 
     UI.closeModal();
     UI.showAlert('Session switched!', 'success');

@@ -13,6 +13,7 @@ import {
 } from './db/database.js';
 import { showModal, closeModal, showAlert, showView } from './ui.js';
 import { TableSystem } from './tables.js';
+import TEMPLATES from '../data/tables/templates/world-builders-guide.js';
 
 export const CustomTables = {
   currentEditId: null,
@@ -215,8 +216,21 @@ export const CustomTables = {
       entriesText = entries.join('\n');
     }
 
+    const templatePicker = table ? '' : `
+        <div class="form-group">
+          <label>Start from a template (optional)</label>
+          <select onchange="CustomTables.applyTemplate(this.value)">
+            <option value="">Blank table</option>
+            ${TEMPLATES.map(t => `<option value="${t.id}">${t.name}</option>`).join('')}
+          </select>
+          <small class="text-muted" id="template-hint" style="display: block; margin-top: 0.25rem;">
+            Templates from the World Builder's Guide: each entry describes what that slot should do. Rewrite them for your setting.
+          </small>
+        </div>`;
+
     return `
       <form id="custom-table-form">
+        ${templatePicker}
         <div class="form-group">
           <label>Table Name *</label>
           <input type="text" name="name" value="${name}" placeholder="e.g., Random Encounters" required>
@@ -249,6 +263,20 @@ export const CustomTables = {
         </div>
       </form>
     `;
+  },
+
+  /**
+   * Fill the create form from a World Builder's Guide template
+   */
+  applyTemplate(templateId) {
+    const form = document.getElementById('custom-table-form');
+    const template = TEMPLATES.find(t => t.id === templateId);
+    if (!form || !template) return;
+
+    form.name.value = template.name.replace(' (template)', '');
+    form.rollType.value = template.rollType;
+    form.entries.value = template.entries.join('\n');
+    this.updateRollTypeHint(template.rollType);
   },
 
   /**

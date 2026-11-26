@@ -1,4 +1,4 @@
-# Loner Assistant v2.3
+# Loner Assistant v2.4
 
 **Loner Assistant** is a comprehensive, offline-first web companion for the [Loner](https://loner.zotiquestgames.com) solo RPG system. It allows you to manage campaigns, characters, and stories entirely in your browser, with no installation required.
 
@@ -12,6 +12,7 @@
 - **Content Management**: Track NPCs, Locations, Narrative Threads, and Events.
 - **Rich Text Editor**: Integrated session notes with auto-insertion of roll results.
 - **Adventure Tools**: Adventure Maker, Get Inspired prompts, and random tables.
+- **Optional Modules**: Loner 4e's Leverage, Challenge Tracks, and Status Track; Action Points, chases, and scene intensity from *Cinematic Action*; time loops, timeline leaps, and the Time-Web from *The Path Not Taken*.
 - **Offline First**: All data is stored locally in your browser (IndexedDB). No server, no login.
 - **Responsive Design**: Works on desktop, tablet, and mobile.
 
