@@ -109,6 +109,9 @@ export async function rollOracle() {
 export function interpretOracleRoll(chance, risk) {
   let answer, modifier;
 
+  // Check for doubles
+  const isDoubles = (chance === risk);
+
   // Determine base answer
   if (chance > risk) {
     answer = 'Yes';
@@ -118,17 +121,17 @@ export function interpretOracleRoll(chance, risk) {
     answer = 'Yes';
   }
 
-  // Determine modifier
-  if (chance < 4 && risk < 4) {
+  // Determine modifier (doubles always resolve as "but", whatever the
+  // dice values, per the Loner 4e rule that an equal roll is Yes, but...)
+  if (isDoubles) {
+    modifier = 'but';
+  } else if (chance < 4 && risk < 4) {
     modifier = 'but';
   } else if (chance > 3 && risk > 3) {
     modifier = 'and';
   } else {
     modifier = null;
   }
-
-  // Check for doubles
-  const isDoubles = (chance === risk);
 
   return {
     answer,
@@ -679,6 +682,12 @@ export async function endConflict() {
   // Clear result
   document.getElementById('conflict-result').classList.add('hidden');
 
+  // Luck is scoped to a single conflict: reset it fully on the character's
+  // sheet too, not just in memory, so the next conflict starts at full Luck.
+  if (conflictCharacterId) {
+    await updateCharacterLuck(conflictCharacterId, 6);
+  }
+
   // Reset values
   characterLuck = 6;
   opponentLuck = 6;
@@ -703,7 +712,7 @@ export async function rollDeadEnd() {
   if (result.answer.startsWith('Yes')) {
     consecutiveDeadEnds = 0;
     guidance = "Introduce a new element that points forward: an overlooked detail, an unexpected contact, an object that suggests a direction. It need not be obvious. It need only exist.";
-  } else if (result.answer === 'No, but...') {
+  } else if (result.answer === 'No' && result.modifier === 'but') {
     guidance = "The path remains closed, but the Protagonist understands something about why. That understanding may suggest a direction, or it may simply be closure.";
   } else {
     consecutiveDeadEnds++;
