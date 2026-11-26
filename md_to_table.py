@@ -142,6 +142,8 @@ DIVIDER_HEADERS = {'inspiration tables'}
 # Name tables that feed the character generator (vs. world/place names, which
 # are ordinary random tables).
 CHARACTER_NAME_TABLES = {'female_names', 'male_names', 'surnames'}
+# The tables the character generator rolls (js/tables.js generateCharacter).
+CHARACTER_TRAIT_TABLES = {'concepts', 'skills', 'frailties', 'gear'}
 
 
 def classify_domain(section_title):
@@ -273,10 +275,10 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
                 }
                 label = 'Get Inspired'
             else:
-                if domain == 'character':
+                # Only the tables the generator rolls are 'character';
+                # Nicknames, Bynames and the like stay rollable as random tables.
+                if domain in ('character', 'names') and table_id in CHARACTER_TRAIT_TABLES | CHARACTER_NAME_TABLES:
                     category = 'character'
-                elif domain == 'names':
-                    category = 'character' if table_id in CHARACTER_NAME_TABLES else 'random-tables'
                 else:
                     category = 'random-tables'
                 supplement_tables[table_id] = {
@@ -345,6 +347,12 @@ def generate_js(supplement_id, supplement_name, tables, default_category, flavor
 # entries rows are indented deeper and the container braces are indented less -
 # so a non-greedy match to the first one reliably captures a whole block.
 TABLE_BLOCK_RE = re.compile(r'^    (\w+): \{\n.*?\n    \}', re.DOTALL | re.MULTILINE)
+# Container keys that the block pattern also matches in hand-written files.
+NOT_TABLE_KEYS = {'supplement', 'tables'}
+
+
+class HandWrittenFile(Exception):
+    """The existing file is not in the generated layout: merging would corrupt it."""
 
 
 def merge_supplement_file(out_path, tables, default_category):
@@ -355,8 +363,8 @@ def merge_supplement_file(out_path, tables, default_category):
     (caller should then do a fresh write)."""
     existing = out_path.read_text(encoding='utf-8')  # universal newlines -> \n
     matches = list(TABLE_BLOCK_RE.finditer(existing))
-    if not matches:
-        return None
+    if not matches or any(m.group(1) in NOT_TABLE_KEYS for m in matches):
+        raise HandWrittenFile(out_path)
 
     ordered_ids = [m.group(1) for m in matches]
     block_map = {m.group(1): m.group(0) for m in matches}
@@ -480,7 +488,12 @@ def write_supplement(out_dir, relative_dir, filename, supplement_id, supplement_
     # Merge into an existing file so tables not present in this markdown are
     # preserved (running on a partial file won't wipe the others). Only a
     # brand-new file is generated from scratch.
-    merged = merge_supplement_file(out_path, tables, default_category) if out_path.exists() else None
+    try:
+        merged = merge_supplement_file(out_path, tables, default_category) if out_path.exists() else None
+    except HandWrittenFile:
+        print(f"\nSkipped {rel}: written by hand, not in the generated layout. "
+              f"Left unchanged; update it by hand if the source changed.")
+        return
     if merged is not None:
         added, replaced = merged
         print(f"\nMerged into {rel}: {len(replaced)} updated, {len(added)} added, "

@@ -22,6 +22,10 @@ All notable changes to Loner Assistant are documented here.
   tables copied from the core rules and tables that are not full D66
   grids are left out and listed; `CACHE_VERSION` is bumped once per run;
   `--name` sets the supplement name when the file name does not give it.
+  Only Concepts, Skills, Frailties, Gear and the first and family name
+  tables get `category: 'character'`; Nicknames and similar stay random
+  tables. A hand-written data file is left unchanged instead of being
+  merged into (the old merge corrupted it).
 - Module panels use shared CSS classes instead of inline styles, so
   they follow the light and dark themes consistently.
 - Dice emoji removed from buttons in favor of text labels ("Generate",
