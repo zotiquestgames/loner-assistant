@@ -50,6 +50,12 @@ All notable changes to Loner Assistant are documented here.
   (Opposition, Actions, Things Variants B/C, Verb/Adjective/Noun grids).
 - `CLAUDE.md` / `README.md` repointed from the old `loner-en.md` rulebook to
   the new `loner-4e.md`.
+- **In-app User Manual updated** for 4th Edition play (scene framing and
+  closing, Scene Transition and Meanwhile, Dead Ends, the optional
+  modules, Relationships, The Living World, Build the Setup) and the new
+  supplement tools. Its Scene section no longer describes the old
+  Expected/Altered/Interrupted roll, and Get Inspired is now described as
+  Verb + Adjective + Noun.
 
 ### Fixed
 
