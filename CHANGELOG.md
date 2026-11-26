@@ -2,6 +2,41 @@
 
 All notable changes to Loner Assistant are documented here.
 
+## v2.3.0 — 2026-11-26
+
+### Added
+
+- **Loner 4th Edition support.** Adopts the procedures and optional modules
+  from the 4th Edition rulebook (`loner-4e.md`), replacing the previous
+  2nd/3rd-edition-era mechanics.
+- **Scene structure**: Framing a Scene (Where/Who/What), Closing a Scene
+  (resolved/blocked/abandoned + oracle fallback), and an expanded two-step
+  Meanwhile procedure.
+- **Relationships**: in-play NPC relationship-tag quick-actions.
+- **Dead Ends**: a fixed oracle question with branching guidance and
+  consecutive-attempt tracking.
+- **Twist Intensity**: contextual guidance on the twist result.
+- **Three new optional modules** — Challenge Tracks, Leverage, and Status
+  Track — each with its own DB schema (bumped to v4) and UI panel, wired
+  into the Oracle and Conflict flows.
+- **The Living World**: a post-adventure review wizard on the Campaigns view
+  for updating NPCs, Locations, and Threads.
+- **"Build the Setup" premise table** (5W+H) in the Adventure Maker / Get
+  Inspired tables.
+
+### Changed
+
+- Adventure Maker / Get Inspired table content corrected to match 4e exactly
+  (Opposition, Actions, Things Variants B/C, Verb/Adjective/Noun grids).
+- `CLAUDE.md` / `README.md` repointed from the old `loner-en.md` rulebook to
+  the new `loner-4e.md`.
+
+### Fixed
+
+- Undefined `--info` / `--bg-primary` CSS variables.
+- An unescaped NPC tag list.
+- An inconsistent status badge on campaign cards.
+
 ## v2.2.0 — 2026-07-23
 
 ### Added

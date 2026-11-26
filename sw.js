@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.2 - Service Worker
+ * LONER ASSISTANT v2.3 - Service Worker
  *
  * Hand-written, Cache API only (no Workbox, no build step). Precaches the
  * full app shell (HTML/CSS/JS modules/table data/vendored libs/fonts/icons)
@@ -14,7 +14,7 @@
  * registerServiceWorker() nudges them to do, but only if this bumps).
  */
 
-const CACHE_VERSION = 'loner-v34';
+const CACHE_VERSION = 'loner-v35';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
