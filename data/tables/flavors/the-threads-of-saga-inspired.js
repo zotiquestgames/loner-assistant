@@ -1,12 +1,12 @@
 /**
- * The Threads of Saga Inspiration
+ * Norse Saga Inspiration
  * D66 random tables
  */
 
 export default {
   supplement: {
     id: 'the-threads-of-saga-inspired',
-    name: 'The Threads of Saga Inspiration',
+    name: 'Norse Saga Inspiration',
     version: '1.0',
     enabled: true,
     flavorOf: 'get-inspired'

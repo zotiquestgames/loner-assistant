@@ -73,7 +73,7 @@ export const ManualSystem = {
         <li>Go to the <strong>Characters</strong> tab to create a character.</li>
         <li>Characters use <strong>Tags</strong> (Concept, Skills, Frailty, Gear) instead of numbers.</li>
         <li>You can mark a character as "Active" to see them in the Play view sidebar.</li>
-        <li><strong>Generate Character</strong> rolls a full character (name, concept, two skills, a frailty, two pieces of gear, and a Lifepath fragment) from a supplement's tables. Reroll any line, then save it as a PC or an NPC.</li>
+        <li><strong>Generate Character</strong> rolls a full character (name, concept, two skills, a frailty, two pieces of gear, and a Lifepath fragment) from a supplement's tables. Reroll any line, then save it as a PC or an NPC. Norse Saga and Celtic Fantasy build characters from six Origins: pick one or roll for it, and the Skills, Frailty and Gear come from that Origin's tables; the Origin is written in the Concept.</li>
         </ul>
         <h4 id="lifepath-and-marks">Lifepath and Marks</h4>
         <p>From the <em>Character Builder's Guide</em>. Open a character with <strong>View</strong> to find them at the bottom of the sheet.</p>

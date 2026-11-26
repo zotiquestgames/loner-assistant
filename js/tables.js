@@ -350,15 +350,50 @@ export const TableSystem = {
     const sources = [];
     for (const [id, supplement] of Object.entries(this.registry)) {
       const tables = supplement.tables || {};
-      // The generator needs all four trait tables; a supplement that builds
-      // characters another way (Origins in The Threads of Saga) is left out.
+      // The generator needs all four trait tables, or Origins (Norse Saga,
+      // Celtic Fantasy: each origin has its own Skills, Frailties and Gear).
       const traits = ['concepts', 'skills', 'frailties', 'gear'];
-      if (traits.every(k => tables[k] && tables[k].category === 'character')) {
+      if (this.getOrigins(id).length ||
+          traits.every(k => tables[k] && tables[k].category === 'character')) {
         sources.push({ id, name: supplement.supplement.name });
       }
     }
     sources.sort((a, b) => a.name.localeCompare(b.name));
     return sources;
+  },
+
+  /**
+   * The Origins of a supplement (empty array when it has none).
+   * Each origin: { name, subtitle, skills[6], frailties[6], gear[6] }.
+   */
+  getOrigins(supplementId) {
+    const t = this.registry[supplementId]?.tables?.origins;
+    return t && t.rollType === 'origins' ? t.entries : [];
+  },
+
+  /**
+   * Roll one trait ('skills', 'frailties' or 'gear') on an origin's d6 table.
+   */
+  rollOriginTrait(supplementId, originIndex, field) {
+    const origin = this.getOrigins(supplementId)[originIndex];
+    const list = origin?.[field] || [];
+    return list.length ? list[Math.floor(Math.random() * list.length)] : '';
+  },
+
+  /**
+   * Concept for an origin. Celtic Fantasy has a Concepts grid whose rows are
+   * the origins (first die = origin): roll the column and add the origin.
+   * Norse Saga has no Concepts: the origin is the concept.
+   */
+  rollOriginConcept(supplementId, originIndex) {
+    const origin = this.getOrigins(supplementId)[originIndex];
+    if (!origin) return '';
+    const grid = this.registry[supplementId].tables.concepts;
+    const row = grid?.rollType === '2d6' ? grid.entries[originIndex] : null;
+    if (row) {
+      return `${row[Math.floor(Math.random() * row.length)]} (${origin.name})`;
+    }
+    return origin.subtitle ? `${origin.name} (${origin.subtitle})` : origin.name;
   },
 
   /**
@@ -377,7 +412,14 @@ export const TableSystem = {
       if (!supplement.tables[tableId] && supplement.tables.names) tableId = 'names';
     }
     if (!supplement.tables[tableId]) return '';
-    return this.roll(supplementId, tableId).result;
+    // Gendered family names (Norse Saga: -son, -dottir): reroll until the
+    // ending matches. 'any' takes either.
+    const suffix = field === 'surnames' ? supplement.tables.surnames.genderSuffix?.[gender] : null;
+    let result = this.roll(supplementId, tableId).result;
+    for (let i = 0; suffix && !result.endsWith(suffix) && i < 100; i++) {
+      result = this.roll(supplementId, tableId).result;
+    }
+    return result;
   },
 
   /**
@@ -385,7 +427,7 @@ export const TableSystem = {
    * Loner PCs start with two skills and two pieces of gear (expandable
    * through play), so those are the defaults.
    */
-  generateCharacter(supplementId, { gender = 'female', skillCount = 2, gearCount = 2 } = {}) {
+  generateCharacter(supplementId, { gender = 'female', skillCount = 2, gearCount = 2, originIndex = null } = {}) {
     const supplement = this.registry[supplementId];
     if (!supplement) throw new Error(`Supplement not found: ${supplementId}`);
     const tables = supplement.tables;
@@ -404,13 +446,45 @@ export const TableSystem = {
       return out;
     };
 
-    const firstName = this.rollCharacterField(supplementId, 'name', gender);
-    const surname = tables.surnames ? this.roll(supplementId, 'surnames').result : '';
+    // One gender for the whole name, so a first name and a gendered
+    // family name agree when 'any' is chosen.
+    const nameGender = gender === 'any' ? (Math.random() < 0.5 ? 'male' : 'female') : gender;
+    const firstName = this.rollCharacterField(supplementId, 'name', nameGender);
+    const surname = tables.surnames ? this.rollCharacterField(supplementId, 'surnames', nameGender) : '';
+
+    const origins = this.getOrigins(supplementId);
+    if (origins.length) {
+      const i = Number.isInteger(originIndex) ? originIndex : Math.floor(Math.random() * origins.length);
+      const distinct = (field, count) => {
+        const out = [];
+        for (let a = 0; out.length < count && a < count * 12; a++) {
+          const v = this.rollOriginTrait(supplementId, i, field);
+          if (!out.includes(v)) out.push(v);
+        }
+        return out;
+      };
+      return {
+        supplementId,
+        supplementName: supplement.supplement.name,
+        gender,
+        nameGender,
+        originIndex: i,
+        origin: origins[i].name,
+        firstName,
+        surname,
+        fullName: [firstName, surname].filter(Boolean).join(' '),
+        concept: this.rollOriginConcept(supplementId, i),
+        skills: distinct('skills', skillCount),
+        frailty: this.rollOriginTrait(supplementId, i, 'frailties'),
+        gear: distinct('gear', gearCount)
+      };
+    }
 
     return {
       supplementId,
       supplementName: supplement.supplement.name,
       gender,
+      nameGender,
       firstName,
       surname,
       fullName: [firstName, surname].filter(Boolean).join(' '),

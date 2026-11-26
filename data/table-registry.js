@@ -180,20 +180,20 @@ export const supplements = [
   },
   {
     id: 'the-threads-of-saga-adventure',
-    name: 'The Threads of Saga Adventure Tables',
+    name: 'Norse Saga Adventure Tables',
     file: 'tables/supplements/the-threads-of-saga.js',
     version: '1.0',
     enabled: true,
-    description: 'The Threads of Saga supplemental adventure tables'
+    description: 'Norse Saga supplemental adventure tables'
   },
   {
     id: 'the-threads-of-saga-inspired',
-    name: 'The Threads of Saga Inspiration',
+    name: 'Norse Saga Inspiration',
     file: 'tables/flavors/the-threads-of-saga-inspired.js',
     version: '1.0',
     enabled: true,
     flavorOf: 'get-inspired',
-    description: 'Get Inspired flavor themed for The Threads of Saga adventures'
+    description: 'Get Inspired flavor themed for Norse Saga adventures'
   },
   {
     id: 'pulp-adventures-adventure',

@@ -15,7 +15,7 @@ export default {
     concepts: {
       id: 'concepts',
       name: 'Concepts',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Exiled Satirist', 'Court Fili', 'Wandering Ollamh', 'Blind Poet', 'Truth-Bound Lorekeeper', 'Apprentice Bard'],
@@ -29,7 +29,7 @@ export default {
     female_names: {
       id: 'female_names',
       name: 'Female Names',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Áine', 'Bríd', 'Cáit', 'Deirdre', 'Eithne', 'Fionnuala'],
@@ -43,7 +43,7 @@ export default {
     male_names: {
       id: 'male_names',
       name: 'Male Names',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Aidan', 'Brendan', 'Cian', 'Diarmuid', 'Eamon', 'Finn'],
@@ -57,7 +57,7 @@ export default {
     surnames: {
       id: 'surnames',
       name: 'Surnames',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Mac Aodha', 'Ó Briain', 'Mac Cárthaigh', 'Ó Dálaigh', 'Mac Eochaidh', 'Ó Fionnagáin'],
@@ -528,6 +528,56 @@ export default {
         ['Feels Cold', 'Feels Burning', 'Feels Soft', 'Feels Sharp', 'Feels Rough', 'Feels Smooth'],
         ['Looks Radiant', 'Looks Dark', 'Looks Twisted', 'Looks Beautiful', 'Looks Grotesque', 'Looks Ethereal'],
         ['Glows Faintly', 'Glows Brightly', 'Shimmers', 'Vibrates', 'Moves Slowly', 'Moves Impossibly Fast'],
+      ]
+    },
+    origins: {
+      id: 'origins',
+      name: 'Origins',
+      category: 'character',
+      rollType: 'origins',
+      entries: [
+        {
+          name: 'Fili',
+          subtitle: 'Poet-Sorcerer',
+          skills: ['Salmon Wisdom', 'Raven\'s Tongue', 'Ogham-Reader', 'Silver-Speech', 'Memory-Keeper', 'Enchanted Verse'],
+          frailties: ['Speaks Only Truth', 'Bound by Oath', 'Fae-Marked', 'Haunted by Silence', 'Cursed Creativity', 'Compelled to Witness'],
+          gear: ['Ogham-Carved Staff', 'Silver-Tongued Harp', 'Poet\'s Bell-Branch', 'Raven-Feather Cloak', 'Chalice of Prophecy', 'Poet\'s Torc (silver neck-ring)']
+        },
+        {
+          name: 'Fianna Warrior',
+          subtitle: 'Outlaw-Hero',
+          skills: ['Cattle-Raid Veteran', 'Spear-Dancer', 'Tracker', 'Wild-Born', 'Ambush-Master', 'Beast-Breaker'],
+          frailties: ['Exiled from the Clan', 'Cannot Refuse a Challenge', 'Hunger-Driven', 'Hunted by Law', 'Warp-Spasm Rage', 'Wanderer\'s Curse'],
+          gear: ['War-Spear', 'Raider\'s Cloak', 'Hound (loyal beast)', 'Chariot-Fragments', 'Trophy-Necklace', 'Campfire & Bedroll']
+        },
+        {
+          name: 'Sídhe-Touched',
+          subtitle: 'Marked by Faerie',
+          skills: ['Mist-Walker', 'Glamour-Weaver', 'Otherworld-Tongue', 'Fae-Bargainer', 'Threshold-Sense', 'Shape-Hint'],
+          frailties: ['Iron-Weak', 'Fae-Hunted', 'Time-Displaced', 'Oath-Bound (to fae)', 'Half-Mortal Grief', 'Beauty That Wounds'],
+          gear: ['Silver Branch (Otherworld key)', 'Faerie Cloak', 'Enchanted Token', 'Rune-Carved Bone', 'Fae-Gifted Ring', 'Stolen Otherworld Treasure']
+        },
+        {
+          name: 'Drui',
+          subtitle: 'Druid',
+          skills: ['Ritual-Master', 'Herb-Lore', 'Animal-Speech', 'Geis-Binder', 'Divination', 'Standing-Stone Magic'],
+          frailties: ['Bound by Neutrality', 'Forbidden Knowledge', 'Price-Keeper (debts owed, rarely honored)', 'Ancient Enemies', 'Compelled by Cycle', 'Weight of Responsibility'],
+          gear: ['Torc of Authority', 'Ritual Robes', 'Druidic Staff', 'Pouch of Herbs & Tokens', 'Standing-Stone Map', 'Sacred Cauldron (shard)']
+        },
+        {
+          name: 'Geis-Bound Champion',
+          subtitle: 'Hero of Prophecy',
+          skills: ['Single-Combat Master', 'Prophecy-Sight', 'Curse-Breaker', 'Oath-Keeper', 'Ríastrad-Channel', 'Champion\'s Luck'],
+          frailties: ['Cursed Bloodline', 'Marked by Doom', 'Cannot Refuse a Bard\'s Insult', 'Geis upon Geis', 'Ríastrad Aftermath', 'Doomed Love'],
+          gear: ['Legendary Sword', 'Hero\'s Armor', 'Champion\'s Mantle', 'Geis-Marked Token', 'Heirloom Shield', 'Bard\'s Recitation (fame itself as armor)']
+        },
+        {
+          name: 'Selkie Exile',
+          subtitle: 'Shapechanger',
+          skills: ['Seal-Form', 'Deep-Diver', 'Siren-Song', 'Water-Sense', 'Bargain-Reader', 'Transformation-Master'],
+          frailties: ['Skin-Stolen (mortal form temporary)', 'Ocean-Homesick', 'Cannot Refuse Water', 'Fae-Separated', 'Land-Weak', 'Sorrow-Song'],
+          gear: ['Hidden Seal-Skin', 'Pearl Necklace', 'Tidal Charm', 'Salt-Blessed Cloak', 'Wave-Worn Token', 'Stolen Mortal Clothes']
+        }
       ]
     }
   }
