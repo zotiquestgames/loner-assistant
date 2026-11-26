@@ -32,6 +32,11 @@ import { LocationManager, showLocationPanel, showNewLocationForm } from './locat
 import { ThreadManager, showThreadPanel, showNewThreadForm } from './threads.js';
 import { EventManager, showEventPanel } from './events.js';
 import { SessionManager, showNewSessionForm, showSessionList, switchToSession, renameSession, deleteSessionConfirm } from './sessions.js';
+import { SceneSystem } from './scenes.js';
+import { ChallengeTracks } from './challenge-tracks.js';
+import { LeverageSystem } from './leverage.js';
+import { StatusTrackSystem } from './status-track.js';
+import { LivingWorld } from './living-world.js';
 import {
   getState,
   setCurrentCampaign,
@@ -106,6 +111,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 await showLocationPanel();
                 await showThreadPanel();
                 await showEventPanel();
+                await ChallengeTracks.showChallengeTracksPanel();
+                await LeverageSystem.displayLeverage();
               }, 500);
             }
           }
@@ -254,6 +261,11 @@ function exposeCuratedGlobals() {
   window.ThreadManager = ThreadManager;
   window.EventManager = EventManager;
   window.SessionManager = SessionManager;
+  window.SceneSystem = SceneSystem;
+  window.ChallengeTracks = ChallengeTracks;
+  window.LeverageSystem = LeverageSystem;
+  window.StatusTrackSystem = StatusTrackSystem;
+  window.LivingWorld = LivingWorld;
 
   // Bare function names referenced directly in markup
   window.showView = UI.showView;
@@ -266,6 +278,7 @@ function exposeCuratedGlobals() {
 
   window.rollOracle = OracleSystem.rollOracle;
   window.rollScene = OracleSystem.rollScene;
+  window.rollDeadEnd = OracleSystem.rollDeadEnd;
   window.resetTwistCounter = OracleSystem.resetTwistCounter;
   window.triggerTwist = OracleSystem.triggerTwist;
   window.startConflict = OracleSystem.startConflict;

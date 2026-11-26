@@ -11,6 +11,7 @@ import { getSession, getCampaign, updateSessionNotes } from './db/database.js';
 import { showAlert } from './toast.js';
 import { formatTime } from './ui.js';
 import { setTwistCounter } from './oracle.js';
+import { displaySceneFrame } from './scenes.js';
 
 let quillEditor = null;
 
@@ -68,6 +69,9 @@ export async function loadSession(sessionId) {
     if (twistCounter !== undefined) {
       setTwistCounter(twistCounter);
     }
+
+    // Restore the current scene frame (Where/Who/What)
+    displaySceneFrame(session);
 
     console.log('✅ Session loaded into editor:', session.name);
   } catch (error) {
