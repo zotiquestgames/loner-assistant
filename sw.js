@@ -13,7 +13,7 @@
  * (`npm test` fails while it is out of date).
  */
 
-const CACHE_VERSION = 'loner-ab0605aafe';
+const CACHE_VERSION = 'loner-4e26b12508';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
