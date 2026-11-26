@@ -33,7 +33,7 @@ export function rollLifepathFragment(tableId = null) {
 }
 
 const removeButton = (onclick) =>
-  `<button type="button" title="Remove" onclick="${onclick}" style="margin-left: 0.4rem; border: none; background: none; cursor: pointer; font-weight: 700; padding: 0;">&times;</button>`;
+  `<button type="button" class="remove-x" title="Remove" onclick="${onclick}">&times;</button>`;
 
 /**
  * Lifepath + Marks section for the character sheet modal.
