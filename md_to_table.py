@@ -267,8 +267,10 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
                 # after Character Traits > Concepts): keep both, and never let
                 # the later one replace a character table.
                 prefix = parent if level == 4 and parent else section_title
-                print(f"  Warning: '{table_name}' repeats an earlier table name; "
-                      f"kept as '{prefix}: {table_name}' (check the heading levels in the source)")
+                if level == 3:
+                    # A table title at section level: usually a heading typo.
+                    print(f"  Warning: '{table_name}' is a ### heading that repeats an earlier table; "
+                          f"kept as '{prefix}: {table_name}' (check the heading levels in the source)")
                 table_id = slugify(prefix + ' ' + table_name).replace('-', '_')
                 table_name = f'{prefix}: {table_name}'
 
