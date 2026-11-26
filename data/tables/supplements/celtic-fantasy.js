@@ -68,6 +68,20 @@ export default {
         ['Mac Labhrainn', 'Ó Mórdha', 'Mac Uidhir', 'Ó Sé', 'Mac Reachtain', 'Ó Baoighill'],
       ]
     },
+    female_surnames: {
+      id: 'female_surnames',
+      name: 'Female Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Nic Aodha', 'Ní Bhriain', 'Nic Cárthaigh', 'Ní Dhálaigh', 'Nic Eochaidh', 'Ní Fhionnagáin'],
+        ['Nic Gabhann', 'Ní Éideáin', 'Nic Íomhair', 'Ní Cheallacháin', 'Nic Lochlainn', 'Ní Mhurchadha'],
+        ['Nic Néill', 'Ní Ruairc', 'Nic Shuibhne', 'Ní Thuathail', 'Nic Uiginn', 'Ní Chonchobhair'],
+        ['Nic Bhranáin', 'Ní Dhónaill', 'Nic Fhearghuis', 'Ní Cheallaigh', 'Nic Dhiarmada', 'Ní Mháille'],
+        ['Nic Giolla', 'Ní Fhlaithbheartaigh', 'Nic Cana', 'Ní Dhubhghaill', 'Nic Cathail', 'Ní Fhearghail'],
+        ['Nic Labhrainn', 'Ní Mhórdha', 'Nic Uidhir', 'Ní Shé', 'Nic Reachtain', 'Ní Bhaoighill']
+      ]
+    },
     nicknames: {
       id: 'nicknames',
       name: 'Nicknames',
