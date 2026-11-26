@@ -396,6 +396,15 @@ export const supplements = [
     enabled: true,
     flavorOf: 'get-inspired',
     description: 'Get Inspired flavor themed for Spacer adventures'
+  },
+  {
+    id: 'mech-requiem-inspired',
+    name: 'Mech Requiem Inspiration',
+    file: 'tables/flavors/mech-requiem-inspired.js',
+    version: '1.0',
+    enabled: true,
+    flavorOf: 'get-inspired',
+    description: 'Get Inspired flavor themed for Mech Requiem adventures'
   }
   // Template for adding new supplements:
   // {

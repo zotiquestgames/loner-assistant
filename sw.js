@@ -14,7 +14,7 @@
  * registerServiceWorker() nudges them to do, but only if this bumps).
  */
 
-const CACHE_VERSION = 'loner-v47';
+const CACHE_VERSION = 'loner-v48';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -122,7 +122,8 @@ const PRECACHE_URLS = [
   './data/tables/supplements/rocketpunk.js',
   './data/tables/flavors/rocketpunk-inspired.js',
   './data/tables/supplements/spacer.js',
-  './data/tables/flavors/spacer-inspired.js'
+  './data/tables/flavors/spacer-inspired.js',
+  './data/tables/flavors/mech-requiem-inspired.js'
 ];
 
 self.addEventListener('install', (event) => {
