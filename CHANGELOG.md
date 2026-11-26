@@ -30,6 +30,19 @@ All notable changes to Loner Assistant are documented here.
     the three Relationship Arc tables, Memory Triggers, False Memory, and
     the four Interpersonal Scene Frames.
   - *The Path Not Taken*: Time Twist Effects.
+- **Cast List fields on NPCs** (*Character Emulator*): Agenda, Disposition,
+  Voice, and Last Seen, plus a Faction flag. Concept, Agenda, Disposition,
+  and Voice each have a Roll button for Quick-Build (Concept rolls on the
+  Faction Concept table for factions).
+- **Faction Beats**: after a Scene Transition (or from the Meanwhile prompt
+  when an organization holds power), roll whether a faction advances its
+  Agenda, at most once per transition. The result goes in its Last Seen;
+  equal dice count toward the Twist as usual.
+- **Cast Twists**: when a Twist fires on a roll about an NPC, roll the Cast
+  Twists table from the Twist panel instead of the standard Twist.
+- **Lifepath fragments and Marks** (*Character Builder's Guide*) on the
+  character sheet, with Identity Checkpoint prompts. The Character Generator
+  rolls a Lifepath fragment for new PCs.
 
 ### Changed
 

@@ -230,6 +230,8 @@ export async function createCharacter(data) {
     luck: data.luck || 6, // Starting luck
     maxLuck: 6,
     isActive: data.isActive || false, // Flag for currently playing character
+    lifepath: data.lifepath || [], // [{ table, text }] backstory fragments
+    marks: data.marks || [], // Character Builder's Guide Marks
     createdAt: new Date()
   });
   return id;
@@ -303,6 +305,12 @@ export async function createNPC(campaignId, data = {}) {
     description: data.description || '', // Free-form notes
     relationship: data.relationship || 'neutral', // 'ally', 'enemy', 'neutral'
     tags: data.tags || [], // Legacy free tags (kept for older/imported NPCs)
+    kind: data.kind || 'person', // 'person' | 'faction'
+    // Cast List fields (Character Emulator)
+    agenda: data.agenda || '',
+    disposition: data.disposition || '',
+    voice: data.voice || '',
+    lastSeen: data.lastSeen || '',
     createdAt: new Date()
   });
   return id;

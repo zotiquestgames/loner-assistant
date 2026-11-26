@@ -17,6 +17,13 @@ import * as LonerDB from './db/database.js';
 import * as Editor from './editor.js';
 import { showNewCharacterForm } from './characters.js';
 import { showNPCPanel, loadNPCsList } from './npcs.js';
+import { rollLifepathFragment } from './backstory.js';
+
+function generate() {
+  const character = TableSystem.generateCharacter(current.supplementId, { gender: current.gender });
+  character.lifepath = rollLifepathFragment();
+  return character;
+}
 
 // Live generator state for the open modal.
 let current = {
@@ -48,7 +55,7 @@ export const CharacterGenerator = {
     if (!current.supplementId || !sources.find(s => s.id === current.supplementId)) {
       current.supplementId = sources[0].id;
     }
-    current.character = TableSystem.generateCharacter(current.supplementId, { gender: current.gender });
+    current.character = generate();
     this.render();
   },
 
@@ -56,7 +63,7 @@ export const CharacterGenerator = {
    * Roll a fresh character from the current supplement/gender.
    */
   regenerate() {
-    current.character = TableSystem.generateCharacter(current.supplementId, { gender: current.gender });
+    current.character = generate();
     this.render();
   },
 
@@ -90,6 +97,8 @@ export const CharacterGenerator = {
       c.concept = TableSystem.rollCharacterField(current.supplementId, 'concepts');
     } else if (field === 'frailty') {
       c.frailty = TableSystem.rollCharacterField(current.supplementId, 'frailties');
+    } else if (field === 'lifepath') {
+      c.lifepath = rollLifepathFragment();
     }
     c.fullName = [c.firstName, c.surname].filter(Boolean).join(' ');
     this.render();
@@ -163,6 +172,7 @@ export const CharacterGenerator = {
         ${c.skills.map((s, i) => this.fieldRow(i === 0 ? 'Skills' : '', s, `CharacterGenerator.rerollSkill(${i})`)).join('')}
         ${this.fieldRow('Frailty', c.frailty, "CharacterGenerator.rerollField('frailty')")}
         ${c.gear.map((g, i) => this.fieldRow(i === 0 ? 'Gear' : '', g, `CharacterGenerator.rerollGear(${i})`)).join('')}
+        ${current.type === 'pc' ? this.fieldRow(`Lifepath: ${c.lifepath.table}`, c.lifepath.text, "CharacterGenerator.rerollField('lifepath')") : ''}
 
         <div style="display:flex; gap:0.5rem; justify-content:space-between; margin-top:1rem;">
           <button class="btn btn-outline" onclick="CharacterGenerator.regenerate()" title="Roll a whole new character">🎲 Regenerate all</button>
@@ -229,7 +239,8 @@ export const CharacterGenerator = {
       concept: c.concept,
       skills: c.skills,
       frailty: c.frailty,
-      gear: c.gear
+      gear: c.gear,
+      lifepath: [c.lifepath]
     });
   },
 

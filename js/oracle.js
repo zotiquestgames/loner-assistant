@@ -26,30 +26,32 @@ export function rollD6() {
 /**
  * Roll the Oracle (Chance vs Risk dice)
  */
+/**
+ * Roll Chance and Risk with a modifier: Advantage rolls two Chance dice,
+ * Disadvantage two Risk dice, keeping the highest.
+ */
+export function rollChanceRisk(modifier) {
+  const chanceDice = modifier === 'advantage' ? Math.max(rollD6(), rollD6()) : rollD6();
+  const riskDice = modifier === 'disadvantage' ? Math.max(rollD6(), rollD6()) : rollD6();
+  return { chanceDice, riskDice };
+}
+
+/**
+ * Equal dice add 1 to the Twist Counter; at 3 the Twist fires.
+ */
+export async function registerDoubles() {
+  currentTwistCounter++;
+  updateTwistCounter();
+  if (currentTwistCounter >= 3) {
+    await triggerTwist();
+  }
+}
+
 export async function rollOracle() {
   // Get modifier selection
   const modifier = document.querySelector('input[name="modifier"]:checked').value;
 
-  let chanceDice, riskDice;
-
-  // Roll based on modifier
-  if (modifier === 'advantage') {
-    // Roll 2 chance dice, keep highest
-    const chance1 = rollD6();
-    const chance2 = rollD6();
-    chanceDice = Math.max(chance1, chance2);
-    riskDice = rollD6();
-  } else if (modifier === 'disadvantage') {
-    // Roll 2 risk dice, keep highest
-    chanceDice = rollD6();
-    const risk1 = rollD6();
-    const risk2 = rollD6();
-    riskDice = Math.max(risk1, risk2);
-  } else {
-    // Normal roll
-    chanceDice = rollD6();
-    riskDice = rollD6();
-  }
+  const { chanceDice, riskDice } = rollChanceRisk(modifier);
 
   // Interpret result
   const result = interpretOracleRoll(chanceDice, riskDice);
@@ -74,13 +76,7 @@ export async function rollOracle() {
 
   // Check for doubles (twist counter)
   if (chanceDice === riskDice) {
-    currentTwistCounter++;
-    updateTwistCounter();
-
-    // Trigger twist at 3
-    if (currentTwistCounter >= 3) {
-      triggerTwist();
-    }
+    registerDoubles();
   }
 
   // Save to roll history if we have a session
@@ -273,6 +269,10 @@ export async function triggerTwist() {
     <div style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-muted); font-style: italic;">
       Twist Intensity: read the pressure first. If it's been building (failed rolls, low Luck, unresolved complications), play this at its most disruptive. If the scene's been clean, it's a shift, not a collapse.
     </div>
+    <button id="cast-twist-btn" class="btn btn-sm btn-outline" onclick="CastSystem.rollCastTwist()" style="margin-top: 0.5rem; width: 100%;">
+      Roll was about an NPC? Use Cast Twists instead
+    </button>
+    <div id="cast-twist-result"></div>
   `;
   twistResult.classList.remove('hidden');
 
@@ -307,7 +307,12 @@ export async function triggerTwist() {
 /**
  * Roll for scene type
  */
+// Counts Scene Transitions, so per-transition limits (one Faction Beat per
+// transition) can tell one transition from the next.
+export let sceneTransitionCount = 0;
+
 export async function rollScene() {
+  sceneTransitionCount++;
   const roll = rollD6();
 
   let sceneType, description;
@@ -334,6 +339,9 @@ export async function rollScene() {
     <div style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.6;">
       Rolled: ${roll}
     </div>
+    <button id="faction-beat-btn" class="btn btn-sm btn-outline" onclick="CastSystem.showFactionBeat()" style="margin-top: 0.5rem; width: 100%;">
+      Faction Beat (the scene touched a faction's interests)
+    </button>
   `;
 
   // Auto-insert into notes
@@ -362,7 +370,7 @@ export async function rollScene() {
  * 1. Update the opposition - cut to whoever holds power and update their tag.
  * 2. Ask the oracle whether an ally or wildcard acts independently.
  */
-async function runMeanwhileProcedure() {
+export async function runMeanwhileProcedure() {
   const state = getState();
   if (!state.campaignId) return;
 
@@ -388,8 +396,11 @@ async function runMeanwhileProcedure() {
       <label>Their new tag (what they're doing now)</label>
       <input type="text" id="meanwhile-tag" placeholder="e.g., Hired Someone to Find Her">
     </div>
-    <button class="btn btn-primary" onclick="OracleSystem.applyMeanwhileTag()" style="width: 100%; margin-bottom: 1rem;">
+    <button class="btn btn-primary" onclick="OracleSystem.applyMeanwhileTag()" style="width: 100%; margin-bottom: 0.5rem;">
       Update Their Tag
+    </button>
+    <button class="btn btn-outline" onclick="CastSystem.showFactionBeat(true)" style="width: 100%; margin-bottom: 1rem;">
+      Power is held by a faction and its move isn't obvious? Faction Beat
     </button>
     <div style="padding-top: 1rem; border-top: var(--border-w) solid var(--border-hairline);">
       <p class="text-muted" style="margin-bottom: 0.5rem;">Then ask the oracle:</p>

@@ -9,6 +9,11 @@ import * as UI from './ui.js';
 import { getState, setCurrentCharacter, clearCurrentCharacter } from './state.js';
 import { openFormModal, confirmAndDelete } from './crud/modal-form.js';
 import { StatusTrackSystem } from './status-track.js';
+import { renderSection as renderBackstory } from './backstory.js';
+
+// Lifepath fragments handed over by the Character Generator, saved with
+// the character when the New Character form is submitted.
+let pendingLifepath = [];
 
 /**
  * Display active character in sidebar
@@ -64,6 +69,7 @@ export function showNewCharacterForm(prefill = null) {
   const v = (s) => UI.escapeHtml(s || '');
   const skillsVal = Array.isArray(p.skills) ? p.skills.join(', ') : (p.skills || '');
   const gearVal = Array.isArray(p.gear) ? p.gear.join(', ') : (p.gear || '');
+  pendingLifepath = p.lifepath || [];
 
   const formHTML = `
     <form id="new-character-form">
@@ -95,6 +101,12 @@ export function showNewCharacterForm(prefill = null) {
         <label>Nemesis</label>
         <input type="text" id="char-nemesis" placeholder="The Syndicate">
       </div>
+      ${pendingLifepath.length ? `
+        <div class="form-group">
+          <label>Lifepath</label>
+          ${pendingLifepath.map(f => `<div style="font-size: 0.9rem;"><span class="text-muted" style="font-size: 0.75rem;">${v(f.table)}:</span> ${v(f.text)}</div>`).join('')}
+        </div>
+      ` : ''}
       <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
         <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
         <button type="submit" class="btn btn-primary">Create Character</button>
@@ -148,8 +160,10 @@ export async function createNewCharacter() {
       gear,
       goalMotive: goal,
       nemesis,
+      lifepath: pendingLifepath,
       campaignId: state.campaignId
     });
+    pendingLifepath = [];
 
     console.log('Character created with ID:', charId);
 
@@ -265,6 +279,7 @@ export async function viewCharacterSheet(characterId) {
           ${statusTag ? `<button class="btn btn-sm btn-outline" onclick="StatusTrackSystem.recover(${characterId}).then(() => viewCharacterSheet(${characterId}))">Recover</button>` : ''}
         </div>
       </div>
+      ${renderBackstory(character)}
     </div>
   `;
 

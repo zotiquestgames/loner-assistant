@@ -8,6 +8,9 @@ import * as LonerDB from './db/database.js';
 import * as UI from './ui.js';
 import { getState } from './state.js';
 import { openFormModal, confirmAndDelete } from './crud/modal-form.js';
+import { TableSystem } from './tables.js';
+
+const EMULATOR = 'character-emulator';
 
 /**
  * Get relationship color
@@ -18,6 +21,79 @@ function getRelationshipColor(relationship) {
     case 'enemy': return 'var(--danger)';
     default: return 'var(--text-muted)';
   }
+}
+
+/**
+ * Quick-Build (Character Emulator): roll a table straight into a form field.
+ */
+export function rollIntoField(inputId, tableId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  input.value = TableSystem.roll(EMULATOR, tableId).result;
+}
+
+/**
+ * Concept rolls on Faction Concept for organizations, NPC Concept otherwise.
+ */
+export function rollConcept(prefix) {
+  const isFaction = document.getElementById(`${prefix}-faction`)?.checked;
+  rollIntoField(`${prefix}-concept`, isFaction ? 'faction_concept' : 'npc_concept');
+}
+
+function rollButton(onclick) {
+  return `<button type="button" class="btn btn-sm btn-outline" onclick="${onclick}" title="Roll on the Character Emulator table">Roll</button>`;
+}
+
+function conceptFieldHTML(prefix, value) {
+  return `
+    <div class="form-group">
+      <label>Concept</label>
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="${prefix}-concept" placeholder="e.g., Wandering Monk" value="${UI.escapeHtml(value || '')}" style="flex: 1;">
+        ${rollButton(`NPCManager.rollConcept('${prefix}')`)}
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Cast List fields (Character Emulator): Agenda, Disposition, Voice,
+ * Last Seen, plus whether this "NPC" is really a faction.
+ */
+function castFieldsHTML(prefix, n) {
+  const v = (s) => UI.escapeHtml(s || '');
+  const field = (key, label, value, tableId, placeholder) => `
+    <div class="form-group">
+      <label>${label}</label>
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="${prefix}-${key}" value="${v(value)}" placeholder="${placeholder}" style="flex: 1;">
+        ${tableId ? rollButton(`NPCManager.rollIntoField('${prefix}-${key}', '${tableId}')`) : ''}
+      </div>
+    </div>
+  `;
+  return `
+    <div class="form-group">
+      <label style="display: flex; align-items: center; gap: 0.5rem; text-transform: none;">
+        <input type="checkbox" id="${prefix}-faction" ${n.kind === 'faction' ? 'checked' : ''} style="width: auto; margin: 0;">
+        Faction (an organization, not a person)
+      </label>
+    </div>
+    ${field('agenda', 'Agenda', n.agenda, 'npc_agenda', 'What they want right now')}
+    ${field('disposition', 'Disposition', n.disposition, 'npc_disposition', 'Stance and awareness toward the Protagonist')}
+    ${field('voice', 'Voice', n.voice, 'npc_voice', 'Their verbal signature')}
+    ${field('lastSeen', 'Last Seen', n.lastSeen, null, 'Where, and what changed')}
+  `;
+}
+
+function readCastFields(prefix) {
+  const val = (key) => document.getElementById(`${prefix}-${key}`).value.trim();
+  return {
+    kind: document.getElementById(`${prefix}-faction`).checked ? 'faction' : 'person',
+    agenda: val('agenda'),
+    disposition: val('disposition'),
+    voice: val('voice'),
+    lastSeen: val('lastSeen')
+  };
 }
 
 /**
@@ -36,10 +112,7 @@ export function showNewNPCForm(prefill = null) {
         <label>Name *</label>
         <input type="text" id="npc-name" required placeholder="NPC name" value="${v(p.name)}">
       </div>
-      <div class="form-group">
-        <label>Concept</label>
-        <input type="text" id="npc-concept" placeholder="e.g., Wandering Monk" value="${v(p.concept)}">
-      </div>
+      ${conceptFieldHTML('npc', p.concept)}
       <div class="form-group">
         <label>Skills (comma-separated)</label>
         <input type="text" id="npc-skills" placeholder="Exorcism, Investigation" value="${v(skillsVal)}">
@@ -60,6 +133,7 @@ export function showNewNPCForm(prefill = null) {
           <option value="enemy" ${rel === 'enemy' ? 'selected' : ''}>Enemy</option>
         </select>
       </div>
+      ${castFieldsHTML('npc', p)}
       <div class="form-group">
         <label>Notes</label>
         <textarea id="npc-description" placeholder="What do you know about them?" rows="3">${v(p.description)}</textarea>
@@ -105,7 +179,8 @@ export async function createNewNPC() {
       frailty: document.getElementById('npc-frailty').value.trim(),
       gear: splitList('npc-gear'),
       relationship: document.getElementById('npc-relationship').value,
-      description: document.getElementById('npc-description').value.trim()
+      description: document.getElementById('npc-description').value.trim(),
+      ...readCastFields('npc')
     });
 
     console.log('NPC created with ID:', npcId);
@@ -169,6 +244,14 @@ export async function viewNPCDetails(npcId) {
           ${UI.escapeHtml(npc.relationship || 'neutral')}
         </div>
       </div>
+      ${[['Agenda', npc.agenda], ['Disposition', npc.disposition], ['Voice', npc.voice], ['Last Seen', npc.lastSeen]]
+        .filter(([, val]) => val)
+        .map(([label, val]) => `
+          <div class="form-group">
+            <label>${label}</label>
+            <div>${UI.escapeHtml(val)}</div>
+          </div>
+        `).join('')}
       ${npc.description ? `
         <div class="form-group">
           <label>Notes</label>
@@ -204,10 +287,7 @@ export async function editNPC(npcId) {
         <label>Name *</label>
         <input type="text" id="edit-npc-name" required value="${v(npc.name)}">
       </div>
-      <div class="form-group">
-        <label>Concept</label>
-        <input type="text" id="edit-npc-concept" value="${v(npc.concept)}">
-      </div>
+      ${conceptFieldHTML('edit-npc', npc.concept)}
       <div class="form-group">
         <label>Skills (comma-separated)</label>
         <input type="text" id="edit-npc-skills" value="${v((npc.skills || []).join(', '))}">
@@ -228,6 +308,7 @@ export async function editNPC(npcId) {
           <option value="enemy" ${npc.relationship === 'enemy' ? 'selected' : ''}>Enemy</option>
         </select>
       </div>
+      ${castFieldsHTML('edit-npc', npc)}
       <div class="form-group">
         <label>Notes</label>
         <textarea id="edit-npc-description" rows="3">${v(npc.description)}</textarea>
@@ -263,7 +344,8 @@ export async function saveNPCEdit(npcId) {
       frailty: document.getElementById('edit-npc-frailty').value.trim(),
       gear: splitList('edit-npc-gear'),
       relationship: document.getElementById('edit-npc-relationship').value,
-      description: document.getElementById('edit-npc-description').value.trim()
+      description: document.getElementById('edit-npc-description').value.trim(),
+      ...readCastFields('edit-npc')
     });
 
     UI.closeModal();
@@ -330,15 +412,17 @@ export async function loadNPCsList() {
       <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
         <h3 style="margin: 0;">${UI.escapeHtml(npc.name)}</h3>
         <span style="display: flex; gap: 0.4rem;">
+          ${npc.kind === 'faction' ? '<span class="status-badge" style="background: var(--text-muted);">faction</span>' : ''}
           ${npc.status === 'gone' ? '<span class="status-badge" style="background: var(--text-muted);">gone</span>' : ''}
           <span class="status-badge" style="background: ${getRelationshipColor(npc.relationship)};">
             ${UI.escapeHtml(npc.relationship || 'neutral')}
           </span>
         </span>
       </div>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: ${npc.agenda ? '0.25rem' : '1rem'};">
         ${UI.escapeHtml(npc.concept || npc.description || 'No concept')}
       </p>
+      ${npc.agenda ? `<p style="font-size: 0.85rem; margin-bottom: 1rem;"><strong>Agenda:</strong> ${UI.escapeHtml(npc.agenda)}</p>` : ''}
       ${(() => {
         const chips = (npc.skills && npc.skills.length ? npc.skills : (npc.tags || []));
         return chips.length ? `
@@ -453,5 +537,7 @@ export const NPCManager = {
   deleteNPCConfirm,
   showRelationshipPrompt,
   addRelationshipTag,
-  loadNPCsList
+  loadNPCsList,
+  rollIntoField,
+  rollConcept
 };

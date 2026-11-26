@@ -37,6 +37,8 @@ import { ChallengeTracks } from './challenge-tracks.js';
 import { LeverageSystem } from './leverage.js';
 import { StatusTrackSystem } from './status-track.js';
 import { LivingWorld } from './living-world.js';
+import { CastSystem } from './cast.js';
+import { Backstory } from './backstory.js';
 import {
   getState,
   setCurrentCampaign,
@@ -266,6 +268,8 @@ function exposeCuratedGlobals() {
   window.LeverageSystem = LeverageSystem;
   window.StatusTrackSystem = StatusTrackSystem;
   window.LivingWorld = LivingWorld;
+  window.CastSystem = CastSystem;
+  window.Backstory = Backstory;
 
   // Bare function names referenced directly in markup
   window.showView = UI.showView;
