@@ -329,8 +329,11 @@ export async function loadNPCsList() {
     <div class="card">
       <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
         <h3 style="margin: 0;">${UI.escapeHtml(npc.name)}</h3>
-        <span class="status-badge" style="background: ${getRelationshipColor(npc.relationship)};">
-          ${UI.escapeHtml(npc.relationship || 'neutral')}
+        <span style="display: flex; gap: 0.4rem;">
+          ${npc.status === 'gone' ? '<span class="status-badge" style="background: var(--text-muted);">gone</span>' : ''}
+          <span class="status-badge" style="background: ${getRelationshipColor(npc.relationship)};">
+            ${UI.escapeHtml(npc.relationship || 'neutral')}
+          </span>
         </span>
       </div>
       <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">

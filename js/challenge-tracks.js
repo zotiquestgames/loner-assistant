@@ -8,6 +8,7 @@ import * as LonerDB from './db/database.js';
 import * as UI from './ui.js';
 import { getState } from './state.js';
 import { openFormModal } from './crud/modal-form.js';
+import { clearLeverage } from './leverage.js';
 
 function renderBoxes(filled, size) {
   let html = '';
@@ -105,12 +106,54 @@ async function createTrack() {
 }
 
 /**
- * Mark or erase progress on a track (delta may be negative)
+ * Mark or erase progress on a track (delta may be negative). If a box
+ * would be erased and Leverage is held, offer to spend it instead: the
+ * result becomes No, but... and no box is lost (Loner 4e, Leverage section).
  */
 export async function markProgress(id, delta) {
+  if (delta < 0) {
+    const state = getState();
+    const session = state.sessionId ? await LonerDB.getSession(state.sessionId) : null;
+    const leverage = session && session.leverage;
+
+    if (leverage) {
+      UI.showModal('Spend Leverage?', `
+        <p class="text-muted" style="margin-bottom: 1rem;">
+          You're holding Leverage: <strong>${UI.escapeHtml(leverage.description)}</strong>. You may spend it here: the result becomes <em>No, but...</em> and no box is lost.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-primary" onclick="ChallengeTracks.spendLeverageToPreventErase()">Spend Leverage - No Box Lost</button>
+          <button class="btn btn-outline" onclick="ChallengeTracks.eraseBoxConfirmed(${id}, ${delta})">Erase the Box Anyway</button>
+        </div>
+      `);
+      return;
+    }
+  }
+
+  await applyProgress(id, delta);
+}
+
+async function applyProgress(id, delta) {
   await LonerDB.updateChallengeTrackProgress(id, delta);
   await showChallengeTracksPanel();
   UI.showAlert(delta > 0 ? `Marked ${delta} box${delta > 1 ? 'es' : ''}` : 'Erased a box', delta > 0 ? 'success' : 'info');
+}
+
+/**
+ * Spend the held Leverage to prevent a box from being erased.
+ */
+export async function spendLeverageToPreventErase() {
+  UI.closeModal();
+  await clearLeverage();
+  UI.showAlert('Leverage spent - no box lost', 'success');
+}
+
+/**
+ * Erase the box anyway, declining to spend the held Leverage.
+ */
+export async function eraseBoxConfirmed(id, delta) {
+  UI.closeModal();
+  await applyProgress(id, delta);
 }
 
 export async function deleteTrack(id) {
@@ -124,5 +167,7 @@ export const ChallengeTracks = {
   showChallengeTracksPanel,
   showNewTrackForm,
   markProgress,
+  spendLeverageToPreventErase,
+  eraseBoxConfirmed,
   deleteTrack
 };

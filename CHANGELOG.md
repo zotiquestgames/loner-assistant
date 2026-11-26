@@ -43,6 +43,16 @@ All notable changes to Loner Assistant are documented here.
   text; every soft dead end was treated as a hard one.
 - **Luck no longer carries over between Conflicts.** It now resets to full
   on the character's sheet, not just in memory, when a Conflict ends.
+- **The Living World now handles NPCs who are gone.** The NPC "Update"
+  prompt lets you remove individual relationship tags or mark an NPC as
+  gone/permanently inaccessible, which clears their tags from active play
+  while keeping a record in their notes.
+- **Closing a Scene's oracle fallback** ("Has this scene run its course?")
+  now interprets its own result: a Yes of any kind closes the scene and
+  rolls the Scene Transition automatically; a No leaves the scene open.
+- **Leverage can now prevent a Challenge Track box from being erased.**
+  Erasing a box while Leverage is held offers to spend it instead, so the
+  result becomes No, but... and no box is lost.
 
 ## v2.2.0 — 2026-07-23
 

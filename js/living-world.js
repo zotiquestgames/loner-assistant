@@ -42,9 +42,10 @@ function renderReview(npcs, locations, threads) {
       <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: var(--border-w) solid var(--border-hairline);">
         <div>
           <strong>${UI.escapeHtml(n.name)}</strong>
+          ${n.status === 'gone' ? '<span class="status-badge" style="background: var(--text-muted); margin-left: 0.5rem;">gone</span>' : ''}
           ${n.tags.length > 0 ? `<div style="font-size: 0.75rem; opacity: 0.7;">${n.tags.map(t => UI.escapeHtml(t)).join(', ')}</div>` : ''}
         </div>
-        <button class="btn btn-sm btn-outline" onclick="NPCManager.showRelationshipPrompt(${n.id})">Update</button>
+        <button class="btn btn-sm btn-outline" onclick="LivingWorld.showNPCUpdatePrompt(${n.id})">Update</button>
       </div>
     `).join('')}
 
@@ -127,10 +128,103 @@ export async function saveThreadUpdate(threadId) {
   await showLivingWorldReview();
 }
 
+/**
+ * Update an NPC's relationship tags, or mark them gone (Loner 4e: a tag
+ * built with an NPC who is gone or permanently inaccessible loses its
+ * fictional anchor - clear it from active play, but keep the history in
+ * the NPC's notes).
+ */
+export async function showNPCUpdatePrompt(npcId) {
+  const npcs = await LonerDB.getNPCsForCampaign(reviewCampaignId);
+  const npc = npcs.find(n => n.id === npcId);
+  if (!npc) return;
+
+  const tags = npc.tags || [];
+  const isGone = npc.status === 'gone';
+
+  UI.showModal('Update NPC', `
+    <p class="text-muted" style="margin-bottom: 1rem;">
+      Has the relationship with <strong>${UI.escapeHtml(npc.name)}</strong> shifted? Update their tags below.
+    </p>
+    <div class="form-group">
+      <label>Relationship tags</label>
+      ${tags.length === 0 ? '<p class="text-muted" style="font-size: 0.85rem;">None yet</p>' : `
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem;">
+          ${tags.map((t, i) => `
+            <span class="tag-chip">
+              ${UI.escapeHtml(t)}
+              <button type="button" title="Remove tag" onclick="LivingWorld.removeNPCTag(${npcId}, ${i})" style="margin-left: 0.4rem; border: none; background: none; cursor: pointer; font-weight: 700; padding: 0;">&times;</button>
+            </span>
+          `).join('')}
+        </div>
+      `}
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="living-world-npc-tag" placeholder="e.g., Useful Ambiguity" style="flex: 1;" ${isGone ? 'disabled' : ''}>
+        <button class="btn btn-sm btn-outline" onclick="LivingWorld.addNPCTag(${npcId})" ${isGone ? 'disabled' : ''}>Add</button>
+      </div>
+    </div>
+    <div class="form-group" style="border-top: var(--border-w) solid var(--border-hairline); padding-top: 1rem; margin-top: 1rem;">
+      <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+        If ${UI.escapeHtml(npc.name)} is gone or permanently out of reach, their relationship tags lose their anchor. Marking them gone clears those tags from active play - the history is kept in their notes.
+      </p>
+      <button class="btn btn-sm btn-danger" onclick="LivingWorld.markNPCGone(${npcId})" ${isGone ? 'disabled' : ''}>
+        ${isGone ? 'Marked as gone' : 'Mark as gone / no longer accessible'}
+      </button>
+    </div>
+    <button class="btn btn-primary" onclick="LivingWorld.showLivingWorldReview()" style="width: 100%; margin-top: 1rem;">
+      Done
+    </button>
+  `);
+}
+
+export async function addNPCTag(npcId) {
+  const input = document.getElementById('living-world-npc-tag');
+  const newTag = (input.value || '').trim();
+  if (!newTag) {
+    UI.showAlert('Enter a tag first', 'error');
+    return;
+  }
+
+  const npcs = await LonerDB.getNPCsForCampaign(reviewCampaignId);
+  const npc = npcs.find(n => n.id === npcId);
+  if (!npc) return;
+
+  await LonerDB.updateNPC(npcId, { tags: [...(npc.tags || []), newTag] });
+  await showNPCUpdatePrompt(npcId);
+}
+
+export async function removeNPCTag(npcId, tagIndex) {
+  const npcs = await LonerDB.getNPCsForCampaign(reviewCampaignId);
+  const npc = npcs.find(n => n.id === npcId);
+  if (!npc) return;
+
+  const tags = (npc.tags || []).filter((_, i) => i !== tagIndex);
+  await LonerDB.updateNPC(npcId, { tags });
+  await showNPCUpdatePrompt(npcId);
+}
+
+export async function markNPCGone(npcId) {
+  const npcs = await LonerDB.getNPCsForCampaign(reviewCampaignId);
+  const npc = npcs.find(n => n.id === npcId);
+  if (!npc) return;
+
+  const tags = npc.tags || [];
+  const historyNote = `[Gone] Relationship tags at the time: ${tags.length > 0 ? tags.join(', ') : '(none)'}`;
+  const description = npc.description ? `${npc.description}\n\n${historyNote}` : historyNote;
+
+  await LonerDB.updateNPC(npcId, { tags: [], description, status: 'gone' });
+  UI.showAlert(`${npc.name} marked as gone - tags cleared, recorded in their notes`, 'success');
+  await showNPCUpdatePrompt(npcId);
+}
+
 export const LivingWorld = {
   showLivingWorldReview,
   showLocationUpdatePrompt,
   saveLocationUpdate,
   showThreadUpdatePrompt,
-  saveThreadUpdate
+  saveThreadUpdate,
+  showNPCUpdatePrompt,
+  addNPCTag,
+  removeNPCTag,
+  markNPCGone
 };

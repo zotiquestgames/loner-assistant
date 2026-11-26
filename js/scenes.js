@@ -10,7 +10,7 @@ import { getSession, updateSessionFrame } from './db/database.js';
 import { showAlert } from './toast.js';
 import * as Editor from './editor.js';
 import * as UI from './ui.js';
-import { rollScene, resetDeadEndCounter } from './oracle.js';
+import { rollScene, resetDeadEndCounter, rollD6, interpretOracleRoll } from './oracle.js';
 
 /**
  * Render the current scene frame (or blank inputs) into the Scene Frame panel
@@ -75,12 +75,42 @@ export function showCloseScenePrompt() {
       <button class="btn btn-outline" onclick="SceneSystem.closeScene('abandoned')">Goal Abandoned</button>
     </div>
     <div style="margin-top: 1rem; padding-top: 1rem; border-top: var(--border-w) solid var(--border-hairline);">
-      <button class="btn btn-secondary" onclick="closeModal(); rollOracle();" style="width: 100%;">
+      <button class="btn btn-secondary" onclick="SceneSystem.askIfSceneHasRunCourse()" style="width: 100%;">
         Ask the Oracle: "Has this scene run its course?"
       </button>
     </div>
   `;
   UI.showModal('Close Scene', html);
+}
+
+/**
+ * Fallback for when none of resolved/blocked/abandoned is clearly met:
+ * ask the oracle. A Yes of any kind closes the scene (and rolls the Scene
+ * Transition, same as the other closing reasons); a No means the scene
+ * still has something worth pursuing, so play continues.
+ */
+export async function askIfSceneHasRunCourse() {
+  UI.closeModal();
+
+  const chance = rollD6();
+  const risk = rollD6();
+  const result = interpretOracleRoll(chance, risk);
+
+  Editor.insertBlock(
+    'Has this scene run its course?',
+    `${result.formatted} (Chance: ${chance}, Risk: ${risk})`,
+    result.answer === 'Yes' ? 'var(--accent-yes)' : 'var(--accent-no)'
+  );
+
+  if (result.answer === 'Yes') {
+    if (typeof window.EventManager !== 'undefined') {
+      await window.EventManager.logEvent('scene', 'Scene closed: ran its course', { chance, risk });
+    }
+    resetDeadEndCounter();
+    await rollScene();
+  } else {
+    showAlert('Still something here - keep playing the scene', 'info');
+  }
 }
 
 /**
@@ -111,5 +141,6 @@ export const SceneSystem = {
   displaySceneFrame,
   saveSceneFrame,
   showCloseScenePrompt,
+  askIfSceneHasRunCourse,
   closeScene
 };
