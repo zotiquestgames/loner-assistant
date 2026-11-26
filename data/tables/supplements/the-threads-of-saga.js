@@ -1,12 +1,12 @@
 /**
- * The Threads of Saga Adventure Tables
+ * Norse Saga Adventure Tables
  * D66 random tables
  */
 
 export default {
   supplement: {
     id: 'the-threads-of-saga-adventure',
-    name: 'The Threads of Saga Adventure Tables',
+    name: 'Norse Saga Adventure Tables',
     version: '1.0',
     enabled: true
   },
@@ -365,7 +365,7 @@ export default {
     female_names: {
       id: 'female_names',
       name: 'Female Names',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Astrid', 'Brynja', 'Dagny', 'Eira', 'Freydis', 'Gudrun'],
@@ -379,7 +379,7 @@ export default {
     male_names: {
       id: 'male_names',
       name: 'Male Names',
-      category: 'random-tables',
+      category: 'character',
       rollType: '2d6',
       entries: [
         ['Alf', 'Bjorn', 'Einar', 'Erik', 'Finn', 'Gunnar'],
@@ -416,6 +416,71 @@ export default {
         ['Flat-Nose', 'Hard-Ruler', 'the Deep-Minded', 'the Peacock', 'the Silent', 'the Shrewd'],
         ['the Proud', 'the Generous', 'the Cruel', 'the Pale', 'the Dark', 'the Fierce'],
         ['Wolf-Coat', 'Bear-Slayer', 'Ship-Breaker', 'Storm-Rider', 'Skull-Splitter', 'the Restless'],
+      ]
+    },
+    origins: {
+      id: 'origins',
+      name: 'Origins',
+      category: 'character',
+      rollType: 'origins',
+      entries: [
+        {
+          name: 'Hersir',
+          subtitle: 'War Leader',
+          skills: ['Shield-Wall Tactics', 'Battle Command', 'Weapon Master', 'Ship Tactics', 'Inspire Courage', 'Read the Field'],
+          frailties: ['Oath-Bound to Jarl', 'Battle-Scarred', 'Cannot Refuse Challenge', 'Burden of Command', 'Haunted by Fallen', 'Rival for Position'],
+          gear: ['Named Sword', 'Chainmail Byrnie', 'War Horn', 'Battle Banner', 'Jarl\'s Gift-Ring', 'Iron Helm']
+        },
+        {
+          name: 'Skald',
+          subtitle: 'Saga Poet',
+          skills: ['Flyting (Verbal Combat)', 'Perfect Memory', 'Saga-Telling', 'Rune-Reading', 'Keen Observer', 'Silver-Tongued'],
+          frailties: ['Cannot Tell Lies', 'Compelled to Witness', 'Words Bring Trouble', 'Frail in Battle', 'Cursed by Subject', 'Rival Skald'],
+          gear: ['Harp', 'Saga-Scroll', 'Rune-Carved Staff', 'Silver Arm-Ring', 'Fine Cloak', 'Ink & Vellum']
+        },
+        {
+          name: 'Völva',
+          subtitle: 'Seeress',
+          skills: ['Seidr Magic', 'Fate-Reading', 'Spirit-Sight', 'Herb-Lore', 'Weather-Reading', 'Curse-Weaving'],
+          frailties: ['Marked by Spirits', 'Iron-Weak', 'Prophetic Burden', 'Socially Isolated', 'Visions Unmake Mind', 'Feared, Not Loved'],
+          gear: ['Seidr Staff', 'Divination Bones', 'Spirit Cloak', 'Ritual Herbs', 'Sacred Distalf', 'Trance-Inducing Brew']
+        },
+        {
+          name: 'Víkingr',
+          subtitle: 'Raider',
+          skills: ['Seafaring', 'Axe-Fighting', 'Climbing & Scaling', 'Navigation', 'Quick Escape', 'Plunder Sense'],
+          frailties: ['Greedy', 'Outlawed Abroad', 'Sea-Sick', 'Wanted in Many Lands', 'Reckless', 'No Land, No Home'],
+          gear: ['Bearded Axe', 'Longship Share', 'Rope & Grappling Hook', 'Plunder Sack', 'Weatherproof Cloak', 'Foreign Coins']
+        },
+        {
+          name: 'Goði',
+          subtitle: 'Chieftain-Priest',
+          skills: ['Law-Speaking', 'Thing-Mastery', 'Judgment', 'Blót Rituals', 'Negotiation', 'Authority'],
+          frailties: ['Bound by Tradition', 'Political Enemies', 'Must Remain Neutral', 'Family Feuds', 'Challenged Authority', 'Weight of Responsibility'],
+          gear: ['Arm-Ring of Authority', 'Law-Stone', 'Ritual Implements', 'Fine Cloak', 'Oath-Ring', 'Temple Key']
+        },
+        {
+          name: 'Berserkr',
+          subtitle: 'Shapeshifter Warrior',
+          skills: ['Battle Fury', 'Pain Immunity', 'Fear-Inspiring', 'Bear Strength', 'Hamramr (Shape-Shift)', 'Relentless'],
+          frailties: ['Uncontrollable Rage', 'Cannot Wear Armor', 'Socially Feared', 'Rage Exhaustion', 'Kills Indiscriminately', 'Cursed Bloodline'],
+          gear: ['Bear/Wolf Pelt', 'Massive Weapon', 'Trophy Necklace', 'War Paint', 'Ritual Mushrooms', 'Iron Chains (for restraint)']
+        }
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Patronymics & Matronymics',
+      category: 'character',
+      rollType: '2d6',
+      genderSuffix: { male: 'son', female: 'dottir' },
+      entries: [
+        ['Eriksson', 'Bjornsson', 'Haraldsson', 'Ragnarsson', 'Thorsson', 'Ulfsson'],
+        ['Gunnarsson', 'Sigurdsson', 'Olafsson', 'Knutsson', 'Leifsson', 'Einarsson'],
+        ['Eriksdottir', 'Bjornsdottir', 'Haraldsdottir', 'Ragnarsdottir', 'Thorsdottir', 'Ulfsdottir'],
+        ['Gunnarsdottir', 'Sigurdsdottir', 'Olafsdottir', 'Knutsdottir', 'Leifsdottir', 'Einarsdottir'],
+        ['Hakonsson', 'Ingolfsson', 'Ketilsson', 'Njálsson', 'Valgardsson', 'Yngvarsson'],
+        ['Hakonsdottir', 'Ingolfsdottir', 'Ketilsdottir', 'Njálsdottir', 'Valgardsdottir', 'Yngvarsdottir'],
       ]
     }
   }

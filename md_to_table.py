@@ -195,6 +195,38 @@ def parse_subtable(table_content):
     return grid, len(entries), missing
 
 
+ORIGIN_HEADING_RE = re.compile(r'^###\s+ORIGIN\s+(\d+):\s*(.+?)\s*(?:\((.+?)\))?\s*$', re.MULTILINE | re.IGNORECASE)
+ORIGIN_ROW_RE = re.compile(r'^\|\s*([1-6])\s*\|\s*(.+?)\s*\|\s*$', re.MULTILINE)
+
+
+def parse_origins(content):
+    """Origins (Norse Saga, Celtic Fantasy): '### ORIGIN n: NAME (Subtitle)',
+    each followed by three d6 tables in this order: Skills, Frailties, Gear.
+    Returns a list of origins in book order, or [] if the book has none."""
+    heads = list(ORIGIN_HEADING_RE.finditer(content))
+    origins = []
+    for i, h in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(content)
+        body = content[h.end():end]
+        # Stop at the next heading of level 2 or 3 (the names chapter after the last origin).
+        stop = re.search(r'^#{2,3}\s', body, re.MULTILINE)
+        if stop:
+            body = body[:stop.start()]
+        rows = [strip_markdown_emphasis(m.group(2)).strip() for m in ORIGIN_ROW_RE.finditer(body)]
+        if len(rows) != 18:
+            print(f"  Warning: Origin '{h.group(2)}' has {len(rows)} d6 rows, expected 18 (Skills, Frailties, Gear); skipped")
+            continue
+        origins.append({
+            'name': strip_markdown_emphasis(h.group(2)).strip().title(),
+            'subtitle': (h.group(3) or '').strip(),
+            'skills': rows[0:6], 'frailties': rows[6:12], 'gear': rows[12:18],
+        })
+    return origins
+
+
+GENDER_SUFFIXES = {'male': 'son', 'female': 'dottir'}
+
+
 def grid_key(grid):
     """Normalised content of a grid, to recognise a table copied from the core rules."""
     return tuple(tuple(re.sub(r'\s+', ' ', c).strip().lower() for c in row) for row in grid)
@@ -303,11 +335,32 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
     if not supplement_tables and not inspiration_tables:
         raise ValueError("No valid tables found")
 
-    # The character generator needs all four trait tables. Without them
-    # (characters built from Origins, as in The Threads of Saga), keep the
-    # names and traits rollable as random tables: the app shows 'character'
-    # tables only inside the generator.
-    if not CHARACTER_TRAIT_TABLES <= {k for k, t in supplement_tables.items() if t['category'] == 'character'}:
+    origins = parse_origins(content)
+    if origins:
+        supplement_tables['origins'] = {
+            'id': 'origins', 'name': 'Origins', 'kind': 'origins',
+            'category': 'character', 'entries': origins,
+        }
+        print(f"  Origins (character): {len(origins)} origins, 18 d6 entries each")
+        # A patronymic table is the family name of these books.
+        if 'surnames' not in supplement_tables:
+            pid = next((k for k in supplement_tables if k.startswith('patronymic')), None)
+            if pid:
+                t = supplement_tables.pop(pid)
+                t['id'], t['category'] = 'surnames', 'character'
+                supplement_tables['surnames'] = t
+                print(f"  {t['name']}: used as surnames")
+        for k in ('concepts', 'female_names', 'male_names', 'surnames', 'names'):
+            if k in supplement_tables:
+                supplement_tables[k]['category'] = 'character'
+        sn = supplement_tables.get('surnames')
+        if sn and all(e.endswith(tuple(GENDER_SUFFIXES.values())) for row in sn['entries'] for e in row):
+            sn['genderSuffix'] = dict(GENDER_SUFFIXES)
+
+    # The character generator needs all four trait tables, or Origins. Without
+    # either, keep the names and traits rollable as random tables: the app
+    # shows 'character' tables only inside the generator.
+    if not origins and not CHARACTER_TRAIT_TABLES <= {k for k, t in supplement_tables.items() if t['category'] == 'character'}:
         demoted = [t['name'] for t in supplement_tables.values() if t['category'] == 'character']
         for t in supplement_tables.values():
             t['category'] = 'random-tables'
@@ -323,14 +376,39 @@ def generate_table_block(table_id, info, default_category):
     comma and without a trailing newline. This is the unit that both a fresh
     write and a merge splice together, so the two paths stay byte-identical."""
     category = info.get('category', default_category)
+    if info.get('kind') == 'origins':
+        lines = [
+            f'    {table_id}: {{',
+            f"      id: {js_string(info['id'])},",
+            f"      name: {js_string(info['name'])},",
+            f"      category: {js_string(category)},",
+            "      rollType: 'origins',",
+            '      entries: [',
+        ]
+        for o in info['entries']:
+            lines.append('        {')
+            lines.append(f"          name: {js_string(o['name'])},")
+            lines.append(f"          subtitle: {js_string(o['subtitle'])},")
+            for key in ('skills', 'frailties', 'gear'):
+                vals = ', '.join(js_string(v) for v in o[key])
+                comma = ',' if key != 'gear' else ''
+                lines.append(f"          {key}: [{vals}]{comma}")
+            lines.append('        },')
+        lines[-1] = '        }'
+        lines.append('      ]')
+        lines.append('    }')
+        return '\n'.join(lines)
     lines = [
         f'    {table_id}: {{',
         f"      id: {js_string(info['id'])},",
         f"      name: {js_string(info['name'])},",
         f"      category: {js_string(category)},",
         "      rollType: '2d6',",
-        '      entries: [',
     ]
+    if info.get('genderSuffix'):
+        gs = ', '.join(f"{k}: {js_string(v)}" for k, v in info['genderSuffix'].items())
+        lines.append(f'      genderSuffix: {{ {gs} }},')
+    lines.append('      entries: [')
     for row in info['entries']:
         escaped_row = ', '.join(js_string(e) for e in row)
         lines.append(f'        [{escaped_row}],')
@@ -539,6 +617,7 @@ def main():
     ap = argparse.ArgumentParser(description='Convert a Loner Markdown source into Loner Assistant tables.')
     ap.add_argument('markdown_file')
     ap.add_argument('--name', help='supplement name when the file name does not give it')
+    ap.add_argument('--slug', help='file slug when it differs from the name (Norse Saga: the-threads-of-saga)')
     args = ap.parse_args()
 
     markdown_file = args.markdown_file
@@ -548,7 +627,7 @@ def main():
 
     try:
         title, supplement_tables, inspiration_tables = parse_markdown(markdown_file, title=args.name)
-        base_slug = slugify(title)
+        base_slug = args.slug or slugify(title)
 
         if supplement_tables:
             filename = base_slug + '.js'

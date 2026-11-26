@@ -2,7 +2,8 @@
  * LONER ASSISTANT v2.1 - Character Generator
  *
  * Rolls a full character (name, concept, two skills, a frailty, two pieces
- * of gear) from a supplement's `character` tables, previews it with per-line
+ * of gear) from a supplement's `character` tables, or from one of its
+ * Origins (Norse Saga, Celtic Fantasy), previews it with per-line
  * rerolls, and saves it either as a PC (pre-fills the New Character sheet) or
  * as an NPC (creates an NPC record AND drops a summary into the session notes).
  *
@@ -19,8 +20,8 @@ import { showNewCharacterForm } from './characters.js';
 import { showNPCPanel, loadNPCsList } from './npcs.js';
 import { rollLifepathFragment } from './backstory.js';
 
-function generate() {
-  const character = TableSystem.generateCharacter(current.supplementId, { gender: current.gender });
+function generate(originIndex = null) {
+  const character = TableSystem.generateCharacter(current.supplementId, { gender: current.gender, originIndex });
   character.lifepath = rollLifepathFragment();
   return character;
 }
@@ -72,12 +73,32 @@ export const CharacterGenerator = {
     this.regenerate();
   },
 
+  /**
+   * Origins: pick one (index) or roll one ('roll'); the traits of the
+   * new origin are rolled, the name is kept.
+   */
+  setOrigin(value) {
+    const origins = TableSystem.getOrigins(current.supplementId);
+    const i = value === 'roll' ? Math.floor(Math.random() * origins.length) : Number(value);
+    const old = current.character;
+    current.character = generate(i);
+    Object.assign(current.character, {
+      firstName: old.firstName, surname: old.surname, fullName: old.fullName,
+      nameGender: old.nameGender, lifepath: old.lifepath
+    });
+    this.render();
+  },
+
   setGender(gender) {
     current.gender = gender;
     // Reroll just the name to the chosen gender, keep everything else.
     const c = current.character;
     c.gender = gender;
-    c.firstName = TableSystem.rollCharacterField(current.supplementId, 'name', gender);
+    c.nameGender = gender === 'any' ? (Math.random() < 0.5 ? 'male' : 'female') : gender;
+    c.firstName = TableSystem.rollCharacterField(current.supplementId, 'name', c.nameGender);
+    if (TableSystem.registry[current.supplementId]?.tables?.surnames?.genderSuffix) {
+      c.surname = TableSystem.rollCharacterField(current.supplementId, 'surnames', c.nameGender);
+    }
     c.fullName = [c.firstName, c.surname].filter(Boolean).join(' ');
     this.render();
   },
@@ -89,14 +110,19 @@ export const CharacterGenerator = {
 
   rerollField(field) {
     const c = current.character;
+    const hasOrigin = Number.isInteger(c.originIndex);
     if (field === 'name') {
-      c.firstName = TableSystem.rollCharacterField(current.supplementId, 'name', current.gender);
+      c.firstName = TableSystem.rollCharacterField(current.supplementId, 'name', c.nameGender || current.gender);
     } else if (field === 'surname') {
-      c.surname = TableSystem.rollCharacterField(current.supplementId, 'surnames');
+      c.surname = TableSystem.rollCharacterField(current.supplementId, 'surnames', c.nameGender || current.gender);
     } else if (field === 'concept') {
-      c.concept = TableSystem.rollCharacterField(current.supplementId, 'concepts');
+      c.concept = hasOrigin
+        ? TableSystem.rollOriginConcept(current.supplementId, c.originIndex)
+        : TableSystem.rollCharacterField(current.supplementId, 'concepts');
     } else if (field === 'frailty') {
-      c.frailty = TableSystem.rollCharacterField(current.supplementId, 'frailties');
+      c.frailty = hasOrigin
+        ? TableSystem.rollOriginTrait(current.supplementId, c.originIndex, 'frailties')
+        : TableSystem.rollCharacterField(current.supplementId, 'frailties');
     } else if (field === 'lifepath') {
       c.lifepath = rollLifepathFragment();
     }
@@ -106,10 +132,13 @@ export const CharacterGenerator = {
 
   rerollSkill(index) {
     const c = current.character;
-    let v = TableSystem.rollCharacterField(current.supplementId, 'skills');
+    const once = () => Number.isInteger(c.originIndex)
+      ? TableSystem.rollOriginTrait(current.supplementId, c.originIndex, 'skills')
+      : TableSystem.rollCharacterField(current.supplementId, 'skills');
+    let v = once();
     let attempts = 0;
     while (c.skills.includes(v) && attempts < 12) {
-      v = TableSystem.rollCharacterField(current.supplementId, 'skills');
+      v = once();
       attempts++;
     }
     c.skills[index] = v;
@@ -118,10 +147,13 @@ export const CharacterGenerator = {
 
   rerollGear(index) {
     const c = current.character;
-    let v = TableSystem.rollCharacterField(current.supplementId, 'gear');
+    const once = () => Number.isInteger(c.originIndex)
+      ? TableSystem.rollOriginTrait(current.supplementId, c.originIndex, 'gear')
+      : TableSystem.rollCharacterField(current.supplementId, 'gear');
+    let v = once();
     let attempts = 0;
     while (c.gear.includes(v) && attempts < 12) {
-      v = TableSystem.rollCharacterField(current.supplementId, 'gear');
+      v = once();
       attempts++;
     }
     c.gear[index] = v;
@@ -168,6 +200,7 @@ export const CharacterGenerator = {
           </div>
         </div>
 
+        ${this.originRow(c)}
         ${this.fieldRow('Concept', c.concept, "CharacterGenerator.rerollField('concept')")}
         ${c.skills.map((s, i) => this.fieldRow(i === 0 ? 'Skills' : '', s, `CharacterGenerator.rerollSkill(${i})`)).join('')}
         ${this.fieldRow('Frailty', c.frailty, "CharacterGenerator.rerollField('frailty')")}
@@ -185,6 +218,27 @@ export const CharacterGenerator = {
         </div>
       </div>
     `);
+  },
+
+  /**
+   * Origin selector (only for supplements with Origins): pick one of the
+   * six, or roll 1d6.
+   */
+  originRow(c) {
+    const origins = TableSystem.getOrigins(current.supplementId);
+    if (!origins.length) return '';
+    return `
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.4rem 0; border-bottom:1px solid var(--border);">
+        <div style="min-width:0; flex:1;">
+          <div style="font-size:0.7rem; text-transform:uppercase; color:var(--text-muted);">Origin</div>
+          <select onchange="CharacterGenerator.setOrigin(this.value)"
+                  style="width:100%;padding:0.35rem;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-weight:600;">
+            ${origins.map((o, i) => `<option value="${i}" ${i === c.originIndex ? 'selected' : ''}>${i + 1}. ${UI.escapeHtml(o.name)}${o.subtitle ? ' (' + UI.escapeHtml(o.subtitle) + ')' : ''}</option>`).join('')}
+          </select>
+        </div>
+        <button class="btn btn-sm btn-outline" onclick="CharacterGenerator.setOrigin('roll')" title="Roll 1d6 for the Origin">Roll</button>
+      </div>
+    `;
   },
 
   /**

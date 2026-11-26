@@ -6,6 +6,14 @@ All notable changes to Loner Assistant are documented here.
 
 ### Added
 
+- **Origins in the character generator** (Norse Saga, Celtic Fantasy).
+  Pick one of the six Origins or roll 1d6; Skills, Frailty and Gear come
+  from that Origin's d6 tables, and rerolls stay inside it. The Origin is
+  written in the Concept: "Skald (Saga Poet)" in Norse Saga, where the
+  Origin takes the place of the Concept, and "Court Fili (Fili)" in Celtic
+  Fantasy, whose Concepts row is the Origin. Norse Saga family names
+  follow the gender of the name (-son, -dottir). `md_to_table.py` reads
+  `### ORIGIN n: NAME (Subtitle)` sections into an `origins` block.
 - **Mech Requiem Get Inspired flavor**, now readable from the book (loner
   PR 50 gave its Verbs, Adjectives and Nouns table titles).
 - **Six more Geared Towards Loner supplements**: Celtic Fantasy,
@@ -49,6 +57,8 @@ All notable changes to Loner Assistant are documented here.
 
 ### Fixed
 
+- The Norse Saga supplement and flavor showed an old name, "The Threads
+  of Saga". Ids and files stay the same, so a chosen flavor is kept.
 - Pulp Heroes: removed "Document Types", a half-empty grid that is no
   longer in the book.
 - The character generator lists only supplements with all four trait

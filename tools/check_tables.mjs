@@ -17,7 +17,15 @@ for (const s of supplements) {
       t.entries.every(r => r.length === 6 && r.every(c => typeof c === 'string' && c.trim()));
     if (!ok) { bad++; console.log(`broken grid: ${s.id} / ${id}`); }
   }
-  if (['concepts', 'skills', 'frailties', 'gear'].every(k => tables[k]?.category === 'character')) {
+  const origins = tables.origins?.rollType === 'origins' ? tables.origins.entries : [];
+  for (const o of origins) {
+    for (const k of ['skills', 'frailties', 'gear']) {
+      if (!Array.isArray(o[k]) || o[k].length !== 6 || !o[k].every(v => v && v.trim())) {
+        bad++; console.log(`broken origin: ${s.id} / ${o.name} / ${k}`);
+      }
+    }
+  }
+  if (origins.length || ['concepts', 'skills', 'frailties', 'gear'].every(k => tables[k]?.category === 'character')) {
     const names = tables.names || (tables.female_names && tables.male_names);
     const missing = names ? [] : ['names'];
     generator.push(s.name + (missing.length ? ` (missing: ${missing.join(', ')})` : ''));
