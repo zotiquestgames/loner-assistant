@@ -14,7 +14,7 @@
  * registerServiceWorker() nudges them to do, but only if this bumps).
  */
 
-const CACHE_VERSION = 'loner-v44';
+const CACHE_VERSION = 'loner-v46';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -73,6 +73,7 @@ const PRECACHE_URLS = [
   './js/backstory.js',
   './js/action.js',
   './js/temporal.js',
+  './js/modules.js',
   './js/db/database.js',
   './js/crud/modal-form.js',
 

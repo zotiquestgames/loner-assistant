@@ -41,6 +41,7 @@ import { CastSystem } from './cast.js';
 import { Backstory } from './backstory.js';
 import { ActionSystem } from './action.js';
 import { TimeSystem } from './temporal.js';
+import { ModuleSettings } from './modules.js';
 import {
   getState,
   setCurrentCampaign,
@@ -276,6 +277,7 @@ function exposeCuratedGlobals() {
   window.Backstory = Backstory;
   window.ActionSystem = ActionSystem;
   window.TimeSystem = TimeSystem;
+  window.ModuleSettings = ModuleSettings;
 
   // Bare function names referenced directly in markup
   window.showView = UI.showView;
