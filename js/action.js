@@ -21,9 +21,16 @@ import {
   rollOracle,
   lastOracleResult
 } from './oracle.js';
+import {
+  DISTANCE,
+  resolveChaseRoll,
+  trailingHigh,
+  canSetIntensity,
+  intensityForNewScene,
+  intensityAfterTwist
+} from './rules/cinematic.js';
 
 const MAX_AP = 3;
-const DISTANCE = ['Caught', 'Close', 'Distant'];
 const INTENSITY = ['Low', 'Medium', 'High'];
 
 const CHASE_QUESTIONS = {
@@ -220,11 +227,6 @@ export function startChase() {
   note('Chase', `${pursuer} close in. Distance: Close.`, 'var(--accent-no)');
 }
 
-function protagonistDelta(result) {
-  if (result.answer === 'Yes') return result.modifier === 'but' ? 0 : 1;
-  return result.modifier === 'and' ? -2 : -1;
-}
-
 export async function chaseRoll(question) {
   if (!chase || chase.over) return;
   const q = CHASE_QUESTIONS[question];
@@ -239,17 +241,9 @@ export async function chaseRoll(question) {
   const { chanceDice, riskDice } = rollChanceRisk(modifier);
   const result = interpretOracleRoll(chanceDice, riskDice);
   const distanceBefore = chase.distance;
-
-  let delta = q.protagonistSide ? protagonistDelta(result) : -protagonistDelta(result);
-  // AP Advantage in a chase guarantees one step in your favor
-  if (usedAdvantage) delta += 1;
-  chase.distance = Math.max(0, Math.min(2, chase.distance + delta));
-
-  if (question === 'escape') {
-    chase.over = result.answer === 'Yes' ? 'escaped' : 'caught';
-  } else if (chase.distance === 0) {
-    chase.over = 'caught';
-  }
+  const outcome = resolveChaseRoll(chase.distance, question, result, q.protagonistSide, usedAdvantage);
+  chase.distance = outcome.distance;
+  chase.over = outcome.over;
   chase.last = { question, distanceBefore, result };
 
   const custom = (document.getElementById('chase-question')?.value || '').trim();
@@ -282,12 +276,6 @@ async function currentSession() {
   return state.sessionId ? await getSession(state.sessionId) : null;
 }
 
-function trailingHigh(history) {
-  let n = 0;
-  for (let i = history.length - 1; i >= 0 && history[i] === 'High'; i--) n++;
-  return n;
-}
-
 async function saveIntensity(intensity) {
   const state = getState();
   if (state.sessionId) await updateSession(state.sessionId, { intensity });
@@ -301,9 +289,7 @@ export async function setIntensity(level) {
   }
   const intensity = session.intensity || { history: [], next: null };
   const history = [...intensity.history];
-  const before = history.length ? history.slice(0, -1) : history;
-
-  if (level === 'High' && trailingHigh(before) >= 3) {
+  if (!canSetIntensity(history, level)) {
     showAlert('After three High scenes in a row, this scene must be Low or Medium', 'error');
     return;
   }
@@ -321,9 +307,9 @@ export async function onSceneTransition() {
   if (!intensity || intensity.history.length === 0) return;
 
   const history = [...intensity.history];
-  let level = intensity.next || history[history.length - 1];
-  if (level === 'High' && trailingHigh(history) >= 3) {
-    level = 'Medium';
+  const wanted = intensity.next || history[history.length - 1];
+  const level = intensityForNewScene(history, intensity.next);
+  if (level !== wanted) {
     showAlert('Three High scenes in a row: this scene starts at Medium', 'info');
   }
   history.push(level);
@@ -337,7 +323,7 @@ export async function onTwist() {
   if (!intensity || intensity.history.length === 0) return;
 
   const current = intensity.history[intensity.history.length - 1];
-  const next = current === 'Low' ? 'Low' : 'High';
+  const next = intensityAfterTwist(current);
   await saveIntensity({ history: intensity.history, next });
   note('Intensity', `Twist during a ${current} scene: the next scene starts at ${next}.`);
   render();

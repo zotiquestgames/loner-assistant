@@ -11,7 +11,7 @@ import {
   updateCustomTable,
   deleteCustomTable
 } from './db/database.js';
-import { showModal, closeModal, showAlert, showView } from './ui.js';
+import { showModal, closeModal, showAlert, showView, escapeHtml } from './ui.js';
 import { TableSystem } from './tables.js';
 import TEMPLATES from '../data/tables/templates/world-builders-guide.js';
 
@@ -58,7 +58,7 @@ export const CustomTables = {
             <button class="btn btn-sm btn-secondary"
                     onclick="TableManager.rollCustomTable('custom-${table.id}')"
                     title="${this.getRollTypeLabel(table.rollType)}">
-              ${table.name}
+              ${escapeHtml(table.name)}
             </button>
           `).join('')}
         </div>
@@ -134,7 +134,7 @@ export const CustomTables = {
     return `
       <div class="card">
         <div class="card-header">
-          <h3>${table.name}</h3>
+          <h3>${escapeHtml(table.name)}</h3>
         </div>
         <div class="card-body">
           <p class="text-muted" style="margin: 0 0 var(--space-sm) 0;">
@@ -233,7 +233,7 @@ export const CustomTables = {
         ${templatePicker}
         <div class="form-group">
           <label>Table Name *</label>
-          <input type="text" name="name" value="${name}" placeholder="e.g., Random Encounters" required>
+          <input type="text" name="name" value="${escapeHtml(name)}" placeholder="e.g., Random Encounters" required>
         </div>
 
         <div class="form-group">
@@ -249,7 +249,7 @@ export const CustomTables = {
 
         <div class="form-group">
           <label id="entries-label">Table Entries *</label>
-          <textarea name="entries" placeholder="Enter entries here..." rows="12" required>${entriesText}</textarea>
+          <textarea name="entries" placeholder="Enter entries here..." rows="12" required>${escapeHtml(entriesText)}</textarea>
           <small class="text-muted" id="entries-hint" style="display: block; margin-top: 0.25rem;"></small>
         </div>
 
@@ -429,7 +429,7 @@ export const CustomTables = {
       showModal(`Test Roll: ${table.name}`, `
         <div style="text-align: center; padding: var(--space-lg);">
           <div style="font-size: 1.1rem; margin-bottom: var(--space-md);">
-            <strong>${result.result}</strong>
+            <strong>${escapeHtml(result.result)}</strong>
           </div>
           <p class="text-muted">
             Roll: ${result.rolls.join(', ')}

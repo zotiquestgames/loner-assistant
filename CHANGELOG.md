@@ -2,7 +2,7 @@
 
 All notable changes to Loner Assistant are documented here.
 
-## Unreleased
+## v2.5.0 — 2026-11-26
 
 ### Added
 
@@ -30,6 +30,15 @@ All notable changes to Loner Assistant are documented here.
   them. The Threads of Saga gets its name tables; its six Origins need
   their own generator. Tables added along the way: Nicknames, vehicle and
   companion traits, and the D66 tables the earlier import missed.
+- **Automated tests** (`npm test`, Node's built-in test runner, no
+  dependencies) for the Oracle, conflict, Dead End and Scene Transition
+  rules (including regression cases for the bugs fixed in v2.3), chase and
+  intensity rules, temporal play rules, the structure of every roll table,
+  and the service worker precache.
+- **Service worker cache version is now computed** from the precached
+  files (`npm run cache-version`) instead of bumped by hand; the tests
+  fail if it is stale or a module is missing from the precache.
+
 - **Optional modules per campaign.** A "Modules" button in the Current
   Campaign panel switches Leverage, Challenge Tracks, Status Track,
   Cinematic Action, and Time Travel on or off. Switched-off modules hide
@@ -50,6 +59,8 @@ All notable changes to Loner Assistant are documented here.
   tables get `category: 'character'`; Nicknames and similar stay random
   tables. A hand-written data file is left unchanged instead of being
   merged into (the old merge corrupted it).
+- Game rules (Oracle, Cinematic Action, temporal play) live in
+  `js/rules/`, free of DOM and storage code, so they can be tested.
 - Module panels use shared CSS classes instead of inline styles, so
   they follow the light and dark themes consistently.
 - Dice emoji removed from buttons in favor of text labels ("Generate",
@@ -77,6 +88,11 @@ All notable changes to Loner Assistant are documented here.
   theme toggle.
 - Checkboxes and radio buttons inside forms were stretched to full width
   and pushed their labels aside.
+- **Text with quotes broke buttons and fields.** `escapeHtml` did not
+  escape quotes, so a name like "D'Arcy" broke the Status Track buttons
+  and a quote in a custom table name broke its form. Quotes are now
+  escaped everywhere, the Status Track buttons no longer pass names, and
+  custom table names, entries and results are escaped.
 
 ## v2.4.0 — 2026-11-26
 

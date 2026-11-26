@@ -14,6 +14,18 @@ import { showAlert } from './toast.js';
 import { showModal, closeModal, escapeHtml } from './ui.js';
 import * as Editor from './editor.js';
 import { rollD6, rollChanceRisk, interpretOracleRoll, registerDoubles } from './oracle.js';
+import {
+  findNode as node,
+  currentLeap,
+  nodeLabel as label,
+  wearForRoll,
+  ritualTook,
+  loopBrokenOutcome,
+  divergenceAddsTag,
+  stabilityOutcome,
+  collapseStress,
+  layoutTimeWeb
+} from './rules/temporal.js';
 
 const WEAR = {
   'Temporal Migraine': 'Your next scene after a reset is played at Disadvantage.',
@@ -74,25 +86,6 @@ async function load() {
 async function save(t) {
   await updateCampaign(getState().campaignId, { temporal: t });
   await render();
-}
-
-function node(t, id) {
-  return t.nodes.find(n => n.id === id);
-}
-
-// The Leap Node you are in: the current node, or the nearest leap above it
-// (a Checkpoint declared inside a leap still lives in that timeline).
-function currentLeap(t) {
-  let n = node(t, t.current);
-  while (n && n.type !== 'leap' && n.type !== 'origin') n = node(t, n.parent);
-  return n?.type === 'leap' ? n : null;
-}
-
-function label(t, n) {
-  if (n.type === 'origin') return 'Node 0';
-  let p = node(t, n.parent);
-  while (p && p.type !== 'leap' && p.type !== 'origin') p = node(t, p.parent);
-  return n.type === 'checkpoint' && p?.type === 'leap' ? `${n.id}@${p.id}` : n.id;
 }
 
 function addNode(t, type, prefix, description, edge = 'forward') {
@@ -207,10 +200,7 @@ export async function resetLoop() {
   t.current = cp.id;
 
   const roll = rollD6();
-  let wear;
-  if (roll <= 2) wear = 'Temporal Migraine';
-  else if (roll <= 4) wear = 'Déjà-Flare';
-  else if (roll === 5) wear = 'Ghost Echo';
+  const wear = wearForRoll(roll);
 
   if (wear) {
     t.wearTags.push(wear);
@@ -265,7 +255,7 @@ export async function removeWear(i) {
 
 export async function ritual() {
   const result = await ask('Did the ritual take?');
-  showAlert(result.answer === 'Yes' && result.modifier !== 'but'
+  showAlert(ritualTook(result)
     ? 'The ritual took: erase one wear tag'
     : 'The ritual did not take', 'info');
 }
@@ -273,10 +263,10 @@ export async function ritual() {
 export async function askLoopBroken() {
   const t = await requireState();
   if (!t || !t.loopActive) return;
-  const result = await ask('Is the loop finally broken?');
-  if (result.answer === 'Yes' && result.modifier === 'but') {
+  const outcome = loopBrokenOutcome(await ask('Is the loop finally broken?'));
+  if (outcome === 'cracks') {
     showAlert('Not quite: the loop cracks, but holds. Push on.', 'info');
-  } else if (result.answer === 'Yes') {
+  } else if (outcome === 'breakthrough') {
     const cp = node(t, t.activeCheckpoint);
     t.current = cp.id;
     addNode(t, 'fixed', 'F', `Breakthrough at ${label(t, cp)}`);
@@ -284,7 +274,7 @@ export async function askLoopBroken() {
     t.activeCheckpoint = null;
     note('Breakthrough', 'The loop is broken. The final Checkpoint becomes a Fixed Point; play continues forward.', 'var(--accent-yes)');
     await save(t);
-  } else if (result.modifier === 'and') {
+  } else if (outcome === 'broken') {
     showAlert('Something fundamental has broken: move toward Consumed, or trigger a Leap', 'error');
   } else {
     showAlert('Not yet. The character pushes on.', 'info');
@@ -349,7 +339,7 @@ export async function leap() {
   const rows = [];
   for (const q of DIVERGENCES) {
     const r = await ask(`Leap ${n.id}: ${q}`);
-    const diverges = r.answer === 'Yes' || (r.answer === 'No' && r.modifier === 'and');
+    const diverges = divergenceAddsTag(r);
     rows.push({ q, r, diverges });
   }
 
@@ -416,17 +406,17 @@ export async function askStable() {
     showAlert('Ask this inside a Leap Node', 'info');
     return;
   }
-  const r = await ask('Is this timeline stable?');
-  if (r.answer === 'No' && r.modifier === 'and') {
+  const outcome = stabilityOutcome(await ask('Is this timeline stable?'));
+  if (outcome === 'collapse') {
     const roll = rollD6();
     const fallout = FALLOUT[roll - 1];
     note('Timeline Collapse', `Fallout (${roll}): ${fallout}`);
     t.current = current.id;
     const n = addNode(t, 'leap', 'L', 'After the collapse', 'leap');
-    n.stress = roll === 6 ? 1 : 2;
+    n.stress = collapseStress(roll);
     t.drift++;
     showAlert(`Collapse! Fallout: ${fallout.split(':')[0]}. Auto-leap to ${n.id}.`, 'error');
-  } else if (r.answer === 'No' && !r.modifier) {
+  } else if (outcome === 'stress') {
     await addStressTo(t, current, 'the timeline holds, for now');
   } else {
     showAlert('The timeline holds', 'success');
@@ -492,28 +482,8 @@ export async function askPrompt() {
 
 // ------------------------------------------------------------ time-web
 
-function layout(t) {
-  const pos = {};
-  const used = new Set();
-  let maxRow = 0;
-  for (const n of t.nodes) {
-    if (!n.parent) {
-      pos[n.id] = { col: 0, row: 0 };
-    } else {
-      const p = pos[n.parent];
-      const col = p.col + 1;
-      let row = n.edge === 'leap' ? maxRow + 1 : p.row;
-      while (used.has(`${col},${row}`)) row++;
-      pos[n.id] = { col, row };
-    }
-    used.add(`${pos[n.id].col},${pos[n.id].row}`);
-    maxRow = Math.max(maxRow, pos[n.id].row);
-  }
-  return { pos, maxRow };
-}
-
 function timeWebSVG(t) {
-  const { pos, maxRow } = layout(t);
+  const { pos, maxRow } = layoutTimeWeb(t.nodes);
   const W = 120, H = 90, PAD = 40;
   const cols = Math.max(...Object.values(pos).map(p => p.col)) + 1;
   const width = cols * W + PAD;
