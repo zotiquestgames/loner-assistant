@@ -56,6 +56,12 @@ All notable changes to Loner Assistant are documented here.
   supplement tools. Its Scene section no longer describes the old
   Expected/Altered/Interrupted roll, and Get Inspired is now described as
   Verb + Adjective + Noun.
+- **Help panels ("?") updated** to match: new Play entries (Scene Frame,
+  Dead End, Scene Transition, Leverage & Challenge Tracks), The Living
+  World on Campaigns, Lifepath & Marks on Characters, and Quick-Build and
+  Factions on NPCs. Entries describing fields and filters the app doesn't
+  have (character Background/Tags, Friendly/Hostile/Complex relationships)
+  now describe the actual forms.
 
 ### Fixed
 

@@ -17,7 +17,11 @@ export const HelpSystem = {
       sections: [
         {
           title: 'Current Session',
-          content: 'Shows your active session. Use "Manage Sessions" to create new sessions or switch between them. Each session tracks its own notes, oracle rolls, and twist counter.'
+          content: 'Shows your active session. Use "Manage Sessions" to create new sessions or switch between them. Each session keeps its own notes and scene frame; the Twist Counter belongs to the campaign, so it carries across sessions.'
+        },
+        {
+          title: 'Scene Frame',
+          content: 'Before rolling anything, answer Where, Who, and What (the scene goal), then click "Save Frame". When the goal is resolved, blocked, or abandoned, click "Close Scene". If none of those is clearly true, ask the oracle "Has this scene run its course?": any Yes closes the scene, a No keeps it going. Closing a scene rolls the Scene Transition.'
         },
         {
           title: 'Oracle (Right Panel)',
@@ -25,15 +29,23 @@ export const HelpSystem = {
         },
         {
           title: 'Twist Counter',
-          content: 'Tracks when the oracle produces doubles. Reaches 3 → triggers a twist event that shakes up your story. Manually force a twist or reset as needed. Keyboard shortcut: Alt+W'
+          content: 'Tracks when the oracle produces doubles. Reaches 3 → triggers a twist event that shakes up your story. Read the Twist Intensity note before playing it. If the roll was about an NPC, click "Use Cast Twists instead" to let the Twist land on that NPC. A Twist also ends any held Leverage. Manually force a twist or reset as needed. Keyboard shortcut: Alt+W'
         },
         {
-          title: 'Scene Management',
-          content: 'Roll "Next Scene" to generate a new scene location for your adventure. Helpful for pacing and keeping gameplay moving.'
+          title: 'Dead End',
+          content: 'When a lead goes cold, ask the fixed question "Does something or someone point toward a new way forward?" instead of questioning the closed path. The app gives guidance for each answer and counts consecutive dead ends: after the second, pull back to the goal.'
+        },
+        {
+          title: 'Scene Transition',
+          content: 'Roll "Next Scene" (or close a scene) to see what comes next: 1-3 Dramatic, 4-5 Quiet, 6 Meanwhile. On Meanwhile, the world acts offstage: update the tag of whoever holds power, then ask whether an ally or wildcard acts independently. If the closed scene touched a faction\'s interests, click "Faction Beat" to see whether it advances its Agenda (one per transition; the result goes in its Last Seen).'
         },
         {
           title: 'Conflict (Harm & Luck)',
-          content: 'Track combat or confrontations using the Harm & Luck system. Set opponent name and starting luck, then roll contested dice. Track both character and opponent luck as they take harm.'
+          content: 'Track combat or confrontations using the Harm & Luck system. Set opponent name and starting luck, then roll contested dice. Track both character and opponent luck as they take harm. Luck resets to full for every conflict. If your character is defeated, you can record a lasting consequence on their Status Track.'
+        },
+        {
+          title: 'Leverage & Challenge Tracks',
+          content: 'Optional modules. On a "Yes, and...", click "Bank as Leverage" to save it: spend it later as Advantage, or to soften a No into a "No, but...". Challenge Tracks (4 or 6 boxes) follow long pursuits: +2 on "Yes, and...", +1 on Yes or "Yes, but...", -1 on No or "No, and...". Erasing a box while holding Leverage lets you spend the Leverage instead and keep the box.'
         },
         {
           title: 'Get Inspired',
@@ -41,7 +53,7 @@ export const HelpSystem = {
         },
         {
           title: 'Adventure Tables',
-          content: 'Quick access to core Loner tables: Settings, Tones, Things, Opposition, and Actions. Perfect for generating adventure elements on the fly. Or roll a "Complete Adventure" for a full prompt.'
+          content: 'Quick access to core Loner tables: Settings, Tones, Things, Opposition, and Actions. Perfect for generating adventure elements on the fly. Or roll a "Complete Adventure" for a full prompt, or "Build the Setup" for a 5W+H mission premise (Who, What, When, Where, Why, How).'
         },
         {
           title: 'Random Tables',
@@ -53,7 +65,7 @@ export const HelpSystem = {
         },
         {
           title: 'Quick Links (Left Panel)',
-          content: 'Toggle quick access to your NPCs, Locations, Narrative Threads, and Recent Events. Great for tracking story elements without leaving the play view.'
+          content: 'Toggle quick access to your NPCs, Locations, Narrative Threads, and Recent Events. Great for tracking story elements without leaving the play view. Click "+" next to an NPC to give the relationship a tag it has earned in play.'
         }
       ]
     },
@@ -76,6 +88,10 @@ export const HelpSystem = {
         {
           title: 'Edit / Delete',
           content: 'Click a campaign to edit its name or description. Delete carefully - it removes the entire campaign and all its sessions and content.'
+        },
+        {
+          title: 'The Living World',
+          content: 'When an adventure ends, click "Living World" on the campaign card to review every NPC, Location, and Thread that played a part. Update relationship tags, mark NPCs who are gone (their tags leave play and are kept in their notes), rewrite locations, and set each thread to Active, Resolved, or Abandoned.'
         }
       ]
     },
@@ -89,11 +105,15 @@ export const HelpSystem = {
         },
         {
           title: 'Create Character',
-          content: 'Click "+ New Character" and fill in: Name, Description, Background (narrative summary), Tags (comma-separated character traits/abilities), and set as Active if desired. This is your playable character.'
+          content: 'Click "+ New Character" and fill in: Name, Concept, Skills, Frailty, Gear, Goal & Motive, and Nemesis. Or click "Generate" to roll a full character from a supplement\'s tables (including a Lifepath fragment), reroll any line, and save it.'
         },
         {
           title: 'Character Sheet',
-          content: 'View full character details including tags and background. Edit anytime to adjust traits or background as your character evolves through play.'
+          content: 'Click "View" for the full sheet: tags, Luck, and the active Status Track tag (with "Recover"). Edit anytime to adjust tags as your character evolves through play.'
+        },
+        {
+          title: 'Lifepath & Marks',
+          content: 'At the bottom of the sheet. Lifepath: roll backstory fragments on seven tables (Origins, Defining Loss, A Memory That May Be False...); a fragment can later harden into a tag. Marks: a short line written at an Identity Checkpoint, when the self shifts. The sheet lists the Checkpoint questions.'
         },
         {
           title: 'Active Character',
@@ -107,15 +127,23 @@ export const HelpSystem = {
       sections: [
         {
           title: 'NPC Management',
-          content: 'NPCs are people, creatures, or entities your character meets. Track their names, descriptions, tags (traits/roles), and relationship status (friendly, neutral, hostile, complex).'
+          content: 'NPCs are people, creatures, or organizations your character meets. Their sheet uses the same tags as a character (Concept, Skills, Frailty, Gear), plus Notes and a relationship (Ally, Neutral, Enemy).'
         },
         {
           title: 'Create NPC',
-          content: 'Add a name, description, tags (e.g., "Shifty Merchant", "Local Authority"), and relationship type. Mark them as visited if your character has interacted.'
+          content: 'Click "+ New NPC" and fill in what you know, or click "Generate" to roll a full NPC. Cast List fields track them between scenes: Agenda (what they want now), Disposition (their stance and what they know), Voice (a verbal signature), and Last Seen (where, and what changed).'
+        },
+        {
+          title: 'Quick-Build',
+          content: 'The "Roll" button next to Concept, Agenda, Disposition, or Voice fills that field from the Character Emulator tables. Skip any field you already know.'
+        },
+        {
+          title: 'Factions',
+          content: 'Tick "Faction" to make an organization act like an NPC: its Concept rolls on the Faction Concept table, and with an Agenda it can take Faction Beats at Scene Transitions.'
         },
         {
           title: 'Relationships',
-          content: 'Track NPC attitudes: Friendly (allies), Neutral (NPCs you\'ve met), Hostile (enemies), Complex (ambiguous). Filter by relationship to find NPCs quickly.'
+          content: 'A relationship tested, strained, or deepened in play earns a tag (e.g., "Trusted Informant", "Sworn Enemy") that grants Advantage or Disadvantage like any other tag. Add one with "+" in the Play view\'s NPCs panel, or review them all in The Living World.'
         },
         {
           title: 'Quick Access',
@@ -211,7 +239,7 @@ export const HelpSystem = {
         },
         {
           title: 'Supplement Tables',
-          content: 'Additional content from Loner supplements. When you select a supplement, its unique tables appear. Roll for specialized encounters, locations, or situations.'
+          content: 'Additional content from Loner supplements. When you select a supplement, its unique tables appear. Roll for specialized encounters, locations, or situations. Character Emulator (NPC Quick-Build, Faction Concept, Cast Twists), Character Builder\'s Guide (Lifepaths, Relationship Arcs, Memory, Scene Frames), and The Path Not Taken (Time Twist Effects) are included.'
         },
         {
           title: 'Custom Tables',
