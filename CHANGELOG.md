@@ -2,6 +2,27 @@
 
 All notable changes to Loner Assistant are documented here.
 
+## v2.5.1 - 2026-11-26
+
+### Changed
+
+- **Tools view reorganized** (#15). Quick Rolls (Adventure Maker, Build
+  the Setup, Get Inspired and its flavor) come first, then the five most
+  recent rolls. Roll Tables shows one closed group per supplement, with
+  its table count, and a search field that finds a table by name or
+  description across every supplement. Data Management is a closed panel
+  at the bottom. On a phone the page is about 1,800 px high instead of
+  about 39,500 px.
+
+### Fixed
+
+- **View headers on mobile** (#12): the title and the action buttons wrap
+  instead of making the page wider than the screen.
+- **Help modal on mobile** (#13): it no longer goes off screen (the cause
+  was the page made wider by #12), and it is limited to the screen width.
+  The help texts no longer use em dashes.
+- **Closed mobile menu** (#14): no strip shows under the navbar.
+
 ## v2.5.0 — 2026-11-26
 
 ### Added

@@ -1,4 +1,4 @@
-# Loner Assistant v2.5
+# Loner Assistant v2.5.1
 
 **Loner Assistant** is a comprehensive, offline-first web companion for the [Loner](https://loner.zotiquestgames.com) solo RPG system. It allows you to manage campaigns, characters, and stories entirely in your browser, with no installation required.
 

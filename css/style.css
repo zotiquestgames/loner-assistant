@@ -429,10 +429,18 @@ a:hover {
     padding: var(--space-md);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, padding 0.3s ease;
     box-shadow: var(--shadow);
     flex-wrap: nowrap;
     justify-content: flex-start;
+  }
+
+  /* Closed: no padding, border or shadow, so nothing shows under the navbar */
+  .nav-links:not(.open) {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+    box-shadow: none;
   }
 
   .nav-links.open {
@@ -708,6 +716,31 @@ a:hover {
   font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: var(--tracking-caps);
+}
+
+/* Mobile: the title row and the action buttons wrap instead of pushing the
+   page wider than the screen (a wider page also pushes fixed overlays such
+   as the help modal off screen). */
+@media (max-width: 768px) {
+  .view-header {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .view-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .view-header > div:last-child,
+  .view-header > .btn {
+    flex: 1 1 100%;
+  }
+
+  .view-header > div:last-child > .btn {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }
 
 /* ==================== ORACLE ==================== */
@@ -1653,22 +1686,6 @@ label.choice {
   }
 }
 
-.table-categories {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
-.table-category h3 {
-  margin-bottom: var(--space-md);
-  color: var(--text-muted);
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-}
-
 .table-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1708,6 +1725,177 @@ label.choice {
   text-transform: uppercase;
   letter-spacing: var(--tracking-caps);
   margin: 0;
+}
+
+/* ==================== TOOLS VIEW ==================== */
+.tools-quick .quick-actions {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: var(--space-md);
+}
+
+.tools-flavor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.tools-flavor select {
+  flex: 1;
+  min-width: 0;
+}
+
+.table-browser-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.table-browser-head h3 {
+  margin: 0;
+}
+
+.table-search {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border-w) solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  font-size: 16px; /* 16px or more: no zoom on focus in iOS */
+  font-family: var(--font-body);
+  background: var(--surface-inset);
+  color: var(--text);
+}
+
+.table-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.table-group {
+  border: var(--border-w) solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+}
+
+.table-group[open] {
+  border-color: var(--border-strong);
+}
+
+.table-group > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+.table-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.table-group > summary::before {
+  content: '+';
+  width: 1em;
+  flex: none;
+}
+
+.table-group[open] > summary::before {
+  content: '-';
+}
+
+.table-group-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.table-group-count {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.table-group-body {
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+.table-group-category {
+  margin: var(--space-md) 0 var(--space-sm);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.table-group-body > .table-list:first-child {
+  margin-top: var(--space-sm);
+}
+
+.table-card-desc {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.8rem;
+}
+
+.tools-data-panel {
+  margin-top: var(--space-xl);
+}
+
+.tools-data-panel > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.tools-data-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.tools-data-panel > summary h3 {
+  display: inline;
+  margin: 0;
+}
+
+.tools-data-panel > summary::after {
+  content: ' +';
+  font-weight: 700;
+}
+
+.tools-data-panel[open] > summary::after {
+  content: ' -';
+}
+
+.tools-data-panel[open] > summary {
+  margin-bottom: var(--space-md);
+}
+
+/* Mobile: compact table rows, description on one line */
+@media (max-width: 768px) {
+  .table-group-body .table-card {
+    padding: var(--space-sm);
+  }
+
+  .table-card-header {
+    margin-bottom: 0;
+  }
+
+  .table-card-desc {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .adventure-maker-results {
@@ -2546,7 +2734,11 @@ label.choice {
   background: var(--bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  width: 100%;
   max-width: 600px;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
   max-height: 85vh;
   overflow-y: auto;
   display: flex;

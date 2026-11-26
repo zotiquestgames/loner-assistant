@@ -30,36 +30,48 @@ export const TableManager = {
 
     container.innerHTML = `
       <div class="table-manager">
-        <!-- Quick Actions -->
-        <div class="quick-actions">
-          <button class="btn btn-large btn-primary" onclick="TableManager.rollAdventureMaker()" title="Roll Adventure Maker (Alt+T)">
-            Roll Adventure Maker
-          </button>
-          <button class="btn btn-large btn-secondary" onclick="TableManager.rollGetInspired()" title="Get Inspired (Alt+T)">
-            Get Inspired
-          </button>
-          <button class="btn btn-large btn-outline" onclick="CustomTables.show()" title="Create and manage custom tables">
-            Custom Tables
-          </button>
+        <!-- Quick rolls: the generators used most, at the top -->
+        <div class="panel tools-quick">
+          <h3>Quick Rolls</h3>
+          <div class="quick-actions">
+            <button class="btn btn-primary" onclick="TableManager.rollAdventureMaker()" title="Roll Adventure Maker (Alt+T)">
+              Adventure Maker
+            </button>
+            <button class="btn btn-primary" onclick="TableManager.rollBuildTheSetup()" title="Roll the 5W+H table to assemble a mission premise before your first scene">
+              Build the Setup
+            </button>
+            <button class="btn btn-secondary" onclick="TableManager.rollGetInspired()" title="Get Inspired">
+              Get Inspired
+            </button>
+          </div>
+          <label class="tools-flavor">
+            <span>Get Inspired flavor</span>
+            <select id="inspired-flavor-select" onchange="TableManager.changeInspiredFlavor(this.value)">
+              ${this.renderFlavorOptions()}
+            </select>
+          </label>
         </div>
 
-        <!-- Get Inspired Flavor Selector -->
-        <div class="panel">
-          <h3>Get Inspired Flavor</h3>
-          <select id="inspired-flavor-select" onchange="TableManager.changeInspiredFlavor(this.value)">
-            ${this.renderFlavorOptions()}
-          </select>
-        </div>
-
-        <!-- Table Categories -->
-        <div class="table-categories">
-          ${this.renderCategories()}
-        </div>
-
-        <!-- Roll History -->
+        <!-- Recent rolls, near the top so results stay in view -->
         <div class="panel">
           <h3>Recent Rolls</h3>
           <div id="table-roll-history"></div>
+        </div>
+
+        <!-- Table browser: one collapsed group per product, with search -->
+        <div class="panel table-browser">
+          <div class="table-browser-head">
+            <h3>Roll Tables</h3>
+            <button class="btn btn-sm btn-outline" onclick="CustomTables.show()" title="Create and manage custom tables">
+              Custom Tables
+            </button>
+          </div>
+          <input type="search" id="table-search" class="table-search" placeholder="Search tables"
+                 aria-label="Search tables" oninput="TableManager.filterTables(this.value)">
+          <p id="table-search-empty" class="text-muted hidden">No tables match.</p>
+          <div class="table-groups">
+            ${this.renderGroups()}
+          </div>
         </div>
       </div>
     `;
@@ -81,75 +93,137 @@ export const TableManager = {
     `).join('');
   },
 
-  /**
-   * Render table categories
-   */
-  renderCategories() {
-    const categories = {
-      'adventure-maker': 'Adventure Maker',
-      'get-inspired': 'Get Inspired Tables',
-      'random-tables': 'Random Tables',
-      'custom': 'Custom Tables'
-    };
-
-    let html = '';
-    for (const [key, label] of Object.entries(categories)) {
-      html += `
-        <div class="table-category">
-          <h3>${label}</h3>
-          <div class="table-list">
-            ${this.renderTablesInCategory(key)}
-          </div>
-        </div>
-      `;
-    }
-
-    return html;
+  // Categories shown in the table browser, in display order
+  BROWSER_CATEGORIES: {
+    'adventure-maker': 'Adventure Maker',
+    'random-tables': 'Random Tables',
+    'get-inspired': 'Get Inspired',
+    'custom': 'Custom Tables'
   },
 
   /**
-   * Render tables in a category
+   * Product name a supplement belongs to: "Cthulhu Adventure Tables" and
+   * "Cthulhu Inspiration" both go under "Cthulhu".
    */
-  renderTablesInCategory(category) {
-    const tables = [];
+  groupName(supplement) {
+    if (supplement.id === 'core-inspired') return 'Loner Core Rules';
+    return supplement.name.replace(/ (Adventure Tables|Inspiration)$/, '');
+  },
 
-    for (const [suppId, supplement] of Object.entries(TableSystem.registry)) {
-      for (const [tableId, table] of Object.entries(supplement.tables)) {
-        if (table.category === category) {
-          tables.push({
-            supplementId: suppId,
-            tableId: tableId,
-            name: table.name,
-            description: table.description || ''
-          });
-        }
+  /**
+   * Collect browsable tables grouped by product, core first, custom last,
+   * the rest in alphabetical order.
+   */
+  collectGroups() {
+    const groups = new Map();
+
+    for (const [suppId, supp] of Object.entries(TableSystem.registry)) {
+      const name = suppId === 'custom' ? 'Custom Tables' : this.groupName(supp.supplement);
+      for (const [tableId, table] of Object.entries(supp.tables)) {
+        if (!(table.category in this.BROWSER_CATEGORIES)) continue;
+        if (!groups.has(name)) groups.set(name, []);
+        groups.get(name).push({
+          supplementId: suppId,
+          tableId,
+          name: table.name,
+          description: table.description || '',
+          category: table.category
+        });
       }
     }
 
-    if (tables.length === 0) {
-      if (category === 'custom') {
-        return '<p class="text-muted">No custom tables yet. <a href="#" onclick="CustomTables.showCreateForm(); return false;">Create one</a></p>';
-      }
-      return '<p class="text-muted">No tables available</p>';
+    const order = [...groups.keys()].sort((a, b) => {
+      const rank = n => (n === 'Loner Core Rules' ? 0 : n === 'Custom Tables' ? 2 : 1);
+      return rank(a) - rank(b) || a.localeCompare(b);
+    });
+    return order.map(name => ({ name, tables: groups.get(name) }));
+  },
+
+  /**
+   * Render the table groups as collapsed <details> blocks
+   */
+  renderGroups() {
+    const groups = this.collectGroups();
+    if (!groups.some(g => g.name === 'Custom Tables')) {
+      groups.push({ name: 'Custom Tables', tables: [] });
     }
 
-    return tables.map(table => `
-      <div class="table-card">
+    return groups.map(group => {
+      let body;
+      if (group.tables.length === 0) {
+        body = '<p class="text-muted">No custom tables yet. <a href="#" onclick="CustomTables.showCreateForm(); return false;">Create one</a></p>';
+      } else {
+        const categories = Object.keys(this.BROWSER_CATEGORIES)
+          .filter(cat => group.tables.some(t => t.category === cat));
+        body = categories.map(cat => `
+          ${categories.length > 1 ? `<h4 class="table-group-category">${this.BROWSER_CATEGORIES[cat]}</h4>` : ''}
+          <div class="table-list">
+            ${group.tables.filter(t => t.category === cat).map(t => this.renderTableRow(t)).join('')}
+          </div>
+        `).join('');
+      }
+
+      return `
+        <details class="table-group">
+          <summary>
+            <span class="table-group-name">${group.name}</span>
+            <span class="table-group-count" data-total="${group.tables.length}">${group.tables.length}</span>
+          </summary>
+          <div class="table-group-body">${body}</div>
+        </details>
+      `;
+    }).join('');
+  },
+
+  /**
+   * One table: name and Roll button on one line, description below
+   */
+  renderTableRow(table) {
+    const action = table.category === 'custom'
+      ? `TableManager.rollCustomTable('${table.tableId}')`
+      : `TableManager.rollTable('${table.supplementId}', '${table.tableId}')`;
+    const search = `${table.name} ${table.description}`.toLowerCase().replace(/"/g, '&quot;');
+
+    return `
+      <div class="table-card" data-search="${search}">
         <div class="table-card-header">
           <h4>${table.name}</h4>
-          ${category === 'custom'
-            ? `<button class="btn btn-sm btn-secondary"
-                      onclick="TableManager.rollCustomTable('${table.tableId}')">
-                Roll
-              </button>`
-            : `<button class="btn btn-sm btn-secondary"
-                      onclick="TableManager.rollTable('${table.supplementId}', '${table.tableId}')">
-                Roll
-              </button>`}
+          <button class="btn btn-sm btn-secondary" onclick="${action}">Roll</button>
         </div>
-        ${table.description ? `<p class="text-muted">${table.description}</p>` : ''}
+        ${table.description ? `<p class="text-muted table-card-desc">${table.description}</p>` : ''}
       </div>
-    `).join('');
+    `;
+  },
+
+  /**
+   * Filter the table browser by name or description. With a query, groups
+   * with matches open and the others hide; an empty query restores the list.
+   */
+  filterTables(query) {
+    const q = query.trim().toLowerCase();
+    let anyMatch = false;
+
+    document.querySelectorAll('.table-browser .table-group').forEach(group => {
+      let matches = 0;
+      group.querySelectorAll('.table-card').forEach(card => {
+        const hit = !q || card.dataset.search.includes(q);
+        card.classList.toggle('hidden', !hit);
+        if (hit) matches++;
+      });
+      group.querySelectorAll('.table-group-category').forEach(h => {
+        const list = h.nextElementSibling;
+        h.classList.toggle('hidden', !!q && !list.querySelector('.table-card:not(.hidden)'));
+      });
+
+      const count = group.querySelector('.table-group-count');
+      count.textContent = q ? `${matches} / ${count.dataset.total}` : count.dataset.total;
+      group.classList.toggle('hidden', !!q && matches === 0);
+      group.open = !!q && matches > 0;
+      if (matches > 0) anyMatch = true;
+    });
+
+    const empty = document.getElementById('table-search-empty');
+    if (empty) empty.classList.toggle('hidden', !q || anyMatch);
   },
 
   /**
@@ -599,7 +673,7 @@ export const TableManager = {
       return;
     }
 
-    container.innerHTML = history.slice(0, 10).map(roll => `
+    container.innerHTML = history.slice(0, 5).map(roll => `
       <div class="roll-history-item">
         <div class="roll-history-header">
           <strong>${roll.tableName}</strong>

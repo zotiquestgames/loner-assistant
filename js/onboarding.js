@@ -113,7 +113,7 @@ export const HelpSystem = {
       sections: [
         {
           title: 'What is a Character?',
-          content: 'Your protagonist in the Loner system. Characters are tag-based (e.g., "Cynical Spacefarer", "Haunted Archaeologist"). No numeric stats—pure narrative.'
+          content: 'Your protagonist in the Loner system. Characters are tag-based (e.g., "Cynical Spacefarer", "Haunted Archaeologist"). No numeric stats, only narrative.'
         },
         {
           title: 'Create Character',
@@ -169,7 +169,7 @@ export const HelpSystem = {
       sections: [
         {
           title: 'Location Management',
-          content: 'Locations are places in your story world—cities, ruins, spaceports, etc. Track their name, description, and whether your character has visited.'
+          content: 'Locations are places in your story world: cities, ruins, spaceports, etc. Track their name, description, and whether your character has visited.'
         },
         {
           title: 'Create Location',
@@ -203,7 +203,7 @@ export const HelpSystem = {
         },
         {
           title: 'Quick Panel',
-          content: 'In Play view, click "Threads" to see active threads. Resolved threads don\'t show in the quick panel—but stay in your history for reference.'
+          content: 'In Play view, click "Threads" to see active threads. Resolved threads don\'t show in the quick panel, but stay in your history for reference.'
         }
       ]
     },
@@ -213,7 +213,7 @@ export const HelpSystem = {
       sections: [
         {
           title: 'Event Log',
-          content: 'An automatic timeline of important story moments. When you roll the oracle, mark a twist, trigger a conflict, or manually log an event—it goes into the timeline.'
+          content: 'An automatic timeline of important story moments. When you roll the oracle, mark a twist, trigger a conflict, or manually log an event, it goes into the timeline.'
         },
         {
           title: 'Create Event',
@@ -250,8 +250,12 @@ export const HelpSystem = {
           content: 'Thematic random prompts. Choose a flavor (e.g., "Core" for standard Loner prompts). Hit the button for random inspiration to spark ideas.'
         },
         {
+          title: 'Finding a Table',
+          content: 'Quick Rolls at the top hold Adventure Maker, Build the Setup, and Get Inspired. Below Recent Rolls, Roll Tables lists one closed group per supplement, with the number of tables: open a group to see its tables, or type in the search field to find a table by name across every supplement. Data Management (export, import, manual) is at the bottom of the page.'
+        },
+        {
           title: 'Supplement Tables',
-          content: 'Additional content from Loner supplements. When you select a supplement, its unique tables appear. Roll for specialized encounters, locations, or situations. Character Emulator (NPC Quick-Build, Faction Concept, Cast Twists), Character Builder\'s Guide (Lifepaths, Relationship Arcs, Memory, Scene Frames), and The Path Not Taken (Time Twist Effects) are included.'
+          content: 'Additional content from Loner supplements. Each supplement has its own group with its random tables and its Get Inspired tables. Roll for specialized encounters, locations, or situations. Character Emulator (NPC Quick-Build, Faction Concept, Cast Twists), Character Builder\'s Guide (Lifepaths, Relationship Arcs, Memory, Scene Frames), and The Path Not Taken (Time Twist Effects) are included.'
         },
         {
           title: 'Custom Tables',

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loner Assistant v2.5</title>
+    <title>Loner Assistant v2.5.1</title>
     <meta name="description" content="A companion tool for the Loner solo RPG system">
 
     <meta property="og:type" content="website">
@@ -48,7 +48,7 @@
               </g>
             </svg>
             <span class="brand-suffix">Assistant</span>
-            <span class="version">v2.5</span>
+            <span class="version">v2.5.1</span>
         </div>
         <button class="hamburger-menu" onclick="toggleNavMenu()" title="Toggle menu">
           <span></span>
@@ -620,9 +620,13 @@
                 </div>
             </div>
 
-            <!-- Data Management Section -->
-            <div class="panel" style="margin-bottom: var(--space-xl);">
-                <h3>Data Management</h3>
+            <div id="tools-grid" class="tools-grid">
+                <!-- Content will be dynamically rendered by TableManager -->
+            </div>
+
+            <!-- Data Management (backups and manual), kept at the bottom: used rarely -->
+            <details class="panel tools-data-panel">
+                <summary><h3>Data Management</h3></summary>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
                     <button class="btn btn-primary" onclick="ExportImportSystem.exportDatabase()" title="Export full database backup">
                         Export All Data
@@ -640,22 +644,8 @@
                 <p class="text-muted" style="margin-top: var(--space-md); font-size: 0.85rem;">
                     Export your data for backup or sharing. Import previously exported sessions, campaigns, or full database backups.
                 </p>
-            </div>
+            </details>
 
-            <!-- Build the Setup (4th Edition 5W+H premise table) -->
-            <div class="panel" style="margin-bottom: var(--space-xl);">
-                <h3>Build the Setup</h3>
-                <p class="text-muted" style="margin-bottom: var(--space-md); font-size: 0.85rem;">
-                    Roll the 5W+H table to assemble a mission premise before your first scene, as an alternative or companion to the Adventure Maker.
-                </p>
-                <button class="btn btn-primary" onclick="TableManager.rollBuildTheSetup()">
-                    Roll Build the Setup
-                </button>
-            </div>
-
-            <div id="tools-grid" class="tools-grid">
-                <!-- Content will be dynamically rendered by TableManager -->
-            </div>
         </div>
 
         <!-- NPCs VIEW -->

@@ -1,5 +1,5 @@
 /**
- * LONER ASSISTANT v2.5 - Service Worker
+ * LONER ASSISTANT v2.5.1 - Service Worker
  *
  * Hand-written, Cache API only (no Workbox, no build step). Precaches the
  * full app shell (HTML/CSS/JS modules/table data/vendored libs/fonts/icons)
@@ -13,7 +13,7 @@
  * (`npm test` fails while it is out of date).
  */
 
-const CACHE_VERSION = 'loner-ab0605aafe';
+const CACHE_VERSION = 'loner-14b36cf1c9';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
