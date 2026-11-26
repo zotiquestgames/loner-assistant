@@ -96,7 +96,8 @@ export const CharacterGenerator = {
     c.gender = gender;
     c.nameGender = gender === 'any' ? (Math.random() < 0.5 ? 'male' : 'female') : gender;
     c.firstName = TableSystem.rollCharacterField(current.supplementId, 'name', c.nameGender);
-    if (TableSystem.registry[current.supplementId]?.tables?.surnames?.genderSuffix) {
+    const t = TableSystem.registry[current.supplementId]?.tables || {};
+    if (t.surnames?.genderSuffix || t.female_surnames || t.male_surnames) {
       c.surname = TableSystem.rollCharacterField(current.supplementId, 'surnames', c.nameGender);
     }
     c.fullName = [c.firstName, c.surname].filter(Boolean).join(' ');

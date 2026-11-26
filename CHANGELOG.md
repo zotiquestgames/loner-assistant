@@ -57,6 +57,10 @@ All notable changes to Loner Assistant are documented here.
 
 ### Fixed
 
+- Celtic Fantasy: a woman's family name takes the female form (Nic for
+  Mac, Ní for Ó, with lenition), as the corrected book says (loner PR 51).
+  The `female_surnames` table is written by hand: the book gives the rule,
+  not a table, so the converter does not generate it.
 - The Norse Saga supplement and flavor showed an old name, "The Threads
   of Saga". Ids and files stay the same, so a chosen flavor is kept.
 - Pulp Heroes: removed "Document Types", a half-empty grid that is no

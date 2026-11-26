@@ -411,10 +411,14 @@ export const TableSystem = {
       // Some supplements have one Names table for everyone (Spacer).
       if (!supplement.tables[tableId] && supplement.tables.names) tableId = 'names';
     }
+    // Family names with a separate table for women (Celtic Fantasy: Nic, Ní).
+    if (field === 'surnames' && supplement.tables[`${gender}_surnames`]) {
+      tableId = `${gender}_surnames`;
+    }
     if (!supplement.tables[tableId]) return '';
     // Gendered family names (Norse Saga: -son, -dottir): reroll until the
     // ending matches. 'any' takes either.
-    const suffix = field === 'surnames' ? supplement.tables.surnames.genderSuffix?.[gender] : null;
+    const suffix = field === 'surnames' ? supplement.tables[tableId].genderSuffix?.[gender] : null;
     let result = this.roll(supplementId, tableId).result;
     for (let i = 0; suffix && !result.endsWith(suffix) && i < 100; i++) {
       result = this.roll(supplementId, tableId).result;
