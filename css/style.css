@@ -381,32 +381,9 @@ a:hover {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Nav menu positioning: wrap rather than push the page wider than the
-   viewport between the mobile breakpoint and full desktop width. */
+/* Nav menu positioning */
 .nav-links {
   position: relative;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  min-width: 0;
-}
-
-@media (max-width: 1400px) and (min-width: 769px) {
-  .navbar {
-    padding: var(--space-sm) var(--space-md);
-    gap: var(--space-md);
-  }
-
-  .nav-links {
-    gap: 2px;
-  }
-
-  .nav-btn {
-    padding: var(--space-sm);
-  }
-
-  .theme-toggle {
-    margin-left: var(--space-sm);
-  }
 }
 
 /* Mobile nav menu styling */
@@ -431,13 +408,10 @@ a:hover {
     overflow: hidden;
     transition: max-height 0.3s ease;
     box-shadow: var(--shadow);
-    flex-wrap: nowrap;
-    justify-content: flex-start;
   }
 
   .nav-links.open {
-    max-height: 80vh;
-    overflow-y: auto;
+    max-height: 500px;
   }
 
   .nav-btn {
@@ -1365,165 +1339,6 @@ select:focus {
   font-family: var(--font-body);
   background: var(--surface-inset);
   color: var(--text);
-}
-
-.form-group input[type="checkbox"],
-.form-group input[type="radio"] {
-  width: auto;
-  padding: 0;
-  margin: 0;
-}
-
-/* Inline checkbox / radio with its label text */
-.form-group label.choice,
-label.choice {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-}
-
-.choice-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-md);
-}
-
-/* ==================== PANEL BUILDING BLOCKS ==================== */
-/* Small shared pieces for module panels, so they don't need inline styles. */
-.module-heading {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: var(--space-md) 0 var(--space-xs);
-}
-
-.module-heading:first-child {
-  margin-top: 0;
-}
-
-.btn-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xs);
-}
-
-.btn-stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.btn-block {
-  width: 100%;
-}
-
-.field-row {
-  display: flex;
-  gap: var(--space-sm);
-  align-items: center;
-}
-
-.field-row > input,
-.field-row > select {
-  flex: 1;
-  min-width: 0;
-}
-
-.panel-text {
-  font-size: 0.85rem;
-  margin-bottom: var(--space-xs);
-}
-
-.hint {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.remove-x {
-  border: none;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-  font-weight: 700;
-  padding: 0 0 0 0.3rem;
-}
-
-.chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-}
-
-.dot-track {
-  font-size: 1.3rem;
-  letter-spacing: 3px;
-}
-
-.split-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-}
-
-.btn-row {
-  display: flex;
-  gap: var(--space-xs);
-}
-
-.btn-row > .btn {
-  flex: 1;
-}
-
-.status-badge.is-active {
-  background: var(--accent-no);
-}
-
-.status-badge.is-dim {
-  background: var(--text-muted);
-  opacity: 0.45;
-}
-
-.mt-xs {
-  margin-top: var(--space-xs);
-}
-
-/* ==================== OPTIONAL MODULES ==================== */
-.module-off {
-  display: none !important;
-}
-
-.module-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.module-option {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  border: var(--border-w) solid var(--border-hairline);
-  border-radius: var(--radius-sm);
-  background: var(--surface-card);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.module-option input {
-  width: auto;
-  margin-top: 0.2rem;
 }
 
 .form-group input:focus,

@@ -585,16 +585,16 @@ export async function render() {
   const t = await load();
   if (!t) {
     container.innerHTML = `
-      <p class="panel-text text-muted">Time loops and timeline leaps, from <em>The Path Not Taken</em>.</p>
-      <button class="btn btn-sm btn-primary btn-block" onclick="TimeSystem.showSetup()">Set Up Temporal Play</button>
+      <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0.5rem;">Time loops and timeline leaps, from <em>The Path Not Taken</em>.</p>
+      <button class="btn btn-sm btn-primary" onclick="TimeSystem.showSetup()" style="width: 100%;">Set Up Temporal Play</button>
     `;
     return;
   }
 
   const current = node(t, t.current);
   const inLeap = !!currentLeap(t);
-  const small = (s) => `<div class="panel-text">${s}</div>`;
-  const remove = (fn) => `<button type="button" class="remove-x" title="Remove" onclick="${fn}">&times;</button>`;
+  const small = (s) => `<div style="font-size: 0.85rem; margin-bottom: 0.3rem;">${s}</div>`;
+  const remove = (fn) => `<button type="button" onclick="${fn}" style="border: none; background: none; cursor: pointer; font-weight: 700; padding: 0 0 0 0.3rem;">&times;</button>`;
   const btn = (fn, text, cls = 'btn-secondary', disabled = false) =>
     `<button class="btn btn-sm ${cls}" onclick="${fn}" ${disabled ? 'disabled' : ''}>${text}</button>`;
 
@@ -605,11 +605,11 @@ export async function render() {
     ${t.paradoxTag ? small(`<strong>${escapeHtml(t.paradoxTag)}</strong>`) : ''}
     ${small(`<strong>Now at:</strong> ${escapeHtml(label(t, current))}${current.stress ? ` ${'✶'.repeat(current.stress)}` : ''}`)}
 
-    <div class="module-heading">Time Loop</div>
+    <div style="margin: 0.75rem 0 0.4rem; font-size: 0.75rem; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Time Loop</div>
     ${t.loopActive ? small(`Checkpoint <strong>${escapeHtml(label(t, node(t, t.activeCheckpoint)))}</strong>, Loop Counter <strong>${t.loopCounter}</strong>`) : ''}
-    ${t.wearTags.length ? `<div class="chip-row mb-1">${t.wearTags.map((w, i) => `<span class="tag-chip" title="${escapeHtml(WEAR[w] || '')}">${escapeHtml(w)}${remove(`TimeSystem.removeWear(${i})`)}</span>`).join('')}</div>` : ''}
+    ${t.wearTags.length ? `<div style="margin-bottom: 0.3rem;">${t.wearTags.map((w, i) => `<span class="tag-chip" title="${escapeHtml(WEAR[w] || '')}">${escapeHtml(w)}${remove(`TimeSystem.removeWear(${i})`)}</span>`).join(' ')}</div>` : ''}
     ${t.persistList.length ? small(`<strong>Persist:</strong> ${t.persistList.map((p, i) => `${escapeHtml(p)}${remove(`TimeSystem.removePersist(${i})`)}`).join(', ')}`) : ''}
-    <div class="btn-grid-2">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem;">
       ${btn('TimeSystem.showCheckpointForm()', t.loopActive ? 'Push Ahead' : 'Declare Checkpoint')}
       ${btn('TimeSystem.resetLoop()', 'Reset Loop', 'btn-secondary', !t.loopActive)}
       ${btn("TimeSystem.showPersistPrompt()", '+ Persist', 'btn-outline')}
@@ -618,8 +618,8 @@ export async function render() {
       ${btn('TimeSystem.acceptLoop()', 'Accept', 'btn-outline', !t.loopActive)}
     </div>
 
-    <div class="module-heading">Time Leap</div>
-    <div class="btn-grid-2">
+    <div style="margin: 0.75rem 0 0.4rem; font-size: 0.75rem; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted);">Time Leap</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem;">
       ${btn('TimeSystem.showFixedPointForm()', 'Fixed Point')}
       ${btn('TimeSystem.leap()', 'Leap', 'btn-secondary', t.leapingDisabled)}
       ${btn('TimeSystem.addStress()', '+ ✶ Stress', 'btn-outline', !inLeap)}
@@ -628,14 +628,13 @@ export async function render() {
       ${btn('TimeSystem.showResolveParadox()', 'Resolve Paradox', 'btn-outline', !t.nodes.some(n => n.entity) || t.leapingDisabled)}
     </div>
 
-    <div class="module-heading">Oracle Prompts</div>
-    <div class="field-row">
-      <select id="temporal-prompt">
+    <div style="display: flex; gap: 0.25rem; margin-top: 0.75rem;">
+      <select id="temporal-prompt" style="flex: 1; font-size: 0.8rem;">
         ${PROMPTS.map(p => `<option>${p}</option>`).join('')}
       </select>
       ${btn('TimeSystem.askPrompt()', 'Ask')}
     </div>
-    <div class="btn-row mt-2">
+    <div style="display: flex; gap: 0.25rem; margin-top: 0.5rem;">
       ${btn('TimeSystem.showTimeWeb()', 'Open Time-Web', 'btn-primary')}
       ${btn('TimeSystem.showSetup()', 'Setup', 'btn-outline')}
     </div>

@@ -153,7 +153,7 @@ export async function showNPCUpdatePrompt(npcId) {
           ${tags.map((t, i) => `
             <span class="tag-chip">
               ${UI.escapeHtml(t)}
-              <button type="button" title="Remove tag" class="remove-x" onclick="LivingWorld.removeNPCTag(${npcId}, ${i})">&times;</button>
+              <button type="button" title="Remove tag" onclick="LivingWorld.removeNPCTag(${npcId}, ${i})" style="margin-left: 0.4rem; border: none; background: none; cursor: pointer; font-weight: 700; padding: 0;">&times;</button>
             </span>
           `).join('')}
         </div>

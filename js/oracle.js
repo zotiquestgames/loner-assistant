@@ -11,7 +11,6 @@ import { showModal, closeModal, escapeHtml } from './ui.js';
 import * as Editor from './editor.js';
 import { clearLeverage } from './leverage.js';
 import { showFillBoxPrompt } from './status-track.js';
-import { isEnabled } from './modules.js';
 
 // Current session state
 let currentTwistCounter = 0;
@@ -167,7 +166,7 @@ function displayOracleResult(result) {
 
   const className = result.answer === 'Yes' ? 'yes' : 'no';
 
-  const canBankLeverage = result.answer === 'Yes' && result.modifier === 'and' && !result.isDoubles && isEnabled('leverage');
+  const isYesAnd = result.answer === 'Yes' && result.modifier === 'and' && !result.isDoubles;
 
   resultDiv.className = `oracle-result ${className}`;
   resultDiv.innerHTML = `
@@ -176,7 +175,7 @@ function displayOracleResult(result) {
       Chance: ${result.chanceDice} | Risk: ${result.riskDice}
       ${result.isDoubles ? ' | <strong>DOUBLES!</strong>' : ''}
     </div>
-    ${canBankLeverage ? '<button class="btn btn-sm btn-outline" onclick="LeverageSystem.showBankPrompt()" style="margin-top: 0.5rem; width: 100%;">Bank as Leverage</button>' : ''}
+    ${isYesAnd ? '<button class="btn btn-sm btn-outline" onclick="LeverageSystem.showBankPrompt()" style="margin-top: 0.5rem; width: 100%;">Bank as Leverage</button>' : ''}
   `;
 
   resultDiv.classList.remove('hidden');
@@ -648,7 +647,7 @@ export async function rollConflict() {
 
     // Status Track (optional module): a defeat may leave a lasting mark
     const state = getState();
-    if (state.characterId && isEnabled('status-track')) {
+    if (state.characterId) {
       const character = await getCharacter(state.characterId);
       if (character) {
         await showFillBoxPrompt(state.characterId, character.name);

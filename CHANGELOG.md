@@ -2,33 +2,6 @@
 
 All notable changes to Loner Assistant are documented here.
 
-## Unreleased
-
-### Added
-
-- **Optional modules per campaign.** A "Modules" button in the Current
-  Campaign panel switches Leverage, Challenge Tracks, Status Track,
-  Cinematic Action, and Time Travel on or off. Switched-off modules hide
-  their panels and stop prompting (no "Bank as Leverage", no Status Track
-  prompt after a defeat). The 4th Edition modules start on; the
-  supplement modules start off.
-
-### Changed
-
-- Module panels use shared CSS classes instead of inline styles, so
-  they follow the light and dark themes consistently.
-- Dice emoji removed from buttons in favor of text labels ("Generate",
-  "Reroll", "Regenerate All").
-
-### Fixed
-
-- **Horizontal scrolling on mid-size screens.** The navigation bar was
-  wider than the viewport between tablet and full desktop width; it now
-  compacts and, if needed, wraps. The mobile menu no longer hides the
-  theme toggle.
-- Checkboxes and radio buttons inside forms were stretched to full width
-  and pushed their labels aside.
-
 ## v2.4.0 — 2026-11-26
 
 ### Added

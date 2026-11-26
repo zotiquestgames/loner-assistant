@@ -99,10 +99,10 @@ export async function showFactionBeat(fromMeanwhile = false) {
     </div>
     <div class="form-group">
       <label>Modifier</label>
-      <div class="choice-row">
-        <label class="choice"><input type="radio" name="faction-beat-modifier" value="normal" checked> Normal</label>
-        <label class="choice"><input type="radio" name="faction-beat-modifier" value="advantage"> Advantage</label>
-        <label class="choice"><input type="radio" name="faction-beat-modifier" value="disadvantage"> Disadvantage</label>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <label style="display: flex; align-items: center; gap: 0.35rem; text-transform: none;"><input type="radio" name="faction-beat-modifier" value="normal" checked style="width: auto; margin: 0;"> Normal</label>
+        <label style="display: flex; align-items: center; gap: 0.35rem; text-transform: none;"><input type="radio" name="faction-beat-modifier" value="advantage" style="width: auto; margin: 0;"> Advantage</label>
+        <label style="display: flex; align-items: center; gap: 0.35rem; text-transform: none;"><input type="radio" name="faction-beat-modifier" value="disadvantage" style="width: auto; margin: 0;"> Disadvantage</label>
       </div>
     </div>
     <button class="btn btn-primary" onclick="CastSystem.rollFactionBeat(${fromMeanwhile})" style="width: 100%;">

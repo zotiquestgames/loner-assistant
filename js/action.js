@@ -347,22 +347,22 @@ export async function onTwist() {
 
 function apHTML(session) {
   if (!pool) {
-    return '<p class="panel-text text-muted">Start a conflict or a chase to get 3 Action Points.</p>';
+    return '<p class="text-muted" style="font-size: 0.85rem;">Start a conflict or a chase to get 3 Action Points.</p>';
   }
   const dots = '●'.repeat(pool.ap) + '○'.repeat(MAX_AP - pool.ap);
   const pushUsed = session?.pushYourselfUsed;
   return `
-    <div class="split-row">
-      <span class="dot-track">${dots}</span>
-      <span class="hint">${pool.ap}/${MAX_AP} AP (${pool.source})</span>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+      <span style="font-size: 1.3rem; letter-spacing: 3px;">${dots}</span>
+      <span class="text-muted" style="font-size: 0.8rem;">${pool.ap}/${MAX_AP} AP (${pool.source})</span>
     </div>
-    <div class="btn-grid-2">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem;">
       <button class="btn btn-sm btn-secondary" onclick="ActionSystem.gainAdvantage()">Gain Advantage</button>
       <button class="btn btn-sm btn-secondary" onclick="ActionSystem.cancelFailure()">Cancel a Failure</button>
       <button class="btn btn-sm btn-secondary" onclick="ActionSystem.avoidConsequence()">Avoid Consequence</button>
       <button class="btn btn-sm btn-secondary" onclick="ActionSystem.showDoImpossible()">Do the Impossible</button>
     </div>
-    <button class="btn btn-sm btn-outline btn-block mt-xs" onclick="ActionSystem.showPushYourself()" ${pushUsed ? 'disabled' : ''}>
+    <button class="btn btn-sm btn-outline" onclick="ActionSystem.showPushYourself()" style="width: 100%; margin-top: 0.25rem;" ${pushUsed ? 'disabled' : ''}>
       ${pushUsed ? 'Push Yourself used this session' : 'Push Yourself (recover 3 AP)'}
     </button>
   `;
@@ -371,55 +371,56 @@ function apHTML(session) {
 function chaseHTML() {
   if (!chase) {
     return `
-      <div class="field-row">
-        <input type="text" id="chase-pursuer" placeholder="Who is chasing you?">
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="chase-pursuer" placeholder="Who is chasing you?" style="flex: 1;">
         <button class="btn btn-sm btn-primary" onclick="ActionSystem.startChase()">Start Chase</button>
       </div>
     `;
   }
 
   const track = DISTANCE.slice().reverse().map((label, i) => {
-    const active = chase.distance === 2 - i;
-    return `<span class="status-badge ${active ? 'is-active' : 'is-dim'}">${label}</span>`;
+    const value = 2 - i;
+    const active = chase.distance === value;
+    return `<span class="status-badge" style="background: ${active ? 'var(--accent-no)' : 'var(--text-muted)'}; opacity: ${active ? 1 : 0.45};">${label}</span>`;
   }).join(' ');
 
   const over = chase.over
-    ? `<p class="panel-text"><strong>${chase.over === 'escaped' ? 'You escape.' : 'You are caught.'}</strong>${chase.over === 'caught' && pool?.ap ? ' Do the Impossible can still turn it around.' : ''}</p>`
+    ? `<p style="font-weight: 700; margin: 0.5rem 0;">${chase.over === 'escaped' ? 'You escape.' : 'You are caught.'}${chase.over === 'caught' && pool?.ap ? ' Do the Impossible can still turn it around.' : ''}</p>`
     : '';
 
   const radio = (value, label) => `
-    <label class="choice">
-      <input type="radio" name="chase-modifier" value="${value}" ${value === 'normal' ? 'checked' : ''}> ${label}
+    <label style="display: flex; align-items: center; gap: 0.3rem; text-transform: none; font-size: 0.8rem;">
+      <input type="radio" name="chase-modifier" value="${value}" ${value === 'normal' ? 'checked' : ''} style="width: auto; margin: 0;"> ${label}
     </label>`;
 
   return `
-    <p class="panel-text"><strong>${escapeHtml(chase.pursuer)}</strong></p>
-    <div class="chip-row mb-1">${track}</div>
+    <p style="font-size: 0.85rem; margin-bottom: 0.4rem;"><strong>${escapeHtml(chase.pursuer)}</strong></p>
+    <div style="display: flex; gap: 0.25rem; margin-bottom: 0.5rem;">${track}</div>
     ${over}
     ${chase.over ? '' : `
-      <div class="choice-row mb-1">
+      <div style="display: flex; gap: 0.75rem; margin-bottom: 0.5rem;">
         ${radio('normal', 'Normal')}${radio('advantage', 'Advantage')}${radio('disadvantage', 'Disadvantage')}
       </div>
-      ${chase.pendingAdvantage ? '<p class="hint">AP Advantage on the next roll: +1 step in your favor.</p>' : ''}
-      <input type="text" id="chase-question" class="btn-block mb-1" placeholder="Your question (optional), e.g. Can I lose them in the market?">
-      <div class="btn-stack">
+      ${chase.pendingAdvantage ? '<p class="text-muted" style="font-size: 0.8rem;">AP Advantage on the next roll: +1 step in your favor.</p>' : ''}
+      <input type="text" id="chase-question" placeholder="Your question (optional), e.g. Can I lose them in the market?" style="margin-bottom: 0.4rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.25rem;">
         ${Object.entries(CHASE_QUESTIONS).map(([k, q]) => `<button class="btn btn-sm btn-secondary" onclick="ActionSystem.chaseRoll('${k}')">${q.label}</button>`).join('')}
       </div>
     `}
-    <button class="btn btn-sm btn-outline btn-block mt-xs" onclick="ActionSystem.endChase()">End Chase</button>
+    <button class="btn btn-sm btn-outline" onclick="ActionSystem.endChase()" style="width: 100%; margin-top: 0.4rem;">End Chase</button>
   `;
 }
 
 function intensityHTML(session) {
-  if (!session) return '<p class="panel-text text-muted">No active session</p>';
+  if (!session) return '<p class="text-muted" style="font-size: 0.85rem;">No active session</p>';
   const intensity = session.intensity || { history: [], next: null };
   const current = intensity.history[intensity.history.length - 1];
   const highs = trailingHigh(intensity.history);
   return `
-    <div class="btn-row">
-      ${INTENSITY.map(l => `<button class="btn btn-sm ${l === current ? 'btn-primary' : 'btn-outline'}" onclick="ActionSystem.setIntensity('${l}')">${l}</button>`).join('')}
+    <div style="display: flex; gap: 0.25rem;">
+      ${INTENSITY.map(l => `<button class="btn btn-sm ${l === current ? 'btn-primary' : 'btn-outline'}" style="flex: 1;" onclick="ActionSystem.setIntensity('${l}')">${l}</button>`).join('')}
     </div>
-    <p class="hint mt-xs">
+    <p class="text-muted" style="font-size: 0.8rem; margin-top: 0.4rem;">
       ${current ? `This scene: ${current}.` : 'Set the intensity of the current scene to start tracking.'}
       ${intensity.next ? ` Next scene: ${intensity.next} (after a Twist).` : ''}
       ${highs >= 3 ? ' Three High scenes in a row: the next must be Low or Medium.' : ''}
@@ -431,7 +432,11 @@ export async function render() {
   const container = document.getElementById('cinematic-content');
   if (!container) return;
   const session = await currentSession();
-  const section = (title, body) => `<div class="module-heading">${title}</div>${body}`;
+  const section = (title, body) => `
+    <div style="margin-bottom: 1rem;">
+      <div style="font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem;">${title}</div>
+      ${body}
+    </div>`;
   container.innerHTML =
     section('Action Points', apHTML(session)) +
     section('Chase', chaseHTML()) +

@@ -129,7 +129,7 @@ export const ManualSystem = {
         <li>You get at most one Faction Beat per Scene Transition. Equal dice count toward the Twist Counter as usual.</li>
         </ul>
         <h2 id="optional-modules">Optional Modules</h2>
-        <p>Optional rules can be switched on or off per campaign: click <strong>Modules</strong> in the Current Campaign panel. Switched-off modules hide their panels and stop prompting; nothing is deleted. Leverage, Challenge Tracks, and the Status Track start on; Cinematic Action and Time Travel start off.</p>
+        <p>These 4th Edition modules each have their own panel in the Play view. Use them only if they suit your game.</p>
         <h3 id="leverage">Leverage</h3>
         <ul>
         <li>When the Oracle answers <strong>Yes, and...</strong>, click <strong>Bank as Leverage</strong> to save that energy instead of narrating it now, and describe what it is.</li>

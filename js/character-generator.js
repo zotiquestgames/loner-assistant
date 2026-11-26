@@ -163,8 +163,8 @@ export const CharacterGenerator = {
         <div class="cg-name" style="text-align:center; padding:0.5rem 0;">
           <div style="font-size:1.4rem; font-weight:700;">${UI.escapeHtml(c.fullName || '—')}</div>
           <div style="margin-top:0.25rem; display:flex; gap:0.25rem; justify-content:center;">
-            <button class="btn btn-sm btn-outline" onclick="CharacterGenerator.rerollField('name')" title="Reroll first name">Reroll First Name</button>
-            <button class="btn btn-sm btn-outline" onclick="CharacterGenerator.rerollField('surname')" title="Reroll surname">Reroll Surname</button>
+            <button class="btn btn-sm btn-outline" onclick="CharacterGenerator.rerollField('name')" title="Reroll first name">🎲 First</button>
+            <button class="btn btn-sm btn-outline" onclick="CharacterGenerator.rerollField('surname')" title="Reroll surname">🎲 Surname</button>
           </div>
         </div>
 
@@ -175,7 +175,7 @@ export const CharacterGenerator = {
         ${current.type === 'pc' ? this.fieldRow(`Lifepath: ${c.lifepath.table}`, c.lifepath.text, "CharacterGenerator.rerollField('lifepath')") : ''}
 
         <div style="display:flex; gap:0.5rem; justify-content:space-between; margin-top:1rem;">
-          <button class="btn btn-outline" onclick="CharacterGenerator.regenerate()" title="Roll a whole new character">Regenerate All</button>
+          <button class="btn btn-outline" onclick="CharacterGenerator.regenerate()" title="Roll a whole new character">🎲 Regenerate all</button>
           <div style="display:flex; gap:0.5rem;">
             <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
             <button class="btn btn-primary" onclick="CharacterGenerator.save()">
@@ -198,7 +198,7 @@ export const CharacterGenerator = {
           ${label ? `<div style="font-size:0.7rem; text-transform:uppercase; color:var(--text-muted);">${label}</div>` : ''}
           <div style="font-weight:600;">${UI.escapeHtml(value || '—')}</div>
         </div>
-        <button class="btn btn-sm btn-outline" onclick="${rerollAction}" title="Reroll">Reroll</button>
+        <button class="btn btn-sm btn-outline" onclick="${rerollAction}" title="Reroll">🎲</button>
       </div>
     `;
   },

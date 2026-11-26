@@ -48,8 +48,8 @@ function conceptFieldHTML(prefix, value) {
   return `
     <div class="form-group">
       <label>Concept</label>
-      <div class="field-row">
-        <input type="text" id="${prefix}-concept" placeholder="e.g., Wandering Monk" value="${UI.escapeHtml(value || '')}">
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="${prefix}-concept" placeholder="e.g., Wandering Monk" value="${UI.escapeHtml(value || '')}" style="flex: 1;">
         ${rollButton(`NPCManager.rollConcept('${prefix}')`)}
       </div>
     </div>
@@ -65,16 +65,16 @@ function castFieldsHTML(prefix, n) {
   const field = (key, label, value, tableId, placeholder) => `
     <div class="form-group">
       <label>${label}</label>
-      <div class="field-row">
-        <input type="text" id="${prefix}-${key}" value="${v(value)}" placeholder="${placeholder}">
+      <div style="display: flex; gap: 0.5rem;">
+        <input type="text" id="${prefix}-${key}" value="${v(value)}" placeholder="${placeholder}" style="flex: 1;">
         ${tableId ? rollButton(`NPCManager.rollIntoField('${prefix}-${key}', '${tableId}')`) : ''}
       </div>
     </div>
   `;
   return `
     <div class="form-group">
-      <label class="choice">
-        <input type="checkbox" id="${prefix}-faction" ${n.kind === 'faction' ? 'checked' : ''}>
+      <label style="display: flex; align-items: center; gap: 0.5rem; text-transform: none;">
+        <input type="checkbox" id="${prefix}-faction" ${n.kind === 'faction' ? 'checked' : ''} style="width: auto; margin: 0;">
         Faction (an organization, not a person)
       </label>
     </div>

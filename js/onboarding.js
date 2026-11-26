@@ -98,10 +98,6 @@ export const HelpSystem = {
           content: 'Click a campaign to edit its name or description. Delete carefully - it removes the entire campaign and all its sessions and content.'
         },
         {
-          title: 'Optional Modules',
-          content: 'Click "Modules" in the Play view\'s Current Campaign panel to choose which optional rules this campaign uses: Leverage, Challenge Tracks, Status Track (on by default), Cinematic Action, and Time Travel (off by default). Switched-off modules hide their panels; nothing is deleted.'
-        },
-        {
           title: 'The Living World',
           content: 'When an adventure ends, click "Living World" on the campaign card to review every NPC, Location, and Thread that played a part. Update relationship tags, mark NPCs who are gone (their tags leave play and are kept in their notes), rewrite locations, and set each thread to Active, Resolved, or Abandoned.'
         }
