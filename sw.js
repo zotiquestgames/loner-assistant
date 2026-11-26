@@ -1,20 +1,19 @@
 /**
- * LONER ASSISTANT v2.4 - Service Worker
+ * LONER ASSISTANT v2.5 - Service Worker
  *
  * Hand-written, Cache API only (no Workbox, no build step). Precaches the
  * full app shell (HTML/CSS/JS modules/table data/vendored libs/fonts/icons)
  * so the app works fully offline after first load, and falls back to
  * cache-first-with-network-fallback for anything else.
  *
- * IMPORTANT - manual cache busting: since there's no bundler to produce
+ * IMPORTANT - cache busting: since there's no bundler to produce
  * content-hashed filenames, this CACHE_VERSION string is the only thing
- * that invalidates old precached files. Bump it any time you change a
- * precached file's contents, or clients will keep serving stale versions
- * until they happen to re-fetch (which the update-prompt in main.js's
- * registerServiceWorker() nudges them to do, but only if this bumps).
+ * that invalidates old precached files. It is a hash of the precached
+ * files: after changing any of them run `npm run cache-version`
+ * (`npm test` fails while it is out of date).
  */
 
-const CACHE_VERSION = 'loner-v46';
+const CACHE_VERSION = 'loner-bec2be3055';
 const CACHE_NAME = `loner-cache-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -74,6 +73,9 @@ const PRECACHE_URLS = [
   './js/action.js',
   './js/temporal.js',
   './js/modules.js',
+  './js/rules/oracle.js',
+  './js/rules/cinematic.js',
+  './js/rules/temporal.js',
   './js/db/database.js',
   './js/crud/modal-form.js',
 

@@ -1,0 +1,10 @@
+{
+  "name": "loner-assistant",
+  "private": true,
+  "description": "Companion app for the Loner solo RPG. No build step: open index.html. Node is only used for tests and maintenance scripts.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "cache-version": "node scripts/cache-version.js --write"
+  }
+}
