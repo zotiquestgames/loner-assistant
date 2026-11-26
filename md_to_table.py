@@ -40,8 +40,20 @@ This will:
   3. Add the new file to sw.js's PRECACHE_URLS so it works offline too,
      and bump CACHE_VERSION so installed PWAs pick it up.
 
+Loner 4e sources (Geared Towards Loner, Loner Files) put the character
+tables one level down: "## Characters" > "### Character Traits" >
+"#### Concepts". A "###" heading named Character Traits or Names sets the
+category of the "####" tables under it, as a "##" heading does.
+
+Tables that repeat the core rules word for word (the Twist Table, the
+Status Track example) are skipped: the app already has them from
+loner-4e.md. A genre version of the same table (different entries) is kept.
+
 Usage:
-    python md_to_table.py markdown_file.md
+    python md_to_table.py markdown_file.md [--name "Display Name"]
+
+--name sets the supplement name (and the file slug) when the file name
+does not give it, for example kwaidan_revised.md.
 """
 
 import re
@@ -180,9 +192,27 @@ def parse_subtable(table_content):
     return grid, len(entries), missing
 
 
-def parse_markdown(markdown_file):
+def grid_key(grid):
+    """Normalised content of a grid, to recognise a table copied from the core rules."""
+    return tuple(tuple(re.sub(r'\s+', ' ', c).strip().lower() for c in row) for row in grid)
+
+
+def core_grids():
+    """Grids of the core rules in loner-4e.md (empty if the file is missing)."""
+    core = REPO_ROOT / 'loner-4e.md'
+    if not core.exists():
+        return set()
+    import contextlib
+    import io
+    with contextlib.redirect_stdout(io.StringIO()):
+        _, tables, _ = parse_markdown(core, skip_core=False)
+    return {grid_key(t['entries']) for t in tables.values()}
+
+
+def parse_markdown(markdown_file, title=None, skip_core=True):
     content = Path(markdown_file).read_text(encoding='utf-8')
-    title = name_from_filename(markdown_file)
+    title = title or name_from_filename(markdown_file)
+    core = core_grids() if skip_core else set()
 
     # Split on '## ' section headers (but not '###'/'####').
     h2_matches = list(re.finditer(r'^##\s+(?!#)(.+?)\s*$', content, re.MULTILINE))
@@ -192,18 +222,26 @@ def parse_markdown(markdown_file):
     supplement_tables = {}   # everything that lives in the supplement file
     inspiration_tables = {}  # split out into the flavor file
 
-    table_pattern = r'^#{3,4} \*?\*?(.+?)\*?\*?\s*\n((?:(?!^#{3,4} ).)*)(?=^#{3,4} |\Z)'
+    table_pattern = r'^(#{3,4}) \*?\*?(.+?)\*?\*?\s*\n((?:(?!^#{3,4} ).)*)(?=^#{3,4} |\Z)'
 
     for i, h2 in enumerate(h2_matches):
         section_title = h2.group(1).strip()
         start = h2.end()
         end = h2_matches[i + 1].start() if i + 1 < len(h2_matches) else len(content)
         body = content[start:end]
-        domain = classify_domain(section_title)
+        section_domain = classify_domain(section_title)
+        sub_domain = None
+        parent = None
 
         for section in re.finditer(table_pattern, body, re.MULTILINE | re.DOTALL):
-            table_name = section.group(1).strip().replace('**', '').replace('*', '')
-            table_content = section.group(2)
+            level = len(section.group(1))
+            table_name = section.group(2).strip().replace('**', '').replace('*', '')
+            table_content = section.group(3)
+            if level == 3:
+                parent = table_name
+                d = classify_domain(table_name)
+                sub_domain = d if d in ('character', 'names') else None
+            domain = section_domain if section_domain != 'adventure' else (sub_domain or 'adventure')
 
             parsed = parse_subtable(table_content)
             grid = parsed[0]
@@ -212,10 +250,21 @@ def parse_markdown(markdown_file):
                     print(f"  Skipping '{table_name}' (no D66 entries found)")
                 continue
             count, missing = parsed[1], parsed[2]
+            if grid_key(grid) in core:
+                print(f"  Skipping '{table_name}' (same as the core rules)")
+                continue
             if missing:
-                print(f"  Warning: '{table_name}' missing codes: {missing}")
+                # A 2d6 range table or a d6 list read as D66: rolling it would
+                # land on empty cells. Leave it out and say so.
+                print(f"  Skipping '{table_name}' (not a full D66 table: {count} of 36 entries; add by hand if wanted)")
+                continue
 
             table_id = slugify(table_name).replace('-', '_')
+            if level == 4 and parent and (table_id in supplement_tables or table_id in inspiration_tables):
+                # Same name as an earlier table (Spacecraft Traits > Concepts
+                # after Character Traits > Concepts): keep both.
+                table_id = slugify(parent + ' ' + table_name).replace('-', '_')
+                table_name = f'{parent}: {table_name}'
 
             if table_id in INSPIRATION_TABLE_NAMES:
                 inspiration_tables[table_id] = {
@@ -402,18 +451,22 @@ def update_service_worker(relative_file_path):
     if not before.endswith(','):
         before += ','
     new_text = before + f"\n  '{entry_line}'" + text[close_idx:]
-
-    version_match = re.search(r"const CACHE_VERSION = 'loner-v(\d+)';", new_text)
-    if version_match:
-        next_version = int(version_match.group(1)) + 1
-        new_text = new_text.replace(
-            version_match.group(0),
-            f"const CACHE_VERSION = 'loner-v{next_version}';"
-        )
-        print(f"  Bumped sw.js CACHE_VERSION to loner-v{next_version}")
-
     write_matching_newline(SW_FILE, new_text)
+    print(f"  Added {entry_line} to sw.js PRECACHE_URLS")
     return True
+
+
+def bump_cache_version():
+    """Bump CACHE_VERSION once per run, so installed PWAs fetch the new data."""
+    text = SW_FILE.read_text(encoding='utf-8')
+    version_match = re.search(r"const CACHE_VERSION = 'loner-v(\d+)';", text)
+    if not version_match:
+        print("  Warning: CACHE_VERSION not found in sw.js; bump it by hand")
+        return
+    next_version = int(version_match.group(1)) + 1
+    text = text.replace(version_match.group(0), f"const CACHE_VERSION = 'loner-v{next_version}';")
+    write_matching_newline(SW_FILE, text)
+    print(f"  Bumped sw.js CACHE_VERSION to loner-v{next_version}")
 
 
 def write_supplement(out_dir, relative_dir, filename, supplement_id, supplement_name,
@@ -446,17 +499,19 @@ def write_supplement(out_dir, relative_dir, filename, supplement_id, supplement_
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python md_to_table.py <markdown_file>")
-        sys.exit(1)
+    import argparse
+    ap = argparse.ArgumentParser(description='Convert a Loner Markdown source into Loner Assistant tables.')
+    ap.add_argument('markdown_file')
+    ap.add_argument('--name', help='supplement name when the file name does not give it')
+    args = ap.parse_args()
 
-    markdown_file = sys.argv[1]
+    markdown_file = args.markdown_file
     if not Path(markdown_file).exists():
         print(f"File not found: {markdown_file}")
         sys.exit(1)
 
     try:
-        title, supplement_tables, inspiration_tables = parse_markdown(markdown_file)
+        title, supplement_tables, inspiration_tables = parse_markdown(markdown_file, title=args.name)
         base_slug = slugify(title)
 
         if supplement_tables:
@@ -508,6 +563,8 @@ def main():
                 description=f'Get Inspired flavor themed for {title} adventures',
                 flavor_of='get-inspired'
             )
+
+        bump_cache_version()
 
         print("\nDone. Refresh the app to see it "
               "(if it's installed as a PWA, it'll pick up the new CACHE_VERSION on next load).")

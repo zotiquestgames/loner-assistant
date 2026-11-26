@@ -15,6 +15,13 @@ All notable changes to Loner Assistant are documented here.
 
 ### Changed
 
+- `md_to_table.py` reads Loner 4e sources as they are: character tables
+  under "### Character Traits" and "### Names" go to the character
+  generator; a table with the same name as an earlier one (Spacecraft
+  Traits > Concepts) is kept under its own id instead of replacing it;
+  tables copied from the core rules and tables that are not full D66
+  grids are left out and listed; `CACHE_VERSION` is bumped once per run;
+  `--name` sets the supplement name when the file name does not give it.
 - Module panels use shared CSS classes instead of inline styles, so
   they follow the light and dark themes consistently.
 - Dice emoji removed from buttons in favor of text labels ("Generate",
