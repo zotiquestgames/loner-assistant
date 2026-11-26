@@ -357,10 +357,9 @@ def parse_markdown(markdown_file, title=None, skip_core=True):
         if sn and all(e.endswith(tuple(GENDER_SUFFIXES.values())) for row in sn['entries'] for e in row):
             sn['genderSuffix'] = dict(GENDER_SUFFIXES)
 
-    # The character generator needs all four trait tables (or Origins). Without them
-    # (characters built from Origins, when the book has no Origins), keep the
-    # names and traits rollable as random tables: the app shows 'character'
-    # tables only inside the generator.
+    # The character generator needs all four trait tables, or Origins. Without
+    # either, keep the names and traits rollable as random tables: the app
+    # shows 'character' tables only inside the generator.
     if not origins and not CHARACTER_TRAIT_TABLES <= {k for k, t in supplement_tables.items() if t['category'] == 'character'}:
         demoted = [t['name'] for t in supplement_tables.values() if t['category'] == 'character']
         for t in supplement_tables.values():
