@@ -291,6 +291,174 @@ export default {
         ['The Rift anomaly creates mirror images of those who stand too close.', 'A Rift expands violently, causing massive land fractures.', 'A Rift shifts the sky itself, showing a completely alien world overhead.', 'A Rift allows creatures to step through—but they flee in terror, as if something follows them.', 'The Rift stabilizes, forming a gateway to a structure that shouldn\'t exist.', 'A Rift opens, but only one person can see it.'],
         ['A Rift flickers near an abandoned battlefield, causing phantoms of past soldiers to reappear.', 'The Rift crackles and randomly rewrites the memories of those nearby.', 'A Rift opens in a warlord\'s throne room, throwing the region into chaos.', 'The Rift anomaly warps time, briefly showing glimpses of the planet\'s distant future.', 'The Rift twists the laws of physics, causing sound and light to behave unnaturally.', 'The Rift does not close—it begins to expand, consuming everything nearby.'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Exiled Gladiator', 'Sky-Pirate Rogue', 'Wasteland Nomad', 'Warlock-King’s Heir', 'Relic-Seeking Scholar', 'Beast-Tamer Outcast'],
+        ['Starborn Vagabond', 'Bloodsworn Duelist', 'Ruins-Stalker', 'Crystal-Warrior', 'Shadowblade Assassin', 'Wandering Sword-Saint'],
+        ['Desert Mystic', 'Skyborne Raider', 'Cursed Warlock', 'Doom-Chained Berserker', 'Tech-Priest of the Fallen', 'Arena Champion'],
+        ['Warlord’s Usurper', 'Fate-Touched Explorer', 'Scavenger-King', 'Lost Starfarer', 'Sorcerer’s Experiment', 'Lone Mercenary'],
+        ['Fallen Noble', 'Alien-Hybrid Nomad', 'Cyber-Templar', 'Engine-Lord’s Forsaken', 'Prophecy-Haunted Vagabond', 'Bone-Witch Outlaw'],
+        ['Shattered Legionnaire', 'Bloodline Betrayer', 'Rogue Psion', 'Sandstorm Hunter', 'Starlit Wanderer', 'War-Beast Rider'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Skyship Gunnery', 'Lightning Reflexes', 'Sandstorm Navigation', 'Powerblade Mastery', 'Mystic Rites', 'Beast-Whisperer'],
+        ['Quickdraw Blades', 'Ancient Lore Deciphering', 'Tactical Ambush', 'Energy Shield Expertise', 'Jungle Survival', 'Cybernetic Repair'],
+        ['Duelist’s Grace', 'Shadowstep Evasion', 'Tech-Sorcery', 'Fearsome Intimidation', 'Shapeshifting Mimicry', 'Gladiator\'s Endurance'],
+        ['Barter & Deception', 'Starship Piloting', 'Relic Activation', 'Poison & Antidotes', 'War Chant Inspiration', 'Grappling Combat'],
+        ['Tracking the Lost', 'Alchemical Crafting', 'Psychic Resistance', 'Blood Rituals', 'Siege Tactics', 'Artifact Tinkering'],
+        ['Marksman’s Precision', 'Quick-Climbing', 'Pilfering Forgotten Treasures', 'Void-Walking', 'Hypnotic Presence', 'Ancient Language Comprehension'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Haunted by Visions', 'Hunted by a Cult', 'Cursed Bloodline', 'Reckless Fighter', 'Overconfident Gambler', 'Addicted to Relic Power'],
+        ['Sworn to a Lost Cause', 'Oath-Bound to an Unworthy Lord', 'Feared by the Superstitious', 'Distrusted by Warlords', 'Fugitive from an Empire', 'Enemy of the Sky-Pirates'],
+        ['Unstable Mutation', 'Seeks an Unreachable Goal', 'Shattered Honor', 'Betrayed by Former Allies', 'Burdened by an Ancient Debt', 'Struggles with Modern Tech'],
+        ['Marked by the Forbidden', 'Nightmares of a Past Self', 'Tainted by Alien Influence', 'Prone to Berserker Rages', 'Refuses to Retreat', 'Drawn to Dangerous Knowledge'],
+        ['Fears the Open Sky', 'Untrusting of Machines', 'Doomed by Prophecy', 'Cannot Resist a Challenge', 'Constantly Shadowed by a Stalker', 'Weak Against Psychic Influence'],
+        ['Hunted by a Warbeast', 'Seeks Vengeance at All Costs', 'Bound to an Ancient Curse', 'Vulnerable to Certain Metals', 'Body is Failing from an Old Wound', 'Mind Fractured by Time Warps'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Void-Tempered Scimitar', 'Plasma-Wreathed Spear', 'Reinforced Bone Armor', 'Twin Sunsteel Daggers', 'Cloak of Shifting Shadows', 'Beastmaster’s Whip'],
+        ['Warlock’s Crystal Staff', 'Engraved Power Gauntlet', 'Sky-Pirate Grappling Hook', 'Glowing Bloodstone Pendant', 'Relic-Forged Chainmail', 'Pulse-Cannon Wristbow'],
+        ['Ancient Builder’s Compass', 'Mask of the Forgotten Warlords', 'Arc-Whip of the Fallen Kings', 'Warbanner of a Dead Empire', 'Cyber-Linked Targeting Helm', 'Star-Crystal Throwing Knives'],
+        ['Shardblade of a Lost Age', 'Wasteland Alchemist’s Belt', 'Sonic Disruptor Baton', 'Sandstorm Goggles', 'Ceremonial Gladiator’s Armor', 'Bone-Carved Talisman'],
+        ['Cloak Woven from Aether', 'Skyship Captain’s Pistol', 'Relic-Infused Spellbook', 'Adaptive Camouflage Suit', 'Razor-Edged Boomerang', 'Plasma Torch Blade'],
+        ['Gauntlet of the Celestial Order', 'Rusted Blade of a Fallen God', 'Desert Nomad’s Twin Blades', 'Shield Engraved with Prophecies', 'Sealed Cylinder of Unreadable Code', 'Energy-Tethered Harpoon'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Nyssa', 'Vashara', 'Ilyria', 'Zayara', 'Teshka', 'Rhavani'],
+        ['Seraya', 'Kaelis', 'Rhovana', 'Sylphi', 'Azmara', 'Thalara'],
+        ['Xyrene', 'Yashara', 'Mirza', 'Callis', 'Veydra', 'Omira'],
+        ['Seneth', 'Zoraya', 'Varess', 'Quinari', 'Eluna', 'Jashari'],
+        ['Kessara', 'Liriel', 'Soreth', 'Valis', 'Tyrani', 'Phayara'],
+        ['Tesira', 'Yvena', 'Orzani', 'Melya', 'Xarha', 'Jysana'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Xaleth', 'Thalric', 'Varek', 'Soran', 'Kaedros', 'Zephar'],
+        ['Rhyzek', 'Yvaren', 'Drakos', 'Ormak', 'Vossan', 'Khalrin'],
+        ['Tyberos', 'Zorath', 'Kyrion', 'Malrek', 'Jorhan', 'Sylkos'],
+        ['Azrik', 'Senros', 'Velkan', 'Rhogar', 'Tarian', 'Xandor'],
+        ['Jhaeros', 'Myrkos', 'Kalric', 'Pharos', 'Vaedran', 'Thyxor'],
+        ['Deymos', 'Zarien', 'Raskir', 'Quinlan', 'Vexor', 'Zephryn'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Darkspire', 'Vorthek', 'Zhen’Karr', 'Ravos', 'Drakar', 'Xyrosian'],
+        ['Tal’Zarin', 'Bloodbrand', 'Orzeth', 'Varshane', 'Nyrekai', 'Tahlmir'],
+        ['Shadowborne', 'Duskfang', 'Kaelos', 'Vaedriss', 'Ryloth', 'Sornath'],
+        ['Obsidianclaw', 'Khyzarek', 'Veilrend', 'Xyroskarn', 'Dunehowl', 'Ironfang'],
+        ['Vaelos', 'Stormriven', 'Zephyros', 'Sablethorn', 'Tyrvannis', 'Blackvein'],
+        ['Maelthir', 'Drakren', 'Kallareth', 'Vaedrakar', 'Jhorveth', 'Nightforged'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Red Wolf', 'Ironfang', 'Dunehawk', 'Shadowborn', 'The Stormblade', 'Voidstrider'],
+        ['Bloodclaw', 'The Phantom', 'Bonebreaker', 'Ghostfang', 'The Sky Reaver', 'Sandsworn'],
+        ['Black Viper', 'The Night Wraith', 'Flameborne', 'The Silent Fang', 'Riftwalker', 'The Forsaken'],
+        ['Doomcaller', 'The Scarred One', 'The Unbroken', 'Warbringer', 'The Ruin Seeker', 'Starborn'],
+        ['Skyshatter', 'The Lost Nomad', 'Stormcaller', 'The Whisperer', 'The Last Sentinel', 'Bladecaster'],
+        ['Wrathborn', 'The Exile', 'The Unseen', 'Firebrand', 'The Lone Warlord', 'Ashenheart'],
+      ]
+    },
+    skyship_traits_concepts: {
+      id: 'skyship_traits_concepts',
+      name: 'Skyship Traits: Concepts',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Raider Skiff', 'Cloud Chaser', 'Relic Seeker', 'Highborn Warship', 'Pirate Cutter', 'Phantom Scout'],
+        ['Sandstorm Cruiser', 'Thunderborne Dreadnought', 'Skyfaring Outpost', 'Smuggler’s Drifter', 'Ironclad Juggernaut', 'Lost Builder Vessel'],
+        ['Nomad\'s Haven', 'Sky Warden\'s Patrol', 'Outlaw Battlecruiser', 'Floating Temple', 'Reaver War-Barge', 'Wasteland Harbinger'],
+        ['Solar-Wind Clipper', 'Void-Touched Drifter', 'Sky-City Freighter', 'Stormchaser\'s Gale', 'Sentinel-Class Escort', 'Horizon Strider'],
+        ['Alchemist’s Ark', 'Forbidden Relic Carrier', 'Mercenary Flagship', 'Xylandran Star-Keeper', 'Shadowhawk Corsair', 'Airborne Cathedral'],
+        ['Titan of the Heavens', 'Sky Fortress', 'Sunsteel Beacon', 'Desert Ghost Hauler', 'Wraithborne Cruiser', 'Riftwalker Frigate'],
+      ]
+    },
+    skyship_traits_skills: {
+      id: 'skyship_traits_skills',
+      name: 'Skyship Traits: Skills',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Solar Sail Maneuvering', 'Storm Piercing Hull', 'Warp-Field Navigation', 'Relic Detection Array', 'Wraith Veil Cloaking', 'Sky-Mounted Ballistae'],
+        ['Cloudborn Agility', 'Temporal Drift Resistance', 'Void Signal Decoding', 'Cargo Disguising Compartments', 'Plasma Lance Turrets', 'Deep Sensor Array'],
+        ['High-Speed Pursuit', 'Meteorite Deflection Shields', 'Elite Infiltration Bay', 'Sealed Reliquary Chamber', 'Firestorm Broadsides', 'Storm Tamer Equipment'],
+        ['Reinforced Solar Canopy', 'Skyborne Repair Systems', 'Adaptive Shielding', 'Airborne War Alchemy', 'Sentinel-Class Overwatch', 'Plasma Harpoons'],
+        ['Hidden Contraband Vaults', 'Pulse-Tether Grappling Hooks', 'Sonic Disruptors', 'Gravity Well Stabilizers', 'Engine Cloaking', 'Resonant Energy Nodes'],
+        ['Planetfall Capacity', 'Rift-Drive Experimentation', 'Battlefield Command Deck', 'Orbital Beacon Relay', 'Energy Lance Cannons', 'Rift Phase Core'],
+      ]
+    },
+    skyship_traits_frailties: {
+      id: 'skyship_traits_frailties',
+      name: 'Skyship Traits: Frailties',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Unstable Power Core', 'Vulnerable to Sandstorms', 'Marked by Warlords', 'Interference from Relic-Tech', 'Prone to Pirate Raids', 'Astral Signal Leakage'],
+        ['Overheating Engines', 'Fuel Consumption Issues', 'Known to Cultist Watchers', 'Hostile AI Fragments', 'Requires Arcane Navigation', 'Weapon Systems Unstable'],
+        ['Ancient Hull Stress', 'Magnetic Storm Weakness', 'Attracts Voidborn Entities', 'Crippled Hyperflight Drive', 'Signature is Easily Tracked', 'High Visibility Profile'],
+        ['Plagued by Mechanical Failures', 'Navigationally Cursed', 'Haunted by Lost Crew', 'Susceptible to Temporal Anomalies', 'Ancient Tech Requires Sacrifices', 'Unstable Rift Reactor'],
+        ['Infamous Among Sky-Pirates', 'Difficult to Repair', 'Unpredictable AI Co-Pilot', 'Enemy of the Builder-Kings', 'Rumored to Be Sentient', 'Plagued by Malfunctioning Shields'],
+        ['Restricted to Certain Altitudes', 'Deep-Sea Vulnerable', 'Possessed by an Unknown Force', 'Energy Supply Depletes Quickly', 'Crew Prone to Desertion', 'Disrupts Timeflow in Proximity'],
+      ]
+    },
+    skyship_traits_gear: {
+      id: 'skyship_traits_gear',
+      name: 'Skyship Traits: Gear',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Twin Plasma Sails', 'Fortified Adamantine Hull', 'Builder-King’s Beacon', 'Ancient Astral Charts', 'Plasma Rail Cannons', 'Chameleon Plating'],
+        ['Warp-Tether Anchor', 'Temporal Shield Array', 'Encrypted Navigator’s Codex', 'Cargo Expansion Modules', 'Runes of Warding', 'Atmosphere Re-Entry Shield'],
+        ['Hypercoil Reactor', 'Voidborne Crystal Drive', 'Resonant Energy Capacitor', 'Solar-Forged Blade Racks', 'Corrupted Data Cores', 'Ethereal Projection Deck'],
+        ['Wraith Drive Core', 'Storm-Catcher Wings', 'Caged Temporal Rift', 'Synchronized Pulse Thrusters', 'Graviton Harpoons', 'Quantum-Linked Beacon'],
+        ['Alchemist’s Crucible', 'Exo-Fuel Conversion Tanks', 'War Chant Amplifier', 'Orbital Strike Turret', 'Dark Matter Sensors', 'Fragment of a Builder’s Throne'],
+        ['Rift-Tempered Steering Rod', 'Void Infusion Engines', 'Gravity-Folded Cargo Bay', 'Armored Sky-Knight\'s Lances', 'Celestial Chronometer', 'Energy-Linked Tetherhooks'],
+      ]
     }
   }
 };

@@ -361,6 +361,146 @@ export default {
         ['Another traveler is using the same route right now; you overlap briefly', 'You arrive with something that wasn\'t yours when you left', 'The route passes through somewhere it shouldn\'t—briefly, terribly', 'Arrival is physically disorienting; magic feels sideways for the next scene', 'The destination has wards that weren\'t there before; someone is expecting visitors', 'Something on the other side touched the portal from their side while you were in it'],
         ['You arrive—but part of your intent didn\'t, and the magic reflects that', 'The crossing cost Luck with no roll—the route is becoming dangerous', 'A second portal opened at the same moment nearby; you don\'t know where it goes', 'You emerged on the wrong side of the Veil—mundanes could have seen you', 'The ley line shows you a memory from when it was first laid, centuries ago', 'You arrive at the right place, right time—but so does your Nemesis'],
       ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Awakening Sorcerer', 'Rogue Fae Changeling', 'Magic Student', 'Hedge Witch', 'Blood-Bound Familiar', 'Urban Shaman'],
+        ['Fallen Angel', 'Techno-Mage', 'School Navigator', 'Monster Hunter', 'Accidental Medium', 'Chaos Practitioner'],
+        ['Oath-Keeper Knight', 'Street Oracle', 'Cursed Heir', 'Portal Guide', 'Memory Eater', 'Sanctuary Keeper'],
+        ['Crossroads Dealer', 'Grimoire Scholar', 'Haven Protector', 'Half-Blood Outcast', 'Artifact Collector', 'Veil Breaker'],
+        ['Renegade Vampire', 'Dream Walker', 'Oath Keeper', 'Wild Talent', 'Community Mediator', 'Ancient in Disguise'],
+        ['Found Family Protector', 'Ley Line Conductor', 'Reluctant Chosen One', 'Reality Hacker', 'Supernatural PI', 'Between-Worlds Refugee'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Veil Sight', 'Ritual Casting', 'Pack Tactics', 'Glamour Weaving', 'Blood Magic', 'Spirit Negotiation'],
+        ['Ward Crafting', 'Shapeshifting', 'Enchantment', 'Shadow Stepping', 'True Name Knowledge', 'Techno-Sorcery'],
+        ['Fae Bargaining', 'Divination', 'Combat Reflexes', 'Alchemy', 'Mind Reading', 'Portal Navigation'],
+        ['Ancient Languages', 'Street Magic', 'Territory Sense', 'Rune Carving', 'Illusion Mastery', 'Soul Binding'],
+        ['Artifact Appraisal', 'Weather Working', 'Dream Manipulation', 'Healing Touch', 'Curse Breaking', 'Urban Tracking'],
+        ['Necromancy', 'Energy Absorption', 'Prophetic Visions', 'Elemental Command', 'Memory Theft', 'Realm Walking'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Iron Weakness', 'Sunlight Vulnerability', 'Silver Sensitivity', 'Oath-Bound', 'Addicted to Magic', 'Hunted by Faction'],
+        ['Unstable Powers', 'Marked by Dark Pact', 'Recurring Visions', 'Cannot Lie', 'Blood Thirst', 'Disconnected from Realm'],
+        ['Vengeful Ghost Haunted', 'Split Personality', 'Forbidden Love', 'Prophetic Nightmares', 'Memory Gaps', 'Transformation Scars'],
+        ['Bound to Location', 'Emotional Contagion', 'Fae Debt', 'Cursed Bloodline', 'Power Overload Risk', 'Mortal Dependent'],
+        ['Reckless Courage', 'Trust Issues', 'Magical Addiction', 'Portal Sickness', 'Betrayed Trust', 'Broken Mastery'],
+        ['Cannot Cross Threshold', 'Price of Power', 'Rival\'s Target', 'Unstable Anchor', 'Sacrificed Humanity', 'Between-Worlds Corruption'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Inherited Grimoire', 'Warded Leather Jacket', 'Silver Chains', 'Enchanted Smartphone', 'Iron Knife', 'Portal Key'],
+        ['Spirit Trap', 'Glamour Charm', 'Blood Vials', 'Rune-Carved Staff', 'Pocket Watch (Temporal)', 'Fae Contract Scroll'],
+        ['Crystal Focus', 'Protective Talisman', 'Ritual Components Kit', 'Consecrated Gun', 'Dream Catcher', 'Ancient Coin'],
+        ['Warded Apartment', 'Tracker Spell Beads', 'Modified Tarot Deck', 'Athame', 'Reality Anchor', 'Bottled Moonlight'],
+        ['Familiar Bond Token', 'Safe House Key', 'Faction Badge', 'Scrying Mirror', 'Hex Breaker', 'Memory Stone'],
+        ['Soul Container', 'Ley Line Map', 'Binding Circle Chalk', 'Truth Serum', 'Invisibility Cloak', 'Realm Compass'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Aurora', 'Raven', 'Willow', 'Sage', 'Luna', 'Morgan'],
+        ['Celeste', 'Ivy', 'Rowan', 'Blair', 'Ember', 'Quinn'],
+        ['Cassandra', 'Violet', 'Hazel', 'Iris', 'Scarlett', 'Thea'],
+        ['Selene', 'Ophelia', 'Dahlia', 'Roxy', 'Vesper', 'Jade'],
+        ['Lilith', 'Winter', 'Phoenix', 'Storm', 'Maven', 'Nyx'],
+        ['Indigo', 'Echo', 'Zara', 'Sable', 'Meadow', 'Lyric'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Asher', 'Rowan', 'Griffin', 'Jasper', 'Silas', 'Felix'],
+        ['Dante', 'Wolf', 'Archer', 'Phoenix', 'Cade', 'Orion'],
+        ['Lucian', 'River', 'Atlas', 'Knox', 'Sage', 'Caspian'],
+        ['Jude', 'Ryder', 'Sterling', 'Cain', 'Ash', 'Damon'],
+        ['Malachi', 'Rune', 'Dorian', 'Salem', 'Blaze', 'Zephyr'],
+        ['Onyx', 'Soren', 'Kieran', 'Talon', 'Rhys', 'Nash'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Blackwood', 'Nightshade', 'Frost', 'Graves', 'Thorn', 'Ashford'],
+        ['Sinclair', 'Wolfe', 'Stone', 'Cross', 'Raven', 'Sterling'],
+        ['Morningstar', 'Crane', 'Vale', 'Woods', 'Moon', 'Winter'],
+        ['Drake', 'Locke', 'Thorne', 'Knight', 'Shadow', 'Storm'],
+        ['Rivers', 'Hawke', 'Glass', 'Chase', 'North', 'Fox'],
+        ['Grey', 'King', 'Wilde', 'Steele', 'Hart', 'Price'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Spark', 'Ghost', 'Blade', 'Whisper', 'Hex', 'Smoke'],
+        ['Twist', 'Moth', 'Echo', 'Cage', 'Silk', 'Thorn'],
+        ['Crow', 'Shade', 'Fang', 'Trick', 'Bone', 'Cinder'],
+        ['Edge', 'Pulse', 'Wire', 'Flash', 'Rust', 'Void'],
+        ['Key', 'Drift', 'Scar', 'Rain', 'Flint', 'Ash'],
+        ['Maze', 'Circuit', 'Frost', 'Spark', 'Coin', 'Wolf'],
+      ]
+    },
+    price_of_power: {
+      id: 'price_of_power',
+      name: 'Price of Power',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Physical exhaustion—take 1 Luck damage immediately', 'Emotional bleed—absorb feelings from your target or environment', 'Magical signature—other practitioners sense what you\'ve done', 'Reality friction—technology near you malfunctions for the next scene', 'Memory fog—lose recent mundane memories (names, appointments, where you parked)', 'Power echo—the magic repeats randomly at an inconvenient moment'],
+        ['Veil crack—mundane witnesses catch glimpses of something impossible', 'Debt incurred—you now owe something to the power source you drew from', 'Physical transformation—temporary change (eyes glow, shadows lengthen, etc.)', 'Attention drawn—something dangerous notices your working', 'Bleeding effect—the magic affects an unintended target', 'Backlash burn—minor magical injury (phantom pain, temporary mark)'],
+        ['Location marked—this place now has supernatural significance', 'Power addiction—you crave using magic again soon', 'Temporal slip—lose several minutes or hours with no memory', 'Emotional cost—the magic feeds on your feelings, leaving you numb', 'Prophetic nightmare—disturbing visions about your future', 'Relationship strain—the working damages a bond with someone important'],
+        ['Reality blur—you see both magical and mundane worlds simultaneously', 'Power leak—minor magic effects happen around you uncontrollably', 'Blood price—take 2 Luck damage as the magic draws from your life force', 'Obsessive focus—you become fixated on the magic\'s target or purpose', 'Fae attention—you\'ve attracted notice from the Courts', 'Mirror curse—the magic will affect you as it affected your target'],
+        ['Veil breach—mundane witnesses see something impossible, confusion spreads', 'Soul stain—the working leaves a lasting mark on your essence', 'Power spiral—your magic is now harder to control (Disadvantage next use)', 'Realm slip—you partially exist in another dimension for a scene', 'Binding formed—you\'re now magically connected to the target or location', 'Identity crisis—question which world you truly belong to'],
+        ['Catastrophic feedback—take 3 Luck damage and gain a temporary Frailty', 'Permanent change—gain a new supernatural feature (mark, ability, or curse)', 'Teacher\'s notice—someone powerful becomes aware of your magic use', 'Portal opened—your working created an unintended passage to another realm', 'True name revealed—someone or something learns your magical identity', 'Magic addiction—you crave the feeling, power calls to you constantly'],
+      ]
+    },
+    veil_breaches_and_exposure: {
+      id: 'veil_breaches_and_exposure',
+      name: 'Veil Breaches and Exposure',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['Social media post goes viral—damage control needed immediately', 'Police investigation begins—mundane authorities asking questions', 'Journalist witnessed event—they\'re investigating the "unexplained"', 'Security footage captured something—organization tries to obtain it', 'Witnesses suffering psychological effects—need help or support', 'Local practitioners offer help—but they want something in return'],
+        ['Mundane scientist took samples—physical evidence exists', 'Children witnessed magic—their parents are asking uncomfortable questions', 'Government agency noticed—watchers are now monitoring the area', 'Rival faction exploiting breach—they\'re using it for their agenda', 'Witnesses formed group—they\'re sharing theories and investigating', 'Media coverage spreading—multiple outlets picking up the story'],
+        ['Location now contaminated—magical signature too strong to hide', 'Witnesses developing abilities—exposure awakened latent powers', 'Religious groups involved—exorcists or faithful interpreting events', 'Academic interest sparked—researchers requesting access to site', 'Tourist attraction forming—curious mundanes flocking to location', 'Insurance fraud suspected—companies investigating "impossible" claims'],
+        ['Copycat incidents occurring—others claiming similar experiences', 'Conspiracy theorists assembling—they\'re getting dangerously close to truth', 'Building condemned—mundane authorities shutting down affected site', 'Witness protection needed—someone saw too much and is now at risk', 'Medical examinations ordered—hospitals studying affected individuals', 'Property seized—government or private organization claiming jurisdiction'],
+        ['Community divided—different practitioners have conflicting approaches', 'Witness went public—press conference or interview already happened', 'Evidence uploaded online—deletion may be impossible', 'Mass hysteria spreading—fear and panic affecting wider community', 'Supernatural refugees appearing—the breach attracted non-human attention', 'Hunter organizations mobilizing—mortal witch hunters entering the area'],
+        ['International attention—foreign powers or organizations investigating', 'Permanent Veil damage—this location is now a known "haunted" or "cursed" site', 'Awakening cascade—multiple people in area developing Veil Sight', 'Powerful mentor confronts you—disappointed and demanding explanation', 'Realm bleed beginning—the breach is allowing other dimensions to seep through', 'Mass awakening—dozens developing Veil Sight, seeking answers and community'],
+      ]
     }
   }
 };

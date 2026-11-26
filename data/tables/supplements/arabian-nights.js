@@ -50,7 +50,7 @@ export default {
         ['A lush, uncharted island appears. No smoke, no voices — but coins lie scattered on the shore.', 'Mist rolls in thick as wool. Sound warps. Compass needles spin. The sea forgets where you are.', 'A castaway clings to driftwood. They whisper of betrayal, gold, and a curse that follows ships.', 'A rival vessel sails alongside, matching your pace — its captain tips a hat and challenges you to a race.', 'A gilded merchant ship hails you, offering exotic spices, charms, and books sealed in wax.', 'A ghost ship passes in silence. Lanterns flicker aboard. No sails. No wind. No crew breathes.'],
         ['A sea djinn rises from the foam and offers a pact — something small, in exchange for safe passage.', 'Behind a veil of reeds and cliffs, a hidden cove opens — calm, sheltered, and eerily silent.', 'A sharp squall tears across your deck. Loose crates roll and a mast groans under the pressure.', 'A massive whale breaches nearby. Its back bears old harpoons and a shrine bound in rope.', 'Another ship closes in. Its captain demands satisfaction for an old slight — by duel or dice.', 'A crate drifts past. Inside: salted meat, soaked parchment, and a dagger carved with initials.'],
         ['Bright fish swarm beneath your hull. One leaps aboard, its scales flashing like coins.', 'Coral reefs shimmer beneath clear waters. One false move could tear your hull wide open.', 'A modest port greets you warmly — flags raised, children waving, food already cooking.', 'Tucked beneath a rotted plank you find a sea-worn map — islands, arrows, and a red X.', 'The sea churns as a whirlpool opens beneath you. Escape demands quick thinking — or sacrifice.', 'A seal-eyed creature surfaces and speaks in broken words, offering aid — or perhaps testing you.'],
-        ['Accusations fly below deck. Knives are drawn. If you don’t act fast, command may slip away.', 'An island cave opens with the tide, revealing a tunnel that smells of salt, moss, and blood.', 'A rival ship feints diplomacy — then veers suddenly, aiming to strike your hull amidships.', 'Singing echoes over the waves. It’s beautiful, haunting — and one of your crew walks toward the rail.', 'Floating debris bears a carved message: a name, a date, and a warning — *“Not for the living.”*', 'Black clouds force you to shelter in a narrow bay. Fires burn onshore, but no one answers your hail.'],
+        ['Accusations fly below deck. Knives are drawn. If you don’t act fast, command may slip away.', 'An island cave opens with the tide, revealing a tunnel that smells of salt, moss, and blood.', 'A rival ship feints diplomacy — then veers suddenly, aiming to strike your hull amidships.', 'Singing echoes over the waves. It’s beautiful, haunting — and one of your crew walks toward the rail.', 'Floating debris bears a carved message: a name, a date, and a warning — “Not for the living.”', 'Black clouds force you to shelter in a narrow bay. Fires burn onshore, but no one answers your hail.'],
         ['A fleet of traders invites you to anchor. Their wares are tempting — their prices, unsettling.', 'Tentacles break the surface — fast and many. The creature wants something more than food.', 'A small island rises in the mist. The people there greet you with music, stories, and veiled warnings.', 'Shards of ice drift beside your ship. Some glow from within. One holds something that watches.', 'An old sailor leans across the rail and speaks of beasts that swallow fleets — and bargains made to stop them.', 'A broken ship lists in the water. No crew, but the hold is full — sealed crates, one of them pulsing with light.'],
       ]
     },
@@ -190,7 +190,7 @@ export default {
         ['In the moonlit gardens, nobles speak in hushed tones — their glances sharpen when they see you.', 'The jester juggles knives and murmurs, “The smallest blade cuts deepest.” Then drops a folded paper.', 'The banquet hall glows with candlelight. Conversations are civil — but the tension hums beneath.', 'A servant drops a napkin and whispers: “Please help. They’re watching. I don’t want to vanish.”', 'A scroll falls from a shelf. Inside: a love letter written in the ruler’s hand, never sent.', 'An ambassador offers you rare wine and asks strange questions about your loyalties.'],
         ['A whisper leads you to a guest room drawer — empty but for gloves soaked in perfume and blood.', 'A noble asks you to carry a sealed message to the stables. “Don’t open it,” they insist.', 'Inside a carved desk leg, you find a small compartment — and a single golden coin with two faces.', 'A dancer’s performance mesmerizes the court — but their footwork maps out something on the floor.', 'Late at night, a pale figure drifts past your chamber. They do not cast a shadow.', 'The palace chef serves you a delicate stew. “It’s for the vizier,” they murmur. “Tell me if it tastes strange.”'],
         ['Behind an old tapestry is a map — corridors marked in red, stairwells others claim don’t exist.', 'A rival noble has begun to spread rumors about you. You hear the first one from a guard you trust.', 'A book in the library rustles as you open it. A note is tucked between its pages — written backward.', 'A guard glances around and says, “Want to see something the council won’t talk about?”', 'In the shadow of a colonnade, two figures exchange a purse of gold and a whisper.', 'The court musician plays a tune you recognize — one taught only to spies in a distant land.'],
-        ['A velvet diary lies open on a writing desk. The ink is fresh — and the secrets are explosive.', 'A palace healer asks for help. “I’ve seen this illness before — but it was never meant to reach here.”', 'A rival noble corners you with a smile and an offer — money for silence, or scandal for defiance.', 'A scrap of parchment falls from your sleeve. The handwriting isn’t yours. It reads: *“They know.”*', 'A portrait in the hall has eyes that don’t match. Behind it, a symbol is scratched into the stone.', 'The librarian leads you to a sealed chamber. “These books are not supposed to be read,” they warn.'],
+        ['A velvet diary lies open on a writing desk. The ink is fresh — and the secrets are explosive.', 'A palace healer asks for help. “I’ve seen this illness before — but it was never meant to reach here.”', 'A rival noble corners you with a smile and an offer — money for silence, or scandal for defiance.', 'A scrap of parchment falls from your sleeve. The handwriting isn’t yours. It reads: “They know.”', 'A portrait in the hall has eyes that don’t match. Behind it, a symbol is scratched into the stone.', 'The librarian leads you to a sealed chamber. “These books are not supposed to be read,” they warn.'],
         ['You’re summoned alone. The ruler stares into the fire and asks, “What do you think of traitors?”', 'The chamberlain confides in you. “If this gets out, half the court will fall — and I with it.”', 'A tunnel hidden beneath your guest room leads out past the walls — and into the night beyond.', 'A noble accuses you publicly. The crowd gasps. A small nod from behind them confirms it’s a trap.', 'Locked in a cabinet: a letter signed by a distant ruler, offering land for betrayal.', 'You discover a circle of nobles meeting in secret — their sigils swapped, their plans already in motion.'],
       ]
     },
@@ -202,7 +202,7 @@ export default {
       entries: [
         ['Tucked beneath loose stone, a silver ring gleams — when worn, the wearer vanishes from sight.', 'A staff wrapped in scorched silk hums with potential. Wind, fire, rain — all obey its touch.', 'A crystal vial filled with golden liquid pulses with warmth. One sip knits flesh and bone alike.', 'A midnight-blue cloak drapes lightly over your shoulders. With a whispered word, you rise into the air.', 'Bound in dragonhide, this tome crackles faintly. Its pages write themselves when the moon is full.', 'Dusty boots clack restlessly on the ground. When worn, you blur like heat on the horizon.'],
         ['A necklace of woven silver resists every blade, arrow, and blow — as long as the wearer speaks no lie.', 'This sword ignites as it\'s drawn, flames curling along the blade — eager, not waiting for orders.', 'A round shield polished like glass rebounds every strike, but shows the attacker’s face before the blow lands.', 'A feathered cap settles perfectly on your brow. Thoughts align, riddles untangle — clarity blossoms.', 'A lantern burns with no flame. In its glow, illusions fade and secrets quiver like smoke.', 'Gloves stitched from lionhide grant strength to lift boulders — or crush a steel helm barehanded.'],
-        ['The mirror’s surface ripples when touched. It shows what *might* be — if one dares pursue it.', 'A copper belt adorned with shells lets you breathe beneath water — or speak with its dwellers.', 'This ring hums near animals. Birds perch closer, wolves listen — and some creatures *answer*.', 'A sapphire set in bronze absorbs stray sparks of magic. It glows when charged… and may not stay quiet.', 'A serpent-shaped pendant coils tightly. While worn, no toxin touches your blood.', 'This quill floats upright over blank paper. At night, it scribbles down dreams you don’t remember.'],
+        ['The mirror’s surface ripples when touched. It shows what might be — if one dares pursue it.', 'A copper belt adorned with shells lets you breathe beneath water — or speak with its dwellers.', 'This ring hums near animals. Birds perch closer, wolves listen — and some creatures answer.', 'A sapphire set in bronze absorbs stray sparks of magic. It glows when charged… and may not stay quiet.', 'A serpent-shaped pendant coils tightly. While worn, no toxin touches your blood.', 'This quill floats upright over blank paper. At night, it scribbles down dreams you don’t remember.'],
         ['The compass needle spins until you ask a question. Then, it points — toward your truest desire.', 'A woven bracelet tightens as you speak. Any tongue becomes yours, every dialect clear as day.', 'This porcelain mask feels warm. When worn, it remakes your face — and whispers a new name.', 'A bone flute carved with runes calls forth flickering spirits — curious, kind, or chaotic.', 'An amulet etched with a burning eye repels curses and keeps foul spirits at bay — unless invited.', 'A sealed vial of water gleams like silver. One drop cleanses rot, poison, or corruption — but vanishes quickly.'],
         ['This ring tightens at first, then relaxes. Thoughts echo faintly — not yours, but close.', 'A blackwood staff topped with a storm crystal thrums with stored lightning. One strike calls the tempest.', 'This scroll glows faintly. The incantation it holds is incomplete — but powerful even half-spoken.', 'The bronze helm narrows your vision… then opens it wide. Mountains, cities, and stars flash across your mind.', 'These silver earrings hum softly. You hear whispers in locked rooms, footsteps in the dark.', 'A plain sack with endless depth. From inside, voices echo. Some items it gives freely — some, not.'],
         ['A ruby ring grows warm in your palm. Speak, and fire dances to your will — but always asks for more.', 'This sword hums when danger nears. In battle, it sings — ancient verses in a voice not your own.', 'The mirror reveals no face — only threats. Knives hidden, shadows moving, lies unspoken.', 'A leather belt tightens with wind. With a leap, you soar skyward, drifting like silk on a breeze.', 'A bronze ring inscribed with flames shields the wearer from all heat — even the sun’s fury.', 'This gnarled staff crackles with petrifying power. Its gaze alone turns limbs to stone.'],
@@ -314,7 +314,7 @@ export default {
       entries: [
         ['Bandits fell a tree across the path, blocking the road ahead.', 'In the dead of night, your camp is silently surrounded.', 'Posing as harmless traders, the bandits wait until you\'re vulnerable.', 'A sharp-eyed scout spots movement among the rocks — an ambush in the making.', 'Just as you enter a narrow pass, bandits strike from above and below.', 'While your guards argue over rations, the attack begins.'],
         ['Cloaked in darkness, bandits rain down arrows from hidden positions.', 'A rival caravan lures you into a trap, bandits waiting just out of sight.', 'Smoke bombs erupt around you — confusion reigns as the bandits charge.', 'An abandoned wagon ahead is a decoy, bait for a deadly ambush.', 'Bandits slip coins to your hired guards — and your defenses melt away.', 'A sudden desert squall blows in — and so do the bandits.'],
-        ['Mid-river, while crossing, bandits strike from both banks.', 'Someone within your own group reveals their allegiance — too late.', 'Dressed in stolen livery, a bandit infiltrates your camp before the attack.', 'Illness spreads — too late you learn the food was tainted by bandits.', 'A toppled wagon blocks the path — a traveler calls for help. It’s a trap.', 'A crude sign is nailed to a tree: *“Leave gold, or lose lives.”*'],
+        ['Mid-river, while crossing, bandits strike from both banks.', 'Someone within your own group reveals their allegiance — too late.', 'Dressed in stolen livery, a bandit infiltrates your camp before the attack.', 'Illness spreads — too late you learn the food was tainted by bandits.', 'A toppled wagon blocks the path — a traveler calls for help. It’s a trap.', 'A crude sign is nailed to a tree: “Leave gold, or lose lives.”'],
         ['Armed and confident, bandits block the road and demand a toll.', 'In the dark, your horses spook and bolt — chaos erupts.', 'Flames rise suddenly behind your camp, and bandits rush from the shadows.', 'While your party sleeps, steel flashes in the night.', 'A bound prisoner is left in the open — but rescuing them springs the trap.', 'A note arrives tied to a knife: your companion is held for ransom.'],
         ['A makeshift barricade blocks your progress — and behind it, movement stirs.', 'Your scouts return shaken — many more bandits than expected lie ahead.', 'A blast from a horn or thunderous boom panics the caravan.', 'You find a stash of food and gear hidden in the brush — it\'s not abandoned.', 'Ragged beggars ask for scraps, then draw blades when close.', 'Rocks tumble down — a landslide triggered by hidden attackers.'],
         ['From above, bandits drop nets and arrows from the trees.', 'An infamous bandit offers an uneasy truce — and a job.', 'Hidden ropes snake out from the underbrush, tangling your animals mid-run.', 'A stolen map shows the location of a bandit hideout — and their plans.', 'A shrill whistle pierces the air — it’s the signal to strike.', 'You overhear whispers of betrayal — someone sold you out.'],
@@ -430,6 +430,118 @@ export default {
         ['A seasonal dance marking the passage of time and honoring each equinox.', 'Intricate symbols are drawn in the sand during a ritual to interpret omens.', 'A torchlit vigil held through the night to avert bad fortune.', 'Storytellers pass down creation myths during a ritual under the stars.', 'Participants fast for a day and night to attain visions of the divine.', 'A harmonic chant sung in circles to summon guardian spirits.'],
         ['A dance barefoot on soil to honor the nurturing earth mother.', 'Faces and arms are painted with sacred designs in a ritual of transformation.', 'A symbolic exchange of handmade items to strengthen tribal bonds.', 'A ceremonial fire kept alive from dusk till dawn as a beacon to the divine.', 'Sacred water is sprinkled over fields and homes to bless and purify.', 'A mourning song echoing through the valley to honor lost souls.'],
         ['A vibrant renewal dance performed to usher in the new year with joy.', 'A binding ceremony where couples are joined with braided cords and oaths.', 'A welcoming rite where newcomers are introduced through symbolic gestures.', 'A chant of gratitude offered to the spirits for their unseen guardianship.', 'An ordeal-based ceremony signifying the passage from youth to adulthood.', 'An initiation ritual filled with secrecy and symbolism to enter a hidden order.'],
+      ]
+    },
+    concepts: {
+      id: 'concepts',
+      name: 'Concepts',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Desert Wanderer', 'Cunning Vizier', 'Star-Touched Seer', 'Masked Assassin', 'Whispering Alchemist', 'Sandborn Mystic'],
+        ['Exiled Prince', 'Moonlight Dancer', 'Saffron Merchant', 'Spirit-Talker', 'Wandering Poet', 'Fire-Eyed Blacksmith'],
+        ['Veiled Courtesan', 'Fortune-Hungry Thief', 'Snake-Charmed Healer', 'Caravan Guard', 'Glassblower of Secrets', 'Desert Falconer'],
+        ['Oracle of the Oasis', 'Spell-Cursed Outcast', 'Shadow-Walker', 'Wandering Dervish', 'Mirror-Wise Philosopher', 'Tamer of Roc Hatchlings'],
+        ['Sand-Scribe', 'Wind-Blessed Nomad', 'Pearl Diver', 'Story-Hunter', 'Palace Juggler', 'Keeper of Forgotten Names'],
+        ['Stormbound Sailor', 'Blood-Bound Sorcerer', 'Jewel-Eyed Artisan', 'Dream-Driven Prophet', 'Laughing Duelist', 'Pilgrim of the Mirage'],
+      ]
+    },
+    skills: {
+      id: 'skills',
+      name: 'Skills',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Whirling Blade Dancer', 'Sandstep Sneak', 'Silver-Tongued Charmer', 'Celestial Navigator', 'Potion-Brewer', 'Oasis Healer'],
+        ['Smoke and Mirror Tricks', 'Desert Survivalist', 'Whispered Negotiator', 'Shadowed Infiltrator', 'Truth-Seeker', 'Master of Miniatures'],
+        ['Djinn-Bound Spellwork', 'Fire-Juggler’s Grace', 'Story-Weaver', 'Tactician of the Bazaar', 'Tongue of Many Lands', 'Feast-Table Savant'],
+        ['Song of Soothing Winds', 'Oud Virtuoso', 'Tale-Spinning Orator', 'Sky-Chart Reader', 'Beast-Way Tracker', 'Horse Whisperer'],
+        ['Relic Engineer', 'Starbound Sailor', 'Ink-Stained Archivist', 'Calligraphy of Secrets', 'Chronicler of Dynasties', 'Cartographer of the Lost'],
+        ['Stargazer of Omens', 'Beast Handler of the Sands', 'Marketwise Trader', 'Falcon-Eyed Hunter', 'Herb-Lore Gatherer', 'Riddle-Cracker'],
+      ]
+    },
+    frailties: {
+      id: 'frailties',
+      name: 'Frailties',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Gold-Lust', 'Trembles Before Blades', 'Proud Beyond Reason', 'Rash Tongue', 'Easily Fooled by Charm', 'Stranger to Deceit'],
+        ['Green-Eyed for Glory', 'Sleeps While the Sun Rises', 'Fire-Tempered Soul', 'Unyielding in Belief', 'Soft Voice in Conflict', 'Rider of Risk'],
+        ['Mirror-Obsessed', 'Vows Broken Like Twigs', 'Haunted by Omens', 'Trusts No One', 'Hungers for Praise', 'Vows Revenge Too Quickly'],
+        ['Forgets Sacred Details', 'Fear of Being Forgotten', 'Sees Shadows in Faces', 'Melancholy Moon-Gazer', 'Confidence Crumbles in Silence', 'Hears Secrets in Silence'],
+        ['Tongue Forked in Prayer', 'Lover of Rival’s Fortune', 'Shakes Before Crowds', 'Heart Tossed by the Winds', 'Grasper of All, Keeper of None', 'Mind Adrift in Wonder'],
+        ['Too Sure of Fate', 'Feeds When He Should Fast', 'Walled in Secrets', 'Hungers for Forbidden Truth', 'Breaker of Rituals', 'Fixates on the Impossible'],
+      ]
+    },
+    gear: {
+      id: 'gear',
+      name: 'Gear',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Polished oil lamp', 'Curved short sword', 'Brass compass', 'Pouch of dried herbs', 'Embroidered robe', 'Rolled parchment'],
+        ['Slim-bladed dagger', 'Worn leather amulet', 'Hand-drawn map', 'Wooden oud', 'Small prayer book', 'Clay potion vial'],
+        ['Bone lockpicks', 'Silver earrings', 'Small spyglass', 'Bronze ring', 'Paper lantern', 'Ink and reed pen'],
+        ['Shortbow and quiver', 'Simple arrows', 'Folded tent cloth', 'Water skin', 'Woven satchel', 'Round wooden shield'],
+        ['Sand-wrapped sandals', 'Rolled travel rug', 'Stringed coin purse', 'Flint and steel', 'Coiled rope', 'Pack of dry food'],
+        ['Worn saddle', 'Sturdy desert horse', 'Carved talisman', 'Plain travel cloak', 'Palm-sized mirror', 'Painted game board'],
+      ]
+    },
+    female_names: {
+      id: 'female_names',
+      name: 'Female Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Amina', 'Layla', 'Zainab', 'Fatima', 'Yasmin', 'Soraya'],
+        ['Nadia', 'Hafsa', 'Salma', 'Miriam', 'Rania', 'Dina'],
+        ['Leila', 'Samira', 'Noor', 'Huda', 'Rima', 'Hana'],
+        ['Zarah', 'Nawal', 'Isra', 'Aisha', 'Mariam', 'Sana'],
+        ['Lina', 'Rahma', 'Zein', 'Lubna', 'Safa', 'Amal'],
+        ['Rasha', 'Ruba', 'Rida', 'Arwa', 'Malak', 'Jumanah'],
+      ]
+    },
+    male_names: {
+      id: 'male_names',
+      name: 'Male Names',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Ahmed', 'Khalid', 'Omar', 'Hassan', 'Karim', 'Tariq'],
+        ['Samir', 'Yasir', 'Nadir', 'Basim', 'Fahad', 'Rashid'],
+        ['Amir', 'Zayd', 'Adil', 'Majid', 'Saeed', 'Talib'],
+        ['Bilal', 'Jamil', 'Rami', 'Ismail', 'Mustafa', 'Farid'],
+        ['Hamid', 'Ibrahim', 'Harun', 'Nabil', 'Qasim', 'Yusuf'],
+        ['Malik', 'Anwar', 'Salem', 'Munir', 'Habib', 'Jamal'],
+      ]
+    },
+    surnames: {
+      id: 'surnames',
+      name: 'Surnames',
+      category: 'character',
+      rollType: '2d6',
+      entries: [
+        ['Al-Farouk', 'Al-Mansour', 'Al-Rashid', 'Al-Hassan', 'Al-Amin', 'Al-Karim'],
+        ['Al-Hakim', 'Al-Nasir', 'Al-Tahir', 'Al-Idrisi', 'Al-Saleh', 'Al-Mahdi'],
+        ['Al-Qasim', 'Al-Fadl', 'Al-Adil', 'Al-Bashir', 'Al-Rafiq', 'Al-Sabir'],
+        ['Al-Zahir', 'Al-Ghazali', 'Al-Mu\'taz', 'Al-Khwarizmi', 'Al-Tusi', 'Al-Rumi'],
+        ['Al-Kindi', 'Al-Muqaddim', 'Al-Jahiz', 'Al-Sulayman', 'Al-Khattab', 'Al-Mu’izz'],
+        ['Al-Numan', 'Al-Samh', 'Al-Balakhi', 'Al-Marwazi', 'Al-Tamimi', 'Al-Sarraj'],
+      ]
+    },
+    nicknames: {
+      id: 'nicknames',
+      name: 'Nicknames',
+      category: 'random-tables',
+      rollType: '2d6',
+      entries: [
+        ['The Wise', 'The Brave', 'The Just', 'The Swift', 'The Merciful', 'The Bold'],
+        ['The Clever', 'The Fearless', 'The Pious', 'The Generous', 'The Silent', 'The Strong'],
+        ['The Gentle', 'The Valiant', 'The Loyal', 'The Quick', 'The Kind', 'The Patient'],
+        ['The Cunning', 'The Radiant', 'The Devout', 'The Mighty', 'The Shrewd', 'The Vigilant'],
+        ['The Graceful', 'The Farsighted', 'The Honorable', 'The Tenacious', 'The Just Hand', 'The Watchful'],
+        ['The Curious', 'The Stern', 'The Humble', 'The Stalwart', 'The Fierce', 'The Diligent'],
       ]
     }
   }
